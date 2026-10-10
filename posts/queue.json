@@ -8,7 +8,7 @@
       "https://tile.loc.gov/storage-services/service/pnp/cph/3a30000/3a33000/3a33900/3a33939r.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2001704327/",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -22,7 +22,7 @@
       "https://iiif.micr.io/KjUkY/full/^1024,538/0/default.webp"
     ],
     "image_credit_page": "https://www.rijksmuseum.nl/en/collection/RP-F-2012-81-1",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -34,7 +34,7 @@
       "https://catalog.archives.gov/medialz/presidential-libraries/truman/photographs/2017/2017-2076.jpg"
     ],
     "image_credit_page": "https://www.trumanlibrary.gov/photograph-records/2017-2076",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -46,7 +46,7 @@
       "https://images.metmuseum.org/CRDImages/dp/original/DP825760.jpg"
     ],
     "image_credit_page": "https://www.metmuseum.org/art/collection/search/415981",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -59,7 +59,7 @@
       "https://tile.loc.gov/storage-services/service/pnp/anrc/14900/14968v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2017679979/",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   }
