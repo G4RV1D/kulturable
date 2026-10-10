@@ -71,6 +71,10 @@ def main() -> int:
         due = [p for p in posts if p["approved"] and not p["published_at"]
                and dt.datetime.fromisoformat(p["publish_at"]) <= now]
         due.sort(key=lambda p: p["publish_at"])
+    if not due and dry:
+        due = [p for p in posts if p["approved"] and not p["published_at"]][:1]
+        if due:
+            print(f"Mode test : vérification du prochain post ({due[0]['id']}).")
     if not due:
         print("Rien à publier pour l'instant.")
         return 0
@@ -85,15 +89,15 @@ def main() -> int:
     check_image_online(image_url)
     print(f"Prêt : {post['id']} ({len(caption)} caractères) avec {image_url}")
 
-    if dry:
-        print("Mode test : rien n'a été publié.")
-        return 0
     if not token:
         print("IG_ACCESS_TOKEN manquant.")
         return 1
-
     me = call("GET", "me", {"fields": "user_id,username", "access_token": token})
     user_id = me.get("user_id") or me["id"]
+    print(f"Clé Instagram valide pour le compte @{me.get('username')}.")
+    if dry:
+        print("Mode test : rien n'a été publié.")
+        return 0
     container = call("POST", f"{user_id}/media",
                      {"image_url": image_url, "caption": caption, "access_token": token})["id"]
     for _ in range(30):  # Instagram traite l'image avant publication
