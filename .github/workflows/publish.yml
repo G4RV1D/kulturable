@@ -1,0 +1,44 @@
+name: Publier sur Instagram
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # chaque heure ; le script ne publie que les posts validés dont l'heure est passée
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Mode test (ne publie rien)"
+        type: boolean
+        default: true
+      force_id:
+        description: "Publier tout de suite ce post (ex. 01-violet-jessop)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kulturable-repo-write
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publier
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IMAGE_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/images
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+          FORCE_ID: ${{ inputs.force_id }}
+        run: python scripts/publish.py
+      - name: Noter la publication
+        run: |
+          git config user.name "kulturable-bot"
+          git config user.email "kulturable-bot@users.noreply.github.com"
+          git add posts/queue.json
+          git diff --cached --quiet || (git commit -m "Post publié" && git push)
