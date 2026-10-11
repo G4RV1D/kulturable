@@ -31,14 +31,6 @@
           0.965,
           0.96
         ]
-      },
-      {
-        "sources": [
-          "https://iiif.micr.io/KjUkY/full/1600,/0/default.jpg",
-          "https://iiif.micr.io/KjUkY/full/1600,/0/default.webp",
-          "https://iiif.micr.io/KjUkY/full/^1024,538/0/default.webp"
-        ],
-        "credit_page": "https://www.rijksmuseum.nl/en/collection/RP-F-2012-81-1"
       }
     ]
   },

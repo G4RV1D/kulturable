@@ -17,7 +17,7 @@ Un post non validé n'est jamais publié.
 
 - Sources : uniquement des institutions (musées, bibliothèques, archives), des encyclopédies ou une presse reconnue. Pas de Wikipedia.
 - Images : conservées par une institution, avec des droits vérifiés.
-- Quand le sujet est une personne, son portrait apparaît en première image si un portrait de source fiable existe ; les autres visuels passent en images suivantes (carrousel).
+- Une seule image par post, comme le reste de la page. Quand le sujet est une personne, cette image est son portrait si un portrait de source fiable existe.
 - Style : un récit écrit comme par un humain, presque sans emojis, avec une question au lecteur puis les sources.
 
 ## Configuration (une seule fois)
