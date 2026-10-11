@@ -70,5 +70,70 @@
     "approved": true,
     "published_at": null,
     "media_id": null
+  },
+  {
+    "id": "06-houdini",
+    "publish_at": "2026-10-30T18:00:00+01:00",
+    "caption_file": "posts/captions/06-houdini.txt",
+    "image_sources": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3c10000:3c12000:3c12400:3c12429/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c12000/3c12400/3c12429v.jpg"
+    ],
+    "image_credit_page": "https://www.loc.gov/item/96518797/",
+    "approved": false,
+    "published_at": null,
+    "media_id": null
+  },
+  {
+    "id": "07-shackleton",
+    "publish_at": "2026-11-03T18:00:00+01:00",
+    "caption_file": "posts/captions/07-shackleton.txt",
+    "image_sources": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:ggbain:24200:24287/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/ggbain/24200/24287v.jpg"
+    ],
+    "image_credit_page": "https://www.loc.gov/item/2014704471/",
+    "approved": false,
+    "published_at": null,
+    "media_id": null
+  },
+  {
+    "id": "08-nellie-bly",
+    "publish_at": "2026-11-06T18:00:00+01:00",
+    "caption_file": "posts/captions/08-nellie-bly.txt",
+    "image_sources": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3c30000:3c36000:3c36800:3c36891/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3c30000/3c36000/3c36800/3c36891v.jpg"
+    ],
+    "image_credit_page": "https://www.loc.gov/item/2006686293/",
+    "approved": false,
+    "published_at": null,
+    "media_id": null
+  },
+  {
+    "id": "09-trebuchon",
+    "publish_at": "2026-11-10T18:00:00+01:00",
+    "caption_file": "posts/captions/09-trebuchon.txt",
+    "image_sources": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:anrc:00400:00496/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/anrc/00400/00496v.jpg"
+    ],
+    "image_credit_page": "https://www.loc.gov/item/2017666571/",
+    "approved": false,
+    "published_at": null,
+    "media_id": null
+  },
+  {
+    "id": "10-annie-taylor",
+    "publish_at": "2026-11-13T18:00:00+01:00",
+    "caption_file": "posts/captions/10-annie-taylor.txt",
+    "image_sources": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:ds:09100:09162/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/ds/09100/09162v.jpg"
+    ],
+    "image_credit_page": "https://www.loc.gov/item/2016647628/",
+    "approved": false,
+    "published_at": null,
+    "media_id": null
   }
 ]
