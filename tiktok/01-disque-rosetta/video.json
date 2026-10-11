@@ -83,5 +83,15 @@
       "https://images-assets.nasa.gov/image/PIA21068/PIA21068~orig.jpg",
       "https://images-assets.nasa.gov/image/PIA21068/PIA21068~large.jpg"
     ]
-  }
+  },
+  "cuts": [
+    12.9,
+    29.8,
+    39.1,
+    52.2,
+    73.8,
+    94.1,
+    105.75,
+    115.4
+  ]
 }

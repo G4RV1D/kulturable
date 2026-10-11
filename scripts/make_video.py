@@ -120,10 +120,24 @@ def align(paras: list, sil: list, dur: float):
     s1 = sil[-1][0] if sil and sil[-1][1] >= dur - 0.05 else dur
     inner = [(a, b) for a, b in sil if a > s0 + 0.1 and b < s1 - 0.1]
     w = [len(p.split()) for p in paras]
+
+    def speech_at(T):  # temps de parole écoulé (pauses exclues) entre s0 et T
+        tot = T - s0
+        for a, b in sil:
+            a2, b2 = max(a, s0), min(b, T)
+            if b2 > a2:
+                tot -= b2 - a2
+        return tot
+
+    S = speech_at(s1)
     cum, expected = 0, []
     for x in w[:-1]:
         cum += x
-        expected.append(s0 + (s1 - s0) * cum / sum(w))
+        target, lo, hi = S * cum / sum(w), s0, s1
+        for _ in range(40):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if speech_at(mid) < target else (lo, mid)
+        expected.append(lo)
     k, m = len(expected), len(inner)
     if m < k:
         return None, s0, s1
@@ -274,6 +288,8 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
         total = vdur + 0.6
         sil = silences(voice)
         cuts, s0, s1 = align(paras, sil, vdur)
+        if spec.get("cuts"):  # réglage manuel possible dans video.json
+            cuts = [float(c) for c in spec["cuts"]]
     else:
         total = sum(weights) / WORDS_PER_SEC
     if cuts:
