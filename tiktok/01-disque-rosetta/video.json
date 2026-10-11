@@ -1,22 +1,87 @@
 {
   "title": "Le disque de Rosetta",
   "segments": [
-    {"paragraph": 1, "image": "disk", "zoom": "in"},
-    {"paragraph": 2, "image": "stone", "zoom": "in"},
-    {"paragraph": 3, "image": "stone", "zoom": "out", "crop": [0.15, 0.55, 0.85, 0.95]},
-    {"paragraph": 4, "image": "disk2", "zoom": "in"},
-    {"paragraph": 5, "image": "disk", "zoom": "in", "crop": [0.2, 0.2, 0.8, 0.8]},
-    {"paragraph": 6, "image": "probe", "zoom": "in"},
-    {"paragraph": 7, "image": "comet_close", "zoom": "in"},
-    {"paragraph": 8, "image": "comet", "zoom": "out"},
-    {"paragraph": 9, "image": "disk", "zoom": "out"}
+    {
+      "paragraph": 1,
+      "image": "disk",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "stone",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "stone",
+      "zoom": "out",
+      "crop": [
+        0.15,
+        0.55,
+        0.85,
+        0.95
+      ]
+    },
+    {
+      "paragraph": 4,
+      "image": "disk2",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 5,
+      "image": "disk",
+      "zoom": "in",
+      "crop": [
+        0.2,
+        0.2,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "paragraph": 6,
+      "image": "probe",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "comet_close",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 8,
+      "image": "comet",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 9,
+      "image": "disk",
+      "zoom": "out"
+    }
   ],
   "images": {
-    "disk": ["https://media.rosettaproject.org/static/ui/rosetta_disk.jpg"],
-    "disk2": ["https://media.rosettaproject.org/static/ui/rosetta_disk2.jpg"],
-    "stone": ["https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta_Stone.JPG?width=1600"],
-    "probe": ["https://images-assets.nasa.gov/image/PIA17666/PIA17666~orig.jpg", "https://images-assets.nasa.gov/image/PIA17666/PIA17666~large.jpg"],
-    "comet": ["https://images-assets.nasa.gov/image/PIA18899/PIA18899~orig.jpg", "https://images-assets.nasa.gov/image/PIA18899/PIA18899~large.jpg"],
-    "comet_close": ["https://images-assets.nasa.gov/image/PIA21068/PIA21068~orig.jpg", "https://images-assets.nasa.gov/image/PIA21068/PIA21068~large.jpg"]
+    "disk": [
+      "https://live.staticflickr.com/4093/4911750160_21c3b6607a_b.jpg",
+      "https://media.rosettaproject.org/static/ui/rosetta_disk.jpg"
+    ],
+    "disk2": [
+      "https://live.staticflickr.com/4093/4911750160_21c3b6607a_b.jpg",
+      "https://media.rosettaproject.org/static/ui/rosetta_disk2.jpg"
+    ],
+    "stone": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta_Stone.JPG?width=1600"
+    ],
+    "probe": [
+      "https://images-assets.nasa.gov/image/PIA17666/PIA17666~orig.jpg",
+      "https://images-assets.nasa.gov/image/PIA17666/PIA17666~large.jpg"
+    ],
+    "comet": [
+      "https://images-assets.nasa.gov/image/PIA18899/PIA18899~orig.jpg",
+      "https://images-assets.nasa.gov/image/PIA18899/PIA18899~large.jpg"
+    ],
+    "comet_close": [
+      "https://images-assets.nasa.gov/image/PIA21068/PIA21068~orig.jpg",
+      "https://images-assets.nasa.gov/image/PIA21068/PIA21068~large.jpg"
+    ]
   }
 }
