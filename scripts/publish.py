@@ -99,7 +99,7 @@ def main() -> int:
     caption = (ROOT / post["caption_file"]).read_text(encoding="utf-8").strip()
     check_caption(caption, post["id"])
     from prepare_images import image_files
-    image_urls = [f"{base}/{name}" for name, _ in image_files(post)]
+    image_urls = [f"{base}/{name}" for name, _, _ in image_files(post)]
     for url in image_urls:
         check_image_online(url)
     print(f"Prêt : {post['id']} ({len(caption)} caractères), {len(image_urls)} image(s)")

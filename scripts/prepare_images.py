@@ -44,9 +44,9 @@ def compose(src: Image.Image) -> Image.Image:
 
 def image_files(post: dict) -> list:
     """Liste (nom de fichier, sources) : une image simple ou plusieurs (carrousel)."""
-    groups = [img["sources"] for img in post["images"]] if "images" in post else [post["image_sources"]]
-    return [(f"{post['id']}.jpg" if i == 0 else f"{post['id']}-{i + 1}.jpg", src)
-            for i, src in enumerate(groups)]
+    imgs = post["images"] if "images" in post else [{"sources": post["image_sources"]}]
+    return [(f"{post['id']}.jpg" if i == 0 else f"{post['id']}-{i + 1}.jpg", img["sources"], img.get("crop"))
+            for i, img in enumerate(imgs)]
 
 
 def main() -> int:
@@ -54,13 +54,18 @@ def main() -> int:
     OUT_DIR.mkdir(exist_ok=True)
     failed = []
     for post in posts:
-        for name, sources in image_files(post):
+        for name, sources, crop in image_files(post):
             out = OUT_DIR / name
             if out.exists():
                 continue
             for url in sources:
                 try:
-                    img = compose(download(url))
+                    src = download(url)
+                    if crop:  # recadrage en fractions (gauche, haut, droite, bas)
+                        l, h, r, b = crop
+                        src = src.crop((round(l * src.width), round(h * src.height),
+                                        round(r * src.width), round(b * src.height)))
+                    img = compose(src)
                     img.save(out, "JPEG", quality=92, optimize=True, progressive=True)
                     print(f"OK   {name} <- {url}")
                     break

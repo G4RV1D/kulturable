@@ -24,7 +24,13 @@
         "sources": [
           "https://collections.countway.harvard.edu/onview/files/original/b82493f7e63e9904f6adaef2d3b11979.jpg"
         ],
-        "credit_page": "https://collections.countway.harvard.edu/onview/items/show/18168"
+        "credit_page": "https://collections.countway.harvard.edu/onview/items/show/18168",
+        "crop": [
+          0.535,
+          0.04,
+          0.965,
+          0.96
+        ]
       },
       {
         "sources": [
