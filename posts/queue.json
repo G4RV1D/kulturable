@@ -75,7 +75,7 @@
     "id": "06-houdini",
     "publish_at": "2026-10-30T18:00:00+01:00",
     "caption_file": "posts/captions/06-houdini.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -103,7 +103,7 @@
       "https://tile.loc.gov/storage-services/service/pnp/ggbain/24200/24287v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2014704471/",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -116,7 +116,7 @@
       "https://tile.loc.gov/storage-services/service/pnp/cph/3c30000/3c36000/3c36800/3c36891v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2006686293/",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null
   },
@@ -124,7 +124,7 @@
     "id": "09-trebuchon",
     "publish_at": "2026-11-10T18:00:00+01:00",
     "caption_file": "posts/captions/09-trebuchon.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -147,7 +147,7 @@
     "id": "10-annie-taylor",
     "publish_at": "2026-11-13T18:00:00+01:00",
     "caption_file": "posts/captions/10-annie-taylor.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
