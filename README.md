@@ -31,3 +31,11 @@ Un post non validé n'est jamais publié.
 ## Test
 
 Onglet **Actions** > **Publier sur Instagram** > **Run workflow**, en laissant « Mode test » coché : le script vérifie tout sans rien publier.
+
+## Vidéos TikTok
+
+Chaque vidéo a son dossier dans `tiktok/` : `script.txt` (texte à lire, un paragraphe par plan), `video.json` (images, recadrages, zooms), `legende.txt` (légende TikTok).
+- Sans voix, **Monter les vidéos TikTok** produit `apercu.mp4` (léger, muet) pour vérifier les images.
+- Dès qu'un enregistrement `voix.m4a` est ajouté au dossier, il produit `video.mp4` en 1080 × 1920 : images et sous-titres calés sur les pauses de la voix, musique calme pendant l'accroche puis rythmée (compositions originales, `music/`), qui baisse quand la voix parle.
+- Si un changement d'image tombe mal, on peut fixer les instants à la main avec `"cuts"` dans `video.json`.
+- Publication : à programmer soi-même dans TikTok Studio (l'API TikTok ne permet pas la publication publique automatique pour un usage personnel).
