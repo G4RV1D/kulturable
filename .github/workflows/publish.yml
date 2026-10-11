@@ -1,6 +1,9 @@
 name: Publier sur Instagram
 
 on:
+  push:
+    branches: [main]
+    paths: ["posts/queue.json"]
   schedule:
     - cron: "7 * * * *"   # chaque heure ; le script ne publie que les posts validés dont l'heure est passée
   workflow_dispatch:
