@@ -1,0 +1,76 @@
+{
+  "title": "Hedy Lamarr, star et inventrice",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "ziegfeld",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "truman",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "heavenly",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "patent",
+      "zoom": "in",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.5
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "patent",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "patent",
+      "zoom": "out",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.35
+      ]
+    },
+    {
+      "paragraph": 7,
+      "image": "truman",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 8,
+      "image": "heavenly",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 9,
+      "image": "ziegfeld",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "truman": [
+      "https://catalog.archives.gov/medialz/presidential-libraries/truman/photographs/2017/2017-2076.jpg"
+    ],
+    "ziegfeld": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Hedy_Lamarr_Ziegfeld_Girl.jpg?width=1600"
+    ],
+    "heavenly": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Hedy_Lamarr_Publicity_Photo_for_The_Heavenly_Body_1944.jpg?width=1600"
+    ],
+    "patent": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Lamarr_patent.png?width=1600"
+    ]
+  }
+}

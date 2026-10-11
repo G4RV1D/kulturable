@@ -1,0 +1,107 @@
+{
+  "title": "Phineas Gage, la barre de fer",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "portrait",
+      "zoom": "in",
+      "crop": [
+        0.6,
+        0.1,
+        0.92,
+        0.52
+      ]
+    },
+    {
+      "paragraph": 2,
+      "image": "portrait",
+      "zoom": "in",
+      "crop": [
+        0.535,
+        0.04,
+        0.965,
+        0.96
+      ]
+    },
+    {
+      "paragraph": 3,
+      "image": "skull",
+      "zoom": "in",
+      "crop": [
+        0.5,
+        0.42,
+        0.94,
+        0.84
+      ]
+    },
+    {
+      "paragraph": 4,
+      "image": "skull",
+      "zoom": "in",
+      "crop": [
+        0.06,
+        0.04,
+        0.52,
+        0.44
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "portrait",
+      "zoom": "out",
+      "crop": [
+        0.535,
+        0.04,
+        0.965,
+        0.96
+      ]
+    },
+    {
+      "paragraph": 6,
+      "image": "skull",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "portrait",
+      "zoom": "in",
+      "crop": [
+        0.6,
+        0.1,
+        0.92,
+        0.52
+      ]
+    },
+    {
+      "paragraph": 8,
+      "image": "skull",
+      "zoom": "in",
+      "crop": [
+        0.48,
+        0.04,
+        0.94,
+        0.44
+      ]
+    },
+    {
+      "paragraph": 9,
+      "image": "portrait",
+      "zoom": "out",
+      "crop": [
+        0.535,
+        0.04,
+        0.965,
+        0.96
+      ]
+    }
+  ],
+  "images": {
+    "portrait": [
+      "https://collections.countway.harvard.edu/onview/files/original/b82493f7e63e9904f6adaef2d3b11979.jpg"
+    ],
+    "skull": [
+      "https://iiif.micr.io/KjUkY/full/1600,/0/default.jpg",
+      "https://iiif.micr.io/KjUkY/full/^1024,538/0/default.webp"
+    ]
+  }
+}

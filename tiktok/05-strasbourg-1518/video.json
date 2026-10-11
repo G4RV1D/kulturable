@@ -1,0 +1,97 @@
+{
+  "title": "Strasbourg 1518, l'épidémie de danse",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "engraving",
+      "zoom": "in",
+      "crop": [
+        0.03,
+        0.4,
+        0.97,
+        0.98
+      ]
+    },
+    {
+      "paragraph": 2,
+      "image": "engraving",
+      "zoom": "in",
+      "crop": [
+        0.3,
+        0.45,
+        0.75,
+        0.95
+      ]
+    },
+    {
+      "paragraph": 3,
+      "image": "engraving",
+      "zoom": "out",
+      "crop": [
+        0.03,
+        0.4,
+        0.97,
+        0.98
+      ]
+    },
+    {
+      "paragraph": 4,
+      "image": "engraving",
+      "zoom": "in",
+      "crop": [
+        0.03,
+        0.45,
+        0.5,
+        0.97
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "engraving",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "engraving",
+      "zoom": "in",
+      "crop": [
+        0.45,
+        0.1,
+        0.95,
+        0.5
+      ]
+    },
+    {
+      "paragraph": 7,
+      "image": "engraving",
+      "zoom": "out",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.5
+      ]
+    },
+    {
+      "paragraph": 8,
+      "image": "engraving",
+      "zoom": "in",
+      "crop": [
+        0.5,
+        0.45,
+        0.97,
+        0.97
+      ]
+    },
+    {
+      "paragraph": 9,
+      "image": "engraving",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "engraving": [
+      "https://images.metmuseum.org/CRDImages/dp/original/DP825760.jpg"
+    ]
+  }
+}

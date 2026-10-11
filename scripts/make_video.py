@@ -346,7 +346,11 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
         graph = None
     if graph:
         cmd += ["-filter_complex", graph, "-map", "0:v", "-map", "[a]", "-c:a", "aac", "-b:a", "192k"]
-    cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+    if not voice:  # aperçu : version légère, juste pour vérifier les images
+        cmd += ["-vf", "scale=720:1280", "-c:v", "libx264", "-preset", "veryfast", "-crf", "28"]
+    else:
+        cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20"]
+    cmd += ["-pix_fmt", "yuv420p",
             "-movflags", "+faststart", "-t", f"{total:.2f}", str(out)]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
 

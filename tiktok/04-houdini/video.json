@@ -1,0 +1,82 @@
+{
+  "title": "Houdini, mort le soir d'Halloween",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "handcuff",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "portrait",
+      "zoom": "in",
+      "crop": [
+        0.36,
+        0.12,
+        0.8,
+        0.68
+      ]
+    },
+    {
+      "paragraph": 3,
+      "image": "handcuff",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 4,
+      "image": "portrait",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 5,
+      "image": "bookplate",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "portrait",
+      "zoom": "out",
+      "crop": [
+        0.36,
+        0.12,
+        0.8,
+        0.68
+      ]
+    },
+    {
+      "paragraph": 7,
+      "image": "handcuff",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 8,
+      "image": "portrait",
+      "zoom": "in",
+      "crop": [
+        0.36,
+        0.12,
+        0.8,
+        0.68
+      ]
+    },
+    {
+      "paragraph": 9,
+      "image": "handcuff",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "portrait": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3c10000:3c12000:3c12400:3c12429/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c12000/3c12400/3c12429v.jpg"
+    ],
+    "handcuff": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3c10000:3c12000:3c12400:3c12420/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3c10000/3c12000/3c12400/3c12420v.jpg"
+    ],
+    "bookplate": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:ppmsca:15500:15521/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/ppmsca/15500/15521r.jpg"
+    ]
+  }
+}

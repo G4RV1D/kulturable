@@ -1,0 +1,86 @@
+{
+  "title": "Shackleton, prisonniers de l'Antarctique",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "night",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "portrait",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "jam",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "last",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 5,
+      "image": "upheaval",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 6,
+      "image": "terrors",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "pressure",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 8,
+      "image": "portrait",
+      "zoom": "out",
+      "crop": [
+        0.15,
+        0.0,
+        0.85,
+        0.6
+      ]
+    },
+    {
+      "paragraph": 9,
+      "image": "night",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "night": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:ppmsca:53100:53156/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/ppmsca/53100/53156v.jpg"
+    ],
+    "portrait": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:ggbain:24200:24287/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/ggbain/24200/24287v.jpg"
+    ],
+    "jam": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3a10000:3a19000:3a19300:3a19373/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3a10000/3a19000/3a19300/3a19373r.jpg"
+    ],
+    "last": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3a10000:3a19000:3a19300:3a19376/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3a10000/3a19000/3a19300/3a19376r.jpg"
+    ],
+    "upheaval": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3a10000:3a11000:3a11300:3a11347/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3a10000/3a11000/3a11300/3a11347r.jpg"
+    ],
+    "terrors": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3a50000:3a52000:3a52100:3a52119/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a52000/3a52100/3a52119r.jpg"
+    ],
+    "pressure": [
+      "https://tile.loc.gov/image-services/iiif/service:pnp:cph:3a10000:3a12000:3a12700:3a12748/full/pct:100/0/default.jpg",
+      "https://tile.loc.gov/storage-services/service/pnp/cph/3a10000/3a12000/3a12700/3a12748r.jpg"
+    ]
+  }
+}
