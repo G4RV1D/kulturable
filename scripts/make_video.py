@@ -4,6 +4,8 @@ Contenu du dossier :
   script.txt   le texte lu, un paragraphe par plan (séparés par une ligne vide)
   video.json   les images de chaque plan (sources, recadrage, sens du zoom)
   voix.*       (facultatif) l'enregistrement de la voix : m4a, mp3, wav, ogg, aac, opus
+  musique.*    (facultatif) une autre musique de fond ; sinon music/ambiance-01.m4a.
+               Mettre "music": null dans video.json pour une vidéo sans musique.
 
 Sans voix, le script produit apercu.mp4, muet, au rythme d'une lecture normale.
 Avec la voix, il produit video.mp4 : chaque plan dure à proportion de son texte.
@@ -43,6 +45,17 @@ def find_voice(folder: pathlib.Path):
         for f in folder.glob(f"voix*.{ext}"):
             return f
     return None
+
+
+def find_music(folder: pathlib.Path, spec: dict):
+    if "music" in spec and spec["music"] is None:
+        return None
+    for ext in ("m4a", "mp3", "wav", "ogg", "aac"):
+        for f in folder.glob(f"musique*.{ext}"):
+            return f
+    name = spec.get("music") or "ambiance-01"
+    f = ROOT / "music" / f"{name}.m4a"
+    return f if f.exists() else None
 
 
 def audio_duration(path: pathlib.Path) -> float:
@@ -147,11 +160,12 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
     if len(segs) != len(paras):
         raise ValueError(f"{len(paras)} paragraphes mais {len(segs)} plans dans video.json")
     voice = find_voice(folder)
+    music = find_music(folder, spec)
     out = folder / ("video.mp4" if voice else "apercu.mp4")
 
     # Ne refait la vidéo que si une entrée a changé.
     h = hashlib.sha256()
-    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__)] + ([voice] if voice else [])):
+    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__)] + ([voice] if voice else []) + ([music] if music else [])):
         h.update(f.read_bytes())
     stamp = folder / f".{out.stem}.hash"
     if out.exists() and stamp.exists() and stamp.read_text() == h.hexdigest() and not force:
@@ -161,7 +175,7 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
     weights = [len(p.split()) + 1.5 for p in paras]  # +1.5 : la pause entre deux paragraphes
     total = audio_duration(voice) + 0.6 if voice else sum(weights) / WORDS_PER_SEC
     durations = [total * w / sum(weights) for w in weights]
-    print(f"{folder.name} : {len(paras)} plans, {total:.1f} s, voix : {voice.name if voice else 'aucune (aperçu)'}")
+    print(f"{folder.name} : {len(paras)} plans, {total:.1f} s, voix : {voice.name if voice else 'aucune (aperçu)'}, musique : {music.name if music else 'aucune'}")
 
     cache = folder / "_images"
     cache.mkdir(exist_ok=True)
@@ -171,8 +185,26 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
 
     cmd = [FFMPEG, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"]
+    fade_out = max(0.0, total - 3.0)
     if voice:
-        cmd += ["-i", str(voice), "-c:a", "aac", "-b:a", "192k", "-af", "apad"]
+        cmd += ["-i", str(voice)]
+    if music:
+        cmd += ["-stream_loop", "-1", "-i", str(music)]
+    m_in = "2" if voice else "1"
+    if voice and music:
+        # la musique baisse automatiquement quand la voix parle
+        graph = (f"[1:a]highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=2[v][key];"
+                 f"[{m_in}:a]volume=0.22,afade=t=in:d=2,afade=t=out:st={fade_out:.2f}:d=3[m];"
+                 f"[m][key]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=600[md];"
+                 f"[v][md]amix=inputs=2:duration=first:normalize=0[a]")
+    elif music:
+        graph = f"[{m_in}:a]volume=0.8,afade=t=in:d=2,afade=t=out:st={fade_out:.2f}:d=3[a]"
+    elif voice:
+        graph = "[1:a]highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad[a]"
+    else:
+        graph = None
+    if graph:
+        cmd += ["-filter_complex", graph, "-map", "0:v", "-map", "[a]", "-c:a", "aac", "-b:a", "192k"]
     cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
             "-movflags", "+faststart", "-t", f"{total:.2f}", str(out)]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
