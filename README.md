@@ -13,6 +13,13 @@ Ce dépôt publie automatiquement les posts validés sur le compte Instagram @ku
 
 Un post non validé n'est jamais publié.
 
+## Règles éditoriales
+
+- Sources : uniquement des institutions (musées, bibliothèques, archives), des encyclopédies ou une presse reconnue. Pas de Wikipedia.
+- Images : conservées par une institution, avec des droits vérifiés.
+- Quand le sujet est une personne, son portrait apparaît en première image si un portrait de source fiable existe ; les autres visuels passent en images suivantes (carrousel).
+- Style : un récit écrit comme par un humain, presque sans emojis, avec une question au lecteur puis les sources.
+
 ## Configuration (une seule fois)
 
 1. **Compte Instagram professionnel** : Paramètres > Type de compte et outils > Passer à un compte professionnel > Créateur.

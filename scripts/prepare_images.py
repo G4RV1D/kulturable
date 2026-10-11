@@ -42,24 +42,32 @@ def compose(src: Image.Image) -> Image.Image:
     return bg
 
 
+def image_files(post: dict) -> list:
+    """Liste (nom de fichier, sources) : une image simple ou plusieurs (carrousel)."""
+    groups = [img["sources"] for img in post["images"]] if "images" in post else [post["image_sources"]]
+    return [(f"{post['id']}.jpg" if i == 0 else f"{post['id']}-{i + 1}.jpg", src)
+            for i, src in enumerate(groups)]
+
+
 def main() -> int:
     posts = json.loads(QUEUE.read_text(encoding="utf-8"))
     OUT_DIR.mkdir(exist_ok=True)
     failed = []
     for post in posts:
-        out = OUT_DIR / f"{post['id']}.jpg"
-        if out.exists():
-            continue
-        for url in post["image_sources"]:
-            try:
-                img = compose(download(url))
-                img.save(out, "JPEG", quality=92, optimize=True, progressive=True)
-                print(f"OK   {post['id']} <- {url}")
-                break
-            except Exception as e:  # on essaie la source suivante
-                print(f"..   {post['id']} : échec avec {url} ({e})")
-        else:
-            failed.append(post["id"])
+        for name, sources in image_files(post):
+            out = OUT_DIR / name
+            if out.exists():
+                continue
+            for url in sources:
+                try:
+                    img = compose(download(url))
+                    img.save(out, "JPEG", quality=92, optimize=True, progressive=True)
+                    print(f"OK   {name} <- {url}")
+                    break
+                except Exception as e:  # on essaie la source suivante
+                    print(f"..   {name} : échec avec {url} ({e})")
+            else:
+                failed.append(name)
     if failed:
         print("Images introuvables pour : " + ", ".join(failed))
         return 1

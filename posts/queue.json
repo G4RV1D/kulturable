@@ -16,15 +16,25 @@
     "id": "02-phineas-gage",
     "publish_at": "2026-10-16T18:00:00+02:00",
     "caption_file": "posts/captions/02-phineas-gage.txt",
-    "image_sources": [
-      "https://iiif.micr.io/KjUkY/full/1600,/0/default.jpg",
-      "https://iiif.micr.io/KjUkY/full/1600,/0/default.webp",
-      "https://iiif.micr.io/KjUkY/full/^1024,538/0/default.webp"
-    ],
-    "image_credit_page": "https://www.rijksmuseum.nl/en/collection/RP-F-2012-81-1",
     "approved": true,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://collections.countway.harvard.edu/onview/files/original/b82493f7e63e9904f6adaef2d3b11979.jpg"
+        ],
+        "credit_page": "https://collections.countway.harvard.edu/onview/items/show/18168"
+      },
+      {
+        "sources": [
+          "https://iiif.micr.io/KjUkY/full/1600,/0/default.jpg",
+          "https://iiif.micr.io/KjUkY/full/1600,/0/default.webp",
+          "https://iiif.micr.io/KjUkY/full/^1024,538/0/default.webp"
+        ],
+        "credit_page": "https://www.rijksmuseum.nl/en/collection/RP-F-2012-81-1"
+      }
+    ]
   },
   {
     "id": "03-hedy-lamarr",

@@ -21,6 +21,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "posts" / "queue.json"
 API = "https://graph.instagram.com/" + os.environ.get("IG_API_VERSION", "v23.0")
@@ -57,6 +59,17 @@ def check_image_online(url: str) -> None:
             raise ValueError(f"L'image {url} n'est pas servie en JPEG ({ctype})")
 
 
+def wait_ready(container: str, token: str) -> None:
+    for _ in range(30):  # Instagram traite le média avant publication
+        status = call("GET", container, {"fields": "status_code", "access_token": token})
+        if status.get("status_code") == "FINISHED":
+            return
+        if status.get("status_code") == "ERROR":
+            raise RuntimeError(f"Instagram a refusé le média : {status}")
+        time.sleep(5)
+    raise RuntimeError("Instagram n'a pas fini de traiter le média à temps.")
+
+
 def main() -> int:
     dry = os.environ.get("DRY_RUN") == "1"
     force = os.environ.get("FORCE_ID", "").strip()
@@ -85,9 +98,11 @@ def main() -> int:
         return 1
     caption = (ROOT / post["caption_file"]).read_text(encoding="utf-8").strip()
     check_caption(caption, post["id"])
-    image_url = f"{base}/{post['id']}.jpg"
-    check_image_online(image_url)
-    print(f"Prêt : {post['id']} ({len(caption)} caractères) avec {image_url}")
+    from prepare_images import image_files
+    image_urls = [f"{base}/{name}" for name, _ in image_files(post)]
+    for url in image_urls:
+        check_image_online(url)
+    print(f"Prêt : {post['id']} ({len(caption)} caractères), {len(image_urls)} image(s)")
 
     if not token:
         print("IG_ACCESS_TOKEN manquant.")
@@ -98,15 +113,20 @@ def main() -> int:
     if dry:
         print("Mode test : rien n'a été publié.")
         return 0
-    container = call("POST", f"{user_id}/media",
-                     {"image_url": image_url, "caption": caption, "access_token": token})["id"]
-    for _ in range(30):  # Instagram traite l'image avant publication
-        status = call("GET", container, {"fields": "status_code", "access_token": token})
-        if status.get("status_code") == "FINISHED":
-            break
-        if status.get("status_code") == "ERROR":
-            raise RuntimeError(f"Instagram a refusé l'image : {status}")
-        time.sleep(5)
+    if len(image_urls) == 1:
+        container = call("POST", f"{user_id}/media",
+                         {"image_url": image_urls[0], "caption": caption, "access_token": token})["id"]
+    else:  # carrousel : un conteneur par image, puis le conteneur du carrousel
+        children = []
+        for url in image_urls:
+            child = call("POST", f"{user_id}/media",
+                         {"image_url": url, "is_carousel_item": "true", "access_token": token})["id"]
+            wait_ready(child, token)
+            children.append(child)
+        container = call("POST", f"{user_id}/media",
+                         {"media_type": "CAROUSEL", "children": ",".join(children),
+                          "caption": caption, "access_token": token})["id"]
+    wait_ready(container, token)
     media = call("POST", f"{user_id}/media_publish",
                  {"creation_id": container, "access_token": token})
 
