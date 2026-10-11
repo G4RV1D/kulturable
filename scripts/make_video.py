@@ -81,6 +81,89 @@ def load_image(urls: list, cache: pathlib.Path) -> Image.Image:
     raise RuntimeError(f"Aucune source utilisable pour {cache.name} ({last})")
 
 
+# ---------- synchronisation sur la voix ----------
+
+def silences(path: pathlib.Path) -> list:
+    """Pauses de la voix (début, fin), seuil adapté au niveau de l'enregistrement."""
+    out = subprocess.run([FFMPEG, "-i", str(path), "-af", "volumedetect", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    mean = float(re.search(r"mean_volume: (-?[\d.]+) dB", out).group(1))
+    thr = max(-55.0, mean - 8.0)
+    out = subprocess.run([FFMPEG, "-i", str(path), "-af", f"silencedetect=noise={thr:.1f}dB:d=0.45",
+                          "-f", "null", "-"], capture_output=True, text=True).stderr
+    starts = [float(x) for x in re.findall(r"silence_start: (-?[\d.]+)", out)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", out)]
+    dur = audio_duration(path)
+    if len(ends) < len(starts):
+        ends.append(dur)
+    return [(max(0.0, s), e) for s, e in zip(starts, ends)]
+
+
+def align(paras: list, sil: list, dur: float):
+    """Place les changements de paragraphe sur les pauses les plus plausibles.
+
+    Retourne les instants de coupure (au milieu des pauses) et le début/fin de la parole.
+    """
+    s0 = sil[0][1] if sil and sil[0][0] <= 0.05 else 0.0
+    s1 = sil[-1][0] if sil and sil[-1][1] >= dur - 0.05 else dur
+    inner = [(a, b) for a, b in sil if a > s0 + 0.1 and b < s1 - 0.1]
+    w = [len(p.split()) for p in paras]
+    cum, expected = 0, []
+    for x in w[:-1]:
+        cum += x
+        expected.append(s0 + (s1 - s0) * cum / sum(w))
+    k, m = len(expected), len(inner)
+    if m < k:
+        return None, s0, s1
+    span = s1 - s0
+    cost = lambda i, j: abs((inner[j][0] + inner[j][1]) / 2 - expected[i]) / span * 100 - 4 * (inner[j][1] - inner[j][0])
+    INF = float("inf")
+    best = [[INF] * m for _ in range(k)]
+    prev = [[-1] * m for _ in range(k)]
+    for j in range(m):
+        best[0][j] = cost(0, j)
+    for i in range(1, k):
+        run, arg = INF, -1
+        for j in range(m):
+            if j > 0 and best[i - 1][j - 1] < run:
+                run, arg = best[i - 1][j - 1], j - 1
+            if arg >= 0:
+                best[i][j] = run + cost(i, j)
+                prev[i][j] = arg
+    j = min(range(m), key=lambda x: best[k - 1][x])
+    picks = []
+    for i in range(k - 1, -1, -1):
+        picks.append(j)
+        j = prev[i][j]
+    picks.reverse()
+    return [(inner[j][0] + inner[j][1]) / 2 for j in picks], s0, s1
+
+
+def caption_times(caps: list, start: float, end: float, sil: list) -> list:
+    """Instant d'apparition de chaque sous-titre, réparti sur le temps de parole (hors pauses)."""
+    gaps = [(max(a, start), min(b, end)) for a, b in sil if b > start and a < end]
+    speech, cur = [], start
+    for a, b in gaps:
+        if a > cur:
+            speech.append((cur, a))
+        cur = max(cur, b)
+    if cur < end:
+        speech.append((cur, end))
+    total = sum(b - a for a, b in speech) or 1.0
+    words = [len(c.split()) for c in caps]
+    times, acc = [], 0
+    for wcount in words:
+        target, t = total * acc / sum(words), None
+        for a, b in speech:
+            if target <= b - a:
+                t = a + target
+                break
+            target -= b - a
+        times.append(t if t is not None else end)
+        acc += wcount
+    return times
+
+
 # ---------- image ----------
 
 def base_canvas(src: Image.Image, crop) -> Image.Image:
@@ -173,8 +256,23 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
         return out
 
     weights = [len(p.split()) + 1.5 for p in paras]  # +1.5 : la pause entre deux paragraphes
-    total = audio_duration(voice) + 0.6 if voice else sum(weights) / WORDS_PER_SEC
-    durations = [total * w / sum(weights) for w in weights]
+    sil, cuts = [], None
+    if voice:
+        vdur = audio_duration(voice)
+        total = vdur + 0.6
+        sil = silences(voice)
+        cuts, s0, s1 = align(paras, sil, vdur)
+    else:
+        total = sum(weights) / WORDS_PER_SEC
+    if cuts:
+        bounds = [0.0] + cuts + [total]
+        print("   coupures sur les pauses : " + ", ".join(f"{c:.1f}s" for c in cuts))
+    else:
+        acc, bounds = 0.0, [0.0]
+        for w in weights:
+            acc += total * w / sum(weights)
+            bounds.append(acc)
+    durations = [b - a for a, b in zip(bounds, bounds[1:])]
     print(f"{folder.name} : {len(paras)} plans, {total:.1f} s, voix : {voice.name if voice else 'aucune (aperçu)'}, musique : {music.name if music else 'aucune'}")
 
     cache = folder / "_images"
@@ -209,20 +307,22 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
             "-movflags", "+faststart", "-t", f"{total:.2f}", str(out)]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
 
-    for seg, para, dur in zip(segs, paras, durations):
+    frame_no = 0
+    for k, (seg, para) in enumerate(zip(segs, paras)):
+        start, end = bounds[k], bounds[k + 1]
         base = base_canvas(sources[seg["image"]], seg.get("crop"))
         caps = chunks(para)
-        cap_w = [len(c.split()) for c in caps]
-        n = max(1, round(dur * FPS))
-        for i in range(n):
-            t = i / n
-            # sous-titre courant, à proportion du nombre de mots
-            acc, idx = 0, len(caps) - 1
-            for j, cw in enumerate(cap_w):
-                acc += cw / sum(cap_w)
-                if t < acc:
+        times = caption_times(caps, start, end, sil)
+        last = round(end * FPS)
+        first = frame_no
+        while frame_no < last:
+            now = frame_no / FPS
+            t = (frame_no - first) / max(1, last - first)
+            idx = 0
+            for j, ct in enumerate(times):
+                if ct <= now:
                     idx = j
-                    break
+            frame_no += 1
             frame = camera(base, t, seg.get("zoom", "in"))
             draw_signature(frame, sig_font)
             draw_caption(frame, caps[idx], cap_font)
