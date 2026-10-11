@@ -1,0 +1,73 @@
+{
+  "title": "Wojtek, l'ours soldat",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "bear",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "iran",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "meet",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "wrestle",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 5,
+      "image": "wrestle2",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "plaque",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "winfield",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 8,
+      "image": "bear",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 9,
+      "image": "iran",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "bear": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Wojtek%20the%20bear.jpg?width=1600"
+    ],
+    "iran": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Polish%20Soldier%20in%20Iran%20wojtek.jpeg?width=1600"
+    ],
+    "meet": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Wojtek%20meet%20the%20new%20friend.jpg?width=1600"
+    ],
+    "wrestle": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Troops%20of%20the%20Polish%2022%20Transport%20Artillery%20Company%20watch%20as%20one%20of%20their%20comrades%20play%20wrestles%20with%20Wojtek%20their%20mascot%20bear.jpg?width=1600"
+    ],
+    "wrestle2": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Polish%2022%20Transport%20Artillery%20Company%20watch%20as%20one%20of%20their%20comrades%20play%20wrestles%20with%20Wojtek%20their%20mascot%20bear%20during%20their%20service%20in%20the%20Middle%20East..jpg?width=1600"
+    ],
+    "plaque": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Wojtek%20Polish%20Bear%20plaque.jpg?width=1600"
+    ],
+    "winfield": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Wojtek%20at%20Winfield%20Aerodrome%20on%20Sunwick%20Farm%2C%20near%20Hutton%20in%20Berwickshire%20after%20the%20war.jpg?width=1600"
+    ]
+  }
+}

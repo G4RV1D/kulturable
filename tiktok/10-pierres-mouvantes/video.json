@@ -1,0 +1,76 @@
+{
+  "title": "Les pierres qui bougent toutes seules",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "stone",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "playa",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "stones",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "study",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 5,
+      "image": "study",
+      "zoom": "in",
+      "crop": [
+        0.2,
+        0.1,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "paragraph": 6,
+      "image": "stone",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 7,
+      "image": "stones",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 8,
+      "image": "playa",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 9,
+      "image": "stone",
+      "zoom": "in",
+      "crop": [
+        0.2,
+        0.1,
+        0.8,
+        0.9
+      ]
+    }
+  ],
+  "images": {
+    "stone": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sailing%20Stone%20%283979385396%29.jpg?width=1600"
+    ],
+    "stones": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sailing%20Stones%20%283992378748%29.jpg?width=1600"
+    ],
+    "playa": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Death-Valley-Recetrack.jpg?width=1600"
+    ],
+    "study": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Racetrack%20playa%202013-12-20.jpg?width=1600"
+    ]
+  }
+}

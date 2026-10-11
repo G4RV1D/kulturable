@@ -1,0 +1,76 @@
+{
+  "title": "Desmond Doss, le soldat sans arme",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "okinawa",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "portrait",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "army",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "okinawa",
+      "zoom": "in",
+      "crop": [
+        0.1,
+        0.0,
+        0.9,
+        0.6
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "okinawa",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 6,
+      "image": "citation",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "portrait",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 8,
+      "image": "award",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 9,
+      "image": "certificate",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "portrait": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Desmond%20Doss.jpg?width=1600"
+    ],
+    "okinawa": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Desmond%20Doss%20in%20Okinawa.jpg?width=1600"
+    ],
+    "army": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/DossDesmondT%20USArmy.jpg?width=1600"
+    ],
+    "award": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Desmond%20Doss%20CMH%20award.jpg?width=1600"
+    ],
+    "citation": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Citatie%20Desmond%20Doss.jpg?width=1600"
+    ],
+    "certificate": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Desmond%20T%20Doss%20Medal%20of%20Honor.jpg?width=1600"
+    ]
+  }
+}

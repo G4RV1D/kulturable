@@ -1,0 +1,79 @@
+{
+  "title": "L'ampoule allumée depuis 1901",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "bulb",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "bulb2001",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "pendant",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "bulb",
+      "zoom": "in",
+      "crop": [
+        0.15,
+        0.15,
+        0.85,
+        0.75
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "cam",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "bulb2016",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 7,
+      "image": "bulb",
+      "zoom": "in",
+      "crop": [
+        0.25,
+        0.25,
+        0.75,
+        0.65
+      ]
+    },
+    {
+      "paragraph": 8,
+      "image": "bulb2001",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 9,
+      "image": "bulb",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "bulb": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Livermore%20Centennial%20Light%20Bulb.jpg?width=1600"
+    ],
+    "bulb2001": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Centennial%20Bulb%20in%20Fire%20Station%206%2C%20Livermore%2C%20California%20in%20April%202001.jpg?width=1600"
+    ],
+    "pendant": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Centennial-Light-Bulb-pendant-light-in-Livermore-CA-2016.jpg?width=1600"
+    ],
+    "bulb2016": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Centennial-Light-Bulb-in-Livermore-CA-2016.jpg?width=1600"
+    ],
+    "cam": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bulb%20Off%20-%20Bulb%20On%20Centennial%20Lightbulb.gif?width=320"
+    ]
+  }
+}

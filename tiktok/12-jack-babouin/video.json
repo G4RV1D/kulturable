@@ -1,0 +1,70 @@
+{
+  "title": "Jack, le babouin aiguilleur",
+  "segments": [
+    {
+      "paragraph": 1,
+      "image": "duo",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 2,
+      "image": "wide",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 3,
+      "image": "jack",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 4,
+      "image": "duo",
+      "zoom": "in",
+      "crop": [
+        0.3,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "paragraph": 5,
+      "image": "jackcrop",
+      "zoom": "in"
+    },
+    {
+      "paragraph": 6,
+      "image": "wide",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 7,
+      "image": "jack",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 8,
+      "image": "duo",
+      "zoom": "out"
+    },
+    {
+      "paragraph": 9,
+      "image": "jackcrop",
+      "zoom": "out"
+    }
+  ],
+  "images": {
+    "duo": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Disabled%20Signalman%20with%20his%20trained%20Baboon%20assistant%20-%20Uitenhage%20railway%20-%20Cape%20Colony%201884.jpg?width=1600"
+    ],
+    "wide": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20the%20Baboon%20and%20James%20Wide.png?width=1600"
+    ],
+    "jack": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Jack.signalman.jpg?width=1600"
+    ],
+    "jackcrop": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Jack.signalman%20%28cropped%29.jpg?width=1600"
+    ]
+  }
+}
