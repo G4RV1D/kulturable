@@ -4,8 +4,11 @@ Contenu du dossier :
   script.txt   le texte lu, un paragraphe par plan (séparés par une ligne vide)
   video.json   les images de chaque plan (sources, recadrage, sens du zoom)
   voix.*       (facultatif) l'enregistrement de la voix : m4a, mp3, wav, ogg, aac, opus
-  musique.*    (facultatif) une autre musique de fond ; sinon music/ambiance-01.m4a.
-               Mettre "music": null dans video.json pour une vidéo sans musique.
+  musique.*    (facultatif) une musique unique pour toute la vidéo.
+Par défaut : musique calme (music/ambiance-01) pendant l'accroche (1er paragraphe),
+puis musique rythmée (music/rythme-01) pour l'explication, avec un fondu entre les deux.
+Dans video.json : "music": null pour aucune musique, "music": "nom" pour une seule,
+ou "music": {"intro": "nom", "main": "nom", "switch_after": 1}.
 
 Sans voix, le script produit apercu.mp4, muet, au rythme d'une lecture normale.
 Avec la voix, il produit video.mp4 : chaque plan dure à proportion de son texte.
@@ -47,15 +50,24 @@ def find_voice(folder: pathlib.Path):
     return None
 
 
+DEFAULT_MUSIC = {"intro": "ambiance-01", "main": "rythme-01", "switch_after": 1}
+
+
 def find_music(folder: pathlib.Path, spec: dict):
+    """Retourne (musique d'accroche, musique principale, n° du paragraphe de bascule) ou None."""
     if "music" in spec and spec["music"] is None:
         return None
     for ext in ("m4a", "mp3", "wav", "ogg", "aac"):
         for f in folder.glob(f"musique*.{ext}"):
-            return f
-    name = spec.get("music") or "ambiance-01"
-    f = ROOT / "music" / f"{name}.m4a"
-    return f if f.exists() else None
+            return (f, None, None)
+    m = spec.get("music", DEFAULT_MUSIC)
+    path = lambda name: ROOT / "music" / f"{name}.m4a"
+    if isinstance(m, str):
+        return (path(m), None, None) if path(m).exists() else None
+    intro, main = path(m.get("intro", "ambiance-01")), path(m.get("main", "rythme-01"))
+    if not intro.exists() or not main.exists():
+        return (intro, None, None) if intro.exists() else None
+    return (intro, main, int(m.get("switch_after", 1)))
 
 
 def audio_duration(path: pathlib.Path) -> float:
@@ -248,7 +260,7 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
 
     # Ne refait la vidéo que si une entrée a changé.
     h = hashlib.sha256()
-    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__)] + ([voice] if voice else []) + ([music] if music else [])):
+    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__)] + ([voice] if voice else []) + ([f for f in music[:2] if f] if music else [])):
         h.update(f.read_bytes())
     stamp = folder / f".{out.stem}.hash"
     if out.exists() and stamp.exists() and stamp.read_text() == h.hexdigest() and not force:
@@ -273,7 +285,7 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
             acc += total * w / sum(weights)
             bounds.append(acc)
     durations = [b - a for a, b in zip(bounds, bounds[1:])]
-    print(f"{folder.name} : {len(paras)} plans, {total:.1f} s, voix : {voice.name if voice else 'aucune (aperçu)'}, musique : {music.name if music else 'aucune'}")
+    print(f"{folder.name} : {len(paras)} plans, {total:.1f} s, voix : {voice.name if voice else 'aucune (aperçu)'}, musique : {' puis '.join(f.name for f in music[:2] if f) if music else 'aucune'}")
 
     cache = folder / "_images"
     cache.mkdir(exist_ok=True)
@@ -284,21 +296,36 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
     cmd = [FFMPEG, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"]
     fade_out = max(0.0, total - 3.0)
+    idx = 1
     if voice:
         cmd += ["-i", str(voice)]
+        idx = 2
+    music_chain = None
     if music:
-        cmd += ["-stream_loop", "-1", "-i", str(music)]
-    m_in = "2" if voice else "1"
-    if voice and music:
+        intro, main, switch_after = music
+        v_intro, v_main = (0.22, 0.17) if voice else (0.8, 0.65)
+        cmd += ["-stream_loop", "-1", "-i", str(intro)]
+        if main:
+            cmd += ["-stream_loop", "-1", "-i", str(main)]
+            s = bounds[min(switch_after, len(bounds) - 2)]  # fin de l'accroche
+            music_chain = (
+                f"[{idx}:a]volume={v_intro},afade=t=in:d=1.5,afade=t=out:st={max(0, s - 0.8):.2f}:d=1.6,"
+                f"atrim=0:{s + 1:.2f}[m1];"
+                f"[{idx + 1}:a]volume={v_main},afade=t=in:d=1.2,"
+                f"adelay={int(max(0, s - 0.6) * 1000)}:all=1,afade=t=out:st={fade_out:.2f}:d=3[m2];"
+                f"[m1][m2]amix=inputs=2:duration=longest:normalize=0[m]")
+        else:
+            music_chain = f"[{idx}:a]volume={v_intro},afade=t=in:d=2,afade=t=out:st={fade_out:.2f}:d=3[m]"
+    voice_chain = "[1:a]highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad"
+    if voice and music_chain:
         # la musique baisse automatiquement quand la voix parle
-        graph = (f"[1:a]highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=2[v][key];"
-                 f"[{m_in}:a]volume=0.22,afade=t=in:d=2,afade=t=out:st={fade_out:.2f}:d=3[m];"
+        graph = (f"{voice_chain},asplit=2[v][key];{music_chain};"
                  f"[m][key]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=600[md];"
                  f"[v][md]amix=inputs=2:duration=first:normalize=0[a]")
-    elif music:
-        graph = f"[{m_in}:a]volume=0.8,afade=t=in:d=2,afade=t=out:st={fade_out:.2f}:d=3[a]"
+    elif music_chain:
+        graph = music_chain.replace("[m]", "[a]") if music_chain.endswith("[m]") else music_chain
     elif voice:
-        graph = "[1:a]highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad[a]"
+        graph = f"{voice_chain}[a]"
     else:
         graph = None
     if graph:
