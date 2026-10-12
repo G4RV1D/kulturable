@@ -190,6 +190,33 @@ def caption_times(caps: list, start: float, end: float, sil: list) -> list:
     return times
 
 
+def caption_chunks_from_words(words: list, max_words: int = 5) -> list:
+    """Blocs de sous-titres à partir des mots horodatés (jamais à cheval sur deux paragraphes)."""
+    chunks_, cur = [], []
+    for i, w in enumerate(words):
+        cur.append(w)
+        nxt = words[i + 1] if i + 1 < len(words) else None
+        end_para = nxt is None or nxt["p"] != w["p"]
+        pause = nxt is not None and nxt["s"] - w["e"] > 0.35
+        punct = re.search(r"[.,:;?!…»]$", w["t"]) and len(cur) >= 2
+        if len(cur) >= max_words or end_para or pause or punct:
+            chunks_.append({"t": " ".join(x["t"] for x in cur), "s": cur[0]["s"], "e": cur[-1]["e"]})
+            cur = []
+    return chunks_
+
+
+def active_caption(chunks_: list, now: float):
+    if not chunks_:
+        return None
+    if now < chunks_[0]["s"]:
+        return chunks_[0]["t"]  # l'accroche est visible dès la première image
+    for i, c in enumerate(chunks_):
+        nxt = chunks_[i + 1]["s"] if i + 1 < len(chunks_) else float("inf")
+        if c["s"] - 0.05 <= now < nxt - 0.05:
+            return c["t"] if now <= c["e"] + 0.5 else None
+    return None
+
+
 # ---------- image ----------
 
 def base_canvas(src: Image.Image, crop) -> Image.Image:
@@ -274,7 +301,8 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
 
     # Ne refait la vidéo que si une entrée a changé.
     h = hashlib.sha256()
-    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__)] + ([voice] if voice else []) + ([f for f in music[:2] if f] if music else [])):
+    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__),
+                    pathlib.Path(__file__).with_name("voice_sync.py")] + ([voice] if voice else []) + ([f for f in music[:2] if f] if music else [])):
         h.update(f.read_bytes())
     stamp = folder / f".{out.stem}.hash"
     if out.exists() and stamp.exists() and stamp.read_text() == h.hexdigest() and not force:
@@ -282,8 +310,24 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
         return out
 
     weights = [len(p.split()) + 1.5 for p in paras]  # +1.5 : la pause entre deux paragraphes
-    sil, cuts = [], None
+    sil, cuts, words, voice_input = [], None, None, voice
+    synced = None
     if voice:
+        import voice_sync
+        synced = voice_sync.sync(folder, voice, paras)
+    if synced:
+        # synchronisation exacte : mots reconnus et horodatés, voix nettoyée
+        voice_input, words, vtotal = synced
+        total = vtotal + 0.6
+        cuts = []
+        for k in range(len(paras) - 1):
+            ends = [w["e"] for w in words if w["p"] == k]
+            starts = [w["s"] for w in words if w["p"] == k + 1]
+            prev = cuts[-1] if cuts else 0.0
+            c = (max(ends) + min(starts)) / 2 if ends and starts else prev + 0.5
+            cuts.append(max(c, prev + 0.3))
+        print("   synchronisation mot à mot : " + ", ".join(f"{c:.1f}s" for c in cuts))
+    elif voice:
         vdur = audio_duration(voice)
         total = vdur + 0.6
         sil = silences(voice)
@@ -294,7 +338,8 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
         total = sum(weights) / WORDS_PER_SEC
     if cuts:
         bounds = [0.0] + cuts + [total]
-        print("   coupures sur les pauses : " + ", ".join(f"{c:.1f}s" for c in cuts))
+        if not words:
+            print("   coupures sur les pauses : " + ", ".join(f"{c:.1f}s" for c in cuts))
     else:
         acc, bounds = 0.0, [0.0]
         for w in weights:
@@ -314,7 +359,7 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
     fade_out = max(0.0, total - 3.0)
     idx = 1
     if voice:
-        cmd += ["-i", str(voice)]
+        cmd += ["-i", str(voice_input)]
         idx = 2
     music_chain = None
     if music:
@@ -354,6 +399,7 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
             "-movflags", "+faststart", "-t", f"{total:.2f}", str(out)]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
 
+    word_caps = caption_chunks_from_words(words) if words else None
     frame_no = 0
     for k, (seg, para) in enumerate(zip(segs, paras)):
         start, end = bounds[k], bounds[k + 1]
@@ -372,7 +418,12 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
             frame_no += 1
             frame = camera(base, t, seg.get("zoom", "in"))
             draw_signature(frame, sig_font)
-            draw_caption(frame, caps[idx], cap_font)
+            if word_caps is not None:
+                text = active_caption(word_caps, now)
+                if text:
+                    draw_caption(frame, text, cap_font)
+            else:
+                draw_caption(frame, caps[idx], cap_font)
             ff.stdin.write(frame.tobytes())
     ff.stdin.close()
     if ff.wait() != 0:

@@ -16,13 +16,13 @@ concurrency:
 jobs:
   videos:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install pillow imageio-ffmpeg
+      - run: pip install pillow imageio-ffmpeg numpy faster-whisper
       - run: python scripts/make_video.py
       - name: Enregistrer les vidéos
         run: |
