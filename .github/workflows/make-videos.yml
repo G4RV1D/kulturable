@@ -25,6 +25,7 @@ jobs:
       - run: pip install pillow imageio-ffmpeg numpy faster-whisper
       - run: python scripts/make_video.py
       - name: Enregistrer les vidéos
+        if: always()
         run: |
           git config user.name "kulturable-bot"
           git config user.email "kulturable-bot@users.noreply.github.com"

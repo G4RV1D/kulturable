@@ -301,8 +301,8 @@ def build(folder: pathlib.Path, force: bool = False) -> pathlib.Path:
 
     # Ne refait la vidéo que si une entrée a changé.
     h = hashlib.sha256()
-    for f in sorted([folder / "script.txt", folder / "video.json", pathlib.Path(__file__),
-                    pathlib.Path(__file__).with_name("voice_sync.py")] + ([voice] if voice else []) + ([f for f in music[:2] if f] if music else [])):
+    code = [pathlib.Path(__file__), pathlib.Path(__file__).with_name("voice_sync.py")] if voice else []
+    for f in sorted([folder / "script.txt", folder / "video.json"] + code + ([voice] if voice else []) + ([f for f in music[:2] if f] if music else [])):
         h.update(f.read_bytes())
     stamp = folder / f".{out.stem}.hash"
     if out.exists() and stamp.exists() and stamp.read_text() == h.hexdigest() and not force:
@@ -437,11 +437,15 @@ if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     force = "--force" in sys.argv
     folders = [pathlib.Path(a) for a in args] or sorted(p for p in (ROOT / "tiktok").iterdir() if p.is_dir())
-    failed = 0
+    import traceback
+    failed, journal = 0, []
     for f in folders:
         try:
             build(f, force)
+            journal.append(f"OK     {f.name}")
         except Exception as e:
             failed += 1
             print(f"ÉCHEC {f.name} : {e}")
+            journal.append(f"ÉCHEC  {f.name} : {e}\n" + traceback.format_exc())
+    (ROOT / "tiktok" / "_journal.txt").write_text("\n".join(journal) + "\n", encoding="utf-8")
     sys.exit(1 if failed else 0)
