@@ -170,7 +170,7 @@
     "id": "11-gene-cernan",
     "publish_at": "2026-10-13T18:00:00+02:00",
     "caption_file": "posts/captions/11-gene-cernan.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
