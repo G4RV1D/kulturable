@@ -1,0 +1,34 @@
+ÉCHEC  01-disque-rosetta : open() got an unexpected keyword argument 'metadata_errors'
+Traceback (most recent call last):
+  File "/home/runner/work/kulturable/kulturable/scripts/make_video.py", line 444, in <module>
+    build(f, force)
+  File "/home/runner/work/kulturable/kulturable/scripts/make_video.py", line 317, in build
+    synced = voice_sync.sync(folder, voice, paras)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/kulturable/kulturable/scripts/voice_sync.py", line 192, in sync
+    words = transcribe(folder, voice, paras)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/kulturable/kulturable/scripts/voice_sync.py", line 67, in transcribe
+    segments, _ = model.transcribe(str(voice), language="fr", word_timestamps=True,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/faster_whisper/transcribe.py", line 876, in transcribe
+    audio = decode_audio(audio, sampling_rate=sampling_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/faster_whisper/audio.py", line 46, in decode_audio
+    with av.open(input_file, mode="r", metadata_errors="ignore") as container:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "av/container/core.py", line 479, in av.container.core.open
+    def open(
+TypeError: open() got an unexpected keyword argument 'metadata_errors'
+
+OK     02-shackleton
+OK     03-phineas-gage
+OK     04-houdini
+OK     05-strasbourg-1518
+OK     06-hedy-lamarr
+OK     07-wojtek
+OK     08-desmond-doss
+OK     09-ampoule-livermore
+OK     10-pierres-mouvantes
+OK     11-manuscrit-voynich
+OK     12-jack-babouin
