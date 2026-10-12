@@ -165,5 +165,23 @@
         ]
       }
     ]
+  },
+  {
+    "id": "11-gene-cernan",
+    "publish_at": "2026-10-13T18:00:00+02:00",
+    "caption_file": "posts/captions/11-gene-cernan.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://images-assets.nasa.gov/image/as17-134-20386/as17-134-20386~orig.jpg",
+          "https://images-assets.nasa.gov/image/as17-134-20386/as17-134-20386~large.jpg",
+          "https://images-assets.nasa.gov/image/AS17-134-20386/AS17-134-20386~orig.jpg"
+        ],
+        "credit_page": "https://images.nasa.gov/details/as17-134-20386"
+      }
+    ]
   }
 ]
