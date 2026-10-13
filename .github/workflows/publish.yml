@@ -5,7 +5,9 @@ on:
     branches: [main]
     paths: ["posts/queue.json"]
   schedule:
-    - cron: "7 * * * *"   # chaque heure ; le script ne publie que les posts validés dont l'heure est passée
+    # GitHub déclenche souvent ces tâches avec plusieurs heures de retard : on vérifie souvent,
+    # et dès qu'un post est prévu dans les ~5 h 40, on attend son heure exacte puis on publie.
+    - cron: "*/20 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -20,13 +22,34 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: kulturable-repo-write
-  cancel-in-progress: false
-
 jobs:
-  publish:
+  attendre:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
+    # une seule attente à la fois ; elle ne bloque pas la préparation des images
+    concurrency:
+      group: kulturable-attente
+      cancel-in-progress: false
+    outputs:
+      go: ${{ steps.wait.outputs.go }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: wait
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          s=$(python3 scripts/next_due.py)
+          if [ "$s" -lt 0 ]; then echo "Rien à publier dans les prochaines heures."; echo "go=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "Prochain post dans $s s, on attend."
+          sleep "$s"
+          echo "go=1" >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: attendre
+    if: needs.attendre.outputs.go == '1'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: kulturable-repo-write
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -45,4 +68,4 @@ jobs:
           git config user.name "kulturable-bot"
           git config user.email "kulturable-bot@users.noreply.github.com"
           git add posts/queue.json
-          git diff --cached --quiet || (git commit -m "Post publié" && git push)
+          git diff --cached --quiet || (git commit -m "Post publié" && git pull --rebase && git push)
