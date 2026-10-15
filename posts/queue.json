@@ -195,7 +195,7 @@
   },
   {
     "id": "12-bruce-mccandless",
-    "publish_at": "2026-10-16T18:00:00+02:00",
+    "publish_at": "2026-12-31T18:00:00+01:00",
     "caption_file": "posts/captions/12-bruce-mccandless.txt",
     "approved": false,
     "published_at": null,
@@ -211,6 +211,23 @@
           "https://images-assets.nasa.gov/image/41B-38-1904/41B-38-1904~large.jpg"
         ],
         "credit_page": "https://images.nasa.gov/details/S84-27017"
+      }
+    ],
+    "note": "En réserve"
+  },
+  {
+    "id": "13-lac-nyos",
+    "publish_at": "2026-10-16T18:00:00+02:00",
+    "caption_file": "posts/captions/13-lac-nyos.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/1_2.jpg"
+        ],
+        "credit_page": "https://www.usgs.gov/media/images/exploding-lakes-cameroon"
       }
     ]
   }
