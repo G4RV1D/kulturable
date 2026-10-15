@@ -16,7 +16,7 @@
     "id": "02-phineas-gage",
     "publish_at": "2026-10-16T18:00:00+02:00",
     "caption_file": "posts/captions/02-phineas-gage.txt",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -32,7 +32,8 @@
           0.96
         ]
       }
-    ]
+    ],
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "03-hedy-lamarr",
@@ -42,9 +43,10 @@
       "https://catalog.archives.gov/medialz/presidential-libraries/truman/photographs/2017/2017-2076.jpg"
     ],
     "image_credit_page": "https://www.trumanlibrary.gov/photograph-records/2017-2076",
-    "approved": true,
+    "approved": false,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "04-strasbourg-1518",
@@ -54,9 +56,10 @@
       "https://images.metmuseum.org/CRDImages/dp/original/DP825760.jpg"
     ],
     "image_credit_page": "https://www.metmuseum.org/art/collection/search/415981",
-    "approved": true,
+    "approved": false,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "05-melasse-boston",
@@ -67,15 +70,16 @@
       "https://tile.loc.gov/storage-services/service/pnp/anrc/14900/14968v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2017679979/",
-    "approved": true,
+    "approved": false,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "06-houdini",
     "publish_at": "2026-10-30T18:00:00+01:00",
     "caption_file": "posts/captions/06-houdini.txt",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -92,7 +96,8 @@
           0.68
         ]
       }
-    ]
+    ],
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "07-shackleton",
@@ -103,9 +108,10 @@
       "https://tile.loc.gov/storage-services/service/pnp/ggbain/24200/24287v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2014704471/",
-    "approved": true,
+    "approved": false,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "08-nellie-bly",
@@ -116,15 +122,16 @@
       "https://tile.loc.gov/storage-services/service/pnp/cph/3c30000/3c36000/3c36800/3c36891v.jpg"
     ],
     "image_credit_page": "https://www.loc.gov/item/2006686293/",
-    "approved": true,
+    "approved": false,
     "published_at": null,
-    "media_id": null
+    "media_id": null,
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "09-trebuchon",
     "publish_at": "2026-11-10T18:00:00+01:00",
     "caption_file": "posts/captions/09-trebuchon.txt",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -141,13 +148,14 @@
           0.86
         ]
       }
-    ]
+    ],
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "10-annie-taylor",
     "publish_at": "2026-11-13T18:00:00+01:00",
     "caption_file": "posts/captions/10-annie-taylor.txt",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -164,7 +172,8 @@
           0.74
         ]
       }
-    ]
+    ],
+    "note": "En réserve : photo noir et blanc"
   },
   {
     "id": "11-gene-cernan",
@@ -181,6 +190,27 @@
           "https://images-assets.nasa.gov/image/AS17-134-20386/AS17-134-20386~orig.jpg"
         ],
         "credit_page": "https://images.nasa.gov/details/as17-134-20386"
+      }
+    ]
+  },
+  {
+    "id": "12-bruce-mccandless",
+    "publish_at": "2026-10-16T18:00:00+02:00",
+    "caption_file": "posts/captions/12-bruce-mccandless.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://images-assets.nasa.gov/image/S84-27017/S84-27017~orig.jpg",
+          "https://images-assets.nasa.gov/image/S84-27017/S84-27017~large.jpg",
+          "https://images-assets.nasa.gov/image/s84-27017/s84-27017~orig.jpg",
+          "https://images-assets.nasa.gov/image/s84-27017/s84-27017~large.jpg",
+          "https://images-assets.nasa.gov/image/41B-38-1904/41B-38-1904~orig.jpg",
+          "https://images-assets.nasa.gov/image/41B-38-1904/41B-38-1904~large.jpg"
+        ],
+        "credit_page": "https://images.nasa.gov/details/S84-27017"
       }
     ]
   }
