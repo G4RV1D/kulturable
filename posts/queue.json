@@ -227,7 +227,13 @@
         "sources": [
           "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/1_2.jpg"
         ],
-        "credit_page": "https://www.usgs.gov/media/images/exploding-lakes-cameroon"
+        "credit_page": "https://www.usgs.gov/media/images/exploding-lakes-cameroon",
+        "crop": [
+          0.08,
+          0.0,
+          0.68,
+          1.0
+        ]
       }
     ]
   }
