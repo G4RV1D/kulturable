@@ -236,5 +236,153 @@
         ]
       }
     ]
+  },
+  {
+    "id": "14-porte-enfer",
+    "publish_at": "2026-10-20T18:00:00+02:00",
+    "caption_file": "posts/captions/14-porte-enfer.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/6/65/The_Door_to_Hell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/The_Door_to_Hell.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:The_Door_to_Hell.jpg"
+      }
+    ]
+  },
+  {
+    "id": "15-lascaux",
+    "publish_at": "2026-10-23T18:00:00+02:00",
+    "caption_file": "posts/captions/15-lascaux.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/1/19/Lascaux%2C_replica_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Lascaux,_replica_03.JPG?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Lascaux,_replica_03.JPG"
+      }
+    ]
+  },
+  {
+    "id": "16-mary-celeste",
+    "publish_at": "2026-10-27T18:00:00+01:00",
+    "caption_file": "posts/captions/16-mary-celeste.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/9/92/Mary_Celeste_as_Amazon_in_1861.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Celeste_as_Amazon_in_1861.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Mary_Celeste_as_Amazon_in_1861.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          0.86
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17-armee-terre-cuite",
+    "publish_at": "2026-10-30T18:00:00+01:00",
+    "caption_file": "posts/captions/17-armee-terre-cuite.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/30/Qin_Terracotta_Army%2C_Pit_1_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Qin_Terracotta_Army,_Pit_1_04.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Qin_Terracotta_Army,_Pit_1_04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "18-chutes-de-sang",
+    "publish_at": "2026-11-03T18:00:00+01:00",
+    "caption_file": "posts/captions/18-chutes-de-sang.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/f/f5/Blood_Falls_by_Peter_Rejcek.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Blood_Falls_by_Peter_Rejcek.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Blood_Falls_by_Peter_Rejcek.jpg",
+        "crop": [
+          0.2,
+          0,
+          0.8,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": "19-centralia",
+    "publish_at": "2026-11-06T18:00:00+01:00",
+    "caption_file": "posts/captions/19-centralia.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/7/78/American_Graffiti_Highway_outside_Centralia%2C_Pennsylvania.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/American_Graffiti_Highway_outside_Centralia,_Pennsylvania.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:American_Graffiti_Highway_outside_Centralia,_Pennsylvania.jpg"
+      }
+    ]
+  },
+  {
+    "id": "20-manuscrits-mer-morte",
+    "publish_at": "2026-11-10T18:00:00+01:00",
+    "caption_file": "posts/captions/20-manuscrits-mer-morte.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/6/63/Cave_in_Qumran_historical_place_bible_scrolls.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Cave_in_Qumran_historical_place_bible_scrolls.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Cave_in_Qumran_historical_place_bible_scrolls.jpg"
+      }
+    ]
+  },
+  {
+    "id": "21-whittier",
+    "publish_at": "2026-11-13T18:00:00+01:00",
+    "caption_file": "posts/captions/21-whittier.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/e/e6/Begich_Towers_Condominium_%28Whittier%2C_Alaska%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Begich_Towers_Condominium_(Whittier,_Alaska).jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Begich_Towers_Condominium_(Whittier,_Alaska).jpg"
+      }
+    ]
   }
 ]
