@@ -217,9 +217,9 @@
   },
   {
     "id": "13-lac-nyos",
-    "publish_at": "2026-10-16T18:00:00+02:00",
+    "publish_at": "2026-10-19T18:00:00+02:00",
     "caption_file": "posts/captions/13-lac-nyos.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
