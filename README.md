@@ -16,7 +16,7 @@ Un post non validé n'est jamais publié.
 ## Règles éditoriales
 
 - Sources : uniquement des institutions (musées, bibliothèques, archives), des encyclopédies ou une presse reconnue. Pas de Wikipedia.
-- Images : conservées par une institution, avec des droits vérifiés.
+- Images : uniquement des images libres, utilisables sans demander d'autorisation : domaine public (archives, musées, NASA, USGS…) ou licence libre (Creative Commons BY / BY-SA / CC0), en citant l'auteur et la licence. Jamais de photos d'agences de presse ni d'images « tous droits réservés ». Quand aucune vraie photo libre n'existe, une illustration originale, signalée comme telle.
 - Une seule image par post, comme le reste de la page. Quand le sujet est une personne, cette image est son portrait si un portrait de source fiable existe.
 - Style : un récit écrit comme par un humain, presque sans emojis, avec une question au lecteur puis les sources.
 

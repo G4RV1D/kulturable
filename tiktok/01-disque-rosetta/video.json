@@ -61,12 +61,10 @@
   ],
   "images": {
     "disk": [
-      "https://live.staticflickr.com/4093/4911750160_21c3b6607a_b.jpg",
-      "https://media.rosettaproject.org/static/ui/rosetta_disk.jpg"
+      "https://raw.githubusercontent.com/G4RV1D/kulturable/main/tiktok/01-disque-rosetta/illustration-disque.jpg"
     ],
     "disk2": [
-      "https://live.staticflickr.com/4093/4911750160_21c3b6607a_b.jpg",
-      "https://media.rosettaproject.org/static/ui/rosetta_disk2.jpg"
+      "https://raw.githubusercontent.com/G4RV1D/kulturable/main/tiktok/01-disque-rosetta/illustration-disque-detail.jpg"
     ],
     "stone": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta_Stone.JPG?width=1600"
