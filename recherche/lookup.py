@@ -1,8 +1,9 @@
 """Recherche d'images libres sur Wikimedia Commons (licence, auteur, miniatures) pour préparer les posts."""
-import json, pathlib, re, urllib.parse, urllib.request
+import json, pathlib, re, time, urllib.parse, urllib.request
 UA = {"User-Agent": "KulturableBot/1.0 (github.com/G4RV1D/kulturable)"}
 API = "https://commons.wikimedia.org/w/api.php"
 def get(params):
+    time.sleep(2)
     url = API + "?" + urllib.parse.urlencode(dict(params, format="json", origin="*"))
     return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60))
 def strip(s): return re.sub(r"<[^>]+>", "", s or "").strip()[:200]
@@ -27,7 +28,7 @@ for key, queries in q.items():
     keep = [r for r in res if r.get("thumb") and (r.get("w") or 0) >= 1000][:8]
     for i, r in enumerate(keep):
         try:
-            data = urllib.request.urlopen(urllib.request.Request(r["thumb"], headers=UA), timeout=60).read()
+            time.sleep(1.5); data = urllib.request.urlopen(urllib.request.Request(r["thumb"], headers=UA), timeout=60).read()
             fn = thumbs / f"{key}-{i}.jpg"; fn.write_bytes(data); r["local"] = fn.name
         except Exception as e: r["thumb_err"] = str(e)
     out[key] = res

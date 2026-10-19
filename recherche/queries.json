@@ -1,10 +1,5 @@
 {
- "darvaza": ["Darvaza gas crater", "Door to Hell Turkmenistan"],
- "lascaux": ["Lascaux painting", "Lascaux cave aurochs"],
- "terracotta": ["Terracotta Army pit 1", "Terracotta warriors Xian"],
- "centralia": ["Centralia Pennsylvania smoke", "Centralia graffiti highway"],
- "qumran": ["Qumran cave 4", "Qumran caves"],
  "bloodfalls": ["Blood Falls Antarctica", "Blood Falls Taylor Glacier"],
- "celeste": ["Mary Celeste painting", "Amazon 1861 Mary Celeste"],
- "whittier": ["Begich Towers Whittier", "Whittier Alaska"]
+ "celeste": ["Mary Celeste", "Amazon 1861 painting"],
+ "whittier": ["Begich Towers", "Whittier Alaska"]
 }
