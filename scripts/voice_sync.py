@@ -190,10 +190,16 @@ def edit(voice: pathlib.Path, tokens: list, out_wav: pathlib.Path, report: list)
 def sync(folder: pathlib.Path, voice: pathlib.Path, paras: list):
     """Retourne (voix montée, mots horodatés, durée) ou None si la transcription est indisponible."""
     words = transcribe(folder, voice, paras)
-    if not words:
-        return None
     report = []
-    tokens = align(paras, words, report)
+    if words:
+        tokens = align(paras, words, report)
+    else:
+        # pas de modèle de reconnaissance vocale : alignement forcé par syllabes sur le texte
+        import align_local
+        aligned, info, per_run = align_local.align(paras, voice)
+        tokens = [{"t": w["w"], "s": w["s"], "e": w["e"], "p": w["p"], "keep": True} for w in aligned]
+        report.append(f"Alignement par syllabes : {info}")
+        report += [f"{a:7.2f}-{b:7.2f} s  ({n} syll.)  {txt}" for a, b, n, txt in per_run]
     out_wav = folder / "_voix_montee.wav"
     kept, total = edit(voice, tokens, out_wav, report)
     (folder / "montage.txt").write_text("\n".join(report) + "\n", encoding="utf-8")

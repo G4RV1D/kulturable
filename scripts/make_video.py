@@ -198,7 +198,7 @@ def caption_chunks_from_words(words: list, max_words: int = 5) -> list:
         nxt = words[i + 1] if i + 1 < len(words) else None
         end_para = nxt is None or nxt["p"] != w["p"]
         pause = nxt is not None and nxt["s"] - w["e"] > 0.35
-        punct = re.search(r"[.,:;?!…»]$", w["t"]) and len(cur) >= 2
+        punct = re.search(r"[.?!…]$", w["t"]) or (re.search(r"[,:;»]$", w["t"]) and len(cur) >= 2)
         if len(cur) >= max_words or end_para or pause or punct:
             chunks_.append({"t": " ".join(x["t"] for x in cur), "s": cur[0]["s"], "e": cur[-1]["e"]})
             cur = []
