@@ -256,7 +256,7 @@
   },
   {
     "id": "15-lascaux",
-    "publish_at": "2026-10-23T18:00:00+02:00",
+    "publish_at": "2026-10-21T18:00:00+02:00",
     "caption_file": "posts/captions/15-lascaux.txt",
     "approved": true,
     "published_at": null,
@@ -273,7 +273,7 @@
   },
   {
     "id": "16-mary-celeste",
-    "publish_at": "2026-10-27T18:00:00+01:00",
+    "publish_at": "2026-10-22T18:00:00+02:00",
     "caption_file": "posts/captions/16-mary-celeste.txt",
     "approved": true,
     "published_at": null,
@@ -296,7 +296,7 @@
   },
   {
     "id": "17-armee-terre-cuite",
-    "publish_at": "2026-10-30T18:00:00+01:00",
+    "publish_at": "2026-10-23T18:00:00+02:00",
     "caption_file": "posts/captions/17-armee-terre-cuite.txt",
     "approved": true,
     "published_at": null,
@@ -313,7 +313,7 @@
   },
   {
     "id": "18-chutes-de-sang",
-    "publish_at": "2026-11-03T18:00:00+01:00",
+    "publish_at": "2026-10-24T18:00:00+02:00",
     "caption_file": "posts/captions/18-chutes-de-sang.txt",
     "approved": true,
     "published_at": null,
@@ -336,7 +336,7 @@
   },
   {
     "id": "19-centralia",
-    "publish_at": "2026-11-06T18:00:00+01:00",
+    "publish_at": "2026-10-25T18:00:00+01:00",
     "caption_file": "posts/captions/19-centralia.txt",
     "approved": true,
     "published_at": null,
@@ -353,7 +353,7 @@
   },
   {
     "id": "20-manuscrits-mer-morte",
-    "publish_at": "2026-11-10T18:00:00+01:00",
+    "publish_at": "2026-10-26T18:00:00+01:00",
     "caption_file": "posts/captions/20-manuscrits-mer-morte.txt",
     "approved": true,
     "published_at": null,
@@ -370,7 +370,7 @@
   },
   {
     "id": "21-whittier",
-    "publish_at": "2026-11-13T18:00:00+01:00",
+    "publish_at": "2026-10-27T18:00:00+01:00",
     "caption_file": "posts/captions/21-whittier.txt",
     "approved": true,
     "published_at": null,
