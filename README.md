@@ -18,7 +18,12 @@ Un post non validé n'est jamais publié.
 - Sources : uniquement des institutions (musées, bibliothèques, archives), des encyclopédies ou une presse reconnue. Pas de Wikipedia.
 - Images : uniquement des images libres, utilisables sans demander d'autorisation : domaine public (archives, musées, NASA, USGS…) ou licence libre (Creative Commons BY / BY-SA / CC0), en citant l'auteur et la licence. Jamais de photos d'agences de presse ni d'images « tous droits réservés ». Quand aucune vraie photo libre n'existe, une illustration originale, signalée comme telle.
 - Une seule image par post, comme le reste de la page. Quand le sujet est une personne, cette image est son portrait si un portrait de source fiable existe.
-- Style : un récit écrit comme par un humain, presque sans emojis, avec une question au lecteur puis les sources.
+- Style : un récit écrit comme par un humain, presque sans emojis, avec une question au lecteur.
+- Structure de chaque légende :
+  1. Première ligne = accroche (100 à 110 caractères maximum, visible avant « … plus ») : TITRE EN MAJUSCULES, deux-points, puis une phrase qui donne envie de lire la suite sans révéler la fin. Le premier paragraphe ne répète pas l'accroche.
+  2. L'histoire, puis la question au lecteur.
+  3. Les hashtags (4 à 6, dont #Kulturable et #HistoireVraie).
+  4. Tout en bas : « Source(s) : … » (sources vérifiables, jamais Wikipédia) et « Photo : … » (photographe et licence).
 
 ## Configuration (une seule fois)
 
