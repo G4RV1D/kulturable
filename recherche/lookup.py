@@ -14,7 +14,7 @@ for key, queries in q.items():
     for query in queries:
         p = {"action": "query", "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 360}
         if query.startswith("File:"): p["titles"] = query
-        else: p.update(generator="search", gsrsearch=query + " filetype:bitmap", gsrnamespace=6, gsrlimit=12)
+        else: p.update(generator="search", gsrsearch=query, gsrnamespace=6, gsrlimit=12)
         try: pages = get(p).get("query", {}).get("pages", {})
         except Exception as e: res.append({"q": query, "err": str(e)}); continue
         for pg in sorted(pages.values(), key=lambda x: x.get("index", 0)):
