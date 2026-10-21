@@ -384,5 +384,124 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Begich_Towers_Condominium_(Whittier,_Alaska).jpg"
       }
     ]
+  },
+  {
+    "id": "22-derinkuyu",
+    "publish_at": "2026-10-28T18:00:00+01:00",
+    "caption_file": "posts/captions/22-derinkuyu.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/d/dc/Derinkuyu_Underground_City_9843_Nevit_Enhancer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Derinkuyu_Underground_City_9843_Nevit_Enhancer.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Derinkuyu_Underground_City_9843_Nevit_Enhancer.jpg"
+      }
+    ]
+  },
+  {
+    "id": "23-fly-geyser",
+    "publish_at": "2026-10-29T18:00:00+01:00",
+    "caption_file": "posts/captions/23-fly-geyser.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/41/Fly_geyser.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Fly_geyser.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Fly_geyser.jpg"
+      }
+    ]
+  },
+  {
+    "id": "24-facteur-cheval",
+    "publish_at": "2026-10-30T18:00:00+01:00",
+    "caption_file": "posts/captions/24-facteur-cheval.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/3a/Palais_id%C3%A9al_du_facteur_Cheval_-_Juin_2023_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_idéal_du_facteur_Cheval_-_Juin_2023_-_06.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Palais_idéal_du_facteur_Cheval_-_Juin_2023_-_06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "25-ile-aux-poupees",
+    "publish_at": "2026-10-31T18:00:00+01:00",
+    "caption_file": "posts/captions/25-ile-aux-poupees.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/b/b6/Xochimilco_Dolls%27_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Xochimilco_Dolls'_Island.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Xochimilco_Dolls'_Island.jpg"
+      }
+    ]
+  },
+  {
+    "id": "26-kuldhara",
+    "publish_at": "2026-11-01T18:00:00+01:00",
+    "caption_file": "posts/captions/26-kuldhara.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/f/fa/Kuldhara.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Kuldhara.JPG?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Kuldhara.JPG"
+      }
+    ]
+  },
+  {
+    "id": "27-naica",
+    "publish_at": "2026-11-02T18:00:00+01:00",
+    "caption_file": "posts/captions/27-naica.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/2/29/Cristales_cueva_de_Naica.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Cristales_cueva_de_Naica.JPG?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Cristales_cueva_de_Naica.JPG"
+      }
+    ]
+  },
+  {
+    "id": "28-gobekli-tepe",
+    "publish_at": "2026-11-03T18:00:00+01:00",
+    "caption_file": "posts/captions/28-gobekli-tepe.txt",
+    "approved": false,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://upload.wikimedia.org/wikipedia/commons/2/2b/Gobekli_Tepe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Gobekli_Tepe_2.jpg?width=2400"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Gobekli_Tepe_2.jpg"
+      }
+    ]
   }
 ]
