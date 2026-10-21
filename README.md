@@ -13,6 +13,8 @@ Ce dépôt publie automatiquement les posts validés sur le compte Instagram @ku
 
 Un post non validé n'est jamais publié.
 
+Rythme : un post par jour à 18h. Chaque mercredi, les 7 posts de la semaine suivante sont préparés et envoyés pour validation (notification + e-mail). Sans réponse 48 h avant le premier post du lot (le lundi à 18h), le lot est validé automatiquement (validation tacite, choisie le 21/10/2026). Un « stop » ou une demande de modification suspend le post concerné.
+
 ## Règles éditoriales
 
 - Sources : uniquement des institutions (musées, bibliothèques, archives), des encyclopédies ou une presse reconnue. Pas de Wikipedia.
