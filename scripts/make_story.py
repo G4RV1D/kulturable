@@ -68,9 +68,19 @@ def make(post_id: str, src: pathlib.Path | None = None) -> pathlib.Path:
     bg = bg.filter(ImageFilter.GaussianBlur(40))
     bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 8, 12)), 0.55)
 
-    # photo nette en haut, pleine largeur, coins arrondis
+    d0 = ImageDraw.Draw(bg)
+    f_brand = ImageFont.truetype(str(FONT), 34)
+    f_title = ImageFont.truetype(str(FONT), 52)
+    f_text = ImageFont.truetype(str(FONT), 58)
+    f_cta = ImageFont.truetype(str(FONT), 38)
+    t_lines = wrap(d0, title, f_title, W - 140)
+    s_lines = wrap(d0, sentence, f_text, W - 140)
+    text_h = len(t_lines) * 66 + 24 + len(s_lines) * 76
+
+    # photo nette en haut, pleine largeur, coins arrondis ; sa hauteur s'adapte au texte
     pw = W - 80
-    ph = 960  # cadrage vertical, la photo est recadrée au centre si besoin
+    cy = H - 300  # bouton hors de la zone couverte par la barre de réponse
+    ph = max(600, min(960, (cy - 46 - 50) - 200 - 70 - text_h))
     ps = max(pw / photo.width, ph / photo.height)
     p = photo.resize((int(photo.width * ps) + 1, int(photo.height * ps) + 1))
     p = p.crop(((p.width - pw) // 2, (p.height - ph) // 2, (p.width - pw) // 2 + pw, (p.height - ph) // 2 + ph))
@@ -83,19 +93,15 @@ def make(post_id: str, src: pathlib.Path | None = None) -> pathlib.Path:
     bg.paste(p, (40, py), mask)
 
     d = ImageDraw.Draw(bg)
-    f_brand = ImageFont.truetype(str(FONT), 34)
-    f_title = ImageFont.truetype(str(FONT), 52)
-    f_text = ImageFont.truetype(str(FONT), 58)
-    f_cta = ImageFont.truetype(str(FONT), 38)
 
     d.text((W // 2, 140), "@kulturable", font=f_brand, fill=(255, 255, 255), anchor="mm")
 
     y = py + ph + 70
-    for line in wrap(d, title, f_title, W - 140):
+    for line in t_lines:
         d.text((W // 2, y), line, font=f_title, fill=ACCENT, anchor="mm")
         y += 66
     y += 24
-    for line in wrap(d, sentence, f_text, W - 140):
+    for line in s_lines:
         d.text((W // 2, y), line, font=f_text, fill=(255, 255, 255), anchor="mm",
                stroke_width=2, stroke_fill=(0, 0, 0))
         y += 76
@@ -103,7 +109,6 @@ def make(post_id: str, src: pathlib.Path | None = None) -> pathlib.Path:
     # renvoi vers le post
     cta = "Toute l'histoire dans le dernier post"
     tw = d.textlength(cta, font=f_cta)
-    cy = H - 300  # hors de la zone couverte par la barre de réponse
     d.rounded_rectangle((W // 2 - tw / 2 - 40, cy - 46, W // 2 + tw / 2 + 40, cy + 46), 46, fill=(255, 255, 255))
     d.text((W // 2, cy), cta, font=f_cta, fill=(20, 20, 24), anchor="mm")
 
