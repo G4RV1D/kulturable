@@ -389,7 +389,7 @@
     "id": "22-derinkuyu",
     "publish_at": "2026-10-28T18:00:00+01:00",
     "caption_file": "posts/captions/22-derinkuyu.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -406,7 +406,7 @@
     "id": "23-fly-geyser",
     "publish_at": "2026-10-29T18:00:00+01:00",
     "caption_file": "posts/captions/23-fly-geyser.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -423,7 +423,7 @@
     "id": "24-facteur-cheval",
     "publish_at": "2026-10-30T18:00:00+01:00",
     "caption_file": "posts/captions/24-facteur-cheval.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -440,7 +440,7 @@
     "id": "25-ile-aux-poupees",
     "publish_at": "2026-10-31T18:00:00+01:00",
     "caption_file": "posts/captions/25-ile-aux-poupees.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -457,7 +457,7 @@
     "id": "26-kuldhara",
     "publish_at": "2026-11-01T18:00:00+01:00",
     "caption_file": "posts/captions/26-kuldhara.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -474,7 +474,7 @@
     "id": "27-naica",
     "publish_at": "2026-11-02T18:00:00+01:00",
     "caption_file": "posts/captions/27-naica.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -491,7 +491,7 @@
     "id": "28-gobekli-tepe",
     "publish_at": "2026-11-03T18:00:00+01:00",
     "caption_file": "posts/captions/28-gobekli-tepe.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
