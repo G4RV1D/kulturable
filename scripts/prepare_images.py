@@ -10,6 +10,8 @@ import pathlib
 import sys
 import urllib.request
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+
 from PIL import Image, ImageFilter, ImageEnhance
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -73,6 +75,17 @@ def main() -> int:
                     print(f"..   {name} : échec avec {url} ({e})")
             else:
                 failed.append(name)
+    # image de story (1080 x 1920) pour chaque post pas encore publié
+    from make_story import make as make_story
+    for post in posts:
+        story = ROOT / "stories" / f"{post['id']}.jpg"
+        if post.get("published_at") or story.exists() or not (OUT_DIR / f"{post['id']}.jpg").exists():
+            continue
+        try:
+            make_story(post["id"])
+            print(f"OK   story {post['id']}")
+        except Exception as e:
+            print(f"..   story {post['id']} : {e}")
     if failed:
         print("Images introuvables pour : " + ", ".join(failed))
         return 1

@@ -18,6 +18,10 @@ on:
         description: "Publier tout de suite ce post (ex. 01-violet-jessop)"
         type: string
         default: ""
+      story_only:
+        description: "Publier seulement la story de ce post déjà publié"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -62,6 +66,7 @@ jobs:
           IMAGE_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/images
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
           FORCE_ID: ${{ inputs.force_id }}
+          STORY_ONLY: ${{ inputs.story_only }}
         run: python scripts/publish.py
       - name: Noter la publication
         run: |

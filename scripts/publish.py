@@ -10,6 +10,9 @@ Variables d'environnement :
   IMAGE_BASE_URL   adresse publique du dossier images/
   DRY_RUN          "1" pour tout vérifier sans rien publier
   FORCE_ID         identifiant d'un post à publier tout de suite (test manuel)
+  STORY_ONLY       identifiant d'un post déjà publié dont on publie seulement la story
+
+Après chaque post, sa story (stories/<id>.jpg) est publiée si elle existe.
 """
 import datetime as dt
 import json
@@ -70,6 +73,25 @@ def wait_ready(container: str, token: str) -> None:
     raise RuntimeError("Instagram n'a pas fini de traiter le média à temps.")
 
 
+def publish_story(post: dict, user_id: str, token: str) -> None:
+    """Publie la story du post ; un échec n'annule pas le post."""
+    if post.get("story_media_id") or not (ROOT / "stories" / f"{post['id']}.jpg").exists():
+        return
+    base = os.environ["IMAGE_BASE_URL"].rstrip("/").rsplit("/images", 1)[0]
+    url = f"{base}/stories/{post['id']}.jpg"
+    try:
+        check_image_online(url)
+        container = call("POST", f"{user_id}/media",
+                         {"image_url": url, "media_type": "STORIES", "access_token": token})["id"]
+        wait_ready(container, token)
+        media = call("POST", f"{user_id}/media_publish", {"creation_id": container, "access_token": token})
+        post["story_media_id"] = media["id"]
+        post["story_published_at"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+        print(f"Story publiée : {post['id']} (media {media['id']})")
+    except Exception as e:
+        print(f"Story non publiée pour {post['id']} : {e}")
+
+
 def main() -> int:
     dry = os.environ.get("DRY_RUN") == "1"
     force = os.environ.get("FORCE_ID", "").strip()
@@ -77,6 +99,17 @@ def main() -> int:
     base = os.environ["IMAGE_BASE_URL"].rstrip("/")
     posts = json.loads(QUEUE.read_text(encoding="utf-8"))
     now = dt.datetime.now(dt.timezone.utc)
+
+    story_only = os.environ.get("STORY_ONLY", "").strip()
+    if story_only:
+        post = next(p for p in posts if p["id"] == story_only)
+        me = call("GET", "me", {"fields": "user_id,username", "access_token": token})
+        if dry:
+            print(f"Mode test : story de {story_only} prête, rien publié.")
+            return 0
+        publish_story(post, me.get("user_id") or me["id"], token)
+        QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return 0 if post.get("story_media_id") else 1
 
     if force:
         due = [p for p in posts if p["id"] == force and not p["published_at"]]
@@ -134,6 +167,8 @@ def main() -> int:
     post["media_id"] = media["id"]
     QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Publié sur @{me.get('username')} : {post['id']} (media {media['id']})")
+    publish_story(post, user_id, token)
+    QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0
 
 
