@@ -79,7 +79,10 @@ def main() -> int:
                 except Exception as e:  # on essaie la source suivante
                     print(f"..   {name} : échec avec {url} ({e})")
             else:
-                failed.append(name)
+                if post.get("approved"):  # un post en réserve ne bloque pas le reste
+                    failed.append(name)
+                else:
+                    print(f"(réserve) {name} non préparée")
     # image de story (1080 x 1920) pour chaque post pas encore publié
     from make_story import make as make_story
     for post in posts:
