@@ -278,8 +278,8 @@
     "publish_at": "2026-10-22T18:00:00+02:00",
     "caption_file": "posts/captions/16-mary-celeste.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-22T16:00:17+00:00",
+    "media_id": "18109892168523024",
     "images": [
       {
         "sources": [
@@ -294,7 +294,9 @@
           0.86
         ]
       }
-    ]
+    ],
+    "story_media_id": "18170220169465005",
+    "story_published_at": "2026-10-22T16:00:37+00:00"
   },
   {
     "id": "17-armee-terre-cuite",
