@@ -66,6 +66,7 @@ def main() -> int:
                 continue
             for url in sources:
                 try:
+                    import time; time.sleep(2)
                     src = download(url)
                     if crop:  # recadrage en fractions (gauche, haut, droite, bas)
                         l, h, r, b = crop
