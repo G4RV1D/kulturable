@@ -6,7 +6,8 @@ Ce dépôt publie automatiquement les posts validés sur le compte Instagram @ku
 
 - `posts/queue.json` : la file d'attente (date et heure de publication, image source, statut).
 - `posts/captions/` : le texte de chaque post.
-- `images/` : les images au format Instagram (1080 × 1350), générées automatiquement.
+- `images/` : les photos en plein cadre (1080 px de large, format d'origine entre 4:5 et 1,91:1, sans fond flou), générées automatiquement.
+- `stories/` : l'image de story (1080 × 1920) de chaque post, publiée juste après lui.
 - **Préparer les images** : se lance à chaque ajout de post, télécharge l'image depuis l'institution qui la conserve et la met au format.
 - **Publier sur Instagram** : vérifie chaque heure s'il y a un post **validé** (`"approved": true`) dont l'heure est passée, et le publie.
 - **Renouveler la clé Instagram** : prolonge chaque lundi la clé d'accès, qui expire sinon au bout de 60 jours.
