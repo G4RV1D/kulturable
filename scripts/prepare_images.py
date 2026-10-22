@@ -1,7 +1,7 @@
 """Télécharge l'image source de chaque post et la met au format Instagram.
 
-Format produit : JPEG 1080 x 1350 (portrait 4:5). L'image d'origine est
-affichée en entier, sans recadrage, sur un fond flou tiré d'elle-même.
+Format produit : JPEG de 1080 px de large, la photo en plein cadre (format d'origine,
+ramené entre 4:5 et 1,91:1 si besoin), sans fond flou.
 Les images déjà prêtes ne sont pas refaites.
 """
 import io
@@ -12,7 +12,7 @@ import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
-from PIL import Image, ImageFilter, ImageEnhance
+from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "posts" / "queue.json"
@@ -31,17 +31,21 @@ def download(url: str) -> Image.Image:
 
 
 def compose(src: Image.Image) -> Image.Image:
-    # Fond : l'image agrandie pour couvrir, floutée et assombrie.
-    scale = max(W / src.width, H / src.height)
-    bg = src.resize((round(src.width * scale), round(src.height * scale)), Image.LANCZOS)
-    left, top = (bg.width - W) // 2, (bg.height - H) // 2
-    bg = bg.crop((left, top, left + W, top + H)).filter(ImageFilter.GaussianBlur(40))
-    bg = ImageEnhance.Brightness(bg).enhance(0.45)
-    # Premier plan : l'image entière, ajustée au cadre.
-    scale = min(W / src.width, H / src.height)
-    fg = src.resize((round(src.width * scale), round(src.height * scale)), Image.LANCZOS)
-    bg.paste(fg, ((W - fg.width) // 2, (H - fg.height) // 2))
-    return bg
+    """Photo en plein cadre, comme une publication classique : pas de fond flou.
+
+    On garde le format d'origine de la photo, dans les limites acceptées par Instagram
+    (du portrait 4:5 au paysage 1,91:1) ; au-delà, on recadre au centre. Largeur 1080 px.
+    """
+    r = src.width / src.height
+    if r < 0.8:  # trop haut : recadrage en 4:5
+        h = round(src.width / 0.8)
+        top = (src.height - h) // 2
+        src = src.crop((0, top, src.width, top + h))
+    elif r > 1.91:  # trop large : recadrage en 1,91:1
+        w = round(src.height * 1.91)
+        left = (src.width - w) // 2
+        src = src.crop((left, 0, left + w, src.height))
+    return src.resize((W, round(W * src.height / src.width)), Image.LANCZOS)
 
 
 def image_files(post: dict) -> list:
