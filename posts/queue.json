@@ -303,8 +303,8 @@
     "publish_at": "2026-10-23T18:00:00+02:00",
     "caption_file": "posts/captions/17-armee-terre-cuite.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-23T16:00:18+00:00",
+    "media_id": "17998575150043883",
     "images": [
       {
         "sources": [
@@ -313,7 +313,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Qin_Terracotta_Army,_Pit_1_04.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18489488314106660",
+    "story_published_at": "2026-10-23T16:00:44+00:00"
   },
   {
     "id": "18-chutes-de-sang",
