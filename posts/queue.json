@@ -322,8 +322,8 @@
     "publish_at": "2026-10-24T18:00:00+02:00",
     "caption_file": "posts/captions/18-chutes-de-sang.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-24T16:00:19+00:00",
+    "media_id": "18000211839008708",
     "images": [
       {
         "sources": [
@@ -338,7 +338,9 @@
           1
         ]
       }
-    ]
+    ],
+    "story_media_id": "18136100122640274",
+    "story_published_at": "2026-10-24T16:00:42+00:00"
   },
   {
     "id": "19-centralia",
