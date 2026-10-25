@@ -347,8 +347,8 @@
     "publish_at": "2026-10-25T18:00:00+01:00",
     "caption_file": "posts/captions/19-centralia.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-25T17:00:18+00:00",
+    "media_id": "18125340028702571",
     "images": [
       {
         "sources": [
@@ -357,7 +357,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:American_Graffiti_Highway_outside_Centralia,_Pennsylvania.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18129690946695538",
+    "story_published_at": "2026-10-25T17:00:42+00:00"
   },
   {
     "id": "20-manuscrits-mer-morte",
