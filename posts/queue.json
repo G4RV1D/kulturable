@@ -366,8 +366,8 @@
     "publish_at": "2026-10-26T18:00:00+01:00",
     "caption_file": "posts/captions/20-manuscrits-mer-morte.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-26T17:24:38+00:00",
+    "media_id": "18236441593323124",
     "images": [
       {
         "sources": [
@@ -376,7 +376,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Cave_in_Qumran_historical_place_bible_scrolls.jpg"
       }
-    ]
+    ],
+    "story_media_id": "17951738325322120",
+    "story_published_at": "2026-10-26T17:25:05+00:00"
   },
   {
     "id": "21-whittier",
