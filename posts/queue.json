@@ -385,8 +385,8 @@
     "publish_at": "2026-10-27T18:00:00+01:00",
     "caption_file": "posts/captions/21-whittier.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-27T17:00:24+00:00",
+    "media_id": "18181925197444202",
     "images": [
       {
         "sources": [
@@ -395,7 +395,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Begich_Towers_Condominium_(Whittier,_Alaska).jpg"
       }
-    ]
+    ],
+    "story_media_id": "18131742853765928",
+    "story_published_at": "2026-10-27T17:00:45+00:00"
   },
   {
     "id": "22-derinkuyu",
