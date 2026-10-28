@@ -404,8 +404,8 @@
     "publish_at": "2026-10-28T18:00:00+01:00",
     "caption_file": "posts/captions/22-derinkuyu.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-28T17:01:22+00:00",
+    "media_id": "17876754042588014",
     "images": [
       {
         "sources": [
@@ -414,7 +414,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Derinkuyu_Underground_City_9843_Nevit_Enhancer.jpg"
       }
-    ]
+    ],
+    "story_media_id": "17963319728999079",
+    "story_published_at": "2026-10-28T17:01:44+00:00"
   },
   {
     "id": "23-fly-geyser",
