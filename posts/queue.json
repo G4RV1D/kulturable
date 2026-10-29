@@ -423,8 +423,8 @@
     "publish_at": "2026-10-29T18:00:00+01:00",
     "caption_file": "posts/captions/23-fly-geyser.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-29T17:03:50+00:00",
+    "media_id": "17909547864578258",
     "images": [
       {
         "sources": [
@@ -433,7 +433,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Fly_geyser.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18110871107463091",
+    "story_published_at": "2026-10-29T17:04:11+00:00"
   },
   {
     "id": "24-facteur-cheval",
