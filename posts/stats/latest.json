@@ -1,47 +1,19 @@
 {
- "date": "2026-10-29T20:31:41+00:00",
+ "date": "2026-10-30T20:05:30+00:00",
  "compte": {
   "user_id": "17841454875673988",
   "username": "kulturable",
   "followers_count": 14,
   "follows_count": 16,
-  "media_count": 74,
+  "media_count": 75,
   "id": "40290243097233043"
  },
  "posts": [
   {
-   "id": "14-porte-enfer",
-   "publie": "2026-10-20T16:00:21+00:00",
-   "base": {
-    "like_count": 2,
-    "comments_count": 0,
-    "permalink": "https://www.instagram.com/p/DeuNmPKEYsW/",
-    "id": "18098649065416859"
-   },
-   "stats": {
-    "views": null,
-    "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Akaj0gq-tq",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A8Ou8j28VN",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AHmpNxLj-9",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AWSMEB4fJc",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Avpl73qqah",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AoCN26DxSp",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AJFh4Tkrhy"
-    ],
-    "reach": null,
-    "likes": null,
-    "comments": null,
-    "shares": null,
-    "saved": null,
-    "total_interactions": null
-   }
-  },
-  {
    "id": "15-lascaux",
    "publie": "2026-10-21T16:00:28+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/DewyZzbGutS/",
     "id": "18160609534514169"
@@ -49,13 +21,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A5hAVZ7onG",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATRn-IEIxv",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AEpUhpN3MV",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATufXfpj06",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AFYeuIYpK0",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATzbyGzRgs",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AiajfW5v5W"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A5XQkPjcfk",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APOPPvjnq0",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A6Ji8hkD55",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A1FTiyHE37",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ANgBKX2amm",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AQRSBJKk1v",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AAjuQKZgGm"
     ],
     "reach": null,
     "likes": null,
@@ -86,7 +58,7 @@
    "id": "16-mary-celeste",
    "publie": "2026-10-22T16:00:17+00:00",
    "base": {
-    "like_count": 0,
+    "like_count": 1,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/DezXLTmIDOk/",
     "id": "18109892168523024"
@@ -94,13 +66,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ApIKvNbS0D",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATAlXaDi_W",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ax1NpfzQ4K",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Azj0YQ0ez1",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AbHKbhS8Ng",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ar9OVCz6o4",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AAjSzxsYyC"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Alqcx_tFmG",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AXUsoy0ftF",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ar8De0-mi8",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AJykFf4cUN",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"At_jRP3_xP",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AmGfluXQMj",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ACeoRMPE01"
     ],
     "reach": null,
     "likes": null,
@@ -131,7 +103,7 @@
    "id": "17-armee-terre-cuite",
    "publie": "2026-10-23T16:00:18+00:00",
    "base": {
-    "like_count": 2,
+    "like_count": 3,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/De17-XNIM6-/",
     "id": "17998575150043883"
@@ -139,13 +111,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A3EjKFXbex",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATcoAhYBrd",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AqwWQvaXMt",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AgkHpXESD4",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AOPnIXXPaE",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APtmrc4jce",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A6aXr0_EA2"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ac727wOKFn",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AkAAfDZdWv",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AQByc13zRG",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGDHagV0zx",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ac_oqgmvJ5",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A-shSpeDkg",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ACXeKkMhbt"
     ],
     "reach": null,
     "likes": null,
@@ -176,7 +148,7 @@
    "id": "18-chutes-de-sang",
    "publie": "2026-10-24T16:00:19+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/De4gxT7lqQw/",
     "id": "18000211839008708"
@@ -184,13 +156,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A3NBXYWtou",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGP6NL12mo",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AVqdpcPtYM",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"As4FUejYlv",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AMFqpzcZl0",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"An1R1Q38gh",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A-a7YB0RQp"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ALgFCppMC7",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AWKjORO1NP",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AYSI8jnOyB",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AUUYVf86o_",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A0SASnICCq",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGeP_FZnvj",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AqwiS9pamV"
     ],
     "reach": null,
     "likes": null,
@@ -221,7 +193,7 @@
    "id": "19-centralia",
    "publie": "2026-10-25T17:00:18+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/De7MbeAFVRO/",
     "id": "18125340028702571"
@@ -229,13 +201,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Aebb-Y7yxR",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AVRQEEOpqh",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATC25JUG-w",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGNgss_b3x",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ASN0hAxC8C",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A7coR6UIi6",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Au2rEVoSHM"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AG_GCJBqdy",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ASeeibGQK7",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AeucRA2xKH",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ad0fS9TvXF",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AwDinEMG3X",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A1LMK6YKRt",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Az7nXUv3_W"
     ],
     "reach": null,
     "likes": null,
@@ -266,7 +238,7 @@
    "id": "20-manuscrits-mer-morte",
    "publie": "2026-10-26T17:24:38+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/De90AxuES69/",
     "id": "18236441593323124"
@@ -274,13 +246,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AYP9E2U6ve",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATKlc_VT4L",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AdnpxTpjRx",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AbvpoxO07f",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AKVwl5GXGd",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AYIgMKXW2W",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AbKICY-A8o"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"An7s2OsC1K",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Alm4BruSI2",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APurSsOrdo",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A4PEev3ktE",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Aw50RNdG7x",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AuFXAZpnV6",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AzB6wmAPdB"
     ],
     "reach": null,
     "likes": null,
@@ -311,7 +283,7 @@
    "id": "21-whittier",
    "publie": "2026-10-27T17:00:24+00:00",
    "base": {
-    "like_count": 0,
+    "like_count": 1,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/DfAWB7FFEOp/",
     "id": "18181925197444202"
@@ -319,13 +291,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AIxtTFWf7i",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A_Khzsz62x",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AaHHxQYZUL",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A_etF7R7z0",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A1Yinxb5iu",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATJczLX4DF",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A4JjhUvRpk"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AjoQB4hnTS",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AgAreBQk2E",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AfSJvzHQQE",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A49hx2bUav",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AJ-R31dpLO",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A-CKL4WjEt",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ALDK63wSob"
     ],
     "reach": null,
     "likes": null,
@@ -356,7 +328,7 @@
    "id": "22-derinkuyu",
    "publie": "2026-10-28T17:01:22+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/DfC68FQEchJ/",
     "id": "17876754042588014"
@@ -364,13 +336,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A_Xf1qB6De",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A9UHalSHlX",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APrTlWUlXP",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ApL6mU8bk7",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AsVSCyRnF5",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ABxqpH50bR",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A8JZ1ZhGui"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AQ0Xnu5Bkc",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Agud9ws067",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Atm32SWae3",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AsE4o70sFu",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AT2qclAIsO",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Aa-me7iIyj",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AYYU1YY-z4"
     ],
     "reach": null,
     "likes": null,
@@ -401,7 +373,7 @@
    "id": "23-fly-geyser",
    "publie": "2026-10-29T17:03:50+00:00",
    "base": {
-    "like_count": 1,
+    "like_count": 2,
     "comments_count": 0,
     "permalink": "https://www.instagram.com/p/DfFgA15lVZW/",
     "id": "17909547864578258"
@@ -409,13 +381,13 @@
    "stats": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AxNa4IWrIR",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A5wuEgVMTr",
-     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A1adQ9GsHT",
-     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AKJh44zwXK",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AIL2MfB1W6",
-     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AOhjGsLNVq",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AA3jsmGeqy"
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AbfHrFUinM",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AKSH0U19rF",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ASG4VhygFz",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APYUR3H-I_",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AETJQaPw2f",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ar-lZMq3lM",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AEX7Oo84UH"
     ],
     "reach": null,
     "likes": null,
@@ -427,12 +399,12 @@
    "story": {
     "views": null,
     "_erreurs": [
-     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ApJWM6RWjD",
-     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ArJuwCBNmZ",
-     "replies: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATR1zhnZQz",
-     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AtFsaAZ0Nd",
-     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Adn2UzQncX",
-     "navigation: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AxoH1qfds4"
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18110871107463091' does not exist, cannot be loaded due to missing perm"
     ],
     "reach": null,
     "replies": null,
@@ -441,6 +413,51 @@
     "navigation": null
    },
    "story_publiee": "2026-10-29T17:04:11+00:00"
+  },
+  {
+   "id": "24-facteur-cheval",
+   "publie": "2026-10-30T17:00:18+00:00",
+   "base": {
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfIEZ6liYFF/",
+    "id": "18644264701021349"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ArgufFvLWG",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AS8apP80Mr",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AS7qkvr6Sz",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATZrmp1x2X",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ArlAyIQB6s",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AQquR58QCm",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Alp6oD_Xjc"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AuwYN3bVKN",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A3x5LmuVgh",
+     "replies: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AzYwmqU0rS",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AFqbtnPZPa",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APXp69pl3k",
+     "navigation: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AdtcyrV6dI"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-10-30T17:00:43+00:00"
   }
  ]
 }
