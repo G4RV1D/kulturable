@@ -442,8 +442,8 @@
     "publish_at": "2026-10-30T18:00:00+01:00",
     "caption_file": "posts/captions/24-facteur-cheval.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-30T17:00:18+00:00",
+    "media_id": "18644264701021349",
     "images": [
       {
         "sources": [
@@ -452,7 +452,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Palais_idéal_du_facteur_Cheval_-_Juin_2023_-_06.jpg"
       }
-    ]
+    ],
+    "story_media_id": "17959018608254393",
+    "story_published_at": "2026-10-30T17:00:43+00:00"
   },
   {
     "id": "25-ile-aux-poupees",
