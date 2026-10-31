@@ -461,8 +461,8 @@
     "publish_at": "2026-10-31T18:00:00+01:00",
     "caption_file": "posts/captions/25-ile-aux-poupees.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-10-31T17:00:21+00:00",
+    "media_id": "18076851353727583",
     "images": [
       {
         "sources": [
@@ -471,7 +471,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Xochimilco_Dolls'_Island.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18650376547005000",
+    "story_published_at": "2026-10-31T17:00:41+00:00"
   },
   {
     "id": "26-kuldhara",
