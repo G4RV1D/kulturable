@@ -1,6 +1,6 @@
 {
   "title": "Le château de corail",
-  "music": "music/rythme-01.m4a",
+  "music": "music/theme-kulturable.m4a",
   "music_start": 0,
   "scenes": [
     {"image": "img0.jpg", "duration": 3.2, "zoom": "in", "pan": 0.45,
