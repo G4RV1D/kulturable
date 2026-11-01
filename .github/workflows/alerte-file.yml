@@ -1,0 +1,33 @@
+name: Alerte file d'attente
+
+# Filet de sécurité : si moins de 3 posts validés restent à publier, GitHub ouvre un ticket,
+# ce qui envoie un e-mail au propriétaire du dépôt.
+on:
+  schedule:
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Compter les posts à venir
+        id: count
+        run: |
+          n=$(python3 -c "import json;print(sum(1 for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at')))")
+          last=$(python3 -c "import json;d=[p['publish_at'][:10] for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at')];print(max(d) if d else 'aucun')")
+          echo "n=$n" >> "$GITHUB_OUTPUT"; echo "last=$last" >> "$GITHUB_OUTPUT"
+          echo "$n post(s) validé(s) à venir, dernier le $last"
+      - name: Prévenir
+        if: steps.count.outputs.n < 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Kulturable : plus que ${{ steps.count.outputs.n }} post(s) programmé(s)"
+          gh issue list --state open --search "Kulturable : plus que in:title" --json number -q '.[].number' | grep -q . && exit 0
+          gh issue create --title "$title" --body "Il ne reste que ${{ steps.count.outputs.n }} post(s) validé(s) à publier (dernier prévu le ${{ steps.count.outputs.last }}). Demande à Claude de préparer et valider le lot suivant pour éviter un jour sans publication. Ferme ce ticket une fois le lot validé."
