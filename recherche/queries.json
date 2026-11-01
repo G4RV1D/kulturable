@@ -1,9 +1,4 @@
 {
- "chaussee": ["Giant's Causeway basalt columns", "Giant's Causeway"],
- "foret": ["Crooked Forest Gryfino", "Krzywy Las"],
- "dallol": ["Dallol hydrothermal", "Dallol Ethiopia"],
- "neuschwanstein": ["Neuschwanstein Castle", "Schloss Neuschwanstein"],
- "pise": ["Leaning Tower of Pisa", "Torre di Pisa"],
- "kukulcan": ["El Castillo Chichen Itza equinox serpent", "Chichén Itzá El Castillo"],
- "pompei": ["Pompeii plaster casts", "Pompei calchi vittime"]
+ "coral": ["Coral Castle Homestead Florida", "Coral Castle Leedskalnin", "Coral Castle gate"],
+ "leedskalnin": ["Edward Leedskalnin"]
 }
