@@ -1,2 +1,6 @@
 __pycache__/
 tiktok/*/_voix_montee.wav
+reels/*/_plans/
+reels/*/reel.mp4
+reels/*/reel.part.mp4
+reels/*/_images/
