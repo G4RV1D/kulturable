@@ -532,7 +532,7 @@
     "id": "29-catacombes",
     "publish_at": "2026-11-04T18:00:00+01:00",
     "caption_file": "posts/captions/29-catacombes.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -549,7 +549,7 @@
     "id": "30-glass-beach",
     "publish_at": "2026-11-05T18:00:00+01:00",
     "caption_file": "posts/captions/30-glass-beach.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -566,7 +566,7 @@
     "id": "31-hashima",
     "publish_at": "2026-11-06T18:00:00+01:00",
     "caption_file": "posts/captions/31-hashima.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -583,7 +583,7 @@
     "id": "32-sedlec",
     "publish_at": "2026-11-07T18:00:00+01:00",
     "caption_file": "posts/captions/32-sedlec.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -600,7 +600,7 @@
     "id": "33-moai",
     "publish_at": "2026-11-08T18:00:00+01:00",
     "caption_file": "posts/captions/33-moai.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -617,7 +617,7 @@
     "id": "34-lac-hillier",
     "publish_at": "2026-11-09T18:00:00+01:00",
     "caption_file": "posts/captions/34-lac-hillier.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -634,7 +634,7 @@
     "id": "35-arbre-proprietaire",
     "publish_at": "2026-11-10T18:00:00+01:00",
     "caption_file": "posts/captions/35-arbre-proprietaire.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -651,7 +651,7 @@
     "id": "36-chaussee-des-geants",
     "publish_at": "2026-11-11T18:00:00+01:00",
     "caption_file": "posts/captions/36-chaussee-des-geants.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -668,7 +668,7 @@
     "id": "37-foret-tordue",
     "publish_at": "2026-11-12T18:00:00+01:00",
     "caption_file": "posts/captions/37-foret-tordue.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -685,7 +685,7 @@
     "id": "38-pompei",
     "publish_at": "2026-11-13T18:00:00+01:00",
     "caption_file": "posts/captions/38-pompei.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -702,7 +702,7 @@
     "id": "39-dallol",
     "publish_at": "2026-11-14T18:00:00+01:00",
     "caption_file": "posts/captions/39-dallol.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -719,7 +719,7 @@
     "id": "40-neuschwanstein",
     "publish_at": "2026-11-15T18:00:00+01:00",
     "caption_file": "posts/captions/40-neuschwanstein.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -736,7 +736,7 @@
     "id": "41-tour-de-pise",
     "publish_at": "2026-11-16T18:00:00+01:00",
     "caption_file": "posts/captions/41-tour-de-pise.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
@@ -753,7 +753,7 @@
     "id": "42-kukulcan",
     "publish_at": "2026-11-17T18:00:00+01:00",
     "caption_file": "posts/captions/42-kukulcan.txt",
-    "approved": false,
+    "approved": true,
     "published_at": null,
     "media_id": null,
     "images": [
