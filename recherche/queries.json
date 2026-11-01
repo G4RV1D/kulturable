@@ -1,9 +1,9 @@
 {
- "catacombes": ["Catacombes de Paris ossuaire", "Paris catacombs bones"],
- "glassbeach": ["Glass Beach Fort Bragg", "Glass Beach MacKerricher"],
- "hashima": ["Hashima island", "Gunkanjima"],
- "sedlec": ["Sedlec Ossuary chandelier", "Kostnice Sedlec"],
- "moai": ["Moai Rano Raraku", "Moai Easter Island Ahu Tongariki"],
- "hillier": ["Lake Hillier", "Lake Hillier Middle Island"],
- "arbre": ["Tree That Owns Itself Athens Georgia", "Tree That Owns Itself"]
+ "chaussee": ["Giant's Causeway basalt columns", "Giant's Causeway"],
+ "foret": ["Crooked Forest Gryfino", "Krzywy Las"],
+ "dallol": ["Dallol hydrothermal", "Dallol Ethiopia"],
+ "neuschwanstein": ["Neuschwanstein Castle", "Schloss Neuschwanstein"],
+ "pise": ["Leaning Tower of Pisa", "Torre di Pisa"],
+ "kukulcan": ["El Castillo Chichen Itza equinox serpent", "Chichén Itzá El Castillo"],
+ "pompei": ["Pompeii plaster casts", "Pompei calchi vittime"]
 }
