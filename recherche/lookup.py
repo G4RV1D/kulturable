@@ -12,7 +12,8 @@ out, thumbs = {}, pathlib.Path("recherche/thumbs"); thumbs.mkdir(exist_ok=True)
 for key, queries in q.items():
     res = []
     for query in queries:
-        p = {"action": "query", "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 360}
+        p = {"action": "query", "prop": "imageinfo", "iiprop": "url|size|extmetadata",
+             "iiurlwidth": 2000 if key.startswith("full_") else 360}
         if query.startswith("File:"): p["titles"] = query
         else: p.update(generator="search", gsrsearch=query, gsrnamespace=6, gsrlimit=12)
         try: pages = get(p).get("query", {}).get("pages", {})
@@ -25,7 +26,7 @@ for key, queries in q.items():
                         "credit": strip(m.get("Credit", {}).get("value")), "date": strip(m.get("DateTimeOriginal", {}).get("value")),
                         "desc": strip(m.get("ImageDescription", {}).get("value")), "url": ii.get("url"), "thumb": ii.get("thumburl")})
     # miniatures des 8 premières images de taille suffisante
-    keep = [r for r in res if r.get("thumb") and (r.get("w") or 0) >= 1000][:8]
+    keep = [r for r in res if r.get("thumb") and (r.get("w") or 0) >= (0 if key.startswith("full_") else 1000)][:8]
     for i, r in enumerate(keep):
         try:
             time.sleep(1.5); data = urllib.request.urlopen(urllib.request.Request(r["thumb"], headers=UA), timeout=60).read()
