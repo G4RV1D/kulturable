@@ -47,7 +47,7 @@ def text_layer(lines_spec):
         blocks.append(("", None, None, int(size * 0.35)))
     blocks.pop()
     total = sum(b[3] for b in blocks)
-    y = int(H * 0.60) - total // 2  # au-dessus de la zone couverte par la légende du Reel
+    y = int(H * 0.40) - total // 2  # au-dessus des boutons (à droite) et de la légende (en bas) de l'écran Reels
     # bandeau sombre derrière le texte
     pad = 40
     d.rounded_rectangle((60, y - pad, W - 60, y + total + pad - 10), 36, fill=(0, 0, 0, 120))
