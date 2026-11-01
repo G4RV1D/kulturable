@@ -480,8 +480,8 @@
     "publish_at": "2026-11-01T18:00:00+01:00",
     "caption_file": "posts/captions/26-kuldhara.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-01T17:00:19+00:00",
+    "media_id": "18133208026831923",
     "images": [
       {
         "sources": [
@@ -490,7 +490,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Kuldhara.JPG"
       }
-    ]
+    ],
+    "story_media_id": "18065852306794545",
+    "story_published_at": "2026-11-01T17:00:41+00:00"
   },
   {
     "id": "27-naica",
