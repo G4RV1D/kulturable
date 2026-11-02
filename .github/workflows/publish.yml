@@ -22,9 +22,14 @@ on:
         description: "Publier seulement la story de ce post déjà publié"
         type: string
         default: ""
+      relais:
+        description: "Usage interne : relance automatique de la surveillance"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   attendre:
@@ -39,12 +44,24 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - id: wait
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.relais }}" != "true" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; exit 0; fi
           s=$(python3 scripts/next_due.py)
-          if [ "$s" -lt 0 ]; then echo "Rien à publier dans les prochaines heures."; echo "go=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          # Relais : GitHub lance les tâches planifiées de façon irrégulière (parfois 7 h d'écart).
+          # Chaque surveillance relance donc la suivante avant de se terminer : il y a toujours une surveillance active.
+          relay() { gh workflow run publish.yml --ref main -f dry_run=false -f relais=true || true; }
+          if [ "$s" -lt 0 ]; then
+            echo "Rien à publier dans les prochaines heures : surveillance pendant 5 h 30, puis relais."
+            sleep 19800
+            relay
+            echo "go=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           echo "Prochain post dans $s s, on attend."
           sleep "$s"
+          relay
           echo "go=1" >> "$GITHUB_OUTPUT"
 
   publish:
