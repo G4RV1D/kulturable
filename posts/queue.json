@@ -499,8 +499,8 @@
     "publish_at": "2026-11-02T18:00:00+01:00",
     "caption_file": "posts/captions/27-naica.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-02T17:06:15+00:00",
+    "media_id": "18495280429108869",
     "images": [
       {
         "sources": [
@@ -509,7 +509,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Cristales_cueva_de_Naica.JPG"
       }
-    ]
+    ],
+    "story_media_id": "18179206456387455",
+    "story_published_at": "2026-11-02T17:06:37+00:00"
   },
   {
     "id": "28-gobekli-tepe",
