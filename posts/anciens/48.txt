@@ -1,0 +1,17 @@
+PYTHAGORE AVANT PYTHAGORE : une tablette de 3 800 ans prouve que les Babyloniens connaissaient son théorème.
+
+À l'école, on apprend que c'est le Grec Pythagore, vers 500 avant notre ère, qui a découvert la célèbre règle des triangles rectangles : le carré du grand côté est égal à la somme des carrés des deux autres. Sauf que les Babyloniens l'utilisaient plus de mille ans avant lui.
+
+La preuve est gravée dans l'argile. Elle s'appelle IM 67118. C'est une petite tablette trouvée en Irak, près de Bagdad, et datée d'environ 1800 avant notre ère. Elle est écrite en cunéiforme, l'écriture en forme de petits clous des Mésopotamiens.
+
+On y trouve un exercice de mathématiques : on connaît la surface d'un rectangle et la longueur de sa diagonale, quels sont ses côtés ? L'élève ou le scribe résout le problème étape par étape. Et à la fin, il vérifie que sa réponse est juste en utilisant exactement le théorème qu'on attribuera plus tard à Pythagore.
+
+Une autre tablette de la même époque, Plimpton 322, conservée à l'université Columbia de New York, va encore plus loin. Elle contient une liste de « triplets pythagoriciens », des séries de trois nombres entiers qui forment des triangles rectangles parfaits, comme 3, 4 et 5.
+
+Pythagore a peut-être été le premier à le démontrer à la manière des Grecs. Mais il n'a pas été le premier à le connaître.
+
+Vous saviez que les maths étaient aussi anciennes ?
+
+#Kulturable #Pythagore #Babylone #Mathématiques #Archéologie #HistoireVraie
+
+Sources : université Columbia (Plimpton 322), UNSW Sydney (Mansfield et Wildberger, 2017).

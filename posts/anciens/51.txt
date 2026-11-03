@@ -1,0 +1,17 @@
+LA FEMME QUI A FAIT ATTERRIR APOLLO 11 : à 3 minutes de la Lune, les alarmes ont sonné. Son logiciel a tenu bon.
+
+Margaret Hamilton naît en 1936 aux États-Unis. Elle étudie les mathématiques, puis entre au célèbre MIT, près de Boston. À l'époque, le métier de programmeur existe à peine. On ne parle même pas encore de « logiciel ». C'est elle qui popularisera l'expression « génie logiciel ».
+
+Dans les années 1960, elle dirige l'équipe qui écrit le programme de l'ordinateur de bord des missions Apollo. Une machine minuscule, avec moins de mémoire qu'une calculatrice d'aujourd'hui. Les programmes sont tissés à la main dans des fils de cuivre. Une célèbre photo la montre à côté d'une pile de listings aussi haute qu'elle.
+
+Le 20 juillet 1969, le module lunaire d'Apollo 11 descend vers la Lune. Trois minutes avant de se poser, des alarmes s'allument : « 1202 », puis « 1201 ». L'ordinateur est surchargé par des données inutiles venues d'un radar.
+
+Mais le logiciel de Margaret Hamilton avait été conçu pour ça. Il abandonne les tâches secondaires et garde uniquement l'essentiel : piloter l'atterrissage. À Houston, on donne le feu vert. Neil Armstrong et Buzz Aldrin se posent sans encombre.
+
+Sans ce choix de programmation, la mission aurait sans doute été interrompue. En 2016, Barack Obama lui a remis la médaille présidentielle de la Liberté.
+
+Vous connaissiez son nom ?
+
+#Kulturable #MargaretHamilton #Apollo11 #NASA #Femmes #HistoireVraie
+
+Source : NASA.

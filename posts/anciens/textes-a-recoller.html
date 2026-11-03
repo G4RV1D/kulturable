@@ -1,0 +1,1348 @@
+<title>Kulturable, textes à recoller</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : une colonne de fiches, une par post, avec une barre de progression collante */
+:root{--bg:#f6f5f2;--card:#ffffff;--ink:#1d1b18;--muted:#6b6660;--line:#e3dfd8;--accent:#ffc448;--accent-ink:#1d1b18;--ok:#2f7d4f;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--card:#1f1d1a;--ink:#f1eee8;--muted:#a49d93;--line:#35322d;--accent:#ffc448;--accent-ink:#1d1b18;--ok:#6fcf97;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151412;--card:#1f1d1a;--ink:#f1eee8;--muted:#a49d93;--line:#35322d;--accent:#ffc448;--accent-ink:#1d1b18;--ok:#6fcf97;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:14px}
+h1{font:800 clamp(28px,6vw,44px)/1.05 var(--display);margin:0;text-wrap:balance}
+h1 span{background:var(--accent);color:var(--accent-ink);padding:0 .15em}
+.intro{color:var(--muted);max-width:62ch;margin:0}
+.steps{margin:0;padding-left:1.2em;color:var(--ink);max-width:62ch}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border-bottom:1px solid var(--line)}
+.count{font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+.track{flex:1 1 160px;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar label{font-size:14px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.post{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:10px;min-width:0}
+.post.is-done{opacity:.55}
+.post header{display:flex;gap:14px;align-items:baseline;min-width:0}
+.num{font:500 13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.meta{min-width:0}
+h2{font:600 18px/1.25 var(--display);margin:0;text-wrap:balance}
+.date{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:600 14px var(--body);border-radius:8px;padding:8px 14px;cursor:pointer;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:transparent}
+.btn.copy{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.copied{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.done{font-size:14px;display:flex;gap:6px;align-items:center;margin-left:auto}
+summary{cursor:pointer;font-size:14px;color:var(--muted)}
+pre{white-space:pre-wrap;word-wrap:break-word;font:15px/1.5 var(--body);margin:10px 0 0;padding:12px;border-radius:8px;background:var(--bg);max-height:420px;overflow:auto}
+@media (prefers-reduced-motion:reduce){.track i{transition:none}}
+</style>
+<div class="wrap">
+<h1>Les 63 anciens posts, <span>remis au format</span></h1>
+<p class="intro">Chaque texte reprend la structure des posts récents : l'accroche visible avant « plus », l'histoire, la question, les hashtags et les sources en bas. Les erreurs repérées dans les anciennes versions ont été corrigées.</p>
+<ol class="steps"><li>Touchez « Ouvrir le post », puis les trois points et « Modifier ».</li><li>Revenez ici, touchez « Copier le texte » et remplacez l'ancienne légende.</li><li>Cochez « Collé » pour suivre où vous en êtes.</li></ol>
+<div class="bar"><span class="count" id="count">0 / 63 collés</span><div class="track"><i id="prog"></i></div><label><input type="checkbox" id="hide"> Masquer les posts déjà collés</label></div>
+<article class="post" data-n="1">
+<header><span class="num">01</span><div class="meta"><h2>LE CHÂTEAU DE CORAIL</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg34d5ajLXw/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-1"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE CHÂTEAU DE CORAIL : un homme a bâti seul 1 100 tonnes de pierre. Pour une fille qui l&#x27;avait quitté.
+
+Il s&#x27;appelle Edward Leedskalnin. Il est né en Lettonie en 1887. À 26 ans, il se fiance avec Agnes, de dix ans sa cadette. Mais la veille du mariage, elle annule tout.
+
+Le cœur brisé, Ed quitte son pays. Il passe par le Canada, la Californie, le Texas, et s&#x27;installe en Floride en 1918.
+
+En 1923, il commence un chantier complètement fou. Il découpe d&#x27;énormes blocs de corail et les assemble tout seul : des murs, des tables, des fauteuils, une tour, un croissant de lune géant. Personne ne le voit vraiment travailler. Il bosse la nuit, à la lumière d&#x27;une lanterne. Sans grue, sans ouvriers.
+
+En 1936, il achète un terrain à Homestead, à une quinzaine de kilomètres. Et il déménage tout son château, bloc par bloc. Ça lui prend trois ans. Au total, il a déplacé plus de 1 100 tonnes de corail.
+
+Quand on lui demande comment il fait, il répond seulement qu&#x27;il connaît les secrets des bâtisseurs des pyramides. Ed meurt en 1951, à 64 ans, sans avoir jamais révélé sa méthode. Le Coral Castle se visite toujours, en Floride. Et Agnes, elle, n&#x27;est jamais venue.
+
+Et vous, vous feriez quoi pour reconquérir quelqu&#x27;un ?
+
+#Kulturable #CoralCastle #Floride #Mystère #Amour #HistoireVraie
+
+Source : Coral Castle Museum (coralcastle.com).</pre></details>
+</article><article class="post" data-n="2">
+<header><span class="num">02</span><div class="meta"><h2>L&#x27;OISEAU QUI GUIDE LES HOMMES</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg34uvsj0dp/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-2"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;OISEAU QUI GUIDE LES HOMMES : en Afrique, un oiseau sauvage conduit les chasseurs jusqu&#x27;au miel. Vraiment.
+
+Au Mozambique, dans la réserve du Niassa, les chasseurs de miel yao ont un partenaire étonnant : un petit oiseau brun, le grand indicateur. Il n&#x27;est ni dressé, ni apprivoisé. Et pourtant, il travaille avec eux.
+
+Quand l&#x27;oiseau repère une ruche d&#x27;abeilles sauvages, il s&#x27;approche des hommes en lançant un cri particulier. Puis il vole d&#x27;arbre en arbre pour les guider jusqu&#x27;à elle. Les chasseurs, de leur côté, l&#x27;appellent avec un son bien à eux, une sorte de « brrrr-hm » transmis de génération en génération.
+
+En 2016, une biologiste de l&#x27;université de Cambridge, Claire Spottiswoode, a voulu vérifier si l&#x27;oiseau comprenait vraiment cet appel. Résultat : quand les chasseurs utilisent leur cri traditionnel, l&#x27;oiseau les conduit beaucoup plus souvent à une ruche que s&#x27;ils émettent un autre son. Leurs chances de trouver du miel passent d&#x27;environ 17 % à plus de 50 %.
+
+Et l&#x27;oiseau y gagne aussi. Les hommes enfument les abeilles et ouvrent la ruche, ce qu&#x27;il ne pourrait jamais faire seul. Une fois le miel récolté, ils lui laissent la cire, dont il se nourrit.
+
+C&#x27;est l&#x27;un des rares exemples connus de coopération entre l&#x27;homme et un animal sauvage. Mais elle disparaît peu à peu, à mesure que le sucre acheté remplace le miel sauvage.
+
+Vous saviez que des humains et des oiseaux pouvaient se parler ?
+
+#Kulturable #GrandIndicateur #Mozambique #Nature #Animaux #HistoireVraie
+
+Sources : Science (Spottiswoode et al., 2016), université de Cambridge, Maxisciences.</pre></details>
+</article><article class="post" data-n="3">
+<header><span class="num">03</span><div class="meta"><h2>LE CHANT QUI APPELLE LES TROUPEAUX</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35CxeDAug/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-3"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE CHANT QUI APPELLE LES TROUPEAUX : en Suède, des bergères rappellent leurs vaches avec une voix ancestrale.
+
+Dans les montagnes du centre de la Suède et de la Norvège, on entend parfois un chant très aigu qui résonne dans toute la vallée. Ce n&#x27;est pas un spectacle. C&#x27;est un appel pour les vaches. On l&#x27;appelle le kulning.
+
+Pendant des siècles, chaque été, les villages envoyaient leurs troupeaux dans les pâturages d&#x27;altitude, les fäbodar. Et ce sont les femmes qui partaient avec eux. Seules, pendant des mois, elles gardaient les bêtes, faisaient la traite, le fromage et le beurre.
+
+Pour rassembler les animaux dispersés dans la forêt, elles avaient inventé une technique : des cris chantés, très haut perchés, souvent deux à trois fois plus aigus que la voix parlée. Ces sons portent extrêmement loin. Ils servaient aussi à communiquer avec les autres bergères, par exemple pour prévenir de l&#x27;arrivée d&#x27;un loup ou d&#x27;un incendie.
+
+La plus ancienne description connue date de la fin du XVIIe siècle : un auteur suédois parle des « appels très étranges » des bergères dans les montagnes. Avec la fin des pâturages d&#x27;été au XXe siècle, la tradition a failli disparaître.
+
+Aujourd&#x27;hui, le kulning revit. On l&#x27;enseigne au Conservatoire royal de musique de Stockholm, et on l&#x27;a même entendu dans le film La Reine des neiges.
+
+Vous auriez réussi à appeler un troupeau avec votre voix ?
+
+#Kulturable #Kulning #Suède #Tradition #Musique #HistoireVraie
+
+Source : Smithsonian Magazine.</pre></details>
+</article><article class="post" data-n="4">
+<header><span class="num">04</span><div class="meta"><h2>TIMON ET PUMBAA EN VRAI</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35QVoDM7p/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-4"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>TIMON ET PUMBAA EN VRAI : en Afrique, des mangoustes font la toilette des phacochères. Et tout le monde y gagne.
+
+On pense forcément au Roi lion. Mais cette amitié existe vraiment, dans la savane africaine, entre deux animaux que tout oppose : le phacochère, un gros cochon sauvage aux défenses impressionnantes, et la mangouste, un petit carnivore de quelques centaines de grammes.
+
+Le phacochère a un problème : son corps est couvert de tiques et de parasites qu&#x27;il ne peut pas atteindre. La mangouste, elle, cherche à manger. Alors elles ont trouvé un arrangement.
+
+Quand des mangoustes rayées s&#x27;approchent, le phacochère s&#x27;allonge par terre, parfois même sur le côté, et se laisse faire. Les mangoustes grimpent sur lui, fouillent ses poils, derrière ses oreilles, autour de ses yeux, et gobent les tiques une à une. Certaines montent même sur son dos pendant qu&#x27;il marche.
+
+Le phacochère repart propre et débarrassé de ses parasites. Les mangoustes repartent le ventre plein. Les scientifiques appellent ça une relation mutualiste : chacun rend service à l&#x27;autre.
+
+Ce comportement a été filmé et étudié notamment en Ouganda, dans le parc national Queen Elizabeth. Et il est d&#x27;autant plus surprenant que les mangoustes rayées ne le font avec aucun autre animal de la savane.
+
+Vous connaissiez cette amitié ?
+
+#Kulturable #Phacochère #Mangouste #Animaux #Nature #HistoireVraie
+
+Source : Maxisciences.</pre></details>
+</article><article class="post" data-n="5">
+<header><span class="num">05</span><div class="meta"><h2>LA FLEUR DE L&#x27;ÈRE GLACIAIRE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35g7yDsOT/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-5"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FLEUR DE L&#x27;ÈRE GLACIAIRE : des chercheurs ont fait pousser une plante vieille de 32 000 ans. Elle a fleuri.
+
+En Sibérie, au bord de la rivière Kolyma, le sol reste gelé en permanence. C&#x27;est le permafrost. En creusant dans ses couches les plus anciennes, des chercheurs russes découvrent d&#x27;anciens terriers d&#x27;écureuils, enfouis à près de 40 mètres sous la surface.
+
+Dans ces terriers, les écureuils avaient stocké des graines et des fruits pour l&#x27;hiver. Un hiver qui a commencé il y a environ 32 000 ans, en pleine période glaciaire, à l&#x27;époque des mammouths. Puis la glace a tout recouvert.
+
+Les graines elles-mêmes étaient trop abîmées pour germer. Mais à l&#x27;intérieur de certains fruits, les chercheurs ont trouvé des tissus encore vivants. Ils les ont mis en culture au laboratoire. Et en 2012, ils ont annoncé avoir obtenu des plantes entières d&#x27;une petite fleur blanche, Silene stenophylla.
+
+Les plantes ont poussé, ont fleuri, et ont même produit de nouvelles graines, capables de germer à leur tour. C&#x27;est la plus vieille plante jamais ramenée à la vie.
+
+Pour les scientifiques, c&#x27;est la preuve que le froid extrême peut conserver la vie pendant des dizaines de milliers d&#x27;années. Et ça pose une question fascinante : que cachent encore les glaces de la planète ?
+
+Vous imaginez sentir une fleur que les mammouths ont connue ?
+
+#Kulturable #Sibérie #Permafrost #Science #Nature #HistoireVraie
+
+Sources : Sciences et Avenir, PNAS (Yashina et al., 2012).</pre></details>
+</article><article class="post" data-n="6">
+<header><span class="num">06</span><div class="meta"><h2>LE POISSON AUX PHARES</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35r_GjAVR/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-6"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE POISSON AUX PHARES : dans les profondeurs, un petit poisson allume et éteint la lumière sous ses yeux.
+
+Dans la mer Rouge et l&#x27;océan Indien vit un petit poisson noir d&#x27;une dizaine de centimètres qui porte un nom parfait : le poisson-lanterne aux yeux de lumière, ou Photoblepharon. Sous chacun de ses yeux, il a une tache qui brille d&#x27;une lumière verdâtre.
+
+Mais cette lumière, ce n&#x27;est pas lui qui la fabrique. Elle vient de milliards de bactéries lumineuses qui vivent dans cet organe. Le poisson les nourrit et les loge. En échange, elles brillent pour lui, en permanence.
+
+Le plus étonnant, c&#x27;est qu&#x27;il peut éteindre ses phares quand il veut. Une petite paupière de peau noire remonte devant l&#x27;organe lumineux et cache la lumière, comme un volet qu&#x27;on ferme.
+
+Et il s&#x27;en sert habilement. La lumière l&#x27;aide à voir ses proies dans l&#x27;obscurité et à reconnaître les autres poissons de son espèce. Quand un prédateur approche, il joue avec l&#x27;interrupteur : il allume, nage dans une direction, éteint, puis change brusquement de cap dans le noir. Le prédateur ne sait plus où il est passé.
+
+Le jour, il se cache dans les récifs. La nuit, des bancs entiers sortent et clignotent comme des lucioles sous l&#x27;eau.
+
+Vous aimeriez voir ce feu d&#x27;artifice sous-marin ?
+
+#Kulturable #PoissonLanterne #Océan #Bioluminescence #Nature #HistoireVraie
+
+Source : Aquaportail (fiche Photoblepharon).</pre></details>
+</article><article class="post" data-n="7">
+<header><span class="num">07</span><div class="meta"><h2>LE BOUDDHA CACHÉ DANS LA MONTAGNE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35zeUjqoT/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-7"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE BOUDDHA CACHÉ DANS LA MONTAGNE : une légende chinoise parle de deux Bouddhas géants. Un seul est prouvé.
+
+En Chine, près de la ville de Leshan, un Bouddha immense est taillé directement dans une falaise, au confluent de trois rivières. Il mesure 71 mètres de haut. Ses oreilles font à elles seules 7 mètres. C&#x27;est la plus grande statue de Bouddha sculptée dans la roche au monde.
+
+Sa construction commence en 713, sous la dynastie Tang. Elle est lancée par un moine, Hai Tong, qui espère que le Bouddha calmera les eaux dangereuses où coulent les bateaux. Le chantier dure 90 ans, bien après sa mort.
+
+Mais une légende locale raconte une histoire plus étonnante. Le moine et son maître auraient voulu protéger la région avec deux statues. Le disciple serait parti sculpter celle de Leshan. Le maître, trop âgé pour voyager, serait resté sculpter la sienne plus loin. Il serait mort avant de la terminer, et la montagne l&#x27;aurait cachée.
+
+En 2017, plusieurs médias ont annoncé qu&#x27;un second Bouddha géant était réapparu dans la province du Guizhou, après le défrichement d&#x27;une forêt. Les photos ont fait le tour du monde. Mais aucune étude archéologique n&#x27;a jamais confirmé qu&#x27;il s&#x27;agissait d&#x27;une statue sculptée, ni son âge. Pour l&#x27;instant, cette partie de la légende reste une légende.
+
+Le Bouddha de Leshan, lui, est bien réel. Il est classé au patrimoine mondial de l&#x27;UNESCO depuis 1996.
+
+Vous croyez qu&#x27;un second Bouddha dort encore quelque part ?
+
+#Kulturable #Bouddha #Leshan #Chine #Légende #HistoireVraie
+
+Sources : UNESCO (Mont Emei et Grand Bouddha de Leshan), Paris Match (2017).</pre></details>
+</article><article class="post" data-n="8">
+<header><span class="num">08</span><div class="meta"><h2>LE LAC DE LA DROGUE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg35-D3j9TG/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-8"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE LAC DE LA DROGUE : en 1977, des grimpeurs de Yosemite ont trouvé un trésor inattendu au fond d&#x27;un lac gelé.
+
+En décembre 1976, un petit avion bimoteur survole la Sierra Nevada, en Californie, par mauvais temps. Il transporte une cargaison très spéciale : des tonnes de cannabis venues du Mexique. Il s&#x27;écrase dans un lac de montagne gelé, au fond du parc national de Yosemite. Les deux pilotes sont tués.
+
+La neige recouvre l&#x27;épave. Pendant des semaines, personne ne sait vraiment ce qu&#x27;il y a à bord.
+
+Au printemps 1977, quand les rangers découvrent la nature de la cargaison, la nouvelle circule vite dans la vallée. Et elle arrive aux oreilles d&#x27;une bande de jeunes grimpeurs qui vivent sur place, sans un sou, pour escalader les grandes parois de Yosemite.
+
+Plusieurs d&#x27;entre eux montent jusqu&#x27;au lac, à des heures de marche, et repêchent des ballots sous la glace avant que les autorités aient tout récupéré. Pendant des mois, l&#x27;argent de cette « pêche » aurait financé leurs expéditions d&#x27;escalade.
+
+L&#x27;endroit a gardé un surnom : le lac de la drogue. Et l&#x27;histoire est devenue une légende du monde de l&#x27;escalade, racontée dans des livres et des documentaires.
+
+Vous auriez osé plonger dans ce lac ?
+
+#Kulturable #Yosemite #Californie #Insolite #Escalade #HistoireVraie
+
+Source : Climbing Magazine.</pre></details>
+</article><article class="post" data-n="9">
+<header><span class="num">09</span><div class="meta"><h2>LE DENTISTE DES CROCODILES</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg36NfqDoBP/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-9"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE DENTISTE DES CROCODILES : depuis 2 500 ans, on raconte qu&#x27;un oiseau nettoie les dents des crocodiles. Vrai ?
+
+L&#x27;histoire est magnifique. Après un bon repas, le crocodile du Nil se repose sur la berge, la gueule grande ouverte. Un petit oiseau, le pluvier égyptien, s&#x27;y glisse sans peur et picore les restes de viande coincés entre ses dents. Le crocodile, reconnaissant, ne le mange pas. Et si un danger approche, l&#x27;oiseau s&#x27;envole en criant pour le prévenir.
+
+Cette scène, on la doit à Hérodote. L&#x27;historien grec la décrit vers 450 avant notre ère, après un voyage en Égypte. Depuis, elle a été recopiée dans des livres, des manuels scolaires et des documentaires pendant plus de deux millénaires.
+
+Le problème, c&#x27;est que personne ne l&#x27;a jamais vraiment vue. Aucune photo ni aucune vidéo fiable ne montre un pluvier nettoyer les dents d&#x27;un crocodile. Les biologistes qui ont observé ces oiseaux pendant des années ne l&#x27;ont jamais constaté.
+
+Ce qui est vrai, en revanche, c&#x27;est que des oiseaux fréquentent les crocodiles sur les berges, picorent des parasites ou des restes autour d&#x27;eux, et s&#x27;envolent bruyamment au moindre danger. C&#x27;est peut-être ce qu&#x27;avait vu Hérodote, en l&#x27;embellissant un peu.
+
+Le dentiste des crocodiles est donc sans doute l&#x27;une des plus vieilles légendes animales du monde. Et l&#x27;une des plus tenaces.
+
+Vous y aviez cru, vous aussi ?
+
+#Kulturable #Crocodile #Légende #Hérodote #Animaux #HistoireVraie
+
+Source : Futura Sciences.</pre></details>
+</article><article class="post" data-n="10">
+<header><span class="num">10</span><div class="meta"><h2>LE CRABE AU CASQUE D&#x27;OURSIN</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg36T-WjTph/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-10"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE CRABE AU CASQUE D&#x27;OURSIN : au fond de la mer, un crabe se promène avec un oursin vivant sur le dos.
+
+Dans l&#x27;océan Indien et le Pacifique vit un petit crabe d&#x27;à peine quelques centimètres, le crabe porte-oursin. Son nom dit tout : il passe sa vie avec un oursin vivant posé sur le dos.
+
+Pour le tenir, il a une astuce. Ses deux dernières paires de pattes sont plus courtes, recourbées vers le haut et terminées par de petits crochets. Il s&#x27;en sert pour agripper l&#x27;oursin et le maintenir au-dessus de lui, comme un casque hérissé de piquants.
+
+Pour le crabe, l&#x27;intérêt est évident. Les poissons qui voudraient le croquer tombent sur une boule de piquants, souvent venimeux selon les espèces d&#x27;oursins. Il est protégé des attaques venues d&#x27;en haut.
+
+Et l&#x27;oursin y trouve aussi son compte. Normalement, il se déplace très lentement. Porté par le crabe, il voyage beaucoup plus vite et plus loin, vers de nouvelles zones où trouver à manger. Un vrai taxi des fonds marins.
+
+Si on lui retire son oursin, le crabe cherche aussitôt à en récupérer un autre. Il ne reste jamais longtemps tête nue.
+
+Vous connaissiez ce duo étonnant ?
+
+#Kulturable #Crabe #Oursin #Océan #Animaux #HistoireVraie
+
+Source : Sous les mers (souslesmers.free.fr).</pre></details>
+</article><article class="post" data-n="11">
+<header><span class="num">11</span><div class="meta"><h2>LE PEUPLE QUI DIT NON AU MONDE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg36ZmoDhMt/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-11"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE PEUPLE QUI DIT NON AU MONDE : sur une île de l&#x27;océan Indien vit un peuple qui refuse tout contact extérieur.
+
+L&#x27;île s&#x27;appelle North Sentinel. Elle se trouve dans l&#x27;archipel indien des Andaman, au milieu du golfe du Bengale. Elle fait à peu près la taille de Paris. Et ses habitants, les Sentinelles, vivent là sans aucun lien avec le reste de l&#x27;humanité.
+
+On pense qu&#x27;ils y sont installés depuis des dizaines de milliers d&#x27;années. On ne connaît ni leur langue, ni leur nombre exact : peut-être quelques dizaines, peut-être quelques centaines. Ils chassent, pêchent et cueillent, comme leurs ancêtres.
+
+Et ils ont toujours fait comprendre une chose : ils ne veulent pas de visiteurs. Quand un bateau ou un hélicoptère s&#x27;approche, ils sortent sur la plage avec leurs arcs et leurs lances.
+
+En 2006, deux pêcheurs indiens qui s&#x27;étaient endormis dans leur barque ont dérivé jusqu&#x27;à l&#x27;île. Ils ont été tués. Après le tsunami de 2004, un hélicoptère venu vérifier s&#x27;ils avaient survécu a été accueilli par des flèches.
+
+Aujourd&#x27;hui, l&#x27;Inde interdit à quiconque d&#x27;approcher l&#x27;île à moins de cinq milles nautiques. C&#x27;est autant pour protéger les visiteurs que pour protéger les Sentinelles : un simple rhume venu de l&#x27;extérieur pourrait les décimer.
+
+Vous pensez qu&#x27;il faut les laisser tranquilles ?
+
+#Kulturable #Sentinelles #Andaman #Peuple #Mystère #HistoireVraie
+
+Source : Survival International.</pre></details>
+</article><article class="post" data-n="12">
+<header><span class="num">12</span><div class="meta"><h2>LE VÉLO QUI A CRÉÉ UNE LÉGENDE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg36nGajhlS/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-12"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE VÉLO QUI A CRÉÉ UNE LÉGENDE : sans ce vol de vélo en 1954, Mohamed Ali ne serait jamais devenu boxeur.
+
+Louisville, Kentucky, en 1954. Cassius Clay a 12 ans. Pour Noël, ses parents lui ont offert un beau vélo rouge et blanc. Un jour, il l&#x27;attache devant un bâtiment où se tient une foire. Quand il ressort, le vélo a disparu.
+
+Furieux et en larmes, il cherche quelqu&#x27;un à qui se plaindre. On l&#x27;envoie au sous-sol, où un policier entraîne des jeunes à la boxe. Il s&#x27;appelle Joe Martin. Cassius lui explique qu&#x27;il va retrouver le voleur et lui « mettre une raclée ».
+
+Le policier le regarde et lui répond calmement : « Tu ferais mieux d&#x27;apprendre à te battre avant de défier qui que ce soit. »
+
+Le lendemain, Cassius revient. Joe Martin devient son premier entraîneur. Quelques semaines plus tard, le gamin remporte son premier combat amateur.
+
+Six ans plus tard, en 1960, il est champion olympique à Rome. En 1964, à 22 ans, il devient champion du monde des poids lourds. Peu après, il prend le nom de Mohamed Ali, et devient l&#x27;un des sportifs les plus célèbres de l&#x27;histoire.
+
+Le vélo, lui, n&#x27;a jamais été retrouvé.
+
+Et vous, un petit événement a-t-il déjà changé votre vie ?
+
+#Kulturable #MohamedAli #Boxe #Destin #Sport #HistoireVraie
+
+Source : Programme TV (programme-tv.net).</pre></details>
+</article><article class="post" data-n="13">
+<header><span class="num">13</span><div class="meta"><h2>LA PLANTE QUI HÉBERGE DES CHAUVES-SOURIS</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg36yAmDMh1/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-13"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA PLANTE QUI HÉBERGE DES CHAUVES-SOURIS : à Bornéo, une plante carnivore a un locataire. Le loyer est spécial.
+
+Dans les forêts de Bornéo pousse une plante carnivore, Nepenthes hemsleyana. Comme ses cousines, elle forme de grandes urnes remplies de liquide, dans lesquelles tombent et se noient les insectes. Elle les digère ensuite pour se nourrir.
+
+Mais celle-ci a un problème : elle attire très peu d&#x27;insectes. Alors elle a trouvé une autre source de nourriture. Un locataire.
+
+Une petite chauve-souris, la kérivoule de Hardwicke, vient dormir dans son urne pendant la journée. L&#x27;urne a juste la bonne taille pour elle, et le niveau de liquide y est assez bas pour qu&#x27;elle ne s&#x27;y noie pas. Elle y est à l&#x27;abri de la pluie, des parasites et des prédateurs.
+
+En échange, la chauve-souris laisse ses excréments au fond de l&#x27;urne. Et c&#x27;est un engrais parfait : des chercheurs ont montré que la plante tire de ces déjections une grande partie de l&#x27;azote dont elle a besoin.
+
+Encore plus fort : l&#x27;urne réfléchit les ultrasons de la chauve-souris d&#x27;une façon particulière, comme une enseigne lumineuse. Elle aide son locataire à la retrouver au milieu de la forêt.
+
+Une chambre contre de l&#x27;engrais : on n&#x27;a jamais vu de colocation aussi bien organisée.
+
+Vous auriez imaginé qu&#x27;une plante puisse avoir un locataire ?
+
+#Kulturable #PlanteCarnivore #ChauveSouris #Bornéo #Nature #HistoireVraie
+
+Source : Current Biology (Schöner et al., 2015 ; Grafe et al., 2011).</pre></details>
+</article><article class="post" data-n="14">
+<header><span class="num">14</span><div class="meta"><h2>LE JOUR OÙ PAPA EST PARTI SUR LA LUNE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg363oHD_SV/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-14"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE JOUR OÙ PAPA EST PARTI SUR LA LUNE : en 1969, cette famille regarde décoller le père, Neil Armstrong.
+
+16 juillet 1969, cap Canaveral, en Floride. Sur un bateau au large du centre spatial, une femme et ses deux fils fixent le ciel. Dans la fusée Saturn V qui vient de décoller, il y a leur mari et leur père : Neil Armstrong.
+
+Janet Armstrong est là avec Eric, 12 ans, et Mark, 6 ans. Ils savent tous les trois où il va. Mais personne ne sait vraiment s&#x27;il reviendra. La Maison-Blanche avait même préparé, au cas où, un discours pour annoncer la mort de l&#x27;équipage.
+
+Quatre jours plus tard, le 20 juillet, Janet suit l&#x27;alunissage chez elle, à Houston, devant la télévision. Comme des centaines de millions de personnes dans le monde, elle entend son mari prononcer sa phrase célèbre en posant le pied sur la Lune.
+
+Le 24 juillet, la capsule amerrit dans le Pacifique. Neil Armstrong, Buzz Aldrin et Michael Collins rentrent sains et saufs.
+
+On regarde souvent les photos des astronautes. On oublie qu&#x27;à chaque lancement, il y avait aussi une famille qui retenait son souffle.
+
+Vous auriez eu le courage de regarder la fusée partir ?
+
+#Kulturable #NeilArmstrong #Apollo11 #Lune #Famille #HistoireVraie
+
+Source : NASA.</pre></details>
+</article><article class="post" data-n="15">
+<header><span class="num">15</span><div class="meta"><h2>LA LANGUE QUI PARLE DE VOUS</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg37Ap4D05g/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-15"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA LANGUE QUI PARLE DE VOUS : en médecine chinoise, le praticien commence souvent par regarder votre langue.
+
+La médecine traditionnelle chinoise existe depuis plus de 2 000 ans. Elle repose sur une idée très différente de la médecine occidentale : le corps serait traversé par une énergie vitale, le qi, qui circule le long de canaux appelés méridiens.
+
+Selon cette tradition, on tombe malade quand cette énergie est bloquée ou déséquilibrée. Le rôle du praticien est alors de rétablir l&#x27;harmonie, avec l&#x27;acupuncture, les massages ou les plantes.
+
+Et pour savoir ce qui ne va pas, il utilise une méthode étonnante : il observe votre langue. Sa couleur, sa forme, son épaisseur, l&#x27;enduit qui la recouvre, les marques laissées par les dents sur les bords. Chaque zone est censée correspondre à un organe. Il prend aussi le pouls à plusieurs endroits du poignet, et écoute longuement le patient.
+
+Pour la science moderne, l&#x27;existence du qi et des méridiens n&#x27;a jamais été démontrée, et l&#x27;efficacité de ces pratiques reste très débattue. Mais cette façon d&#x27;examiner le corps fait partie d&#x27;une tradition millénaire, toujours pratiquée par des millions de personnes en Chine et ailleurs.
+
+Il est d&#x27;ailleurs reconnu par l&#x27;UNESCO : l&#x27;acupuncture chinoise est inscrite depuis 2010 au patrimoine culturel immatériel de l&#x27;humanité.
+
+Vous avez déjà essayé, ou vous restez sceptique ?
+
+#Kulturable #MédecineChinoise #Chine #Tradition #Culture #HistoireVraie
+
+Sources : UNESCO (acupuncture et moxibustion, 2010), Cosmopolitan.</pre></details>
+</article><article class="post" data-n="16">
+<header><span class="num">16</span><div class="meta"><h2>LA PREMIÈRE FEMME NOIRE DANS L&#x27;ESPACE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg37SDGjQyn/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-16"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA PREMIÈRE FEMME NOIRE DANS L&#x27;ESPACE : médecin, danseuse, ingénieure. Et en 1992, astronaute de la NASA.
+
+Mae Jemison naît en 1956 en Alabama et grandit à Chicago. Petite, elle regarde les missions Apollo à la télévision. Et une chose la frappe : parmi les astronautes, il n&#x27;y a aucune femme. Elle se dit pourtant qu&#x27;un jour, elle ira dans l&#x27;espace.
+
+À 16 ans, elle entre à l&#x27;université de Stanford. Elle en sort ingénieure chimiste, puis devient médecin. Elle part ensuite deux ans en Afrique de l&#x27;Ouest avec le Corps de la paix, comme médecin en Sierra Leone et au Liberia. Et à côté de tout ça, elle danse, parle le russe, le swahili et le japonais.
+
+En 1987, elle est sélectionnée par la NASA parmi environ 2 000 candidats.
+
+Le 12 septembre 1992, elle décolle à bord de la navette Endeavour pour la mission STS-47. Elle devient la première femme afro-américaine à aller dans l&#x27;espace. Pendant huit jours, elle réalise des expériences scientifiques en orbite, notamment sur les os et sur le mal de l&#x27;espace.
+
+Petit clin d&#x27;œil : passionnée de Star Trek, elle commence chacune de ses journées en orbite en disant « Hailing frequencies open », la réplique d&#x27;une officière de la série. Quelque temps plus tard, elle apparaît elle-même dans un épisode.
+
+Vous aviez un rêve d&#x27;enfant comme le sien ?
+
+#Kulturable #MaeJemison #NASA #Espace #Femmes #HistoireVraie
+
+Source : NASA.</pre></details>
+</article><article class="post" data-n="17">
+<header><span class="num">17</span><div class="meta"><h2>LA CREVETTE QUI FRAPPE COMME UNE BALLE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg371BAj8m7/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-17"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA CREVETTE QUI FRAPPE COMME UNE BALLE : elle casse des coquillages d&#x27;un coup de poing. Et fait bouillir l&#x27;eau.
+
+La squille, qu&#x27;on appelle aussi crevette-mante, vit dans les récifs tropicaux. Elle ne mesure que quelques centimètres. Mais elle possède l&#x27;une des armes les plus impressionnantes du monde animal.
+
+Sous sa tête, elle a deux pattes repliées en forme de massues. Quand elle frappe, elle les détend à une vitesse folle : plus de 80 km/h, avec une accélération comparable à celle d&#x27;une balle de pistolet. Le tout en quelques millièmes de seconde. C&#x27;est l&#x27;un des mouvements les plus rapides jamais mesurés chez un animal.
+
+Le coup est si violent qu&#x27;il pulvérise les coquilles des escargots de mer et la carapace des crabes. En aquarium, certaines ont même fissuré la vitre.
+
+Mais le plus fou, c&#x27;est ce qui se passe dans l&#x27;eau. Le mouvement est si rapide qu&#x27;il crée une petite bulle de vide, qui implose aussitôt. Ce phénomène, la cavitation, libère un éclair de lumière et une chaleur de plusieurs milliers de degrés, pendant un instant minuscule. La proie reçoit donc deux chocs : celui de la massue, puis celui de la bulle.
+
+Les ingénieurs l&#x27;étudient de près : la structure de ses massues, qui résistent à des milliers de coups, inspire de nouveaux matériaux ultra-résistants.
+
+Vous auriez cru qu&#x27;une crevette pouvait faire ça ?
+
+#Kulturable #Squille #CrevetteMante #Océan #Animaux #HistoireVraie
+
+Sources : Nature (Patek et al., 2004), Le Temps.</pre></details>
+</article><article class="post" data-n="18">
+<header><span class="num">18</span><div class="meta"><h2>ELLE A CHANGÉ DE GROUPE SANGUIN</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg379BWDG6s/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-18"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>ELLE A CHANGÉ DE GROUPE SANGUIN : après une greffe de foie, une fillette a pris l&#x27;immunité de son donneur.
+
+Demi-Lee Brennan est australienne. À 9 ans, son foie lâche brutalement. Elle reçoit en urgence une greffe, à l&#x27;hôpital pour enfants de Westmead, à Sydney. L&#x27;opération réussit, mais comme tous les greffés, elle doit prendre à vie des médicaments anti-rejet.
+
+Neuf mois plus tard, les médecins remarquent quelque chose qu&#x27;ils n&#x27;ont jamais vu. Son groupe sanguin a changé. Elle était O négatif. Elle est maintenant O positif, comme son donneur.
+
+En réalité, ce ne sont pas seulement les globules rouges qui ont changé. Les cellules souches présentes dans le foie greffé ont colonisé sa moelle osseuse. Petit à petit, son système immunitaire tout entier est devenu celui du donneur.
+
+Résultat : son corps ne voit plus le nouveau foie comme un intrus. Elle a pu arrêter son traitement anti-rejet, ce qui n&#x27;arrive presque jamais.
+
+Son cas a été publié en 2008 dans la grande revue médicale New England Journal of Medicine. Les médecins espèrent comprendre ce qui s&#x27;est passé pour, un jour, éviter les traitements à vie à d&#x27;autres greffés.
+
+Vous imaginez apprendre un jour que votre sang a changé ?
+
+#Kulturable #Médecine #Greffe #Science #Mystère #HistoireVraie
+
+Sources : New England Journal of Medicine (Alexander et al., 2008), La Dépêche.</pre></details>
+</article><article class="post" data-n="19">
+<header><span class="num">19</span><div class="meta"><h2>LE DISQUE POUR DANS 10 000 ANS</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38EHFjnQT/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-19"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE DISQUE POUR DANS 10 000 ANS : il tient dans la main et contient plus de 1 500 langues pour nos descendants.
+
+En 1799, des soldats français découvrent en Égypte une pierre gravée d&#x27;un même texte en trois écritures : hiéroglyphes, démotique et grec ancien. Grâce au grec, qu&#x27;on savait lire, Champollion parvient en 1822 à déchiffrer les hiéroglyphes. C&#x27;est la pierre de Rosette.
+
+Deux siècles plus tard, une fondation californienne, la Long Now Foundation, s&#x27;en inspire pour un projet fou : préparer une nouvelle pierre de Rosette pour les humains d&#x27;un futur très lointain. Et elle prend une forme étonnante : un petit disque de nickel de 7,5 cm de diamètre.
+
+Sur une face, une phrase est gravée en huit grandes langues. Elle tourne en spirale et rapetisse jusqu&#x27;à devenir invisible, comme pour dire : regardez de plus près. Car l&#x27;autre face contient plus de 13 000 pages microscopiques, lisibles au microscope. On y trouve des textes, des grammaires et des listes de mots dans plus de 1 500 langues.
+
+Pas besoin d&#x27;ordinateur ni de logiciel pour le lire : seulement une loupe puissante. L&#x27;idée est qu&#x27;il reste lisible dans plusieurs milliers d&#x27;années, même si toutes nos technologies ont disparu.
+
+Une copie de ce disque a même voyagé dans l&#x27;espace : en 2004, l&#x27;Agence spatiale européenne en a placé une à bord de sa sonde Rosetta, qui s&#x27;est posée sur une comète en 2016. Elle y est toujours.
+
+Et vous, quel message laisseriez-vous aux humains de l&#x27;an 12 000 ?
+
+#Kulturable #ProjetRosetta #Langues #Héritage #Futur #HistoireVraie
+
+Sources : The Long Now Foundation (rosettaproject.org), Agence spatiale européenne (ESA).</pre></details>
+</article><article class="post" data-n="20">
+<header><span class="num">20</span><div class="meta"><h2>LA FEMME QUI A COURU MALGRÉ TOUT</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38M9fDw9e/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-20"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FEMME QUI A COURU MALGRÉ TOUT : en 1967, un organisateur a voulu la sortir du marathon. Elle l&#x27;a terminé.
+
+En 1967, le marathon de Boston est réservé aux hommes. Rien dans le règlement ne l&#x27;écrit noir sur blanc, mais tout le monde pense qu&#x27;une femme est incapable de courir 42 kilomètres.
+
+Kathrine Switzer, une étudiante en journalisme de 20 ans, s&#x27;entraîne depuis des mois avec son coach. Elle s&#x27;inscrit sous le nom de « K. V. Switzer », comme elle signe d&#x27;habitude ses articles. Personne ne remarque rien. Le jour de la course, elle prend le départ avec le dossard 261.
+
+Au bout de quelques kilomètres, un des organisateurs, Jock Semple, la repère. Furieux, il saute du car de presse, court derrière elle et tente de lui arracher son dossard en criant. Son compagnon, un costaud lanceur de marteau qui court avec elle, le bouscule et l&#x27;envoie au sol. Les photographes ont tout immortalisé.
+
+Kathrine termine la course en un peu plus de quatre heures. Les photos font le tour du monde. Et la fédération d&#x27;athlétisme interdit encore plus clairement aux femmes de courir avec les hommes.
+
+Elle se bat pendant cinq ans. En 1972, le marathon de Boston s&#x27;ouvre enfin officiellement aux femmes.
+
+En 2017, cinquante ans après, Kathrine Switzer, 70 ans, court à nouveau le marathon de Boston avec le même dossard, le 261. Et ce numéro ne sera plus jamais attribué à personne.
+
+Vous connaissiez le combat de Kathrine ?
+
+#Kulturable #KathrineSwitzer #Marathon #Boston #Femmes #HistoireVraie
+
+Sources : France Inter (Il était une femme), The Boston Globe.</pre></details>
+</article><article class="post" data-n="21">
+<header><span class="num">21</span><div class="meta"><h2>LE SOLDAT QUI REFUSAIT DE TENIR UNE ARME</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38VZHjMmx/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-21"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE SOLDAT QUI REFUSAIT DE TENIR UNE ARME : en 1945, à Okinawa, il a sauvé 75 hommes sans tirer une balle.
+
+Desmond Doss est un jeune Américain de Virginie, très croyant. Quand les États-Unis entrent dans la Seconde Guerre mondiale, il veut servir son pays. Mais sa foi lui interdit de tuer. Il s&#x27;engage donc comme infirmier et refuse de toucher à un fusil.
+
+À l&#x27;entraînement, c&#x27;est l&#x27;enfer. Ses camarades le traitent de lâche, lui jettent des chaussures pendant qu&#x27;il prie, et ses supérieurs tentent de le faire renvoyer de l&#x27;armée. Il tient bon.
+
+En mai 1945, son unité arrive sur l&#x27;île d&#x27;Okinawa, au Japon. Elle doit prendre une falaise d&#x27;une centaine de mètres, que les soldats surnomment la falaise de Hacksaw. Les Japonais contre-attaquent violemment, et la plupart des Américains redescendent. Doss, lui, reste en haut.
+
+Sous les balles, il va chercher les blessés un par un et les fait descendre en rappel le long de la falaise, avec une corde et un nœud de sa fabrication. À chaque fois, il prie : « Seigneur, aide-moi à en sauver encore un. » On estime qu&#x27;il a sauvé environ 75 hommes ce jour-là.
+
+Quelques jours plus tard, il est lui-même gravement blessé. En octobre 1945, le président Truman lui remet la Medal of Honor, la plus haute décoration militaire américaine. Il est le premier objecteur de conscience à la recevoir. Son histoire a inspiré le film Tu ne tueras point, de Mel Gibson, en 2016.
+
+Vous auriez eu son courage ?
+
+#Kulturable #DesmondDoss #Okinawa #Courage #Guerre #HistoireVraie
+
+Source : The National WWII Museum (Nouvelle-Orléans).</pre></details>
+</article><article class="post" data-n="22">
+<header><span class="num">22</span><div class="meta"><h2>L&#x27;HOMME QUI SE FAISAIT MORDRE PAR LES SERPENTS</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38fspjdym/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-22"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;HOMME QUI SE FAISAIT MORDRE PAR LES SERPENTS : mordu plus de 170 fois, il est mort à l&#x27;âge de 100 ans.
+
+Bill Haast est né en 1910 dans le New Jersey. Dès l&#x27;enfance, il est fasciné par les serpents. Adulte, il ouvre en 1947 le Miami Serpentarium, en Floride, où il élève des cobras, des mambas et des vipères venus du monde entier.
+
+Son travail : traire les serpents. Il les attrape à mains nues, leur fait mordre une membrane tendue sur un récipient, et récupère le venin. Ce venin sert à fabriquer des sérums contre les morsures, et à la recherche médicale. Il a recueilli du venin des dizaines de milliers de fois.
+
+Mais Bill Haast va encore plus loin. Pendant des décennies, il s&#x27;injecte lui-même de petites doses de venin, de plus en plus fortes. Il veut que son corps fabrique des anticorps, pour résister aux morsures.
+
+Et ça a marché. Au cours de sa vie, il a été mordu plus de 170 fois par des serpents mortels. Il a survécu à chaque fois. Son sang, devenu riche en anticorps, a même été transfusé à plusieurs victimes de morsures pour les aider à s&#x27;en sortir.
+
+Il a perdu un doigt après une morsure de crotale, mais il a continué à travailler avec les serpents presque jusqu&#x27;à la fin. Bill Haast est mort en 2011, à l&#x27;âge de 100 ans.
+
+Vous oseriez approcher un cobra ?
+
+#Kulturable #BillHaast #Serpents #Venin #Insolite #HistoireVraie
+
+Sources : billhaast.com, The New York Times (2011).</pre></details>
+</article><article class="post" data-n="23">
+<header><span class="num">23</span><div class="meta"><h2>LE BIJOU QUI ÉTAIT VIVANT</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38y7SjmH3/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-23"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE BIJOU QUI ÉTAIT VIVANT : on dirait de l&#x27;or massif. C&#x27;est en réalité la chrysalide d&#x27;un papillon d&#x27;Amazonie.
+
+En Amérique centrale et en Amérique du Sud vit un papillon orange et noir, Mechanitis polymnia. Comme tous les papillons, il passe par une étape de transformation : la chrysalide. Et la sienne est spectaculaire.
+
+Elle brille comme un bijou en or ou en argent, avec des reflets métalliques. Pourtant, il n&#x27;y a ni or ni métal dedans. L&#x27;effet vient de couches très fines dans son enveloppe, qui renvoient la lumière comme un miroir.
+
+Pourquoi un tel éclat ? Les scientifiques ont plusieurs hypothèses. Dans la forêt, une surface qui reflète tout ce qui l&#x27;entoure devient difficile à repérer : elle se fond dans les feuilles et les gouttes d&#x27;eau. Ce miroir pourrait aussi tromper ou effrayer les prédateurs, ou aider la chrysalide à ne pas trop chauffer au soleil.
+
+Et ce n&#x27;est pas sa seule défense. La chenille se nourrit de plantes toxiques, de la famille des tomates et des aubergines. Le papillon adulte garde un goût désagréable pour les oiseaux. Ses couleurs vives servent d&#x27;avertissement : ne me mangez pas.
+
+Quelques jours après avoir brillé comme un bijou, la chrysalide s&#x27;ouvre. Et un papillon s&#x27;envole.
+
+Vous auriez cru que c&#x27;était vivant ?
+
+#Kulturable #Papillon #Chrysalide #Nature #AmériqueDuSud #HistoireVraie
+
+Source : Ulyces.</pre></details>
+</article><article class="post" data-n="24">
+<header><span class="num">24</span><div class="meta"><h2>LE SAVANT QUE PERSONNE NE CROYAIT</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg384p2DWy8/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-24"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE SAVANT QUE PERSONNE NE CROYAIT : il disait que la matière était faite d&#x27;atomes. On s&#x27;est moqué de lui.
+
+Ludwig Boltzmann naît à Vienne en 1844. C&#x27;est un physicien brillant. À la fin du XIXe siècle, il défend une idée qui nous paraît évidente aujourd&#x27;hui : la matière est faite de minuscules particules, les atomes, qui s&#x27;agitent sans arrêt. Pour lui, la chaleur, c&#x27;est simplement ce mouvement.
+
+Avec ses calculs, il explique pourquoi le désordre augmente toujours dans l&#x27;univers, pourquoi un café chaud refroidit et ne se réchauffe jamais tout seul. Il résume tout ça dans une formule célèbre : S = k log W.
+
+Mais à l&#x27;époque, personne n&#x27;a jamais vu un atome. Beaucoup de grands scientifiques pensent que c&#x27;est une idée inutile, presque de la métaphysique. Ils l&#x27;attaquent violemment. Boltzmann, sujet à de graves périodes de dépression, se sent incompris.
+
+En 1905, un jeune employé de bureau suisse publie un article sur le mouvement des grains de pollen dans l&#x27;eau. Il s&#x27;appelle Albert Einstein. Il montre que ce mouvement s&#x27;explique par les chocs des molécules. Quelques années plus tard, le Français Jean Perrin le confirme par l&#x27;expérience. Les atomes existent bel et bien.
+
+Boltzmann ne le saura jamais. Il s&#x27;est donné la mort en 1906, en vacances près de Trieste. Aujourd&#x27;hui, sa formule est gravée sur sa tombe, au cimetière central de Vienne.
+
+Vous connaissez d&#x27;autres génies qui avaient raison trop tôt ?
+
+#Kulturable #Boltzmann #Physique #Science #Atomes #HistoireVraie
+
+Source : Accromath (Université du Québec à Montréal, 2011).</pre></details>
+</article><article class="post" data-n="25">
+<header><span class="num">25</span><div class="meta"><h2>LES ARBRES REVENUS DE LA LUNE</h2><p class="date">Publié le 5 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Cg38-FsDVJh/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-25"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LES ARBRES REVENUS DE LA LUNE : leurs graines ont fait le tour de la Lune en 1971. Certains poussent encore.
+
+En janvier 1971, la mission Apollo 14 décolle vers la Lune. À bord, l&#x27;astronaute Stuart Roosa emporte dans ses affaires personnelles une petite boîte métallique. Dedans, il y a environ 500 graines d&#x27;arbres : des pins, des séquoias, des sycomores, des sapins de Douglas et des liquidambars.
+
+Avant d&#x27;être astronaute, Roosa avait été sauteur parachutiste pour les pompiers forestiers aux États-Unis. Le service des forêts lui avait demandé d&#x27;emmener ces graines pour une expérience : est-ce qu&#x27;un voyage dans l&#x27;espace change la façon dont un arbre pousse ?
+
+Pendant que ses deux collègues marchent sur la Lune, Roosa reste en orbite autour d&#x27;elle dans le module de commande. Les graines font ainsi 34 fois le tour de la Lune avec lui.
+
+Au retour, la boîte s&#x27;ouvre accidentellement pendant la décontamination. On pense les graines perdues. Mais la plupart germent. Les jeunes arbres sont plantés un peu partout aux États-Unis, souvent en 1976 pour le bicentenaire du pays, et quelques-uns à l&#x27;étranger.
+
+On les appelle les arbres lunaires. Ils ont poussé exactement comme leurs cousins restés sur Terre. Beaucoup ont été oubliés avec le temps, mais la NASA en a retrouvé plusieurs dizaines, toujours debout.
+
+Vous aimeriez avoir un arbre lunaire dans votre jardin ?
+
+#Kulturable #MoonTree #Apollo14 #NASA #Arbres #HistoireVraie
+
+Source : NASA (National Space Science Data Center).</pre></details>
+</article><article class="post" data-n="26">
+<header><span class="num">26</span><div class="meta"><h2>LE BABOUIN AIGUILLEUR</h2><p class="date">Publié le 20 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CheVPZ2oxtK/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-26"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE BABOUIN AIGUILLEUR : en Afrique du Sud, un singe a dirigé les trains pendant 9 ans. Sans jamais se tromper.
+
+Fin du XIXe siècle, en Afrique du Sud. James Wide travaille pour les chemins de fer, près de la ville d&#x27;Uitenhage. Son métier l&#x27;oblige à sauter d&#x27;un wagon à l&#x27;autre pendant que le train roule. Un jour, il glisse et tombe sous les roues. Il perd ses deux jambes.
+
+Il se fabrique des jambes de bois et obtient un poste d&#x27;aiguilleur : il doit actionner les leviers qui orientent les trains sur les bonnes voies. Mais avec ses prothèses, chaque déplacement est un calvaire.
+
+Un jour, au marché, il voit un babouin chacma conduire une charrette tirée par des bœufs. Impressionné, il l&#x27;achète. Il l&#x27;appelle Jack. D&#x27;abord, Jack pousse son fauteuil roulant. Puis James lui apprend à actionner les leviers. À chaque coup de sifflet du train, Jack sait quel levier tirer.
+
+Un jour, une passagère voit un singe aux commandes et se plaint auprès de la compagnie. James risque d&#x27;être renvoyé. Des inspecteurs viennent alors tester Jack, en faisant siffler les trains de différentes façons. Le babouin réussit tout.
+
+Il est officiellement embauché. On raconte qu&#x27;il recevait 20 cents par jour et une demi-bouteille de bière chaque semaine. Jack a travaillé neuf ans sans une seule erreur, jusqu&#x27;à sa mort de la tuberculose, en 1890. Son crâne est conservé à l&#x27;Albany Museum, à Makhanda.
+
+Vous auriez fait confiance à Jack pour votre train ?
+
+#Kulturable #Babouin #AfriqueDuSud #Train #Animaux #HistoireVraie
+
+Sources : Amusing Planet, Farmer&#x27;s Weekly (Afrique du Sud).</pre></details>
+</article><article class="post" data-n="27">
+<header><span class="num">27</span><div class="meta"><h2>L&#x27;OURS QUI ÉTAIT CAPORAL</h2><p class="date">Publié le 21 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Chgk9TdIGnc/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-27"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;OURS QUI ÉTAIT CAPORAL : pendant la Seconde Guerre mondiale, l&#x27;armée polonaise a enrôlé un ours brun.
+
+Iran, 1942. Des soldats polonais, libérés des camps soviétiques, traversent le pays pour rejoindre les Alliés. Près de Hamadan, ils croisent un jeune garçon qui porte un sac. Dedans, il y a un ourson orphelin. Les soldats l&#x27;échangent contre des conserves, du chocolat et un couteau de poche.
+
+Ils l&#x27;appellent Wojtek. Ils le nourrissent au lait concentré dans une bouteille de vodka vide. Il grandit avec eux, dort parfois contre eux pour se réchauffer, adore les bains, la bière et les cigarettes, qu&#x27;il mange.
+
+Mais en 1944, l&#x27;armée doit embarquer pour l&#x27;Italie, et les animaux sont interdits sur les bateaux. Alors les soldats trouvent une solution : ils l&#x27;enrôlent officiellement. Wojtek devient soldat de la 22e compagnie de ravitaillement d&#x27;artillerie, avec un nom, un matricule et un grade.
+
+En Italie, il participe à la bataille du Mont-Cassin. Selon les récits de ses camarades, il les aidait à décharger les caisses de munitions. Les historiens discutent aujourd&#x27;hui de ce qu&#x27;il a vraiment porté, mais une chose est sûre : il remontait le moral de toute la troupe. Après la guerre, le symbole de la compagnie devient un ours portant un obus.
+
+Démobilisé en Écosse, Wojtek finit sa vie au zoo d&#x27;Édimbourg. Ses anciens camarades venaient le voir, et lui lançaient parfois des cigarettes par-dessus la barrière. Il meurt en 1963. Des statues lui rendent hommage à Édimbourg et à Cracovie.
+
+Vous connaissiez ce soldat pas comme les autres ?
+
+#Kulturable #Wojtek #Ours #Pologne #Guerre #HistoireVraie
+
+Source : Hoover Institution (université Stanford).</pre></details>
+</article><article class="post" data-n="28">
+<header><span class="num">28</span><div class="meta"><h2>SAFARI DANS UNE GOUTTE D&#x27;EAU</h2><p class="date">Publié le 22 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/ChjJv94I5_N/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-28"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>SAFARI DANS UNE GOUTTE D&#x27;EAU : ces créatures étranges ne viennent pas d&#x27;une autre planète, mais d&#x27;un étang.
+
+On dirait des extraterrestres, des vaisseaux spatiaux ou des bijoux de verre. Pourtant, toutes ces créatures ont été trouvées dans de l&#x27;eau d&#x27;étang ordinaire, aux États-Unis.
+
+C&#x27;est le photographe américain Peter Matulavich qui a eu l&#x27;idée de ce projet, qu&#x27;il a appelé « safari dans un étang ». Il prélève quelques gouttes d&#x27;eau, les place sous un microscope et photographie ce qu&#x27;il y voit. Et ce qu&#x27;il y voit est fascinant.
+
+Dans une seule goutte, on peut trouver des algues microscopiques aux formes géométriques parfaites, des vers transparents, des larves, des œufs, des bactéries et de minuscules animaux appelés rotifères, qui font tourner des cils autour de leur bouche comme des hélices.
+
+On y croise aussi des tardigrades, ces « oursons d&#x27;eau » de moins d&#x27;un millimètre, parmi les animaux les plus résistants de la planète. Ils survivent au froid extrême, à la sécheresse et même au vide spatial.
+
+Tout ce petit monde mange, chasse, se reproduit et meurt sous nos pieds, sans qu&#x27;on le remarque jamais. Une simple flaque est en réalité une jungle entière.
+
+Vous y penserez, la prochaine fois que vous tremperez les pieds dans un étang ?
+
+#Kulturable #Microscope #Nature #Étang #Science #HistoireVraie
+
+Source : Maxisciences.</pre></details>
+</article><article class="post" data-n="29">
+<header><span class="num">29</span><div class="meta"><h2>L&#x27;AMPOULE QUI NE S&#x27;ÉTEINT JAMAIS</h2><p class="date">Publié le 23 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/ChnHzswo1VJ/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-29"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;AMPOULE QUI NE S&#x27;ÉTEINT JAMAIS : dans une caserne de Californie, elle brille depuis 1901. Plus de 120 ans.
+
+Elle est accrochée au plafond de la caserne de pompiers de Livermore, en Californie. C&#x27;est une ampoule toute simple, en verre soufflé à la main, avec un filament de carbone. Elle a été fabriquée vers la fin du XIXe siècle à Shelby, dans l&#x27;Ohio.
+
+Elle a été installée en 1901. Et depuis, elle n&#x27;a presque jamais été éteinte.
+
+Elle n&#x27;a été coupée que de rares fois : une semaine en 1937, pendant des travaux, et une vingtaine de minutes en 1976, quand on l&#x27;a transportée dans la nouvelle caserne, escortée par des camions de pompiers.
+
+Aujourd&#x27;hui, elle éclaire faiblement, environ 4 watts. Mais elle tient bon. Le livre Guinness des records la reconnaît comme l&#x27;ampoule ayant fonctionné le plus longtemps au monde. Une webcam la filme en continu, et en 2013, des internautes ont été les premiers à remarquer qu&#x27;elle s&#x27;était éteinte. Ce n&#x27;était pas elle qui avait lâché, mais l&#x27;alimentation électrique. Une fois réparée, elle s&#x27;est rallumée.
+
+Pourquoi dure-t-elle autant ? Elle reste allumée en permanence, à faible puissance, ce qui épargne son filament. Elle est aussi devenue le symbole d&#x27;un débat : l&#x27;idée que les objets modernes seraient conçus pour durer moins longtemps.
+
+En 2001, la ville a fêté son centième anniversaire.
+
+Vous aimeriez avoir une ampoule comme celle-là chez vous ?
+
+#Kulturable #Ampoule #Californie #Record #Insolite #HistoireVraie
+
+Source : Livermore&#x27;s Centennial Light (centennialbulb.org).</pre></details>
+</article><article class="post" data-n="30">
+<header><span class="num">30</span><div class="meta"><h2>LA MÉDUSE IMMORTELLE</h2><p class="date">Publié le 24 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/ChpsnRRoEXk/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-30"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA MÉDUSE IMMORTELLE : quand elle vieillit ou se sent menacée, elle redevient jeune. Encore et encore.
+
+En 1988, en Italie, un étudiant allemand en biologie marine, Christian Sommer, ramasse du plancton près de la côte de Rapallo. Il le rapporte au laboratoire pour étudier de petites méduses. L&#x27;une d&#x27;elles va lui faire une drôle de surprise.
+
+Elle s&#x27;appelle Turritopsis dohrnii. Elle mesure moins d&#x27;un centimètre. Comme les autres méduses, elle commence sa vie sous forme de polype, une sorte de petite tige fixée au fond, puis devient une méduse qui nage librement.
+
+Mais celle-ci refuse de mourir. Quand elle est blessée, affamée ou trop vieille, elle se laisse couler, se rétracte et se transforme à nouveau en polype. Autrement dit, elle remonte le temps et redevient bébé. Puis elle recommence sa vie depuis le début.
+
+Et elle peut le faire plusieurs fois. En théorie, rien ne l&#x27;empêche de vivre indéfiniment. Dans la nature, elle finit pourtant souvent mangée par un poisson ou tuée par une maladie avant.
+
+Les scientifiques l&#x27;étudient de près pour comprendre comment ses cellules arrivent à rajeunir. En 2022, des chercheurs espagnols ont décrypté son génome pour percer ce secret.
+
+Et vous, vous voudriez vivre éternellement ?
+
+#Kulturable #MéduseImmortelle #Océan #Science #Nature #HistoireVraie
+
+Source : Notre-planete.info.</pre></details>
+</article><article class="post" data-n="31">
+<header><span class="num">31</span><div class="meta"><h2>LA FAMILLE PERDUE DE LA TAÏGA</h2><p class="date">Publié le 25 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/ChsRZDxoDz0/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-31"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FAMILLE PERDUE DE LA TAÏGA : en 1978, des géologues ont trouvé une famille coupée du monde depuis 40 ans.
+
+Été 1978, en Sibérie. Un hélicoptère cherche un endroit où poser des géologues, dans une région de taïga si isolée que la ville la plus proche est à plus de 250 kilomètres. Soudain, le pilote aperçoit quelque chose d&#x27;impossible : un potager, sur le flanc d&#x27;une montagne.
+
+Les géologues montent voir. Ils trouvent une cabane en rondins, noire de suie, et un vieil homme pieds nus, en haillons. Il s&#x27;appelle Karp Lykov. Il vit là avec ses quatre enfants.
+
+Karp appartient aux vieux-croyants, des chrétiens orthodoxes persécutés depuis des siècles. En 1936, après qu&#x27;une patrouille soviétique a abattu son frère, il s&#x27;enfuit dans la forêt avec sa femme et leurs deux premiers enfants. Les deux plus jeunes naîtront là-bas, sans jamais voir d&#x27;autres humains que leur famille.
+
+Pendant plus de quarante ans, ils survivent seuls. Ils cultivent des pommes de terre, chassent à mains nues en courant derrière les bêtes, fabriquent leurs vêtements en chanvre. Ils ne savent rien de la Seconde Guerre mondiale. Ils découvrent, émerveillés, la cellophane, la télévision et le sel.
+
+Trois des enfants meurent peu de temps après la rencontre, peut-être de maladies venues de l&#x27;extérieur. Karp meurt en 1988. Sa fille Agafia, elle, a refusé de quitter la taïga. Aujourd&#x27;hui octogénaire, elle y vit toujours, seule, à des centaines de kilomètres de tout.
+
+Vous pourriez vivre quarante ans sans aucun contact avec le monde ?
+
+#Kulturable #Lykov #Sibérie #Taïga #Isolement #HistoireVraie
+
+Source : Smithsonian Magazine (Mike Dash, 2013).</pre></details>
+</article><article class="post" data-n="32">
+<header><span class="num">32</span><div class="meta"><h2>L&#x27;HOMME QUI A PLANTÉ UNE FORÊT</h2><p class="date">Publié le 26 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Chu2MHjoRmR/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-32"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;HOMME QUI A PLANTÉ UNE FORÊT : depuis 1979, un Indien plante des arbres. Sa forêt dépasse Central Park.
+
+Jadav Payeng a 16 ans en 1979. Il vit en Inde, dans l&#x27;État d&#x27;Assam, au bord du Brahmapoutre, l&#x27;un des plus grands fleuves d&#x27;Asie. Cette année-là, après de fortes inondations, il découvre sur un banc de sable des dizaines de serpents morts de chaleur. Il n&#x27;y a plus un seul arbre pour leur faire de l&#x27;ombre.
+
+Ça le bouleverse. Alors il commence à planter. D&#x27;abord des bambous, sur l&#x27;île de Majuli, au milieu du fleuve. Puis d&#x27;autres arbres, un par un, chaque jour, en arrosant à la main. Seul.
+
+Pendant trente ans, presque personne ne le sait. Ce n&#x27;est qu&#x27;en 2007 qu&#x27;un photographe et journaliste local, Jitu Kalita, tombe par hasard sur cette forêt qui n&#x27;apparaît sur aucune carte.
+
+Elle s&#x27;étend aujourd&#x27;hui sur environ 550 hectares, plus que Central Park, à New York. Les animaux sont revenus : des cerfs, des oiseaux, des singes, des tigres du Bengale, des rhinocéros et même un troupeau d&#x27;une centaine d&#x27;éléphants sauvages qui y passe chaque année.
+
+En l&#x27;honneur de son créateur, la forêt porte désormais son surnom : Molai. En 2015, l&#x27;Inde a décerné à Jadav Payeng l&#x27;une de ses plus hautes distinctions civiles, le Padma Shri. Et il continue de planter.
+
+Et vous, combien d&#x27;arbres avez-vous déjà planté ?
+
+#Kulturable #JadavPayeng #Inde #Forêt #Nature #HistoireVraie
+
+Source : Libération.</pre></details>
+</article><article class="post" data-n="33">
+<header><span class="num">33</span><div class="meta"><h2>LA CHOUETTE D&#x27;OR</h2><p class="date">Publié le 27 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Chxa-tSozHg/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-33"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA CHOUETTE D&#x27;OR : 31 ans de chasse au trésor en France. Et en 2024, quelqu&#x27;un a enfin trouvé la cachette.
+
+En 1993, un livre sort en librairie : Sur la trace de la chouette d&#x27;or. Son auteur signe Max Valentin. Le principe est simple : en résolvant onze énigmes, on peut trouver l&#x27;endroit où est enterrée une contremarque en bronze, quelque part en France. Celui qui la déterre gagne une chouette en or et en argent, sertie de diamants, sculptée par l&#x27;artiste Michel Becker.
+
+Au départ, on pensait que le trésor serait trouvé en quelques mois. Il a fallu des décennies. Des centaines de milliers de joueurs se lancent dans l&#x27;aventure. Certains creusent des trous partout, d&#x27;autres y consacrent des années de leur vie.
+
+En 2009, coup de théâtre : Max Valentin, de son vrai nom Régis Hauser, meurt. Il emporte la solution avec lui, et la chasse semble condamnée. Mais il l&#x27;avait confiée à un huissier. Le jeu continue, pendant que la vraie chouette passe de main en main entre héritiers et créanciers.
+
+Puis le 3 octobre 2024, Michel Becker, qui avait racheté les droits du jeu, publie un message qui fait l&#x27;effet d&#x27;une bombe : la contremarque a été trouvée. La chasse au trésor la plus célèbre de France est terminée, après 31 ans.
+
+L&#x27;heureux gagnant a choisi de rester anonyme. Et le lieu exact n&#x27;a été dévoilé que sept mois plus tard, en mai 2025 : la contremarque était enterrée dans une forêt de Dabo, en Moselle.
+
+Vous auriez cherché, vous aussi ?
+
+#Kulturable #ChouetteDor #ChasseAuTrésor #Énigme #France #HistoireVraie
+
+Sources : Futura Sciences, Demotivateur (mai 2025).</pre></details>
+</article><article class="post" data-n="34">
+<header><span class="num">34</span><div class="meta"><h2>LE PLUS GRAND ÊTRE VIVANT DU MONDE</h2><p class="date">Publié le 28 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Chz_xpQIsGf/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-34"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE PLUS GRAND ÊTRE VIVANT DU MONDE : cette forêt de 47 000 arbres n&#x27;est en réalité qu&#x27;un seul individu.
+
+Dans l&#x27;Utah, aux États-Unis, il y a une forêt de peupliers faux-trembles qui couvre environ 43 hectares. En automne, ses feuilles deviennent jaune doré. Elle a l&#x27;air parfaitement ordinaire. Pourtant, elle cache un secret étonnant.
+
+Tous ses troncs, environ 47 000, sont génétiquement identiques. Ils sont reliés entre eux par un seul et même système de racines, sous la terre. Ce ne sont pas des arbres différents : ce sont des pousses d&#x27;un même organisme, des clones.
+
+Les scientifiques l&#x27;ont baptisé Pando, ce qui signifie « je m&#x27;étends » en latin. Il pèse environ 6 000 tonnes. C&#x27;est l&#x27;un des plus grands êtres vivants connus sur Terre.
+
+Et il est très vieux. Chaque tronc ne vit qu&#x27;environ 130 ans, mais les racines, elles, continuent de faire pousser de nouveaux troncs. Les estimations de l&#x27;âge de Pando varient énormément : plusieurs milliers d&#x27;années au minimum, et selon certains chercheurs bien plus encore.
+
+Mais le géant est en danger. Les cerfs et les élans mangent les jeunes pousses, et les vieux troncs ne sont plus remplacés. Des clôtures ont été installées pour le protéger.
+
+Vous auriez cru qu&#x27;une forêt entière pouvait être un seul être vivant ?
+
+#Kulturable #Pando #Utah #Arbres #Nature #HistoireVraie
+
+Source : Futura Sciences.</pre></details>
+</article><article class="post" data-n="35">
+<header><span class="num">35</span><div class="meta"><h2>LES TROIS SOLEILS</h2><p class="date">Publié le 29 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Ch2kldXISvM/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-35"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LES TROIS SOLEILS : parfois, deux faux soleils apparaissent à côté du vrai. Et ce n&#x27;est pas une illusion.
+
+Imaginez : vous levez les yeux, et vous voyez trois soleils. Un au centre, et deux autres, plus pâles, de chaque côté, à la même hauteur. Ce phénomène porte un nom : le parhélie. On l&#x27;appelle aussi « chiens du soleil ».
+
+Il ne se produit que dans certaines conditions. Il faut que de fins nuages de haute altitude, les cirrus, flottent entre 6 000 et 12 000 mètres. À ces hauteurs, ils sont faits de minuscules cristaux de glace, en forme de petites plaques à six côtés.
+
+Quand le soleil est bas sur l&#x27;horizon, ces cristaux se mettent à plat en tombant lentement, comme des feuilles. La lumière qui les traverse est déviée d&#x27;un angle précis, 22 degrés. Résultat : deux taches lumineuses apparaissent à gauche et à droite du soleil. Elles sont souvent un peu colorées, rouges du côté du vrai soleil.
+
+Le phénomène peut durer quelques secondes ou plusieurs dizaines de minutes. Et il n&#x27;est pas si rare : on peut en voir en France plusieurs fois par an, à condition de regarder au bon moment.
+
+Autrefois, ces faux soleils effrayaient. On y voyait des présages, des signes de guerre ou de catastrophe. Aujourd&#x27;hui, on sait que c&#x27;est simplement de la glace et de la lumière.
+
+Vous en avez déjà vu un ?
+
+#Kulturable #Parhélie #Ciel #Phénomène #Nature #HistoireVraie
+
+Source : Atmospheric Optics (atoptics.co.uk).</pre></details>
+</article><article class="post" data-n="36">
+<header><span class="num">36</span><div class="meta"><h2>L&#x27;HOMME QUI NE DORMAIT JAMAIS</h2><p class="date">Publié le 30 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Ch5JyqQMoGs/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-36"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;HOMME QUI NE DORMAIT JAMAIS : après une balle dans la tête en 1915, ce soldat n&#x27;aurait plus fermé l&#x27;œil.
+
+L&#x27;histoire a fait le tour des journaux dans les années 1930. Paul Kern est un soldat hongrois. En 1915, pendant la Première Guerre mondiale, il reçoit une balle en pleine tête. Elle traverse son crâne et endommage le lobe frontal de son cerveau.
+
+Les médecins l&#x27;opèrent sur place, sans grand espoir. Mais Kern survit. Il se réveille, garde sa mémoire, sa capacité de parler et de marcher. Il souffre seulement de violents maux de tête.
+
+Et d&#x27;une chose très étrange : il ne ressent plus jamais le besoin de dormir. Selon les récits de l&#x27;époque, il passe ses nuits à lire et à se reposer allongé, les yeux ouverts, sans jamais sombrer dans le sommeil. Il retourne travailler comme employé de bureau, et se sent parfaitement bien.
+
+Les journaux racontent que des médecins de Budapest et de Vienne l&#x27;ont examiné sans réussir à l&#x27;expliquer. Il serait mort en 1955, après 40 ans sans sommeil.
+
+Il faut toutefois rester prudent. Son cas n&#x27;a jamais été publié dans une revue scientifique, et on sait aujourd&#x27;hui qu&#x27;un être humain ne peut pas survivre sans dormir. Il est possible que Paul Kern ait connu, sans s&#x27;en rendre compte, de très courtes phases de sommeil, des micro-sommeils de quelques secondes.
+
+Vrai miracle ou légende de journaux, son histoire continue de fasciner.
+
+Vous y croyez, à l&#x27;homme qui ne dormait jamais ?
+
+#Kulturable #PaulKern #Sommeil #Mystère #Cerveau #HistoireVraie
+
+Source : Ouest-France.</pre></details>
+</article><article class="post" data-n="37">
+<header><span class="num">37</span><div class="meta"><h2>LA JEUNE FILLE TOMBÉE DU CIEL</h2><p class="date">Publié le 31 août 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Ch7ulyVIdpu/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-37"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA JEUNE FILLE TOMBÉE DU CIEL : seule rescapée d&#x27;un crash en Amazonie, elle a survécu 11 jours dans la jungle.
+
+24 décembre 1971, au Pérou. Juliane Koepcke, 17 ans, monte avec sa mère dans le vol 508 de la compagnie LANSA, qui doit les ramener pour Noël auprès de son père, un biologiste installé en Amazonie.
+
+En plein vol, l&#x27;avion entre dans un orage. Un éclair frappe une aile, qui prend feu. L&#x27;appareil se disloque dans le ciel. Juliane, toujours attachée à sa rangée de sièges, tombe de plus de 3 000 mètres. Les arbres de la forêt amortissent sa chute.
+
+Quand elle reprend connaissance, elle est seule, au milieu de la jungle. Elle a une clavicule cassée, une profonde entaille au bras, un œil gonflé. Elle a perdu une chaussure et ses lunettes. Sa mère est introuvable.
+
+Mais Juliane a grandi dans une station de recherche, au cœur de la forêt. Son père lui a appris une règle : si tu te perds, trouve un cours d&#x27;eau et suis-le. Il te mènera vers des humains. Alors elle marche, puis nage dans les ruisseaux, en se méfiant des raies et des piranhas. Pendant dix jours.
+
+Le dixième jour, elle trouve une cabane de bûcherons. Elle soigne elle-même sa blessure infestée de larves en y versant de l&#x27;essence. Le lendemain, les bûcherons la découvrent et la sauvent. Elle est la seule survivante des 92 personnes à bord.
+
+Juliane est devenue biologiste, comme ses parents. Elle a raconté son histoire dans un livre, Als ich vom Himmel fiel, « Quand je suis tombée du ciel ».
+
+Vous auriez eu la force de continuer à marcher ?
+
+#Kulturable #JulianeKoepcke #Amazonie #Survie #Pérou #HistoireVraie
+
+Sources : Juliane Koepcke, Als ich vom Himmel fiel (2011), BBC.</pre></details>
+</article><article class="post" data-n="38">
+<header><span class="num">38</span><div class="meta"><h2>LES PIERRES QUI SE DÉPLACENT SEULES</h2><p class="date">Publié le 1 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/Ch-T9p7opfM/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-38"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LES PIERRES QUI SE DÉPLACENT SEULES : dans la Vallée de la Mort, des rochers glissent sans qu&#x27;on les voie.
+
+En Californie, dans la Vallée de la Mort, il existe un ancien lac asséché, parfaitement plat, appelé Racetrack Playa. Sur son sol craquelé, on trouve des dizaines de pierres, parfois de plus de 300 kilos. Et derrière chacune d&#x27;elles, un long sillon, comme si elle avait glissé sur des centaines de mètres.
+
+Certaines traces sont droites. D&#x27;autres tournent, font des zigzags ou des angles brusques. Pourtant, pendant près d&#x27;un siècle, personne n&#x27;a jamais vu une seule de ces pierres bouger. On a parlé de vents violents, de champs magnétiques, et bien sûr d&#x27;extraterrestres.
+
+En 2011, une équipe de scientifiques décide d&#x27;en avoir le cœur net. Ils installent une station météo, des caméras, et placent des pierres équipées de GPS sur le lac.
+
+En décembre 2013, ils ont de la chance. Un peu de pluie a rempli le fond du lac de quelques centimètres d&#x27;eau, qui gèle la nuit en une fine couche de glace. En fin de matinée, au soleil, la glace se brise en grandes plaques de quelques millimètres d&#x27;épaisseur. Poussées par une brise légère, ces plaques avancent lentement et entraînent les pierres avec elles, à quelques mètres par minute.
+
+Le mystère était résolu : de la glace, du vent et beaucoup de patience. Les chercheurs ont publié leurs observations en 2014.
+
+Vous aviez une autre explication en tête ?
+
+#Kulturable #ValléeDeLaMort #Californie #Mystère #Nature #HistoireVraie
+
+Sources : Pour la Science, PLOS ONE (Norris et al., 2014).</pre></details>
+</article><article class="post" data-n="39">
+<header><span class="num">39</span><div class="meta"><h2>L&#x27;AVION DES PHARAONS</h2><p class="date">Publié le 2 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiA4eXxIePv/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-39"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;AVION DES PHARAONS : dans une tombe égyptienne, on a trouvé un oiseau de bois qui ressemble à un planeur.
+
+En 1898, des archéologues fouillent une tombe à Saqqarah, la grande nécropole de l&#x27;Égypte ancienne, près du Caire. Ils y trouvent un petit objet en bois de sycomore, vieux d&#x27;environ 2 200 ans. Il mesure 18 centimètres d&#x27;envergure et pèse 39 grammes. Ils l&#x27;enregistrent comme une figurine d&#x27;oiseau, et le rangent dans les réserves du musée du Caire.
+
+Il y reste soixante-dix ans, oublié. Puis en 1969, un médecin et chercheur égyptien, Khalil Messiha, le redécouvre. Et il est frappé. Cet oiseau n&#x27;a ni plumes, ni pattes. Ses ailes sont droites et fines. Et surtout, sa queue est verticale, comme la dérive d&#x27;un avion. Aucun oiseau n&#x27;a une queue comme ça.
+
+Pour Messiha, c&#x27;est la maquette d&#x27;un planeur. Les Égyptiens auraient-ils connu le principe du vol ? L&#x27;objet devient vite célèbre sous le nom d&#x27;oiseau de Saqqarah.
+
+Des passionnés ont fabriqué des répliques pour vérifier. Sans modification, elles ne volent pas vraiment. Il faut leur ajouter un empennage horizontal, qui n&#x27;existe pas sur l&#x27;original, pour obtenir un vol plané. La plupart des égyptologues y voient donc un jouet, une girouette ou un objet religieux en forme de faucon.
+
+Mais personne ne sait exactement à quoi il servait. L&#x27;oiseau de Saqqarah est toujours exposé au Musée égyptien du Caire, et il continue de faire rêver.
+
+Jouet ou maquette d&#x27;avion, vous en pensez quoi ?
+
+#Kulturable #Saqqarah #Égypte #Mystère #Archéologie #HistoireVraie
+
+Source : Historic Wings (2015).</pre></details>
+</article><article class="post" data-n="40">
+<header><span class="num">40</span><div class="meta"><h2>LE LIVRE QUE PERSONNE NE SAIT LIRE</h2><p class="date">Publié le 3 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiDckQeIj1V/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-40"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE LIVRE QUE PERSONNE NE SAIT LIRE : écrit il y a 600 ans dans une langue inconnue, il résiste aux plus forts.
+
+En 1912, un marchand de livres anciens, Wilfrid Voynich, achète un lot de manuscrits à des jésuites, près de Rome. Parmi eux, il y a un livre de 240 pages environ, couvert d&#x27;une écriture qu&#x27;il n&#x27;a jamais vue. Il ne ressemble à aucune langue connue.
+
+On l&#x27;appelle depuis le manuscrit de Voynich. En 2009, une analyse au carbone 14 a daté son parchemin du début du XVe siècle, entre 1404 et 1438.
+
+Ses pages sont remplies de dessins étranges : des plantes qui n&#x27;existent nulle part, des cartes du ciel, des femmes nues qui se baignent dans des bassins reliés par des tuyaux. Et tout autour, ce texte mystérieux. L&#x27;écriture est fluide, sans ratures. Celui qui l&#x27;a écrit savait exactement ce qu&#x27;il faisait.
+
+Depuis un siècle, des linguistes, des historiens et des cryptographes s&#x27;y cassent les dents. Même les spécialistes qui avaient déchiffré les codes secrets de la Seconde Guerre mondiale ont échoué. Régulièrement, quelqu&#x27;un annonce l&#x27;avoir enfin traduit. À chaque fois, la solution est rejetée.
+
+Code secret, langue disparue, canular de génie ? Personne ne sait. Le manuscrit est conservé à l&#x27;université Yale, aux États-Unis, et il est entièrement consultable en ligne.
+
+Vous aimeriez tenter votre chance ?
+
+#Kulturable #Voynich #Manuscrit #Mystère #Énigme #HistoireVraie
+
+Source : National Geographic.</pre></details>
+</article><article class="post" data-n="41">
+<header><span class="num">41</span><div class="meta"><h2>L&#x27;OBJET ROMAIN QUE PERSONNE N&#x27;EXPLIQUE</h2><p class="date">Publié le 4 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiGBYrUvKWW/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-41"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;OBJET ROMAIN QUE PERSONNE N&#x27;EXPLIQUE : on en a trouvé 130 en Europe, et on ignore toujours à quoi il servait.
+
+Il est creux, en bronze, et tient dans la main. Il a douze faces en forme de pentagone, chacune percée d&#x27;un trou de taille différente. À chaque coin, une petite boule. On l&#x27;appelle le dodécaèdre romain.
+
+On en connaît environ 130 aujourd&#x27;hui. Ils datent des IIe et IIIe siècles. On les a trouvés en France, en Belgique, en Allemagne, aux Pays-Bas, en Suisse, en Angleterre et jusqu&#x27;en Hongrie. Mais curieusement, presque jamais en Italie, ni en Grèce.
+
+Et le plus incroyable, c&#x27;est qu&#x27;aucun texte romain n&#x27;en parle. Pas une ligne, pas un dessin. Alors les archéologues ont proposé des dizaines d&#x27;hypothèses : un outil pour mesurer les distances, un calendrier pour savoir quand semer le blé, un gabarit pour tricoter des gants, un bougeoir, un jouet, un objet de divination.
+
+En 2023, des archéologues amateurs en ont trouvé un en parfait état à Norton Disney, en Angleterre. Il a fait la une des journaux et a été exposé au musée. Mais il n&#x27;a pas livré son secret.
+
+L&#x27;hypothèse qui revient le plus souvent aujourd&#x27;hui, c&#x27;est un objet religieux ou magique. Mais ce n&#x27;est qu&#x27;une hypothèse.
+
+Et vous, à quoi pourrait-il bien servir ?
+
+#Kulturable #DodécaèdreRomain #Archéologie #Rome #Mystère #HistoireVraie
+
+Source : université de Nottingham et Norton Disney History and Archaeology Group (2023).</pre></details>
+</article><article class="post" data-n="42">
+<header><span class="num">42</span><div class="meta"><h2>LE DÉTECTEUR DE SÉISMES DE L&#x27;AN 132</h2><p class="date">Publié le 5 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiImJyCMkPu/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-42"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE DÉTECTEUR DE SÉISMES DE L&#x27;AN 132 : en Chine, un savant a inventé une machine qui sentait les tremblements.
+
+Il s&#x27;appelle Zhang Heng. Il vit en Chine sous la dynastie des Han. C&#x27;est un génie touche-à-tout : astronome, mathématicien, ingénieur, poète et peintre. Et en l&#x27;an 132, il présente à la cour impériale une invention extraordinaire.
+
+C&#x27;est un grand vase de bronze, de près de deux mètres de diamètre. Tout autour, huit dragons regardent vers les huit directions. Chacun tient une boule de bronze dans sa gueule. Et en dessous, huit crapauds de bronze attendent, la bouche ouverte.
+
+Quand un séisme se produit, même très loin, un mécanisme caché à l&#x27;intérieur se met en mouvement. Une boule tombe de la gueule d&#x27;un dragon et atterrit dans la bouche du crapaud, avec un bruit retentissant. La direction du dragon indique d&#x27;où vient le tremblement de terre.
+
+Les textes anciens racontent qu&#x27;un jour, une boule est tombée alors que personne n&#x27;avait rien senti dans la capitale. Les savants se sont moqués de Zhang Heng. Quelques jours plus tard, un messager est arrivé : un séisme venait de frapper une région située à des centaines de kilomètres.
+
+Le mécanisme original a disparu. Mais en 2005, des chercheurs chinois en ont construit une réplique, qui a réussi à réagir à des secousses simulées.
+
+Vous imaginez inventer ça il y a 2 000 ans ?
+
+#Kulturable #ZhangHeng #Chine #Invention #Séisme #HistoireVraie
+
+Source : Futura Sciences.</pre></details>
+</article><article class="post" data-n="43">
+<header><span class="num">43</span><div class="meta"><h2>L&#x27;ÎLE EXTRATERRESTRE</h2><p class="date">Publié le 6 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiLLcK4IJO4/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-43"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;ÎLE EXTRATERRESTRE : au large du Yémen, une île cache des arbres qu&#x27;on ne trouve nulle part ailleurs.
+
+Socotra est une île de l&#x27;océan Indien, entre la Somalie et le Yémen. Elle s&#x27;est détachée du continent il y a des millions d&#x27;années. Depuis, sa nature a évolué seule, isolée du reste du monde. Et le résultat est stupéfiant.
+
+Le symbole de l&#x27;île, c&#x27;est le dragonnier de Socotra. Un arbre en forme de parapluie retourné, aux branches serrées comme celles d&#x27;un champignon géant. Quand on entaille son écorce, il en coule une résine rouge sang, qu&#x27;on appelle depuis l&#x27;Antiquité le « sang-dragon ». On l&#x27;utilisait comme teinture, comme vernis et comme médicament.
+
+À côté, on croise des roses du désert au tronc gonflé comme une bouteille, des arbres à encens et des concombres qui poussent sur des arbres. Plus d&#x27;un tiers des plantes de Socotra n&#x27;existent nulle part ailleurs sur la planète. C&#x27;est pour ça qu&#x27;on la surnomme l&#x27;île extraterrestre.
+
+En 2008, l&#x27;archipel de Socotra a été inscrit au patrimoine mondial de l&#x27;UNESCO pour sa biodiversité exceptionnelle.
+
+Mais ce paradis est fragile. Les cyclones, le surpâturage des chèvres et la guerre au Yémen menacent ses arbres uniques. Les vieux dragonniers ne sont presque plus remplacés par de jeunes pousses.
+
+Vous aimeriez marcher au milieu de ces arbres ?
+
+#Kulturable #Socotra #Yémen #Nature #Voyage #HistoireVraie
+
+Source : UNESCO (Archipel de Socotra).</pre></details>
+</article><article class="post" data-n="44">
+<header><span class="num">44</span><div class="meta"><h2>L&#x27;HOMME QUI A VAINCU L&#x27;EVEREST À 80 ANS</h2><p class="date">Publié le 7 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiNvvIVI-Mj/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-44"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;HOMME QUI A VAINCU L&#x27;EVEREST À 80 ANS : trois fois au sommet, avec deux opérations du cœur et un bassin cassé.
+
+Yuichiro Miura est japonais. Dans les années 1960 et 1970, il est déjà une légende : un skieur de l&#x27;extrême. En 1970, il descend à ski une partie de l&#x27;Everest, en freinant avec un parachute. Un film en est tiré, qui remporte un Oscar.
+
+Puis il prend sa retraite, et se laisse aller. À 60 ans, il est en surpoids, souffre d&#x27;hypertension et de diabète. Les médecins s&#x27;inquiètent. Alors il se fixe un défi fou : gravir l&#x27;Everest.
+
+Il s&#x27;entraîne en marchant dans les rues avec des poids aux chevilles et un sac lourd sur le dos. En 2003, à 70 ans, il atteint le sommet du plus haut mont du monde, à 8 849 mètres. Il devient le plus vieil homme à l&#x27;avoir fait.
+
+En 2008, à 75 ans, il y retourne et réussit encore. Puis l&#x27;année suivante, un accident de ski lui fracture le bassin et le fémur. Les médecins lui disent qu&#x27;il ne marchera peut-être plus normalement. Il subit aussi plusieurs opérations du cœur à cause d&#x27;une arythmie.
+
+Il s&#x27;entraîne malgré tout. Et le 23 mai 2013, à 80 ans, Yuichiro Miura atteint pour la troisième fois le sommet de l&#x27;Everest. C&#x27;est encore aujourd&#x27;hui le record de la personne la plus âgée à l&#x27;avoir gravi.
+
+Vous pensez qu&#x27;il n&#x27;y a pas d&#x27;âge pour réaliser ses rêves ?
+
+#Kulturable #YuichiroMiura #Everest #Record #Courage #HistoireVraie
+
+Source : Seiko (ambassadeur Yuichiro Miura).</pre></details>
+</article><article class="post" data-n="45">
+<header><span class="num">45</span><div class="meta"><h2>« SI TU ME VOIS, PLEURE »</h2><p class="date">Publié le 8 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiQUhSWIIjV/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-45"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>« SI TU ME VOIS, PLEURE » : dans les rivières d&#x27;Europe, des pierres gravées réapparaissent à chaque sécheresse.
+
+En 2018, puis en 2022, l&#x27;Europe connaît des étés terribles. Le niveau des fleuves baisse comme rarement. Et dans le lit de l&#x27;Elbe, en République tchèque et en Allemagne, réapparaissent d&#x27;étranges rochers couverts d&#x27;inscriptions.
+
+On les appelle les pierres de la faim, Hungersteine en allemand. Pendant des siècles, lors des grandes sécheresses, les habitants gravaient sur ces rochers la date et parfois quelques mots, au niveau le plus bas de l&#x27;eau. C&#x27;était un message pour les générations futures.
+
+Car une rivière trop basse, ça voulait dire des récoltes perdues, des moulins arrêtés, des bateaux bloqués. Et souvent, la famine.
+
+La plus célèbre se trouve à Děčín, en République tchèque. On y lit des dates de sécheresses depuis 1616. Et une phrase gravée en allemand, qui donne froid dans le dos : « Wenn du mich siehst, dann weine », « Si tu me vois, pleure ».
+
+Ces pierres restaient cachées sous l&#x27;eau pendant des dizaines d&#x27;années. Mais ces derniers étés, on les a vues de plus en plus souvent. Comme un avertissement venu du passé.
+
+Vous auriez imaginé que nos ancêtres nous laissaient des messages dans les rivières ?
+
+#Kulturable #PierresDeLaFaim #Sécheresse #Europe #Histoire #HistoireVraie
+
+Source : France Culture.</pre></details>
+</article><article class="post" data-n="46">
+<header><span class="num">46</span><div class="meta"><h2>LES 7 ÉNIGMES À UN MILLION DE DOLLARS</h2><p class="date">Publié le 9 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiS5V4loXFZ/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-46"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LES 7 ÉNIGMES À UN MILLION DE DOLLARS : une seule a été résolue. Et son génie a refusé l&#x27;argent.
+
+En 1900, à Paris, le grand mathématicien allemand David Hilbert présente une liste de 23 problèmes. Selon lui, ce sont les grands défis du siècle qui commence. Beaucoup ont été résolus depuis. D&#x27;autres résistent encore.
+
+Cent ans plus tard, en mai 2000, à Paris lui aussi, l&#x27;Institut de mathématiques Clay reprend l&#x27;idée. Il choisit sept problèmes parmi les plus difficiles de toutes les mathématiques, les « problèmes du millénaire ». Et il promet un million de dollars pour chacun d&#x27;eux.
+
+Leurs noms font peur : la conjecture de Poincaré, l&#x27;hypothèse de Riemann, le problème P contre NP, les équations de Navier-Stokes, qui décrivent comment l&#x27;eau et l&#x27;air s&#x27;écoulent... Les résoudre changerait la physique, l&#x27;informatique et la sécurité d&#x27;Internet.
+
+En 2003, un mathématicien russe discret, Grigori Perelman, publie sur Internet la démonstration de la conjecture de Poincaré. Les experts mettent des années à la vérifier. Elle est juste.
+
+En 2010, l&#x27;Institut Clay lui attribue son million de dollars. Perelman le refuse. Il avait déjà refusé en 2006 la médaille Fields, l&#x27;équivalent du prix Nobel pour les mathématiques. Il vit retiré à Saint-Pétersbourg.
+
+Les six autres problèmes attendent toujours leur génie.
+
+Vous auriez accepté le million, vous ?
+
+#Kulturable #Mathématiques #Perelman #Énigme #Science #HistoireVraie
+
+Source : Clay Mathematics Institute (claymath.org).</pre></details>
+</article><article class="post" data-n="47">
+<header><span class="num">47</span><div class="meta"><h2>L&#x27;ORDINATEUR DE 2 000 ANS</h2><p class="date">Publié le 11 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiWVDRNIxqr/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-47"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>L&#x27;ORDINATEUR DE 2 000 ANS : au fond de la mer, on a trouvé une machine grecque qui prédisait les éclipses.
+
+En 1900, des pêcheurs d&#x27;éponges grecs plongent près de la petite île d&#x27;Anticythère, entre le Péloponnèse et la Crète. Par 45 mètres de fond, ils découvrent l&#x27;épave d&#x27;un navire antique, coulé vers le Ier siècle avant notre ère. Il est chargé de statues de bronze, de marbre, d&#x27;amphores et de pièces.
+
+Parmi les trésors remontés en 1901, il y a un bloc de bronze corrodé, de la taille d&#x27;une boîte à chaussures. Personne n&#x27;y prête attention. Jusqu&#x27;au jour où il se fend, et laisse apparaître des roues dentées.
+
+Il a fallu plus d&#x27;un siècle, des rayons X et des scanners très puissants pour comprendre ce que c&#x27;était. La machine d&#x27;Anticythère contenait au moins une trentaine d&#x27;engrenages, d&#x27;une précision incroyable. En tournant une manivelle, on pouvait voir la position du Soleil et de la Lune, les phases lunaires, et prévoir les éclipses des années à l&#x27;avance.
+
+Elle indiquait même la date des Jeux olympiques. Les chercheurs pensent qu&#x27;elle montrait aussi les mouvements des cinq planètes connues à l&#x27;époque.
+
+Rien d&#x27;aussi complexe n&#x27;a été retrouvé avant les horloges astronomiques du Moyen Âge, plus de mille ans plus tard. On la surnomme souvent le premier ordinateur de l&#x27;histoire. Elle est exposée au Musée national archéologique d&#x27;Athènes.
+
+Vous imaginez les Grecs fabriquer ça il y a 2 000 ans ?
+
+#Kulturable #Anticythère #Grèce #Archéologie #Mystère #HistoireVraie
+
+Sources : GEO, Nature (Freeth et al., 2006).</pre></details>
+</article><article class="post" data-n="48">
+<header><span class="num">48</span><div class="meta"><h2>CICADA 3301</h2><p class="date">Publié le 11 sept. 2022</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/CiYDHtGIio_/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-48"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>CICADA 3301 : l&#x27;énigme la plus difficile d&#x27;Internet. Personne ne sait qui l&#x27;a créée, ni ce qu&#x27;elle cherchait.
+
+Le 4 janvier 2012, une image apparaît sur un forum Internet. Fond noir, texte blanc : « Bonjour. Nous cherchons des individus très intelligents. Pour les trouver, nous avons conçu un test. Un message est caché dans cette image. » La signature : 3301.
+
+Des milliers de personnes se lancent. Le message caché mène à un autre indice, puis à un autre. Il faut décoder des chiffrements anciens, reconnaître des citations de livres rares, analyser des fichiers informatiques. Les indices mènent à des numéros de téléphone, à des sites Internet, puis dans le monde réel : des affiches avec un QR code, collées le même jour dans plusieurs villes du monde, de Varsovie à Séoul en passant par Sydney.
+
+Seule une poignée de personnes arrive au bout. Elles sont contactées en privé. Ce qui leur est arrivé ensuite reste flou. Certains ont raconté qu&#x27;on leur avait parlé d&#x27;un projet sur la vie privée et le chiffrement des données.
+
+D&#x27;autres énigmes suivent en 2013, en 2014 et en 2016, puis un dernier message authentifié en 2017. Depuis, plus rien.
+
+Qui se cache derrière Cicada 3301 ? Une agence de renseignement qui recrute, un groupe de hackers, une secte, un jeu ? Plus de dix ans plus tard, personne ne le sait.
+
+Vous auriez tenté de résoudre l&#x27;énigme ?
+
+#Kulturable #Cicada3301 #Énigme #Internet #Mystère #HistoireVraie
+
+Sources : The Conversation, The Week.</pre></details>
+</article><article class="post" data-n="49">
+<header><span class="num">49</span><div class="meta"><h2>PYTHAGORE AVANT PYTHAGORE</h2><p class="date">Publié le 5 déc. 2023</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C0fHxUGtsb0/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-49"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>PYTHAGORE AVANT PYTHAGORE : une tablette de 3 800 ans prouve que les Babyloniens connaissaient son théorème.
+
+À l&#x27;école, on apprend que c&#x27;est le Grec Pythagore, vers 500 avant notre ère, qui a découvert la célèbre règle des triangles rectangles : le carré du grand côté est égal à la somme des carrés des deux autres. Sauf que les Babyloniens l&#x27;utilisaient plus de mille ans avant lui.
+
+La preuve est gravée dans l&#x27;argile. Elle s&#x27;appelle IM 67118. C&#x27;est une petite tablette trouvée en Irak, près de Bagdad, et datée d&#x27;environ 1800 avant notre ère. Elle est écrite en cunéiforme, l&#x27;écriture en forme de petits clous des Mésopotamiens.
+
+On y trouve un exercice de mathématiques : on connaît la surface d&#x27;un rectangle et la longueur de sa diagonale, quels sont ses côtés ? L&#x27;élève ou le scribe résout le problème étape par étape. Et à la fin, il vérifie que sa réponse est juste en utilisant exactement le théorème qu&#x27;on attribuera plus tard à Pythagore.
+
+Une autre tablette de la même époque, Plimpton 322, conservée à l&#x27;université Columbia de New York, va encore plus loin. Elle contient une liste de « triplets pythagoriciens », des séries de trois nombres entiers qui forment des triangles rectangles parfaits, comme 3, 4 et 5.
+
+Pythagore a peut-être été le premier à le démontrer à la manière des Grecs. Mais il n&#x27;a pas été le premier à le connaître.
+
+Vous saviez que les maths étaient aussi anciennes ?
+
+#Kulturable #Pythagore #Babylone #Mathématiques #Archéologie #HistoireVraie
+
+Sources : université Columbia (Plimpton 322), UNSW Sydney (Mansfield et Wildberger, 2017).</pre></details>
+</article><article class="post" data-n="50">
+<header><span class="num">50</span><div class="meta"><h2>LE SOLDAT IMMORTEL</h2><p class="date">Publié le 7 déc. 2023</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C0kG0nFtMh4/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-50"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE SOLDAT IMMORTEL : un œil en moins, une main en moins, deux crashs d&#x27;avion. Et il a dit avoir aimé la guerre.
+
+Adrian Carton de Wiart naît en 1880 à Bruxelles, dans une famille d&#x27;origine belge et irlandaise. Il grandit en partie en Égypte, puis part étudier à Oxford. Mais à 19 ans, il quitte l&#x27;université pour s&#x27;engager dans l&#x27;armée britannique, sous un faux nom et en mentant sur son âge.
+
+Pendant la guerre des Boers, en Afrique du Sud, il est blessé au ventre et à l&#x27;aine. En 1914, en Somalie, il prend une balle dans l&#x27;œil. Il arrache lui-même son bandage pour continuer à se battre, et portera un bandeau noir toute sa vie.
+
+Puis vient la Première Guerre mondiale. Sa main gauche est déchiquetée. Quand le médecin refuse de lui couper les doigts abîmés, il se les arrache lui-même. Il est ensuite blessé au crâne, à la cheville, à la hanche, à la jambe et à l&#x27;oreille. Il reçoit la Victoria Cross, la plus haute décoration britannique.
+
+Pendant la Seconde Guerre mondiale, son avion s&#x27;écrase en mer près de la Libye. Il nage jusqu&#x27;à la côte et il est fait prisonnier par les Italiens. À plus de 60 ans, avec un œil et une main, il tente cinq fois de s&#x27;évader, et passe une fois huit jours en cavale.
+
+Il meurt paisiblement en 1963, à 83 ans. Dans ses mémoires, il écrit cette phrase restée célèbre : « Franchement, j&#x27;ai aimé la guerre. »
+
+Vous connaissez quelqu&#x27;un d&#x27;aussi increvable ?
+
+#Kulturable #CartonDeWiart #Guerre #Courage #Insolite #HistoireVraie
+
+Source : Ça m&#x27;intéresse.</pre></details>
+</article><article class="post" data-n="51">
+<header><span class="num">51</span><div class="meta"><h2>LE DISQUE D&#x27;OR DE L&#x27;HUMANITÉ</h2><p class="date">Publié le 9 déc. 2023</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C0pPKX9t04t/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-51"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE DISQUE D&#x27;OR DE L&#x27;HUMANITÉ : depuis 1977, deux sondes emportent vers les étoiles un message pour les aliens.
+
+En 1977, la NASA lance deux sondes, Voyager 1 et Voyager 2. Leur mission : explorer Jupiter, Saturne, puis Uranus et Neptune. Mais on sait déjà qu&#x27;après, elles ne reviendront jamais. Elles continueront tout droit, vers les étoiles.
+
+Alors l&#x27;astronome Carl Sagan et son équipe ont une idée : y fixer un message. Au cas où, dans des millions d&#x27;années, quelqu&#x27;un les trouverait.
+
+Ce message, c&#x27;est un disque de cuivre recouvert d&#x27;or, de 30 centimètres. On l&#x27;appelle le Golden Record. Il contient 115 images de la Terre et de ses habitants, des bruits de la nature, comme la pluie, le vent, le chant des baleines, les battements d&#x27;un cœur, des salutations dans 55 langues, et 90 minutes de musique, de Bach à Chuck Berry en passant par des chants traditionnels du monde entier.
+
+Sur la pochette, des schémas expliquent comment lire le disque, et où se trouve la Terre. Une aiguille est même fournie.
+
+Aujourd&#x27;hui, les deux sondes ont quitté notre système solaire. Voyager 1 est à plus de 25 milliards de kilomètres. C&#x27;est l&#x27;objet humain le plus lointain jamais envoyé. Leurs instruments s&#x27;éteignent peu à peu. Mais les disques, eux, dureront probablement des milliards d&#x27;années. Ils survivront sans doute à la Terre elle-même.
+
+Et vous, quelle musique auriez-vous mise sur le disque ?
+
+#Kulturable #Voyager #GoldenRecord #NASA #Espace #HistoireVraie
+
+Source : NASA Jet Propulsion Laboratory (voyager.jpl.nasa.gov).</pre></details>
+</article><article class="post" data-n="52">
+<header><span class="num">52</span><div class="meta"><h2>LA FEMME QUI A FAIT ATTERRIR APOLLO 11</h2><p class="date">Publié le 22 déc. 2023</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C1Jn4KsNLLm/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-52"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FEMME QUI A FAIT ATTERRIR APOLLO 11 : à 3 minutes de la Lune, les alarmes ont sonné. Son logiciel a tenu bon.
+
+Margaret Hamilton naît en 1936 aux États-Unis. Elle étudie les mathématiques, puis entre au célèbre MIT, près de Boston. À l&#x27;époque, le métier de programmeur existe à peine. On ne parle même pas encore de « logiciel ». C&#x27;est elle qui popularisera l&#x27;expression « génie logiciel ».
+
+Dans les années 1960, elle dirige l&#x27;équipe qui écrit le programme de l&#x27;ordinateur de bord des missions Apollo. Une machine minuscule, avec moins de mémoire qu&#x27;une calculatrice d&#x27;aujourd&#x27;hui. Les programmes sont tissés à la main dans des fils de cuivre. Une célèbre photo la montre à côté d&#x27;une pile de listings aussi haute qu&#x27;elle.
+
+Le 20 juillet 1969, le module lunaire d&#x27;Apollo 11 descend vers la Lune. Trois minutes avant de se poser, des alarmes s&#x27;allument : « 1202 », puis « 1201 ». L&#x27;ordinateur est surchargé par des données inutiles venues d&#x27;un radar.
+
+Mais le logiciel de Margaret Hamilton avait été conçu pour ça. Il abandonne les tâches secondaires et garde uniquement l&#x27;essentiel : piloter l&#x27;atterrissage. À Houston, on donne le feu vert. Neil Armstrong et Buzz Aldrin se posent sans encombre.
+
+Sans ce choix de programmation, la mission aurait sans doute été interrompue. En 2016, Barack Obama lui a remis la médaille présidentielle de la Liberté.
+
+Vous connaissiez son nom ?
+
+#Kulturable #MargaretHamilton #Apollo11 #NASA #Femmes #HistoireVraie
+
+Source : NASA.</pre></details>
+</article><article class="post" data-n="53">
+<header><span class="num">53</span><div class="meta"><h2>LA CALCULATRICE HUMAINE DE LA NASA</h2><p class="date">Publié le 22 déc. 2023</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C1KowdXsYQx/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-53"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA CALCULATRICE HUMAINE DE LA NASA : en 1962, John Glenn a refusé de partir sans qu&#x27;elle vérifie les calculs.
+
+Katherine Johnson naît en 1918 en Virginie-Occidentale. Elle est tellement douée en mathématiques qu&#x27;elle entre au lycée à 10 ans et à l&#x27;université à 15. Mais elle est noire, dans une Amérique où la ségrégation est la loi.
+
+En 1953, elle est embauchée au centre de recherche de Langley, qui deviendra une partie de la NASA. Elle travaille dans un service de femmes noires qu&#x27;on appelle les « computers » : les calculatrices. À l&#x27;époque, ce sont des humains qui font, à la main, les calculs dont les ingénieurs ont besoin. Les bureaux, la cantine et les toilettes sont séparés selon la couleur de peau.
+
+Très vite, elle se fait remarquer par la justesse de ses calculs. En 1961, elle calcule la trajectoire du premier vol spatial américain, celui d&#x27;Alan Shepard.
+
+En 1962, John Glenn doit devenir le premier Américain à faire le tour de la Terre en orbite. Les calculs sont désormais faits par des ordinateurs électroniques, mais il ne leur fait pas confiance. Il demande que « la fille » refasse les calculs à la main. « Si elle dit qu&#x27;ils sont bons, je suis prêt à partir. » Elle vérifie. Le vol est un succès.
+
+Elle travaillera ensuite sur les missions Apollo, dont celle qui a emmené les premiers hommes sur la Lune. Le film Les Figures de l&#x27;ombre a raconté son histoire en 2016. Elle est morte en 2020, à 101 ans.
+
+Vous connaissiez l&#x27;histoire de Katherine Johnson ?
+
+#Kulturable #KatherineJohnson #NASA #Femmes #Espace #HistoireVraie
+
+Source : NASA.</pre></details>
+</article><article class="post" data-n="54">
+<header><span class="num">54</span><div class="meta"><h2>LA CARTE QUI A VAINCU LE CHOLÉRA</h2><p class="date">Publié le 27 janv. 2024</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/C2mbWjTt96a/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-54"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA CARTE QUI A VAINCU LE CHOLÉRA : en 1854, un médecin a trouvé le coupable en dessinant des traits sur un plan.
+
+Londres, fin août 1854. Dans le quartier de Soho, le choléra frappe d&#x27;un coup. En dix jours, plus de 500 personnes meurent. À l&#x27;époque, presque tout le monde pense que la maladie se transmet par le « miasme », un mauvais air qui sortirait des ordures et des égouts.
+
+Le docteur John Snow n&#x27;y croit pas. Il pense que le choléra se transmet par l&#x27;eau. Pour le prouver, il fait quelque chose de nouveau : il prend un plan du quartier et marque d&#x27;un petit trait noir chaque maison où quelqu&#x27;un est mort.
+
+Le résultat saute aux yeux. Les traits forment un amas autour d&#x27;un seul endroit : une pompe à eau publique, sur Broad Street. Plus on habite près de la pompe, plus on meurt. Il remarque aussi que les ouvriers d&#x27;une brasserie voisine sont épargnés : ils boivent de la bière, et la brasserie a son propre puits.
+
+Snow convainc les autorités de retirer la poignée de la pompe pour qu&#x27;on ne puisse plus s&#x27;en servir. L&#x27;épidémie, qui commençait déjà à reculer, s&#x27;éteint. On découvrira plus tard que la pompe était contaminée par une fosse d&#x27;aisances toute proche.
+
+Sa carte est devenue célèbre. Elle est considérée comme l&#x27;un des actes fondateurs de l&#x27;épidémiologie, la science qui étudie la propagation des maladies. Une réplique de la pompe, sans poignée, se trouve toujours dans la rue.
+
+Vous auriez eu l&#x27;idée de faire une carte ?
+
+#Kulturable #JohnSnow #Londres #Médecine #Science #HistoireVraie
+
+Source : Géoconfluences (ENS de Lyon).</pre></details>
+</article><article class="post" data-n="55">
+<header><span class="num">55</span><div class="meta"><h2>« NE PAS OUVRIR AVANT 8113 »</h2><p class="date">Publié le 9 janv. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DEm1xmTMJ23/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-55"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>« NE PAS OUVRIR AVANT 8113 » : en 1940, une université a scellé une salle remplie de trésors pour le futur.
+
+Thornwell Jacobs est le président de l&#x27;université Oglethorpe, à Atlanta, en Géorgie. Dans les années 1930, il se fait une réflexion : pour comprendre l&#x27;Égypte ancienne, les archéologues doivent fouiller des tombes et deviner. Pourquoi ne pas laisser aux humains du futur un témoignage complet de notre époque ?
+
+Il fait alors aménager une ancienne piscine en sous-sol, d&#x27;environ 6 mètres de long, et la remplit pendant des années. On y range des milliers de livres reproduits sur microfilms, des enregistrements sonores, des films, des objets de la vie quotidienne : un grille-pain, des jouets, des poupées, une machine à écrire, des bouteilles de bière. Des voix de dirigeants de l&#x27;époque y sont même enregistrées.
+
+Il pense à tout. Il laisse un projecteur, une machine à lire les microfilms, et un petit générateur actionné à la main, au cas où l&#x27;électricité n&#x27;existerait plus. Et un appareil pour apprendre l&#x27;anglais, si personne ne le parle plus.
+
+La crypte est scellée en mai 1940, derrière une porte en acier soudée. Elle ne doit pas être ouverte avant l&#x27;an 8113.
+
+Pourquoi cette date ? Jacobs a calculé que 6 177 ans s&#x27;étaient écoulés depuis le début de la première année connue du calendrier égyptien jusqu&#x27;en 1936. Il a voulu laisser la même durée dans l&#x27;autre sens. Le livre Guinness des records l&#x27;a reconnue comme la première capsule temporelle réussie.
+
+Et vous, qu&#x27;est-ce que vous mettriez dans une capsule pour l&#x27;an 8113 ?
+
+#Kulturable #CapsuleTemporelle #Atlanta #Futur #Insolite #HistoireVraie
+
+Source : Oglethorpe University (Crypt of Civilization).</pre></details>
+</article><article class="post" data-n="56">
+<header><span class="num">56</span><div class="meta"><h2>LE TUEUR QUI NE VISAIT QUE DES CRIMINELS</h2><p class="date">Publié le 10 janv. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DEp05cRMX5m/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-56"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE TUEUR QUI NE VISAIT QUE DES CRIMINELS : au Brésil, Pedrinho Matador a été condamné pour 71 meurtres.
+
+Pedro Rodrigues Filho naît en 1954 au Brésil, dans l&#x27;État du Minas Gerais. Son enfance est marquée par la violence. Adolescent, il commet ses premiers meurtres pour se venger d&#x27;hommes qui avaient humilié son père. Puis il s&#x27;en prend à des membres de gangs et à des trafiquants.
+
+Arrêté en 1973, il est envoyé en prison. Et c&#x27;est là que son histoire devient glaçante. Il continue de tuer, derrière les barreaux. Ses victimes sont presque toujours des détenus condamnés pour des crimes graves. Il en a fait sa règle, et s&#x27;en vantait.
+
+Les médias brésiliens le surnomment Pedrinho Matador, « Petit Pierre le Tueur ». Il a été condamné pour 71 meurtres, et lui-même en revendiquait plus de 100. Ses peines cumulées dépassaient plusieurs centaines d&#x27;années de prison.
+
+Au Brésil, la loi limite la durée réelle de détention à 30 ans. Il est libéré en 2007, puis à nouveau en 2018 après une autre peine. Il devient alors une célébrité sur Internet, où il dit regretter et vouloir détourner les jeunes du crime.
+
+En mars 2023, il est tué par balles dans la rue, à Mogi das Cruzes, près de São Paulo, à 68 ans.
+
+Son histoire soulève une question qui dérange : peut-on se faire justice soi-même ? Pour la justice brésilienne, la réponse était claire : non.
+
+Et vous, qu&#x27;en pensez-vous ?
+
+#Kulturable #Brésil #Justice #FaitDivers #Histoire #HistoireVraie
+
+Source : BBC News Brasil (2023).</pre></details>
+</article><article class="post" data-n="57">
+<header><span class="num">57</span><div class="meta"><h2>EURÊKA !</h2><p class="date">Publié le 14 janv. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DEznJPXsqal/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-57"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>EURÊKA ! : un roi croit qu&#x27;on l&#x27;a volé. Archimède trouve la réponse dans son bain et sort tout nu dans la rue.
+
+Nous sommes à Syracuse, en Sicile, au IIIe siècle avant notre ère. Le roi Hiéron II a commandé une couronne en or pur pour l&#x27;offrir aux dieux. Il a donné à l&#x27;orfèvre une quantité précise d&#x27;or. La couronne revient. Elle a le bon poids. Mais le roi a un doute : et si l&#x27;artisan avait gardé une partie de l&#x27;or pour le remplacer par de l&#x27;argent, moins cher ?
+
+Il demande à Archimède, le plus grand savant de la ville, de trouver la vérité. Sans abîmer la couronne.
+
+Archimède réfléchit longtemps. Puis un jour, en entrant dans son bain, il remarque que l&#x27;eau monte et déborde. Plus il s&#x27;enfonce, plus l&#x27;eau déborde. Et il comprend : un objet plongé dans l&#x27;eau déplace un volume d&#x27;eau égal à son propre volume.
+
+Or, l&#x27;argent est plus léger que l&#x27;or. Pour faire le même poids, il en faut davantage. Une couronne mélangée prendra donc plus de place qu&#x27;un lingot d&#x27;or pur du même poids, et fera déborder plus d&#x27;eau.
+
+Selon l&#x27;architecte romain Vitruve, qui raconte cette histoire deux siècles plus tard, Archimède est si heureux qu&#x27;il saute de son bain et court tout nu dans les rues en criant « Eurêka ! », « J&#x27;ai trouvé ! ».
+
+Il fait l&#x27;expérience. La couronne déplace plus d&#x27;eau que l&#x27;or pur. L&#x27;orfèvre avait bien triché.
+
+Vous avez déjà eu une idée géniale sous la douche ?
+
+#Kulturable #Archimède #Eurêka #Science #Grèce #HistoireVraie
+
+Source : Vitruve, De l&#x27;architecture, livre IX.</pre></details>
+</article><article class="post" data-n="58">
+<header><span class="num">58</span><div class="meta"><h2>LA FILLE QUI VOULAIT ALLER À L&#x27;ÉCOLE</h2><p class="date">Publié le 15 janv. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DE2SCuRMwdx/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-58"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FILLE QUI VOULAIT ALLER À L&#x27;ÉCOLE : à 15 ans, une balle dans la tête. À 17 ans, le prix Nobel de la paix.
+
+Malala Yousafzai naît en 1997 dans la vallée de Swat, au nord du Pakistan. Son père dirige une école de filles. Elle adore apprendre et rêve de devenir médecin.
+
+Mais à partir de 2007, les talibans prennent le contrôle de la région. Ils interdisent la télévision, la musique, et bientôt l&#x27;école pour les filles. Des dizaines d&#x27;écoles sont détruites.
+
+Malala n&#x27;a que 11 ans. Sous un faux nom, elle commence à écrire un journal en ligne pour la BBC, où elle raconte la peur et son envie d&#x27;étudier. Puis elle prend la parole à visage découvert, à la télévision et dans les journaux. Elle devient une voix connue dans tout le pays.
+
+Le 9 octobre 2012, un homme arrête son bus scolaire et demande : « Qui est Malala ? » Puis il tire. Elle est touchée à la tête. Transférée en Angleterre, à Birmingham, elle survit, après plusieurs opérations.
+
+Neuf mois plus tard, le jour de ses 16 ans, elle parle devant l&#x27;ONU, à New York. Elle dit cette phrase restée célèbre : « Un enfant, un enseignant, un livre et un stylo peuvent changer le monde. »
+
+En 2014, à 17 ans, elle reçoit le prix Nobel de la paix. C&#x27;est la plus jeune lauréate de l&#x27;histoire. Elle a ensuite étudié à l&#x27;université d&#x27;Oxford, et continue de se battre pour l&#x27;éducation des filles dans le monde entier.
+
+Et vous, qu&#x27;est-ce que l&#x27;école vous a apporté ?
+
+#Kulturable #Malala #Pakistan #Éducation #Courage #HistoireVraie
+
+Source : Prix Nobel (nobelprize.org).</pre></details>
+</article><article class="post" data-n="59">
+<header><span class="num">59</span><div class="meta"><h2>LE « NON » QUI A CHANGÉ L&#x27;AMÉRIQUE</h2><p class="date">Publié le 15 janv. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DE3NqhZsGE-/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-59"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE « NON » QUI A CHANGÉ L&#x27;AMÉRIQUE : en 1955, une couturière a refusé de céder sa place dans un bus.
+
+Montgomery, en Alabama, le 1er décembre 1955. Dans le sud des États-Unis, la ségrégation est la loi. Dans les bus, les premières rangées sont réservées aux Blancs. Les passagers noirs doivent s&#x27;asseoir au fond, et laisser leur place si un Blanc n&#x27;en trouve pas.
+
+Ce soir-là, Rosa Parks, 42 ans, couturière dans un grand magasin, rentre du travail. Elle s&#x27;assoit dans la partie du milieu. Le bus se remplit. Le chauffeur lui ordonne de se lever pour laisser sa place à un passager blanc. Elle refuse.
+
+On raconte souvent qu&#x27;elle était simplement fatiguée. Elle a corrigé cette idée elle-même : « La seule fatigue que j&#x27;avais, c&#x27;était d&#x27;être fatiguée de céder. » Rosa Parks était en réalité une militante engagée depuis des années pour les droits civiques.
+
+Elle est arrêtée et condamnée à une amende. Quatre jours plus tard, la communauté noire de Montgomery lance un boycott des bus. Un jeune pasteur de 26 ans en prend la tête : Martin Luther King.
+
+Pendant 381 jours, des dizaines de milliers de personnes vont à pied au travail, parfois sur des kilomètres, plutôt que de prendre le bus. En novembre 1956, la Cour suprême déclare la ségrégation dans les bus contraire à la Constitution.
+
+Rosa Parks est morte en 2005. Elle a été la première femme à reposer en hommage au Capitole de Washington.
+
+Vous auriez osé dire non, vous aussi ?
+
+#Kulturable #RosaParks #DroitsCiviques #Histoire #Courage #HistoireVraie
+
+Source : Library of Congress (Rosa Parks Papers).</pre></details>
+</article><article class="post" data-n="60">
+<header><span class="num">60</span><div class="meta"><h2>LA FÊTE OÙ LES MORTS REVIENNENT</h2><p class="date">Publié le 28 avr. 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DJAFRjiMCzQ/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-60"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FÊTE OÙ LES MORTS REVIENNENT : chaque année au Mexique, les familles préparent un repas pour leurs défunts.
+
+Les 1er et 2 novembre, le Mexique tout entier se couvre de fleurs orange, de bougies et de crânes colorés. C&#x27;est el Día de los Muertos, le jour des Morts. Mais ce n&#x27;est pas une fête triste. C&#x27;est un grand rendez-vous avec ceux qui sont partis.
+
+Selon la tradition, pendant ces deux jours, les âmes des défunts ont le droit de revenir rendre visite à leur famille. Alors on les accueille. Dans les maisons, on monte des autels, les ofrendas. On y pose les photos des disparus, leurs plats préférés, leur boisson favorite, parfois leurs cigarettes ou leurs jouets d&#x27;enfant.
+
+Les pétales de cempasúchil, une fleur orange, tracent un chemin pour guider les âmes jusqu&#x27;à la maison. Les bougies éclairent leur route. Et partout, on croise des calaveras, des crânes en sucre ou en céramique, joyeusement décorés.
+
+Cette fête mêle des rites venus des peuples indigènes d&#x27;avant la conquête espagnole, qui honoraient déjà leurs morts, et les fêtes catholiques de la Toussaint et du jour des défunts. Dans certains villages, les familles passent toute la nuit au cimetière, autour des tombes, à manger, prier et chanter.
+
+Depuis 2008, la fête est inscrite au patrimoine culturel immatériel de l&#x27;humanité de l&#x27;UNESCO. Et en 2017, le film Coco l&#x27;a fait découvrir au monde entier, avec cette idée : on ne meurt vraiment que lorsqu&#x27;on est oublié.
+
+Et vous, comment honorez-vous ceux qui sont partis ?
+
+#Kulturable #DiaDeLosMuertos #Mexique #Tradition #Culture #HistoireVraie
+
+Source : UNESCO (fête indigène dédiée aux morts).</pre></details>
+</article><article class="post" data-n="61">
+<header><span class="num">61</span><div class="meta"><h2>PERDU DANS LE SAHARA</h2><p class="date">Publié le 13 juin 2025</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DK2gfZVsnSY/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-61"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>PERDU DANS LE SAHARA : en pleine course, une tempête de sable l&#x27;a égaré. Il a survécu 9 jours seul au désert.
+
+En 1994, Mauro Prosperi, un policier italien de 39 ans, prend le départ du Marathon des Sables, au Maroc. C&#x27;est l&#x27;une des courses les plus dures du monde : environ 250 kilomètres à pied en plein désert, en six étapes, avec tout son matériel sur le dos.
+
+Au quatrième jour, une violente tempête de sable se lève. Mauro se met à l&#x27;abri, puis repart quand elle se calme. Mais le paysage a changé. Les repères ont disparu. Il est perdu.
+
+Il lui reste un peu d&#x27;eau et de nourriture. Il rationne tout. Pour tenir, il boit sa propre urine. Il se réfugie dans un petit sanctuaire abandonné, où il trouve des chauves-souris. Il les mange crues, et boit leur sang.
+
+Il marche le matin et le soir, et se cache du soleil aux heures les plus chaudes. Il s&#x27;oriente en suivant les nuages à l&#x27;horizon, en se disant qu&#x27;ils annoncent des montagnes. Il croise un jour une petite oasis, et se jette dans l&#x27;eau.
+
+Après neuf jours, il est retrouvé par une famille de nomades touaregs. Il a parcouru près de 300 kilomètres dans la mauvaise direction, jusqu&#x27;en Algérie. Il a perdu près de 18 kilos, et son foie restera abîmé.
+
+Le plus fou, c&#x27;est qu&#x27;il est retourné courir le Marathon des Sables quelques années plus tard. Et il y est revenu plusieurs fois depuis.
+
+Et vous, vous auriez tenu combien de temps ?
+
+#Kulturable #MauroProsperi #Sahara #Survie #Désert #HistoireVraie
+
+Source : La República (Pérou, 2023).</pre></details>
+</article><article class="post" data-n="62">
+<header><span class="num">62</span><div class="meta"><h2>LA FEMME QUI NE COULAIT PAS</h2><p class="date">Publié le 11 oct. 2026</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/p/DeVUyyDmd3T/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-62"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LA FEMME QUI NE COULAIT PAS : Violet Jessop a survécu au Titanic. Et à deux autres catastrophes en mer.
+
+Violet Jessop était hôtesse de bord pour la White Star Line, la compagnie des plus grands paquebots de son époque. Et elle a vécu les trois pires catastrophes de la compagnie.
+
+La première fois, en 1911, elle travaille sur l&#x27;Olympic quand le paquebot percute un croiseur de la marine britannique, le HMS Hawke. Les deux navires sont salement abîmés, mais personne ne meurt. Violet reprend son service.
+
+L&#x27;année suivante, on l&#x27;affecte au tout nouveau Titanic. Dans la nuit du 14 au 15 avril 1912, le navire heurte un iceberg. Violet aide les passagers à garder leur calme, puis on la fait monter dans le canot numéro 16. Juste avant qu&#x27;il ne soit mis à l&#x27;eau, un officier lui tend un bébé. Le lendemain, à bord du Carpathia qui a recueilli les survivants, une femme s&#x27;approche, lui reprend l&#x27;enfant des bras et repart sans dire un mot.
+
+On pourrait croire qu&#x27;après ça, elle aurait voulu rester à terre. Pas du tout. Pendant la Première Guerre mondiale, elle s&#x27;engage comme infirmière sur le Britannic, le troisième frère de la série, transformé en navire-hôpital. En novembre 1916, il heurte une mine en mer Égée et coule. Violet est blessée. Elle survit encore une fois.
+
+Elle a continué à naviguer jusqu&#x27;à 63 ans. Au total, 42 ans de sa vie passés en mer. Ses mémoires ont été publiés en 1997 sous le titre « Titanic Survivor ».
+
+Et vous, après le Titanic, vous seriez remonté sur un bateau ?
+
+#Kulturable #Titanic #VioletJessop #Naufrage #Histoire #HistoireVraie
+
+Sources : National Maritime Museum Cornwall, Molly Brown House Museum, mémoires de Violet Jessop (Sheridan House, 1997).
+Photo : canots du Titanic rejoignant le Carpathia, 15 avril 1912. Library of Congress, collection Bain.</pre></details>
+</article><article class="post" data-n="63">
+<header><span class="num">63</span><div class="meta"><h2>LE DERNIER HOMME SUR LA LUNE</h2><p class="date">Publié le 13 oct. 2026</p></div></header>
+<div class="actions"><a class="btn ghost" href="https://www.instagram.com/kulturable/" target="_blank" rel="noopener">Ouvrir le post</a><button class="btn copy" type="button">Copier le texte</button><label class="done"><input type="checkbox" id="done-63"> Collé</label></div>
+<details><summary>Voir le texte</summary><pre>LE DERNIER HOMME SUR LA LUNE : en 1972, Gene Cernan a écrit un prénom dans la poussière. Il y est encore.
+
+En décembre 1972, Gene Cernan pose le pied sur la Lune pour la mission Apollo 17. Personne ne le sait encore, mais ce sera la dernière fois qu&#x27;un être humain marche là-haut. Plus de cinquante ans après, personne n&#x27;y est retourné.
+
+Avec lui, il y a Harrison Schmitt, le seul géologue à avoir jamais travaillé sur la Lune, pendant que Ronald Evans tourne en orbite autour d&#x27;eux. Pendant trois jours, les deux hommes parcourent la vallée de Taurus-Littrow à bord de leur jeep lunaire et ramassent un record de roches.
+
+Il y a aussi des moments de bricolage. Cernan arrache par accident un garde-boue de la jeep. Sans lui, la poussière lunaire leur retombe dessus à chaque tour de roue et risque de faire surchauffer le matériel. Alors ils en fabriquent un nouveau avec des cartes plastifiées et des pinces, sur les conseils du centre de contrôle à Houston.
+
+Avant de partir, Cernan s&#x27;agenouille et écrit dans la poussière les initiales de sa fille, Tracy. Sur la Lune, il n&#x27;y a ni vent ni pluie, alors ces lettres sont sans doute toujours là. Des années plus tard, il racontera que ses traces de pas y resteront « pour toujours, aussi longtemps que dure toujours ».
+
+Le 14 décembre 1972, il remonte l&#x27;échelle du module lunaire en dernier. Il est mort en 2017. Il disait souvent qu&#x27;il aurait aimé perdre ce titre de « dernier homme sur la Lune » de son vivant.
+
+Et vous, vous pensez qu&#x27;on y retournera bientôt ?
+
+#Kulturable #Apollo17 #GeneCernan #Lune #Espace #HistoireVraie
+
+Sources : NASA (entretien de Gene Cernan, Johnson Space Center Oral History Project), Smithsonian National Air and Space Museum.
+Photo : Gene Cernan près du drapeau américain, Apollo 17, décembre 1972. NASA.</pre></details>
+</article>
+</div>
+<script>
+const posts=[...document.querySelectorAll('.post')];
+function load(){try{return JSON.parse(localStorage.getItem('kult-done')||'[]')}catch(e){return[]}}
+function save(a){try{localStorage.setItem('kult-done',JSON.stringify(a))}catch(e){}}
+const hide=document.getElementById('hide');
+function refresh(){const done=load();let c=0;posts.forEach(p=>{const on=done.includes(p.dataset.n);p.querySelector('.done input').checked=on;p.classList.toggle('is-done',on);p.hidden=on&&hide.checked;if(on)c++});
+document.getElementById('count').textContent=c+' / '+posts.length+' collés';document.getElementById('prog').style.width=(100*c/posts.length)+'%'}
+posts.forEach(p=>{
+ p.querySelector('.done input').addEventListener('change',e=>{let a=load().filter(x=>x!==p.dataset.n);if(e.target.checked)a.push(p.dataset.n);save(a);refresh()});
+ const b=p.querySelector('.copy');
+ b.addEventListener('click',()=>{const t=p.querySelector('pre').textContent;
+  const ok=()=>{b.textContent='Copié';b.classList.add('copied');setTimeout(()=>{b.textContent='Copier le texte';b.classList.remove('copied')},2000)};
+  const fail=()=>{const d=p.querySelector('details');d.open=true;const r=document.createRange();r.selectNodeContents(p.querySelector('pre'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Texte sélectionné, copiez-le'};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fail)}else fail()});
+});
+hide.addEventListener('change',refresh);refresh();
+</script>
