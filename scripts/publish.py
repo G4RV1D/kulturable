@@ -73,9 +73,45 @@ def wait_ready(container: str, token: str) -> None:
     raise RuntimeError("Instagram n'a pas fini de traiter le média à temps.")
 
 
+def first_line(text: str) -> str:
+    return " ".join((text or "").strip().split("\n")[0].split()).lower()
+
+
+def already_posted(caption: str, user_id: str, token: str):
+    """Garde-fou anti-doublon : cherche sur Instagram un post récent qui a déjà cette légende."""
+    data = call("GET", f"{user_id}/media", {"fields": "id,caption,timestamp", "limit": 25, "access_token": token})
+    target = first_line(caption)
+    for m in data.get("data", []):
+        if first_line(m.get("caption", "")) == target:
+            return m
+    return None
+
+
+def recent_story(user_id: str, token: str, since: dt.datetime):
+    """Garde-fou anti-doublon : une story publiée par le compte depuis `since` ?"""
+    try:
+        data = call("GET", f"{user_id}/stories", {"fields": "id,timestamp", "access_token": token})
+    except Exception as e:
+        print(f"Impossible de lire les stories en ligne ({e}) : on s'appuie sur la file seule.")
+        return None
+    for st in data.get("data", []):
+        ts = dt.datetime.strptime(st["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+        if ts >= since:
+            return st
+    return None
+
+
 def publish_story(post: dict, user_id: str, token: str) -> None:
     """Publie la story du post ; un échec n'annule pas le post."""
     if post.get("story_media_id") or not (ROOT / "stories" / f"{post['id']}.jpg").exists():
+        return
+    since = dt.datetime.fromisoformat(post["published_at"]) - dt.timedelta(minutes=10) if post.get("published_at") \
+        else dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=6)
+    st = recent_story(user_id, token, since)
+    if st:
+        post["story_media_id"] = st["id"]
+        post["story_published_at"] = st["timestamp"]
+        print(f"Story déjà en ligne pour {post['id']} ({st['id']}) : pas de doublon.")
         return
     base = os.environ["IMAGE_BASE_URL"].rstrip("/").rsplit("/images", 1)[0]
     url = f"{base}/stories/{post['id']}.jpg"
@@ -145,6 +181,14 @@ def main() -> int:
     print(f"Clé Instagram valide pour le compte @{me.get('username')}.")
     if dry:
         print("Mode test : rien n'a été publié.")
+        return 0
+    dup = already_posted(caption, user_id, token)
+    if dup:  # déjà publié (par une autre exécution) : on le note et on ne republie pas
+        post["published_at"] = post.get("published_at") or dup["timestamp"].replace("+0000", "+00:00")
+        post["media_id"] = dup["id"]
+        print(f"{post['id']} est déjà sur Instagram ({dup['id']}) : pas de doublon.")
+        publish_story(post, user_id, token)
+        QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return 0
     if len(image_urls) == 1:
         container = call("POST", f"{user_id}/media",

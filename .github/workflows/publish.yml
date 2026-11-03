@@ -43,6 +43,8 @@ jobs:
       go: ${{ steps.wait.outputs.go }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - id: wait
         env:
           GH_TOKEN: ${{ github.token }}
@@ -61,7 +63,11 @@ jobs:
           fi
           echo "Prochain post dans $s s, on attend."
           sleep "$s"
+          sleep 20
+          git pull -q origin main   # une autre exécution a peut-être déjà publié
+          s2=$(python3 scripts/next_due.py)
           relay
+          if [ "$s2" -ne 0 ]; then echo "Déjà publié par une autre exécution."; echo "go=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           echo "go=1" >> "$GITHUB_OUTPUT"
 
   publish:
@@ -73,6 +79,8 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
