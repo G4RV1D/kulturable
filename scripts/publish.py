@@ -184,9 +184,13 @@ def main() -> int:
         if last:  # test du garde-fou sur le dernier post publié : il doit être retrouvé en ligne
             cap = (ROOT / last["caption_file"]).read_text(encoding="utf-8")
             found = already_posted(cap, user_id, token)
-            print(f"Garde-fou : dernier post {last['id']} {'retrouvé en ligne' if found else 'NON retrouvé'}.")
             st = recent_story(user_id, token, dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24))
-            print(f"Garde-fou stories : {'une story des dernières 24 h retrouvée' if st else 'aucune story retrouvée'}.")
+            msg = (f"{now.isoformat(timespec='seconds')} garde-fou posts : dernier post {last['id']} "
+                   f"{'retrouvé en ligne' if found else 'NON retrouvé'} ; stories : "
+                   f"{'une story des dernières 24 h retrouvée' if st else 'aucune story retrouvée'}\n")
+            print(msg)
+            (ROOT / "posts" / "stats").mkdir(exist_ok=True)
+            (ROOT / "posts" / "stats" / "garde-fou.txt").write_text(msg, encoding="utf-8")
         print("Mode test : rien n'a été publié.")
         return 0
     dup = already_posted(caption, user_id, token)
