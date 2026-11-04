@@ -67,7 +67,8 @@
   - Une version condensée de l'anecdote qui donne envie d'aller lire le post complet.
   - **Pas de musique sur les Reels Instagram** (décision du 4/11 ; TikTok garde musique + voix) : uniquement les photos qui défilent avec les phrases à l'écran.
 - **Règle : Reels hors grille.** Les Reels apparaissent uniquement dans l'onglet Reels, jamais dans la grille du profil, pour éviter les doublons avec les posts dont ils sont tirés. À la main : désactiver « Afficher dans la grille du profil » avant de publier. En automatique : `share_to_feed = false`.
-- **Reel n°1 terminé (brouillon)** : *Le château de corail* (Edward Leedskalnin), 7 scènes, 24 s, avec ses photos libres créditées et sa légende complète. Il est dans `reels/01-coral-castle/`, et un aperçu dans une fausse page Instagram a été montré.
+- **Reel n°1 refait le 4/11 (brouillon, non publié)** : 6 diapositives muettes, 14 s (2 à 2,8 s par diapo, texte court et gros), photos réelles créditées, `reels/01-coral-castle/apercu.mp4`. Montage automatique : `.github/workflows/make-reels.yml` (à chaque modification d'un `reel.json`). Chaque Reel porte `"share_to_feed": false` : onglet Reels uniquement, jamais dans la grille.
+- Ancienne version : **Reel n°1 terminé (brouillon)** : *Le château de corail* (Edward Leedskalnin), 7 scènes, 24 s, avec ses photos libres créditées et sa légende complète. Il est dans `reels/01-coral-castle/`, et un aperçu dans une fausse page Instagram a été montré.
 - **À faire** : refaire le Reel n°1 sans musique.
 - **Musique de la chaîne** (plus utilisée dans les Reels Instagram ; gardée pour TikTok, qui aura musique + voix) :
   - La mélodie choisie est la proposition 1, « boîte à musique, mystère » : ré-la-fa-mi-ré-do#-ré.
