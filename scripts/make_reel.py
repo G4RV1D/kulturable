@@ -173,7 +173,15 @@ def build(folder: pathlib.Path) -> pathlib.Path:
     total = sum(s["duration"] for s in cfg["scenes"])
     final = folder / "reel.mp4"
     tmp = folder / "reel.part.mp4"
-    if cfg.get("music"):
+    if cfg.get("music") == "signature":  # son de la chaîne, chute calée sur la dernière diapositive
+        from reel_sound import make as make_sound
+        hit = total - cfg["scenes"][-1]["duration"]
+        wav = work / "son.wav"
+        make_sound(total, hit, str(wav))
+        subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-i", str(wav),
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                        "-t", str(total), "-movflags", "+faststart", str(tmp)], check=True)
+    elif cfg.get("music"):
         music = ROOT / cfg["music"]
         start = cfg.get("music_start", 0)
         subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-ss", str(start), "-i", str(music),

@@ -3,7 +3,7 @@ name: Monter les Reels
 on:
   push:
     branches: [main]
-    paths: ["reels/**/reel.json", "scripts/make_reel.py"]
+    paths: ["reels/**/reel.json", "scripts/make_reel.py", "scripts/reel_sound.py"]
   workflow_dispatch:
 
 permissions:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install pillow imageio-ffmpeg numpy
+      - run: pip install pillow imageio-ffmpeg numpy scipy
       - run: python scripts/make_reel.py
       - name: Crédits des images
         run: |

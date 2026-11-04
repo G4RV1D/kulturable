@@ -1,6 +1,6 @@
 {
   "title": "Le chant qui appelle les troupeaux",
-  "music": null,
+  "music": "signature",
   "share_to_feed": false,
   "source_post": "posts/anciens/02.txt",
   "images": {
@@ -118,5 +118,5 @@
       "pan": 0.55
     }
   ],
-  "note": "Photos chanteuse.jpg et vaches.jpg fournies par Paul : auteur et licence À VÉRIFIER avant publication. Son : à ajouter dans Instagram au moment de publier."
+  "note": "Photos chanteuse.jpg et vaches.jpg fournies par Paul : auteur et licence À VÉRIFIER avant publication. Son : signature Kulturable."
 }
