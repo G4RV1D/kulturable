@@ -11,7 +11,7 @@
   },
   "scenes": [
     {
-      "image": "fleur.jpg",
+      "image": "fleur2.jpg",
       "duration": 2.2,
       "text": [
         {
@@ -28,7 +28,8 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "pan": 0.55
     },
     {
       "image": "kolyma.jpg",
@@ -73,7 +74,7 @@
       "pan": 0.5
     },
     {
-      "image": "fleur2.jpg",
+      "image": "fleur.jpg",
       "duration": 2.4,
       "text": [
         {
@@ -91,10 +92,16 @@
         }
       ],
       "zoom": "in",
-      "pan": 0.5
+      "pan": 0.5,
+      "crop": [
+        0.0,
+        0.35,
+        1.0,
+        1.0
+      ]
     },
     {
-      "image": "fleur.jpg",
+      "image": "fleur2.jpg",
       "duration": 2.8,
       "text": [
         {
@@ -115,7 +122,8 @@
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.55
     }
   ]
 }

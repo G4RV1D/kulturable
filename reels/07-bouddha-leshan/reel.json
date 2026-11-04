@@ -7,7 +7,6 @@
     "dessous.jpg": "File:Leshan_Dafo_(Grand_Buddha)_(13946265775).jpg",
     "tete.jpg": "File:The_head_of_the_Leshan_Giant_Buddha.jpg",
     "riviere.jpg": "File:Leshan-Giant-Buddha_and_Min-River.jpg",
-    "pied.jpg": "File:Leshan_Buddha,_foot_and_man.jpg",
     "vue.jpg": "File:Leshan_Buddha_Statue_View.JPG"
   },
   "scenes": [
@@ -74,7 +73,7 @@
       "pan": 0.5
     },
     {
-      "image": "pied.jpg",
+      "image": "dessous.jpg",
       "duration": 2.4,
       "text": [
         {
@@ -91,8 +90,14 @@
           ]
         }
       ],
-      "zoom": "out",
-      "pan": 0.5
+      "zoom": "in",
+      "pan": 0.5,
+      "crop": [
+        0.0,
+        0.45,
+        1.0,
+        1.0
+      ]
     },
     {
       "image": "vue.jpg",
