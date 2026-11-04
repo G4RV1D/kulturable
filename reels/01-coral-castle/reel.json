@@ -21,15 +21,14 @@
         1.0,
         0.75
       ],
-      "text_y": 0.63,
       "text": [
         {
           "text": "Sa fiancée l'a planté",
-          "size": 78
+          "size": 58
         },
         {
           "text": "LA VEILLE DU MARIAGE.",
-          "size": 86,
+          "size": 74,
           "color": [
             255,
             196,
@@ -46,11 +45,11 @@
       "text": [
         {
           "text": "Alors il a bâti un château",
-          "size": 72
+          "size": 58
         },
         {
           "text": "POUR LA RECONQUÉRIR.",
-          "size": 86,
+          "size": 74,
           "color": [
             255,
             196,
@@ -67,11 +66,11 @@
       "text": [
         {
           "text": "Seul. La nuit.",
-          "size": 80
+          "size": 58
         },
         {
           "text": "1 100 TONNES DE CORAIL.",
-          "size": 86,
+          "size": 74,
           "color": [
             255,
             196,
@@ -87,11 +86,11 @@
       "text": [
         {
           "text": "Il était sûr qu'elle reviendrait",
-          "size": 70
+          "size": 58
         },
         {
           "text": "EN VOYANT ÇA.",
-          "size": 96,
+          "size": 74,
           "color": [
             255,
             196,
@@ -108,11 +107,11 @@
       "text": [
         {
           "text": "Elle n'est",
-          "size": 84
+          "size": 58
         },
         {
           "text": "JAMAIS REVENUE.",
-          "size": 104,
+          "size": 74,
           "color": [
             255,
             196,
@@ -129,11 +128,11 @@
       "text": [
         {
           "text": "Il disait connaître le secret des pyramides.",
-          "size": 66
+          "size": 58
         },
         {
           "text": "IL L'A EMPORTÉ DANS LA TOMBE.",
-          "size": 80,
+          "size": 74,
           "color": [
             255,
             196,
@@ -141,8 +140,8 @@
           ]
         },
         {
-          "text": "L'histoire complète sur notre profil",
-          "size": 44
+          "text": "Histoire complète sur le profil",
+          "size": 46
         }
       ]
     }

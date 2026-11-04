@@ -44,25 +44,44 @@ def wrap(d, text, font, width):
     return lines + ([cur] if cur else [])
 
 
-def text_layer(lines_spec, y_frac=0.40):
-    """Calque transparent avec le texte (liste de (texte, taille, couleur)), centré vers le milieu de l'écran."""
+def text_layer(lines_spec, y_frac=0.70):
+    """Calque transparent : léger dégradé sombre en bas de l'écran et texte posé dessus, sans encadré.
+
+    Le haut de la photo reste intact. Le texte reste dans la zone visible des Reels :
+    au-dessus de la légende (bas de l'écran) et à l'écart des boutons (bord droit).
+    """
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    # dégradé : transparent jusqu'à 48 % de la hauteur, puis assombrissement progressif
+    grad = Image.new("L", (1, H), 0)
+    for yy in range(H):
+        t = (yy / H - 0.42) / 0.40
+        grad.putpixel((0, yy), int(215 * max(0.0, min(1.0, t)) ** 1.3))
+    layer.paste(Image.new("RGBA", (W, H), (0, 0, 0, 255)), (0, 0), grad.resize((W, H)))
     d = ImageDraw.Draw(layer)
+    width = W - 300  # marges : 150 px de chaque côté (boutons à droite)
     blocks = []
     for txt, size, color in lines_spec:
         f = ImageFont.truetype(FONT, size)
-        for ln in wrap(d, txt, f, W - 200):
-            blocks.append((ln, f, color, int(size * 1.22)))
-        blocks.append(("", None, None, int(size * 0.35)))
+        for ln in wrap(d, txt, f, width):
+            blocks.append((ln, f, color, int(size * 1.18)))
+        blocks.append(("", None, None, int(size * 0.30)))
     blocks.pop()
     total = sum(b[3] for b in blocks)
-    y = int(H * y_frac) - total // 2  # au-dessus des boutons (à droite) et de la légende (en bas) de l'écran Reels
-    # bandeau sombre derrière le texte
-    pad = 40
-    d.rounded_rectangle((60, y - pad, W - 60, y + total + pad - 10), 36, fill=(0, 0, 0, 120))
+    y0 = int(H * y_frac) - total // 2
+    # ombre douce du texte
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ds = ImageDraw.Draw(shadow)
+    y = y0
     for ln, f, color, h in blocks:
         if f:
-            d.text((W // 2, y + h // 2), ln, font=f, fill=color, anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0))
+            ds.text((W // 2 + 3, y + h // 2 + 4), ln, font=f, fill=(0, 0, 0, 200), anchor="mm")
+        y += h
+    layer = Image.alpha_composite(layer, shadow.filter(ImageFilter.GaussianBlur(6)))
+    d = ImageDraw.Draw(layer)
+    y = y0
+    for ln, f, color, h in blocks:
+        if f:
+            d.text((W // 2, y + h // 2), ln, font=f, fill=color, anchor="mm")
         y += h
     return layer
 
@@ -79,7 +98,7 @@ def render_scene(scene, folder, out, idx):
     else:
         big = None
     text = text_layer([(t["text"], t.get("size", 72), tuple(t.get("color", (255, 255, 255)))) for t in scene["text"]],
-                      scene.get("text_y", 0.40))
+                      scene.get("text_y", 0.70))
     zoom_in = scene.get("zoom", "in") == "in"
     pan = scene.get("pan", 0.5)  # 0 = gauche, 1 = droite (pour les photos larges)
     tmp = out.with_name(out.stem + ".part.mp4")
