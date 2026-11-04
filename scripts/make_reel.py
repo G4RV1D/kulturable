@@ -141,6 +141,10 @@ def fetch_images(cfg, folder):
         out = cache / name
         if out.exists():
             continue
+        if (ROOT / src).is_file():  # image fournie dans le dépôt
+            shutil.copy(ROOT / src, out)
+            print(f"image {name} <- {src}")
+            continue
         url = src
         if src.startswith("File:"):
             url = ("https://commons.wikimedia.org/wiki/Special:FilePath/"

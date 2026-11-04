@@ -5,8 +5,8 @@
   "source_post": "posts/anciens/02.txt",
   "images": {
     "fjall.jpg": "File:Fjäll.jpg",
-    "vaches.jpg": "File:Unique_swedish_mountain_cattle_(Fjällnära_ko)_at_Skansen_Sweden.JPG",
-    "fabod.jpg": "File:Fabodpadel.jpg"
+    "chanteuse.jpg": "reels/03-kulning/photos/chanteuse.jpg",
+    "troupeau.jpg": "reels/03-kulning/photos/vaches.jpg"
   },
   "scenes": [
     {
@@ -14,11 +14,11 @@
       "duration": 2.2,
       "text": [
         {
-          "text": "Un chant si aigu",
+          "text": "Un chant envoûtant",
           "size": 58
         },
         {
-          "text": "QU'IL TRAVERSE LA VALLÉE.",
+          "text": "QUI TRAVERSE LA VALLÉE.",
           "size": 74,
           "color": [
             255,
@@ -31,15 +31,35 @@
       "pan": 0.4
     },
     {
-      "image": "vaches.jpg",
-      "duration": 2.4,
+      "image": "chanteuse.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "En Suède, il sert à appeler",
+          "text": "En Suède, les bergères",
           "size": 58
         },
         {
-          "text": "LES VACHES.",
+          "text": "CHANTENT POUR LEURS VACHES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "troupeau.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Et les vaches",
+          "size": 58
+        },
+        {
+          "text": "ACCOURENT.",
           "size": 74,
           "color": [
             255,
@@ -49,39 +69,18 @@
         }
       ],
       "zoom": "in",
-      "pan": 0.05
-    },
-    {
-      "image": "fabod.jpg",
-      "duration": 2.6,
-      "text": [
-        {
-          "text": "Les bergères vivaient seules",
-          "size": 58
-        },
-        {
-          "text": "TOUT L'ÉTÉ, EN MONTAGNE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "out",
-      "pan": 0.5
+      "pan": 0.55
     },
     {
       "image": "fjall.jpg",
       "duration": 2.4,
       "text": [
         {
-          "text": "Ce chant servait aussi",
+          "text": "Ce chant prévenait aussi",
           "size": 58
         },
         {
-          "text": "À PRÉVENIR DES LOUPS.",
+          "text": "DE L'ARRIVÉE DES LOUPS.",
           "size": 74,
           "color": [
             255,
@@ -94,7 +93,7 @@
       "pan": 0.7
     },
     {
-      "image": "vaches.jpg",
+      "image": "troupeau.jpg",
       "duration": 2.8,
       "text": [
         {
@@ -116,7 +115,8 @@
         }
       ],
       "zoom": "out",
-      "pan": 0.05
+      "pan": 0.55
     }
-  ]
+  ],
+  "note": "Photos chanteuse.jpg et vaches.jpg fournies par Paul : auteur et licence À VÉRIFIER avant publication. Son : à ajouter dans Instagram au moment de publier."
 }
