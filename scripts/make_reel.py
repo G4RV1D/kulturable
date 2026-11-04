@@ -188,5 +188,11 @@ def build(folder: pathlib.Path) -> pathlib.Path:
 
 if __name__ == "__main__":
     folders = [pathlib.Path(a) for a in sys.argv[1:]] or sorted(p.parent for p in (ROOT / "reels").glob("*/reel.json"))
+    failed = []
     for f in folders:
-        print(build(f))
+        try:
+            print(build(f))
+        except Exception as e:  # un Reel en échec ne bloque pas les autres
+            print(f"ÉCHEC {f.name} : {e}")
+            failed.append(f.name)
+    sys.exit(1 if failed else 0)

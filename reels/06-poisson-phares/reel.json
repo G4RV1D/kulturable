@@ -1,0 +1,132 @@
+{
+  "title": "Le poisson aux phares",
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/05.txt",
+  "images": {
+    "poisson.jpg": "File:Photoblepharonpalpebratum.JPG"
+  },
+  "scenes": [
+    {
+      "image": "poisson.jpg",
+      "duration": 2.2,
+      "text": [
+        {
+          "text": "Ce poisson a",
+          "size": 58
+        },
+        {
+          "text": "DES PHARES SOUS LES YEUX.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "poisson.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Leur lumière vient de",
+          "size": 58
+        },
+        {
+          "text": "MILLIARDS DE BACTÉRIES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.3,
+      "crop": [
+        0.15,
+        0.1,
+        0.75,
+        0.9
+      ]
+    },
+    {
+      "image": "poisson.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Et il peut",
+          "size": 58
+        },
+        {
+          "text": "LES ÉTEINDRE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.6,
+      "crop": [
+        0.25,
+        0.05,
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "image": "poisson.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Un prédateur approche ?",
+          "size": 58
+        },
+        {
+          "text": "IL ÉTEINT ET DISPARAÎT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.5
+    },
+    {
+      "image": "poisson.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Son nom :",
+          "size": 58
+        },
+        {
+          "text": "LE POISSON AUX YEUX DE LUMIÈRE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.4
+    }
+  ]
+}

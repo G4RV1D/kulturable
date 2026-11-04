@@ -1,0 +1,122 @@
+{
+  "title": "Le chant qui appelle les troupeaux",
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/02.txt",
+  "images": {
+    "fjall.jpg": "File:Fjäll.jpg",
+    "vaches.jpg": "File:Unique_swedish_mountain_cattle_(Fjällnära_ko)_at_Skansen_Sweden.JPG",
+    "fabod.jpg": "File:Fabodpadel.jpg"
+  },
+  "scenes": [
+    {
+      "image": "fjall.jpg",
+      "duration": 2.2,
+      "text": [
+        {
+          "text": "Un chant si aigu",
+          "size": 58
+        },
+        {
+          "text": "QU'IL TRAVERSE LA VALLÉE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.4
+    },
+    {
+      "image": "vaches.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "En Suède, il sert à appeler",
+          "size": 58
+        },
+        {
+          "text": "LES VACHES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "fabod.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Les bergères vivaient seules",
+          "size": 58
+        },
+        {
+          "text": "TOUT L'ÉTÉ, EN MONTAGNE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.5
+    },
+    {
+      "image": "fjall.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ce chant servait aussi",
+          "size": 58
+        },
+        {
+          "text": "À PRÉVENIR DES LOUPS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.7
+    },
+    {
+      "image": "vaches.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Son nom :",
+          "size": 58
+        },
+        {
+          "text": "LE KULNING.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.4
+    }
+  ]
+}

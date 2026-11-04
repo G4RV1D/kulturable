@@ -1,0 +1,121 @@
+{
+  "title": "La fleur de l'ère glaciaire",
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/04.txt",
+  "images": {
+    "fleur.jpg": "File:Silene_stenophylla_158085000.jpg",
+    "fleur2.jpg": "File:Silene_stenophylla_115390032.jpg",
+    "kolyma.jpg": "File:Kolyma-river_01.jpg",
+    "kolyma2.jpg": "File:Kolyma's_Annual_Purge_(cropped).jpg"
+  },
+  "scenes": [
+    {
+      "image": "fleur.jpg",
+      "duration": 2.2,
+      "text": [
+        {
+          "text": "Cette fleur a",
+          "size": 58
+        },
+        {
+          "text": "32 000 ANS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "kolyma.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Elle dormait dans un terrier",
+          "size": 58
+        },
+        {
+          "text": "GELÉ EN SIBÉRIE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "kolyma2.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Des chercheurs ont réveillé",
+          "size": 58
+        },
+        {
+          "text": "SES CELLULES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.5
+    },
+    {
+      "image": "fleur2.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Et en 2012,",
+          "size": 58
+        },
+        {
+          "text": "ELLE A FLEURI.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "fleur.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Une fleur",
+          "size": 58
+        },
+        {
+          "text": "DU TEMPS DES MAMMOUTHS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

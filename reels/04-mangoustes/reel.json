@@ -1,0 +1,123 @@
+{
+  "title": "Timon et Pumbaa en vrai",
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/03.txt",
+  "images": {
+    "phaco.jpg": "File:Warthog_(Phacochoerus_africanus)_(0288)_-_Relic38.jpg",
+    "mangouste.jpg": "File:Banded_mongoose_(Mungos_mungo).jpg",
+    "toilette.jpg": "File:-4285-_Banded_mongoose_grooming_himself_(18865578522).jpg",
+    "groupe.jpg": "File:Mongoose_pile.jpg"
+  },
+  "scenes": [
+    {
+      "image": "phaco.jpg",
+      "duration": 2.2,
+      "text": [
+        {
+          "text": "Ce phacochère a ses",
+          "size": 58
+        },
+        {
+          "text": "TOILETTEUSES PERSO.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "mangouste.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Des mangoustes rayées",
+          "size": 58
+        },
+        {
+          "text": "GRIMPENT SUR LUI.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "toilette.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Elles gobent ses tiques",
+          "size": 58
+        },
+        {
+          "text": "UNE PAR UNE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.5
+    },
+    {
+      "image": "phaco.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Lui se couche",
+          "size": 58
+        },
+        {
+          "text": "ET SE LAISSE FAIRE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.3
+    },
+    {
+      "image": "groupe.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Timon et Pumbaa ?",
+          "size": 58
+        },
+        {
+          "text": "ÇA EXISTE VRAIMENT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    }
+  ]
+}

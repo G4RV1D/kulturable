@@ -1,0 +1,123 @@
+{
+  "title": "Le Bouddha caché dans la montagne",
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/06.txt",
+  "images": {
+    "dessous.jpg": "File:Leshan_Dafo_(Grand_Buddha)_(13946265775).jpg",
+    "tete.jpg": "File:The_head_of_the_Leshan_Giant_Buddha.jpg",
+    "riviere.jpg": "File:Leshan-Giant-Buddha_and_Min-River.jpg",
+    "pied.jpg": "File:Leshan_Buddha,_foot_and_man.jpg",
+    "vue.jpg": "File:Leshan_Buddha_Statue_View.JPG"
+  },
+  "scenes": [
+    {
+      "image": "dessous.jpg",
+      "duration": 2.2,
+      "text": [
+        {
+          "text": "Taillé dans une falaise :",
+          "size": 58
+        },
+        {
+          "text": "71 MÈTRES DE HAUT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "tete.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ses oreilles mesurent",
+          "size": 58
+        },
+        {
+          "text": "7 MÈTRES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "riviere.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Un moine voulait calmer",
+          "size": 58
+        },
+        {
+          "text": "DES EAUX MEURTRIÈRES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "pied.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Le chantier a duré",
+          "size": 58
+        },
+        {
+          "text": "90 ANS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.5
+    },
+    {
+      "image": "vue.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Selon la légende,",
+          "size": 58
+        },
+        {
+          "text": "IL AURAIT UN JUMEAU CACHÉ.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    }
+  ]
+}
