@@ -1,12 +1,21 @@
 """Monte un Reel court sans voix : des photos qui défilent (léger zoom), un texte à l'écran par plan,
-une musique, et un écran de fin. Format 1080 x 1920, 30 images/s.
+et un écran de fin. Format 1080 x 1920, 30 images/s.
 
-Usage : python scripts/make_reel.py reels/<dossier>   (lit reel.json, écrit reel.mp4)
+Sans "music" dans reel.json (ou "music": null), le Reel est muet (piste son silencieuse).
+"images" dans reel.json : nom du fichier -> titre Wikimedia Commons ("File:...") ou URL ;
+les images manquantes sont téléchargées dans _images/.
+
+Usage : python scripts/make_reel.py reels/<dossier>   (lit reel.json, écrit reel.mp4 et apercu.mp4)
 """
+import io
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
+import time
+import urllib.parse
+import urllib.request
 
 import imageio_ffmpeg
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -102,8 +111,30 @@ def render_scene(scene, folder, out, idx):
     tmp.rename(out)
 
 
+UA = "KulturablePublisher/1.0 (+https://github.com)"
+
+
+def fetch_images(cfg, folder):
+    cache = folder / "_images"
+    cache.mkdir(exist_ok=True)
+    for name, src in cfg.get("images", {}).items():
+        out = cache / name
+        if out.exists():
+            continue
+        url = src
+        if src.startswith("File:"):
+            url = ("https://commons.wikimedia.org/wiki/Special:FilePath/"
+                   + urllib.parse.quote(src[5:].replace(" ", "_")) + "?width=2400")
+        time.sleep(1)
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            Image.open(io.BytesIO(r.read())).convert("RGB").save(out, "JPEG", quality=94)
+        print(f"image {name} <- {src}")
+
+
 def build(folder: pathlib.Path) -> pathlib.Path:
     cfg = json.loads((folder / "reel.json").read_text(encoding="utf-8"))
+    fetch_images(cfg, folder)
     work = folder / "_plans"
     work.mkdir(exist_ok=True)
     parts = []
@@ -116,16 +147,26 @@ def build(folder: pathlib.Path) -> pathlib.Path:
     silent = work / "muet.mp4"
     subprocess.run([FFMPEG, "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)], check=True)
     total = sum(s["duration"] for s in cfg["scenes"])
-    music = ROOT / cfg.get("music", "music/rythme-01.m4a")
-    start = cfg.get("music_start", 0)
     final = folder / "reel.mp4"
     tmp = folder / "reel.part.mp4"
-    subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-ss", str(start), "-i", str(music),
-                    "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-                    "-af", f"afade=t=in:d=0.3,afade=t=out:st={total - 1.5}:d=1.5", "-t", str(total), str(tmp)], check=True)
-    tmp.rename(final)
+    if cfg.get("music"):
+        music = ROOT / cfg["music"]
+        start = cfg.get("music_start", 0)
+        subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-ss", str(start), "-i", str(music),
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                        "-af", f"afade=t=in:d=0.3,afade=t=out:st={total - 1.5}:d=1.5", "-t", str(total), str(tmp)],
+                       check=True)
+    else:  # Reel muet : piste son silencieuse (format accepté partout)
+        subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-f", "lavfi",
+                        "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "64k",
+                        "-t", str(total), "-movflags", "+faststart", str(tmp)], check=True)
+    tmp.replace(final)
+    shutil.copy(final, folder / "apercu.mp4")
     return final
 
 
 if __name__ == "__main__":
-    print(build(pathlib.Path(sys.argv[1])))
+    folders = [pathlib.Path(a) for a in sys.argv[1:]] or sorted(p.parent for p in (ROOT / "reels").glob("*/reel.json"))
+    for f in folders:
+        print(build(f))

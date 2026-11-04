@@ -1,21 +1,27 @@
 {
   "title": "Le château de corail",
-  "music": "music/theme-mystere.m4a",
-  "music_start": 0,
+  "music": null,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/00.txt",
+  "images": {
+    "chateau.jpg": "File:Coral_Castle.jpg",
+    "ed.jpg": "File:Edward_Leedskalnin,_circa_1910.jpg",
+    "tour.jpg": "File:Homestead_FL_Coral_Castle_tower02.jpg",
+    "telescope.jpg": "File:Homestead_FL_Coral_Castle_telescope02.jpg",
+    "blocs.jpg": "File:Coral_Castle_2.jpg"
+  },
   "scenes": [
-    {"image": "img0.jpg", "duration": 3.2, "zoom": "in", "pan": 0.45,
-     "text": [{"text": "Un homme a construit ce château", "size": 70}, {"text": "TOUT SEUL.", "size": 96, "color": [255, 196, 72]}]},
-    {"image": "img1.jpg", "duration": 3.6, "zoom": "out",
-     "text": [{"text": "Ed Leedskalnin.", "size": 76, "color": [255, 196, 72]}, {"text": "La veille de son mariage, sa fiancée le quitte.", "size": 64}]},
-    {"image": "img2.jpg", "duration": 3.4, "pan": 0.2, "pan_to": 0.8,
-     "text": [{"text": "Pour elle, il taille et dresse", "size": 64}, {"text": "1 100 TONNES DE CORAIL", "size": 84, "color": [255, 196, 72]}]},
-    {"image": "img3.jpg", "duration": 3.2, "zoom": "in", "crop": [0.05, 0.06, 0.95, 0.94],
-     "text": [{"text": "La nuit. À la lanterne.", "size": 72}, {"text": "Sans grue. Sans ouvriers.", "size": 72, "color": [255, 196, 72]}]},
-    {"image": "img4.jpg", "duration": 3.4, "zoom": "out", "pan": 0.4,
-     "text": [{"text": "Puis il déménage tout le château.", "size": 66}, {"text": "BLOC PAR BLOC.", "size": 88, "color": [255, 196, 72]}]},
-    {"image": "img5.jpg", "duration": 3.4, "zoom": "in", "pan": 0.6,
-     "text": [{"text": "Il meurt en 1951", "size": 72}, {"text": "sans jamais révéler sa méthode.", "size": 66, "color": [255, 196, 72]}]},
-    {"image": "img0.jpg", "duration": 3.8, "zoom": "out", "pan": 0.45,
-     "text": [{"text": "Et elle ?", "size": 90, "color": [255, 196, 72]}, {"text": "Elle n'est jamais venue.", "size": 72}, {"text": "Toute l’histoire en légende", "size": 46}]}
+    {"image": "chateau.jpg", "duration": 2.0, "zoom": "in", "pan": 0.45,
+     "text": [{"text": "Il a bâti ce château", "size": 76}, {"text": "SEUL.", "size": 130, "color": [255, 196, 72]}]},
+    {"image": "ed.jpg", "duration": 2.4, "zoom": "in", "crop": [0.0, 0.0, 1.0, 0.75],
+     "text": [{"text": "Sa fiancée l'a quitté", "size": 76}, {"text": "LA VEILLE DU MARIAGE.", "size": 84, "color": [255, 196, 72]}]},
+    {"image": "tour.jpg", "duration": 2.4, "zoom": "out", "pan": 0.5,
+     "text": [{"text": "Alors il a taillé", "size": 76}, {"text": "1 100 TONNES DE CORAIL.", "size": 84, "color": [255, 196, 72]}]},
+    {"image": "telescope.jpg", "duration": 2.4, "zoom": "in",
+     "text": [{"text": "La nuit. Sans grue.", "size": 80}, {"text": "SANS AUCUNE AIDE.", "size": 88, "color": [255, 196, 72]}]},
+    {"image": "blocs.jpg", "duration": 2.4, "zoom": "out", "pan": 0.5,
+     "text": [{"text": "Sa méthode ?", "size": 84}, {"text": "PERSONNE NE LA CONNAÎT.", "size": 84, "color": [255, 196, 72]}]},
+    {"image": "chateau.jpg", "duration": 2.8, "zoom": "out", "pan": 0.7,
+     "text": [{"text": "Et elle…", "size": 84}, {"text": "N'EST JAMAIS VENUE.", "size": 92, "color": [255, 196, 72]}, {"text": "L'histoire complète sur notre profil", "size": 44}]}
   ]
 }
