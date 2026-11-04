@@ -11,17 +11,140 @@
     "blocs.jpg": "File:Coral_Castle_2.jpg"
   },
   "scenes": [
-    {"image": "chateau.jpg", "duration": 2.0, "zoom": "in", "pan": 0.45,
-     "text": [{"text": "Il a bâti ce château", "size": 76}, {"text": "SEUL.", "size": 130, "color": [255, 196, 72]}]},
-    {"image": "ed.jpg", "duration": 2.4, "zoom": "in", "crop": [0.0, 0.0, 1.0, 0.75], "text_y": 0.63,
-     "text": [{"text": "Sa fiancée l'a quitté", "size": 76}, {"text": "LA VEILLE DU MARIAGE.", "size": 84, "color": [255, 196, 72]}]},
-    {"image": "tour.jpg", "duration": 2.4, "zoom": "out", "pan": 0.5,
-     "text": [{"text": "Alors il a taillé", "size": 76}, {"text": "1 100 TONNES DE CORAIL.", "size": 84, "color": [255, 196, 72]}]},
-    {"image": "telescope.jpg", "duration": 2.4, "zoom": "in",
-     "text": [{"text": "La nuit. Sans grue.", "size": 80}, {"text": "SANS AUCUNE AIDE.", "size": 88, "color": [255, 196, 72]}]},
-    {"image": "blocs.jpg", "duration": 2.4, "zoom": "out", "pan": 0.5,
-     "text": [{"text": "Sa méthode ?", "size": 84}, {"text": "PERSONNE NE LA CONNAÎT.", "size": 84, "color": [255, 196, 72]}]},
-    {"image": "chateau.jpg", "duration": 2.8, "zoom": "out", "pan": 0.7,
-     "text": [{"text": "Et elle…", "size": 84}, {"text": "N'EST JAMAIS VENUE.", "size": 92, "color": [255, 196, 72]}, {"text": "L'histoire complète sur notre profil", "size": 44}]}
+    {
+      "image": "ed.jpg",
+      "duration": 2.4,
+      "zoom": "in",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.75
+      ],
+      "text_y": 0.63,
+      "text": [
+        {
+          "text": "Sa fiancée l'a planté",
+          "size": 78
+        },
+        {
+          "text": "LA VEILLE DU MARIAGE.",
+          "size": 86,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "chateau.jpg",
+      "duration": 2.4,
+      "zoom": "in",
+      "pan": 0.45,
+      "text": [
+        {
+          "text": "Alors il a bâti un château",
+          "size": 72
+        },
+        {
+          "text": "POUR LA RECONQUÉRIR.",
+          "size": 86,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "tour.jpg",
+      "duration": 2.4,
+      "zoom": "out",
+      "pan": 0.5,
+      "text": [
+        {
+          "text": "Seul. La nuit.",
+          "size": 80
+        },
+        {
+          "text": "1 100 TONNES DE CORAIL.",
+          "size": 86,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "telescope.jpg",
+      "duration": 2.4,
+      "zoom": "in",
+      "text": [
+        {
+          "text": "Il était sûr qu'elle reviendrait",
+          "size": 70
+        },
+        {
+          "text": "EN VOYANT ÇA.",
+          "size": 96,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "blocs.jpg",
+      "duration": 2.2,
+      "zoom": "out",
+      "pan": 0.5,
+      "text": [
+        {
+          "text": "Elle n'est",
+          "size": 84
+        },
+        {
+          "text": "JAMAIS REVENUE.",
+          "size": 104,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "chateau.jpg",
+      "duration": 3.0,
+      "zoom": "out",
+      "pan": 0.7,
+      "text": [
+        {
+          "text": "Il disait connaître le secret des pyramides.",
+          "size": 66
+        },
+        {
+          "text": "IL L'A EMPORTÉ DANS LA TOMBE.",
+          "size": 80,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "L'histoire complète sur notre profil",
+          "size": 44
+        }
+      ]
+    }
   ]
 }
