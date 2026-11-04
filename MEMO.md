@@ -17,6 +17,7 @@
 ## Les règles de publication (à respecter pour tout nouveau post)
 
 - **Sources** vérifiables (institutions, musées, revues, presse reconnue). **Jamais Wikipédia.**
+- **Images réelles en priorité** (décision du 4/11) : une vraie photo du lieu, de l'objet ou de la personne, avec l'auteur et la licence crédités. Pas de tableau de reconstitution ni d'illustration inventée tant qu'une photo réelle existe. Vérification automatique des auteurs et licences : `scripts/check_credits.py` (lancé à chaque préparation d'images).
 - **Images** : uniquement libres de droits, sans autorisation à demander : domaine public ou Creative Commons, avec le photographe crédité. Jamais d'agence de presse. Si aucune photo libre n'existe, une illustration originale signalée comme telle.
 - **Une seule image** par post, le portrait de la personne quand c'est possible, **en couleur** (pas de noir et blanc).
 - Photo en **plein cadre**, format d'origine entre 4:5 et 1,91:1, **sans fond flou**.
@@ -48,7 +49,7 @@
   - 4/11 catacombes · 5/11 Glass Beach · 6/11 Hashima · 7/11 Sedlec · 8/11 moaï · 9/11 lac Hillier · 10/11 arbre propriétaire de lui-même
   - 11/11 Chaussée des Géants · 12/11 forêt tordue · 13/11 Pompéi · 14/11 Dallol · 15/11 Neuschwanstein · 16/11 tour de Pise · 17/11 Kukulcán
 - **Lot du 18 au 24 novembre préparé le 4/11** (sujets Perplexity ; validé d’office sauf « stop » avant le 16/11 à 18h) : 18/11 Strasbourg 1518 (légende existante 04) · 19/11 vague de bière · 20/11 procès du pape mort · 21/11 tulipomanie · 22/11 défenestration de Prague · 23/11 année sans été · 24/11 Grande Puanteur. Un script vidéo de 45 à 60 s par sujet, pour TikTok et les Reels.
-  - Ajouté au dépôt le 4/11 avec ses images (illustration originale pour la vague de bière). Scripts vidéo dans `tiktok/scripts_18-24_novembre.md`.
+  - Ajouté au dépôt le 4/11 avec des photos réelles créditées. Scripts vidéo dans `tiktok/scripts_18-24_novembre.md`.
 - **À vérifier** : que le post des catacombes (4/11) et sa story ne sortent qu'une seule fois.
 - En réserve, non validés : plusieurs anciens projets de posts (Phineas Gage, Hedy Lamarr…).
 
