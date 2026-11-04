@@ -13,7 +13,7 @@
   "scenes": [
     {"image": "chateau.jpg", "duration": 2.0, "zoom": "in", "pan": 0.45,
      "text": [{"text": "Il a bâti ce château", "size": 76}, {"text": "SEUL.", "size": 130, "color": [255, 196, 72]}]},
-    {"image": "ed.jpg", "duration": 2.4, "zoom": "in", "crop": [0.0, 0.0, 1.0, 0.75],
+    {"image": "ed.jpg", "duration": 2.4, "zoom": "in", "crop": [0.0, 0.0, 1.0, 0.75], "text_y": 0.63,
      "text": [{"text": "Sa fiancée l'a quitté", "size": 76}, {"text": "LA VEILLE DU MARIAGE.", "size": 84, "color": [255, 196, 72]}]},
     {"image": "tour.jpg", "duration": 2.4, "zoom": "out", "pan": 0.5,
      "text": [{"text": "Alors il a taillé", "size": 76}, {"text": "1 100 TONNES DE CORAIL.", "size": 84, "color": [255, 196, 72]}]},

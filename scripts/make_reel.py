@@ -44,7 +44,7 @@ def wrap(d, text, font, width):
     return lines + ([cur] if cur else [])
 
 
-def text_layer(lines_spec):
+def text_layer(lines_spec, y_frac=0.40):
     """Calque transparent avec le texte (liste de (texte, taille, couleur)), centré vers le milieu de l'écran."""
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
@@ -56,7 +56,7 @@ def text_layer(lines_spec):
         blocks.append(("", None, None, int(size * 0.35)))
     blocks.pop()
     total = sum(b[3] for b in blocks)
-    y = int(H * 0.40) - total // 2  # au-dessus des boutons (à droite) et de la légende (en bas) de l'écran Reels
+    y = int(H * y_frac) - total // 2  # au-dessus des boutons (à droite) et de la légende (en bas) de l'écran Reels
     # bandeau sombre derrière le texte
     pad = 40
     d.rounded_rectangle((60, y - pad, W - 60, y + total + pad - 10), 36, fill=(0, 0, 0, 120))
@@ -78,7 +78,8 @@ def render_scene(scene, folder, out, idx):
         big = cover(src, int(W * 1.12), int(H * 1.12))
     else:
         big = None
-    text = text_layer([(t["text"], t.get("size", 72), tuple(t.get("color", (255, 255, 255)))) for t in scene["text"]])
+    text = text_layer([(t["text"], t.get("size", 72), tuple(t.get("color", (255, 255, 255)))) for t in scene["text"]],
+                      scene.get("text_y", 0.40))
     zoom_in = scene.get("zoom", "in") == "in"
     pan = scene.get("pan", 0.5)  # 0 = gauche, 1 = droite (pour les photos larges)
     tmp = out.with_name(out.stem + ".part.mp4")
