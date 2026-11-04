@@ -1,4 +1,4 @@
-# Mémo Kulturable — où on en est (3 novembre 2026)
+# Mémo Kulturable — où on en est (4 novembre 2026)
 
 À coller au début d'une nouvelle conversation avec Claude, pour reprendre là où on s'est arrêtés.
 
@@ -6,6 +6,13 @@
 
 - Instagram **@kulturable**, slogan « La culture se cultive ». Des anecdotes vraies, incroyables, surréalistes, historiques ou légendaires. Varier les sujets, pas trop d'astronomie.
 - Environ 14 abonnés début novembre, 1 à 3 j'aime par post. On veut développer l'audience, puis lancer les Reels et TikTok.
+
+## Méthode de recherche (depuis le 4/11)
+
+- Les sujets sont approfondis avec **Perplexity**, pour aller plus loin et réunir des **preuves de l'authenticité** de chaque histoire (sources solides, toujours sans Wikipédia).
+- **Fichier `deja_publie.txt`** : liste de toutes les histoires publiées (titre + résumé d'une ou deux phrases). À consulter avant chaque nouveau sujet pour éviter les doublons.
+- À chaque nouvelle histoire publiée, l'ajouter **uniquement** à ce fichier, puis remplacer l'ancienne version par la nouvelle (écrasement). Pas d'autre fichier de suivi.
+- Le fichier est à la racine du dépôt et se met à jour **automatiquement** à chaque publication (titre + accroche du post).
 
 ## Les règles de publication (à respecter pour tout nouveau post)
 
@@ -40,7 +47,8 @@
 - Validés et programmés **jusqu'au 17 novembre** :
   - 4/11 catacombes · 5/11 Glass Beach · 6/11 Hashima · 7/11 Sedlec · 8/11 moaï · 9/11 lac Hillier · 10/11 arbre propriétaire de lui-même
   - 11/11 Chaussée des Géants · 12/11 forêt tordue · 13/11 Pompéi · 14/11 Dallol · 15/11 Neuschwanstein · 16/11 tour de Pise · 17/11 Kukulcán
-- **À faire** : préparer la semaine du **18 au 24 novembre** vers le 11/11. Validation tacite le 16/11 à 18h.
+- **Lot du 18 au 24 novembre préparé le 4/11** (sujets Perplexity ; validé d’office sauf « stop » avant le 16/11 à 18h) : 18/11 Strasbourg 1518 (légende existante 04) · 19/11 vague de bière · 20/11 procès du pape mort · 21/11 tulipomanie · 22/11 défenestration de Prague · 23/11 année sans été · 24/11 Grande Puanteur. Un script vidéo de 45 à 60 s par sujet, pour TikTok et les Reels.
+  - Ajouté au dépôt le 4/11 avec ses images (illustration originale pour la vague de bière). Scripts vidéo dans `tiktok/scripts_18-24_novembre.md`.
 - **À vérifier** : que le post des catacombes (4/11) et sa story ne sortent qu'une seule fois.
 - En réserve, non validés : plusieurs anciens projets de posts (Phineas Gage, Hedy Lamarr…).
 
@@ -56,15 +64,17 @@
 - Format choisi :
   - Une vidéo verticale de 20 à 30 s, avec plusieurs photos en mouvement (zoom ou glissement) et de courtes phrases à l'écran, placées assez haut pour ne pas être cachées par les boutons des Reels.
   - Une version condensée de l'anecdote qui donne envie d'aller lire le post complet.
-  - De la musique, même si beaucoup de gens regardent sans le son.
+  - **Pas de musique sur les Reels Instagram** (décision du 4/11 ; TikTok garde musique + voix) : uniquement les photos qui défilent avec les phrases à l'écran.
+- **Règle : Reels hors grille.** Les Reels apparaissent uniquement dans l'onglet Reels, jamais dans la grille du profil, pour éviter les doublons avec les posts dont ils sont tirés. À la main : désactiver « Afficher dans la grille du profil » avant de publier. En automatique : `share_to_feed = false`.
 - **Reel n°1 terminé (brouillon)** : *Le château de corail* (Edward Leedskalnin), 7 scènes, 24 s, avec ses photos libres créditées et sa légende complète. Il est dans `reels/01-coral-castle/`, et un aperçu dans une fausse page Instagram a été montré.
-- **Musique de la chaîne** :
+- **À faire** : refaire le Reel n°1 sans musique.
+- **Musique de la chaîne** (plus utilisée dans les Reels Instagram ; gardée pour TikTok, qui aura musique + voix) :
   - La mélodie choisie est la proposition 1, « boîte à musique, mystère » : ré-la-fa-mi-ré-do#-ré.
   - Elle a été peaufinée avec des cordes, un violoncelle, un coup sourd au début et de la réverbération. C'est une composition originale, sans droits.
   - Version courte : `music/signature-kulturable.m4a` (≈ 10 s). Version longue pour le fond des Reels : `music/theme-mystere.m4a` (≈ 47 s).
-  - **En attente** : ton avis sur la version peaufinée et sur le Reel Coral Castle.
+  - **En attente** : ton avis sur le Reel Coral Castle (version sans musique).
 - **Prochaines étapes** :
-  1. Valider la musique et le Reel n°1.
+  1. Refaire puis valider le Reel n°1 sans musique.
   2. Faire les Reels suivants à partir des anciens posts réécrits.
   3. Plus tard, mettre en place la publication automatique des Reels.
 

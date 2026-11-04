@@ -23,6 +23,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
@@ -52,6 +53,41 @@ def check_caption(text: str, post_id: str) -> None:
     tags = sum(1 for w in text.split() if w.startswith("#"))
     if tags > MAX_HASHTAGS:
         raise ValueError(f"{post_id} : trop de hashtags ({tags})")
+
+
+PARIS = ZoneInfo("Europe/Paris")
+
+
+def add_to_deja_publie(post: dict, caption: str) -> None:
+    try:
+        _add_to_deja_publie(post, caption)
+    except Exception as e:  # ne doit jamais bloquer une publication
+        print(f"deja_publie.txt non mis à jour : {e}")
+
+
+def _add_to_deja_publie(post: dict, caption: str) -> None:
+    """Ajoute l'histoire publiée à deja_publie.txt (titre + résumé tiré de l'accroche).
+
+    Le fichier est réécrit en entier (écrasement) ; une histoire déjà listée n'est pas ajoutée.
+    """
+    path = ROOT / "deja_publie.txt"
+    if not path.exists():
+        return
+    first = caption.strip().splitlines()[0]
+    title, _, summary = first.partition(" : ")
+    title = title.strip().upper()
+    text = path.read_text(encoding="utf-8")
+    if f"\n{title} (" in text or f"\n{title}\n" in text:
+        return
+    day = dt.datetime.fromisoformat(post["published_at"]).astimezone(PARIS).strftime("%d/%m/%Y")
+    lines = text.splitlines()
+    for i, line in enumerate(lines[:5]):
+        if line.startswith("Mis à jour le"):
+            lines[i] = f"Mis à jour le {day} (dernier post publié : {title})"
+    body = "\n".join(lines).rstrip("\n")
+    summary = summary.strip() or first
+    body += f"\n\n{title} ({day})\n{summary[:1].upper() + summary[1:]}\n"
+    path.write_text(body, encoding="utf-8")
 
 
 def check_image_online(url: str) -> None:
@@ -198,6 +234,7 @@ def main() -> int:
         post["published_at"] = post.get("published_at") or dup["timestamp"].replace("+0000", "+00:00")
         post["media_id"] = dup["id"]
         print(f"{post['id']} est déjà sur Instagram ({dup['id']}) : pas de doublon.")
+        add_to_deja_publie(post, caption)
         publish_story(post, user_id, token)
         QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return 0
@@ -222,6 +259,7 @@ def main() -> int:
     post["media_id"] = media["id"]
     QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Publié sur @{me.get('username')} : {post['id']} (media {media['id']})")
+    add_to_deja_publie(post, caption)
     publish_story(post, user_id, token)
     QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0

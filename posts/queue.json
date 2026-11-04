@@ -49,19 +49,6 @@
     "note": "En réserve : photo noir et blanc"
   },
   {
-    "id": "04-strasbourg-1518",
-    "publish_at": "2026-10-23T18:00:00+02:00",
-    "caption_file": "posts/captions/04-strasbourg-1518.txt",
-    "image_sources": [
-      "https://images.metmuseum.org/CRDImages/dp/original/DP825760.jpg"
-    ],
-    "image_credit_page": "https://www.metmuseum.org/art/collection/search/415981",
-    "approved": false,
-    "published_at": null,
-    "media_id": null,
-    "note": "En réserve : photo noir et blanc"
-  },
-  {
     "id": "05-melasse-boston",
     "publish_at": "2026-10-27T18:00:00+01:00",
     "caption_file": "posts/captions/05-melasse-boston.txt",
@@ -769,5 +756,129 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Chichen_Itza,_El_Castillo_(14180679857).jpg"
       }
     ]
+  },
+  {
+    "id": "04-strasbourg-1518",
+    "publish_at": "2026-11-18T18:00:00+01:00",
+    "caption_file": "posts/captions/04-strasbourg-1518.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_John%E2%80%99s_Dancers_in_Molenbeeck%E2%80%99_(1592)_by_Pieter_Brueghel_II.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_John%E2%80%99s_Dancers_in_Molenbeeck%E2%80%99_(1592)_by_Pieter_Brueghel_II.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Saint_John%E2%80%99s_Dancers_in_Molenbeeck%E2%80%99_(1592)_by_Pieter_Brueghel_II.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "47-vague-de-biere",
+    "publish_at": "2026-11-19T18:00:00+01:00",
+    "caption_file": "posts/captions/47-vague-de-biere.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "images/47-vague-de-biere.jpg (illustration originale déjà prête)"
+        ]
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "44-proces-du-pape-mort",
+    "publish_at": "2026-11-20T18:00:00+01:00",
+    "caption_file": "posts/captions/44-proces-du-pape-mort.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Paul_Laurens_-_Le_jugement_du_pape_Formose_-_PDUT1462_-_Mus%C3%A9e_des_Beaux-Arts_de_la_ville_de_Paris.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Paul_Laurens_-_Le_jugement_du_pape_Formose_-_PDUT1462_-_Mus%C3%A9e_des_Beaux-Arts_de_la_ville_de_Paris.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Jean-Paul_Laurens_-_Le_jugement_du_pape_Formose_-_PDUT1462_-_Mus%C3%A9e_des_Beaux-Arts_de_la_ville_de_Paris.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "49-tulipomanie",
+    "publish_at": "2026-11-21T18:00:00+01:00",
+    "caption_file": "posts/captions/49-tulipomanie.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Flora's_Wagon_of_Fools_(Flora's_Mallewagen)_tulipomania,_Hendrik_Gerritsz_Pot_c1637.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Flora's_Wagon_of_Fools_(Flora's_Mallewagen)_tulipomania,_Hendrik_Gerritsz_Pot_c1637.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Flora's_Wagon_of_Fools_(Flora's_Mallewagen)_tulipomania,_Hendrik_Gerritsz_Pot_c1637.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "45-defenestration-prague",
+    "publish_at": "2026-11-22T18:00:00+01:00",
+    "caption_file": "posts/captions/45-defenestration-prague.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/V%C3%A1clavBRO%C5%BD%C3%8DK-Defenestrace.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/V%C3%A1clavBRO%C5%BD%C3%8DK-Defenestrace.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:V%C3%A1clavBRO%C5%BD%C3%8DK-Defenestrace.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "46-annee-sans-ete",
+    "publish_at": "2026-11-23T18:00:00+01:00",
+    "caption_file": "posts/captions/46-annee-sans-ete.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Tambora_Volcano,_Sumbawa_Island,_Indonesia.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Tambora_Volcano,_Sumbawa_Island,_Indonesia.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Mount_Tambora_Volcano,_Sumbawa_Island,_Indonesia.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+  },
+  {
+    "id": "48-grande-puanteur",
+    "publish_at": "2026-11-24T18:00:00+01:00",
+    "caption_file": "posts/captions/48-grande-puanteur.txt",
+    "approved": true,
+    "published_at": null,
+    "media_id": null,
+    "images": [
+      {
+        "sources": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Belvedere_,_Crossness_Pumping_Station_interior_view_-_geograph.org.uk_-_7309198.jpg?width=2400",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Belvedere_,_Crossness_Pumping_Station_interior_view_-_geograph.org.uk_-_7309198.jpg"
+        ],
+        "credit_page": "https://commons.wikimedia.org/wiki/File:Belvedere_,_Crossness_Pumping_Station_interior_view_-_geograph.org.uk_-_7309198.jpg"
+      }
+    ],
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
   }
 ]
