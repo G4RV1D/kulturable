@@ -23,6 +23,8 @@ jobs:
           python-version: "3.12"
       - run: pip install pillow numpy
       - run: python scripts/prepare_images.py
+      - name: Vérifier auteurs et licences
+        run: python scripts/check_credits.py || true
       - name: Enregistrer les images
         if: always()
         run: |
