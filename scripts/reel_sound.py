@@ -1,4 +1,4 @@
-"""Son de fond des Reels Kulturable : mystérieux, reconnaissable, avec une chute.
+"""Son de fond des Reels Kulturable : synthés analogiques années 80, mystérieux et fascinants (sans angoisse), avec une chute lumineuse.
 
 Construction (composition originale, aucune source extérieure) :
 - un souffle grave en ré qui tient tout le Reel (nappe + air filtré) ;
@@ -87,27 +87,89 @@ def put(mix, sig, at, gain=1.0):
     mix[i:j] += sig[: j - i] * gain
 
 
+def saw(f, n, detune=0.0):
+    """Dent de scie adoucie (somme d'harmoniques), deux oscillateurs légèrement désaccordés."""
+    t = np.arange(n) / SR
+    out = np.zeros(n)
+    for d in (-detune, detune):
+        ff = f * (1 + d)
+        for k in range(1, int(min(40, (SR / 2) / ff))):
+            out += np.sin(2 * np.pi * k * ff * t) / k
+    return out / 2
+
+
+def synth_note(m, length, cutoff, decay=3.0):
+    n = int(length * SR)
+    x = saw(hz(m), n, 0.004)
+    b, a = butter(2, min(cutoff, 16000) / (SR / 2), "low")
+    x = lfilter(b, a, x)
+    t = np.arange(n) / SR
+    return x * np.exp(-t * decay) * env(n, 0.004, 0.03)
+
+
+def echo(x, delay=0.27, fb=0.35, mix=0.35):
+    d = int(delay * SR)
+    y = np.concatenate([x, np.zeros(d * 4)])
+    for k in range(1, 5):
+        y[d * k: d * k + len(x)] += x * (fb ** k) * mix / fb
+    return y
+
+
+def pulse(f, n, width=0.35):
+    """Onde rectangulaire adoucie (somme d'harmoniques), timbre des synthés analogiques."""
+    t = np.arange(n) / SR
+    out = np.zeros(n)
+    for k in range(1, int(min(30, (SR / 2) / f))):
+        out += np.sin(np.pi * k * width) / k * np.cos(2 * np.pi * k * f * t)
+    return out
+
+
+def analog(m, length, cutoff, attack=0.005, release=0.05, decay=0.0, kind="saw", detune=0.003):
+    n = int(length * SR)
+    x = saw(hz(m), n, detune) if kind == "saw" else pulse(hz(m), n)
+    b, a = butter(2, min(cutoff, 15000) / (SR / 2), "low")
+    x = lfilter(b, a, x)
+    t = np.arange(n) / SR
+    e = env(n, attack, release)
+    if decay:
+        e *= np.exp(-t * decay)
+    return x * e
+
+
 def make(total, hit_at, out):
+    """Synthés analogiques des années 80 (composition originale) : nappe chaude, arpège qui scintille,
+    basse ronde. Harmonie en accords de septième majeure et de neuvième : mystère et émerveillement,
+    sans angoisse. La musique continue jusqu'au bout : sur la dernière diapositive, elle revient
+    sur l'accord de départ, quelques notes scintillent, puis tout s'éteint en fondu."""
     mix = np.zeros(int(total * SR))
-    put(mix, drone(total), 0, 0.55)
-    # la mélodie de la chaîne, une fois, en ouverture
-    beat = 0.36
-    for m, b in [(74, 0), (81, 1), (77, 2), (76, 2.5), (74, 3), (73, 3.5), (74, 4)]:
-        put(mix, music_box(m + 12 if m < 76 else m), 0.25 + b * beat * 1.6, 0.28)
-    # quelques notes suspendues ensuite, de plus en plus rares
-    t, k = 0.25 + 4 * beat * 1.6 + 1.2, 0
-    while t < hit_at - 2.0:
-        put(mix, music_box([81, 77, 76, 73][k % 4]), t, 0.18)
-        t += 1.3 + 0.3 * k
-        k += 1
-    # montée, silence, chute
-    put(mix, riser(1.5), hit_at - 1.55, 0.6)
-    gap = slice(int((hit_at - 0.08) * SR), int(hit_at * SR))
-    mix[gap] *= 0.1
-    put(mix, impact(), hit_at, 0.9)
-    put(mix, music_box(86, 4.0), hit_at + 0.35, 0.3)
-    mix = reverb(mix)
-    mix *= env(len(mix), 0.05, 0.6)
+    step = 60 / 96 / 2  # croches à 96 battements par minute
+    # fa maj7 - ré m9 - si bémol maj7 - do 6/9 (fondamentales et couleurs propres à la chaîne)
+    chords = [(53, [0, 4, 7, 11]), (50, [0, 3, 7, 14]), (46, [0, 4, 7, 11]), (48, [0, 4, 9, 14])]
+    pattern = [0, 2, 3, 1, 2, 3, 2, 1]  # ordre des notes de l'accord dans l'arpège
+    bar_len = step * 8
+    final = (53, [0, 4, 7, 14])  # fa maj9 : retour à la maison, couleur lumineuse
+    t, i = 0.1, 0
+    landed = False
+    while t < total:
+        if t >= hit_at - 0.01 and not landed:  # dernière diapositive : on retombe sur l'accord de départ
+            landed, i = True, 0
+        root, iv = final if landed else chords[(i // 8) % 4]
+        if i % 8 == 0:
+            span = min(bar_len + 0.6, total - t + 0.5)
+            for v in iv[:3]:  # nappe chaude, attaque lente
+                put(mix, analog(root + 12 + v, span, 1400, attack=0.6, release=0.6, detune=0.006), t, 0.10)
+            put(mix, analog(root - 12, span, 380, attack=0.08, release=0.4), t, 0.30)  # basse ronde
+        prog = min(1.0, t / max(1.0, hit_at))
+        note = root + 24 + iv[pattern[i % 8]]
+        put(mix, analog(note, step * 1.4, 1500 + 2500 * prog, decay=4, kind="pulse"), t, 0.16)
+        t += step
+        i += 1
+    mix = echo(mix, delay=step * 1.5, fb=0.35, mix=0.3)[: len(mix)]
+    # la chute, en douceur : sur la dernière diapositive, quelques notes aiguës qui scintillent en écho
+    sparkle = sum(analog(77 + v, 0.6, 5000, decay=3, kind="pulse") * 0.6 ** k for k, v in enumerate((0, 7, 12, 16)))
+    put(mix, echo(sparkle, step * 1.5, 0.45, 0.6), hit_at, 0.09)
+    mix = reverb(mix, 2.4, 0.3)
+    mix *= env(len(mix), 0.08, 2.0)  # fondu progressif sur la dernière diapositive
     mix /= np.abs(mix).max() / 0.89
     pcm = (np.stack([mix, mix], 1) * 32767).astype(np.int16)
     with wave.open(out, "wb") as w:

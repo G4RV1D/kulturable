@@ -18,6 +18,7 @@ import urllib.parse
 import urllib.request
 
 import imageio_ffmpeg
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -156,6 +157,105 @@ def fetch_images(cfg, folder):
         print(f"image {name} <- {src}")
 
 
+OUTRO_LEN = 3.2
+NAVY = (14, 16, 28)
+
+
+def ease(x):
+    x = max(0.0, min(1.0, x))
+    return 1 - (1 - x) ** 3
+
+
+def emblem(size, grow):
+    """Emblème de la chaîne : une pousse qui sort d'un livre ouvert (« la culture se cultive »)."""
+    S = size * 4  # dessin en grand puis réduit : traits lisses
+    im = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    gold = ACCENT + (255,)
+    w = S // 22
+    d.ellipse((w, w, S - w, S - w), outline=gold, width=w)
+    # livre ouvert
+    cx, by = S // 2, int(S * 0.70)
+    d.line([(int(S * 0.24), by - S // 20), (cx, by), (int(S * 0.76), by - S // 20)], fill=gold, width=w, joint="curve")
+    d.line([(int(S * 0.24), by - S // 20 - S // 12), (cx, by - S // 12), (int(S * 0.76), by - S // 20 - S // 12)],
+           fill=gold, width=w // 2, joint="curve")
+    # tige et feuilles qui poussent
+    top = by - int(S * 0.36 * grow)
+    if grow > 0.02:
+        d.line([(cx, by - S // 12), (cx, top)], fill=gold, width=w)
+    if grow > 0.5:
+        k = (grow - 0.5) * 2
+        lw, lh = int(S * 0.17 * k), int(S * 0.08 * k)
+        y = top + S // 14
+        leaf = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        dl = ImageDraw.Draw(leaf)
+        dl.ellipse((cx - lw * 2, y - lh, cx, y + lh), fill=gold)
+        im.alpha_composite(leaf.rotate(-25, center=(cx, y)))
+        leaf = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        dl = ImageDraw.Draw(leaf)
+        dl.ellipse((cx, y - lh, cx + lw * 2, y + lh), fill=gold)
+        im.alpha_composite(leaf.rotate(25, center=(cx, y)))
+    return im.resize((size, size), Image.LANCZOS)
+
+
+def outro_frame(t, stars):
+    frame = Image.new("RGBA", (W, H), NAVY + (255,))
+    d = ImageDraw.Draw(frame)
+    for (x, y, r, ph) in stars:  # poussière d'étoiles qui scintille doucement
+        a = int(90 + 80 * np.sin(ph + t * 3))
+        d.ellipse((x - r, y - r, x + r, y + r), fill=(255, 230, 170, a))
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    em = emblem(300, ease(t / 0.9))
+    alpha = ease(t / 0.4)
+    em.putalpha(em.getchannel("A").point(lambda v: int(v * alpha)))
+    layer.alpha_composite(em, (W // 2 - 150, int(H * 0.22)))
+    dl = ImageDraw.Draw(layer)
+
+    def txt(y, text, size, color, start, dur=0.45, rise=30):
+        k = ease((t - start) / dur)
+        if k <= 0:
+            return
+        f = ImageFont.truetype(FONT, size)
+        dl.text((W // 2, y + int(rise * (1 - k))), text, font=f, fill=color + (int(255 * k),), anchor="mm")
+
+    txt(int(H * 0.42), "KULTURABLE", 104, ACCENT, 0.35)
+    txt(int(H * 0.47), "La culture se cultive", 50, (255, 255, 255), 0.7)
+    txt(int(H * 0.545), "Des histoires vraies,", 48, (220, 220, 230), 1.05)
+    txt(int(H * 0.575), "insolites et fascinantes.", 48, (220, 220, 230), 1.15)
+    txt(int(H * 0.615), "Une nouvelle chaque jour.", 48, (220, 220, 230), 1.25)
+    # bouton d'abonnement qui apparaît puis pulse
+    k = ease((t - 1.6) / 0.35)
+    if k > 0:
+        pulse_ = 1 + 0.04 * np.sin(max(0.0, t - 1.95) * 7) if t > 1.95 else 0.85 + 0.15 * k
+        bw, bh = int(520 * pulse_), int(120 * pulse_)
+        cx, cy = W // 2, int(H * 0.70)
+        dl.rounded_rectangle((cx - bw // 2, cy - bh // 2, cx + bw // 2, cy + bh // 2), bh // 2,
+                             fill=ACCENT + (int(255 * k),))
+        f = ImageFont.truetype(FONT, int(54 * pulse_))
+        dl.text((cx, cy + 2), "S'ABONNER", font=f, fill=NAVY + (int(255 * k),), anchor="mm")
+        f2 = ImageFont.truetype(FONT, 44)
+        dl.text((cx, cy + bh // 2 + 60), "@kulturable", font=f2, fill=(255, 255, 255, int(220 * k)), anchor="mm")
+    frame.alpha_composite(layer)
+    return frame.convert("RGB")
+
+
+def render_outro(out):
+    rng = np.random.default_rng(7)
+    stars = [(int(rng.uniform(0, W)), int(rng.uniform(0, H)), int(rng.uniform(1, 4)), rng.uniform(0, 6.28))
+             for _ in range(140)]
+    n = round(OUTRO_LEN * FPS)
+    tmp = out.with_name(out.stem + ".part.mp4")
+    proc = subprocess.Popen([FFMPEG, "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
+                             "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+                             "-pix_fmt", "yuv420p", "-r", str(FPS), str(tmp)], stdin=subprocess.PIPE)
+    for i in range(n):
+        proc.stdin.write(outro_frame(i / FPS, stars).tobytes())
+    proc.stdin.close()
+    if proc.wait() != 0:
+        raise RuntimeError("ffmpeg a échoué pour l'écran de fin")
+    tmp.replace(out)
+
+
 def build(folder: pathlib.Path) -> pathlib.Path:
     cfg = json.loads((folder / "reel.json").read_text(encoding="utf-8"))
     fetch_images(cfg, folder)
@@ -166,16 +266,21 @@ def build(folder: pathlib.Path) -> pathlib.Path:
         out = work / f"plan{i:02d}.mp4"
         render_scene(sc, folder, out, i)
         parts.append(out)
+    story = sum(s["duration"] for s in cfg["scenes"])
+    if cfg.get("outro", True):  # écran de fin : logo, ce que propose la chaîne, abonnement
+        out = work / "fin.mp4"
+        render_outro(out)
+        parts.append(out)
     lst = work / "liste.txt"
     lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
     silent = work / "muet.mp4"
     subprocess.run([FFMPEG, "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)], check=True)
-    total = sum(s["duration"] for s in cfg["scenes"])
+    total = story + (OUTRO_LEN if cfg.get("outro", True) else 0)
     final = folder / "reel.mp4"
     tmp = folder / "reel.part.mp4"
     if cfg.get("music") == "signature":  # son de la chaîne, chute calée sur la dernière diapositive
         from reel_sound import make as make_sound
-        hit = total - cfg["scenes"][-1]["duration"]
+        hit = story - cfg["scenes"][-1]["duration"]
         wav = work / "son.wav"
         make_sound(total, hit, str(wav))
         subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-i", str(wav),
