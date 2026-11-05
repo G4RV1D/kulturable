@@ -4,23 +4,44 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/01.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17921959892400502.jpg",
     "oiseau.jpg": "File:Greater_Honeyguide,_Gambia.jpg",
-    "oiseau2.jpg": "File:Greater_Honeyguide_(Indicator_indicator)_(45663851145).jpg",
-    "ruche.jpg": "File:A_bee_hive_on_a_tree.jpg",
-    "rayons.jpg": "File:Honey_Bee_Nest.jpg"
+    "recolte.jpg": "https://www.cam.ac.uk/sites/www.cam.ac.uk/files/inner-images/160714-harvesting-honey.jpg",
+    "oiseau2.jpg": "File:Greater_Honeyguide_(Indicator_indicator)_(45663851145).jpg"
   },
   "scenes": [
     {
-      "image": "oiseau.jpg",
-      "duration": 2.2,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Cet oiseau sauvage",
+          "text": "Ni dressé, ni apprivoisé.",
           "size": 58
         },
         {
-          "text": "GUIDE LES HOMMES AU MIEL.",
-          "size": 74,
+          "text": "ALORS POURQUOI L'AIDE-T-IL ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.6
+    },
+    {
+      "image": "oiseau.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Il lance un cri bien particulier.",
+          "size": 58
+        },
+        {
+          "text": "QUE VEUT-IL LUI DIRE ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -31,91 +52,75 @@
       "zoom": "in"
     },
     {
-      "image": "oiseau2.jpg",
-      "duration": 2.4,
+      "image": "recolte.jpg",
+      "duration": 2.7,
       "text": [
         {
-          "text": "Les chasseurs l'appellent",
+          "text": "Il les guide d'arbre en arbre.",
           "size": 58
         },
         {
-          "text": "« BRRRR-HM ! »",
-          "size": 74,
+          "text": "JUSQU'OÙ LES MÈNE-T-IL ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
-        }
-      ],
-      "zoom": "out",
-      "pan": 0.5
-    },
-    {
-      "image": "ruche.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Il répond, et vole",
-          "size": 58
-        },
-        {
-          "text": "JUSQU'À UNE RUCHE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "pan": 0.5
-    },
-    {
-      "image": "rayons.jpg",
-      "duration": 2.6,
-      "text": [
-        {
-          "text": "Grâce à cet appel, ils trouvent du miel",
-          "size": 58
-        },
-        {
-          "text": "3 FOIS PLUS SOUVENT.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "out",
-      "pan": 0.5
-    },
-    {
-      "image": "oiseau.jpg",
-      "duration": 2.8,
-      "text": [
-        {
-          "text": "Et sa récompense ?",
-          "size": 58
-        },
-        {
-          "text": "LA CIRE DE LA RUCHE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        },
-        {
-          "text": "Histoire complète sur le profil",
-          "size": 46
         }
       ],
       "zoom": "out"
+    },
+    {
+      "image": "oiseau2.jpg",
+      "duration": 2.7,
+      "text": [
+        {
+          "text": "Les hommes l'appellent, eux aussi.",
+          "size": 58
+        },
+        {
+          "text": "L'OISEAU LES COMPREND-IL ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Que gagne l'oiseau dans l'affaire ?",
+          "size": 58
+        },
+        {
+          "text": "ET POURQUOI CELA DISPARAÎT-IL ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Toute l'histoire dans le post",
+          "size": 46
+        }
+      ],
+      "zoom": "out",
+      "crop": [
+        0.45,
+        0.0,
+        1.0,
+        0.75
+      ],
+      "pan": 0.5
     }
   ]
 }

@@ -4,135 +4,111 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/00.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17928772751390564.jpg",
     "chateau.jpg": "File:Coral_Castle.jpg",
-    "ed.jpg": "File:Edward_Leedskalnin,_circa_1910.jpg",
     "tour.jpg": "File:Homestead_FL_Coral_Castle_tower02.jpg",
-    "telescope.jpg": "File:Homestead_FL_Coral_Castle_telescope02.jpg",
-    "blocs.jpg": "File:Coral_Castle_2.jpg"
+    "telescope.jpg": "File:Homestead_FL_Coral_Castle_telescope02.jpg"
   },
   "scenes": [
     {
-      "image": "ed.jpg",
-      "duration": 2.4,
-      "zoom": "in",
-      "crop": [
-        0.0,
-        0.0,
-        1.0,
-        0.75
-      ],
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Sa fiancée l'a planté",
+          "text": "Sa fiancée a tout annulé la veille du mariage.",
           "size": 58
         },
         {
-          "text": "LA VEILLE DU MARIAGE.",
-          "size": 74,
+          "text": "QU'A-T-IL FAIT POUR ELLE ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
         }
-      ]
+      ],
+      "zoom": "in",
+      "crop": [
+        0.38,
+        0.0,
+        0.95,
+        0.88
+      ],
+      "pan": 0.6
     },
     {
       "image": "chateau.jpg",
-      "duration": 2.4,
-      "zoom": "in",
-      "pan": 0.45,
+      "duration": 2.6,
       "text": [
         {
-          "text": "Alors il a bâti un château",
+          "text": "Des blocs de plusieurs tonnes. Sans grue.",
           "size": 58
         },
         {
-          "text": "POUR LA RECONQUÉRIR.",
-          "size": 74,
+          "text": "QUI A PU LES DRESSER ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
         }
-      ]
+      ],
+      "zoom": "in",
+      "pan": 0.45
     },
     {
       "image": "tour.jpg",
-      "duration": 2.4,
-      "zoom": "out",
-      "pan": 0.5,
+      "duration": 2.7,
       "text": [
         {
-          "text": "Seul. La nuit.",
+          "text": "Seul, la nuit, à la lueur d'une lanterne.",
           "size": 58
         },
         {
-          "text": "1 100 TONNES DE CORAIL.",
-          "size": 74,
+          "text": "COMMENT EST-CE POSSIBLE ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
         }
-      ]
+      ],
+      "zoom": "out"
     },
     {
       "image": "telescope.jpg",
-      "duration": 2.4,
-      "zoom": "in",
+      "duration": 2.7,
       "text": [
         {
-          "text": "Il était sûr qu'elle reviendrait",
+          "text": "Il disait connaître un secret très ancien.",
           "size": 58
         },
         {
-          "text": "EN VOYANT ÇA.",
-          "size": 74,
+          "text": "L'A-T-IL RÉVÉLÉ UN JOUR ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
         }
-      ]
+      ],
+      "zoom": "in"
     },
     {
-      "image": "blocs.jpg",
-      "duration": 2.2,
-      "zoom": "out",
-      "pan": 0.5,
+      "image": "origine.jpg",
+      "duration": 2.8,
       "text": [
         {
-          "text": "Elle n'est",
+          "text": "Est-elle venue voir son château ?",
           "size": 58
         },
         {
-          "text": "JAMAIS REVENUE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ]
-    },
-    {
-      "image": "chateau.jpg",
-      "duration": 3.0,
-      "zoom": "out",
-      "pan": 0.7,
-      "text": [
-        {
-          "text": "Il disait connaître le secret des pyramides.",
-          "size": 58
-        },
-        {
-          "text": "IL L'A EMPORTÉ DANS LA TOMBE.",
-          "size": 74,
+          "text": "FERIEZ-VOUS ÇA PAR AMOUR ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -140,10 +116,18 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
-      ]
+      ],
+      "zoom": "out",
+      "crop": [
+        0.0,
+        0.0,
+        0.6,
+        0.88
+      ],
+      "pan": 0.4
     }
   ]
 }
