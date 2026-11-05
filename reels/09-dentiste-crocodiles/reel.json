@@ -4,24 +4,45 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/08.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17879942867659137.jpg",
     "gueule.jpg": "File:Open mouth Crocodile.jpg",
-    "pluvier.jpg": "File:Flickr - Rainbirder - Egyptian Plover (Pluvianus aegyptius).jpg",
-    "herodote.jpg": "File:Marble bust of Herodotos MET DT11742.jpg",
-    "berge.jpg": "File:Nile Crocodile basking (13869043013).jpg",
-    "croc.jpg": "File:Crocodylus-niloticus-Crocoloco-296-Zachi-Evenor.jpg"
+    "buste.jpg": "File:Marble bust of Herodotos MET DT11742.jpg",
+    "pluvier.jpg": "File:Flickr - Rainbirder - Egyptian Plover (Pluvianus aegyptius).jpg"
   },
   "scenes": [
     {
-      "image": "gueule.jpg",
-      "duration": 2.4,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Un oiseau nettoie les dents",
+          "text": "Un oiseau dans la gueule d'un crocodile.",
           "size": 58
         },
         {
-          "text": "DES CROCODILES ?",
-          "size": 74,
+          "text": "POURQUOI NE LE MANGE-T-IL PAS ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.6,
+      "text_y": 0.82
+    },
+    {
+      "image": "gueule.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "On dit qu'il lui nettoie les dents.",
+          "size": 58
+        },
+        {
+          "text": "DEPUIS COMBIEN DE SIÈCLES ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -33,36 +54,16 @@
       "pan": 0.0
     },
     {
-      "image": "pluvier.jpg",
-      "duration": 2.4,
+      "image": "buste.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Le pluvier égyptien picorerait",
+          "text": "Un historien de l'Antiquité l'a raconté.",
           "size": 58
         },
         {
-          "text": "ENTRE SES CROCS.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "herodote.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Hérodote le raconte",
-          "size": 58
-        },
-        {
-          "text": "VERS 450 AV. J.-C.",
-          "size": 74,
+          "text": "L'A-T-IL VRAIMENT VU ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -73,36 +74,36 @@
       "zoom": "out"
     },
     {
-      "image": "berge.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Depuis 2 500 ans,",
-          "size": 58
-        },
-        {
-          "text": "ON LE RÉPÈTE PARTOUT.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "croc.jpg",
+      "image": "pluvier.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "Problème : personne",
+          "text": "Ce petit oiseau est-il vraiment",
           "size": 58
         },
         {
-          "text": "NE L'A JAMAIS VRAIMENT VU.",
-          "size": 74,
+          "text": "LE DENTISTE DES CROCODILES ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Et cette photo, alors ?",
+          "size": 58
+        },
+        {
+          "text": "PEUT-ON CROIRE CE QU'ON VOIT ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -110,11 +111,19 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.5,
+      "crop": [
+        0.2,
+        0.15,
+        0.95,
+        0.95
+      ],
+      "text_y": 0.82
     }
   ]
 }

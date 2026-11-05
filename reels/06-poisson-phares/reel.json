@@ -4,20 +4,22 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/05.txt",
   "images": {
-    "poisson.jpg": "File:Photoblepharonpalpebratum.JPG"
+    "origine.jpg": "posts/originaux/18210970096087898.jpg",
+    "musee.jpg": "https://media.australian.museum/media/dd/images/Photoblepharon_palpebratum.82ac2d2.width-1200.941334a.jpg",
+    "anomalops.jpg": "File:Anomalops sp.jpg"
   },
   "scenes": [
     {
-      "image": "poisson.jpg",
-      "duration": 2.2,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Ce poisson a",
+          "text": "Des lumières qui nagent dans le noir.",
           "size": 58
         },
         {
-          "text": "DES PHARES SOUS LES YEUX.",
-          "size": 74,
+          "text": "QUI LES A ALLUMÉES ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -26,19 +28,20 @@
         }
       ],
       "zoom": "in",
-      "pan": 0.5
+      "pan": 0.0,
+      "text_y": 0.52
     },
     {
-      "image": "poisson.jpg",
-      "duration": 2.4,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Leur lumière vient de",
+          "text": "Regardez sous son œil.",
           "size": 58
         },
         {
-          "text": "MILLIARDS DE BACTÉRIES.",
-          "size": 74,
+          "text": "À QUOI SERT CETTE TACHE ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -49,84 +52,78 @@
       "zoom": "in",
       "pan": 0.3,
       "crop": [
-        0.15,
-        0.1,
-        0.75,
-        0.9
-      ]
-    },
-    {
-      "image": "poisson.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Et il peut",
-          "size": 58
-        },
-        {
-          "text": "LES ÉTEINDRE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
+        0.0,
+        0.42,
+        0.62,
+        1.0
       ],
-      "zoom": "out",
-      "pan": 0.6,
-      "crop": [
-        0.25,
-        0.05,
-        0.95,
-        0.95
-      ]
+      "text_y": 0.3
     },
     {
-      "image": "poisson.jpg",
+      "image": "musee.jpg",
       "duration": 2.6,
       "text": [
         {
-          "text": "Un prédateur approche ?",
+          "text": "Cette lumière, il ne la fabrique pas.",
           "size": 58
         },
         {
-          "text": "IL ÉTEINT ET DISPARAÎT.",
-          "size": 74,
+          "text": "ALORS D'OÙ VIENT-ELLE ?",
+          "size": 72,
           "color": [
             255,
             196,
             72
           ]
-        }
-      ],
-      "zoom": "out",
-      "pan": 0.5
-    },
-    {
-      "image": "poisson.jpg",
-      "duration": 2.8,
-      "text": [
-        {
-          "text": "Son nom :",
-          "size": 58
-        },
-        {
-          "text": "LE POISSON AUX YEUX DE LUMIÈRE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        },
-        {
-          "text": "Histoire complète sur le profil",
-          "size": 46
         }
       ],
       "zoom": "in",
       "pan": 0.4
+    },
+    {
+      "image": "anomalops.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Un prédateur approche dans la nuit.",
+          "size": 58
+        },
+        {
+          "text": "COMMENT DISPARAÎTRE QUAND ON BRILLE ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Vous aimeriez voir ce ballet sous l'eau ?",
+          "size": 58
+        },
+        {
+          "text": "QUEL EST SON SECRET ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Toute l'histoire dans le post",
+          "size": 46
+        }
+      ],
+      "zoom": "out",
+      "pan": 0.95
     }
   ]
 }

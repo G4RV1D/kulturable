@@ -4,23 +4,44 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/06.txt",
   "images": {
+    "origine.jpg": "posts/originaux/18176314894230490.jpg",
     "dessous.jpg": "File:Leshan_Dafo_(Grand_Buddha)_(13946265775).jpg",
     "tete.jpg": "File:The_head_of_the_Leshan_Giant_Buddha.jpg",
-    "riviere.jpg": "File:Leshan-Giant-Buddha_and_Min-River.jpg",
-    "vue.jpg": "File:Leshan_Buddha_Statue_View.JPG"
+    "riviere.jpg": "File:Leshan-Giant-Buddha_and_Min-River.jpg"
   },
   "scenes": [
     {
-      "image": "dessous.jpg",
-      "duration": 2.2,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Taillé dans une falaise :",
+          "text": "Un visage géant dans la montagne ?",
           "size": 58
         },
         {
-          "text": "71 MÈTRES DE HAUT.",
-          "size": 74,
+          "text": "STATUE OU ILLUSION ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.55
+    },
+    {
+      "image": "dessous.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Ailleurs, un géant de 71 mètres.",
+          "size": 58
+        },
+        {
+          "text": "QUI A OSÉ TAILLER UNE FALAISE ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -31,85 +52,58 @@
       "zoom": "out"
     },
     {
-      "image": "tete.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Ses oreilles mesurent",
-          "size": 58
-        },
-        {
-          "text": "7 MÈTRES.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "pan": 0.5
-    },
-    {
       "image": "riviere.jpg",
-      "duration": 2.6,
-      "text": [
-        {
-          "text": "Un moine voulait calmer",
-          "size": 58
-        },
-        {
-          "text": "DES EAUX MEURTRIÈRES.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "pan": 0.5
-    },
-    {
-      "image": "dessous.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Le chantier a duré",
-          "size": 58
-        },
-        {
-          "text": "90 ANS.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "pan": 0.5,
-      "crop": [
-        0.0,
-        0.45,
-        1.0,
-        1.0
-      ]
-    },
-    {
-      "image": "vue.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "Selon la légende,",
+          "text": "À ses pieds, des bateaux coulaient.",
           "size": 58
         },
         {
-          "text": "IL AURAIT UN JUMEAU CACHÉ.",
-          "size": 74,
+          "text": "UNE STATUE PEUT-ELLE CALMER UN FLEUVE ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "tete.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Une vieille légende parle de deux géants.",
+          "size": 58
+        },
+        {
+          "text": "OÙ SE CACHE LE SECOND ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Et si la forêt l'avait caché ?",
+          "size": 58
+        },
+        {
+          "text": "CROYEZ-VOUS À LA LÉGENDE ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -117,12 +111,18 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "in",
-      "pan": 0.5
+      "zoom": "out",
+      "pan": 0.5,
+      "crop": [
+        0.25,
+        0.1,
+        0.95,
+        0.75
+      ]
     }
   ]
 }

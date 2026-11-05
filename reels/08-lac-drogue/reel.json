@@ -4,24 +4,45 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/07.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17933318804226489.jpg",
+    "aile.jpg": "https://cdn.climbing.com/wp-content/uploads/2022/11/The-wing.jpg",
     "lac.jpg": "File:Tenaya Lake, Yosemite National Park, California, U.S.jpg",
-    "hiver.jpg": "File:Winter Morning Sunrise Tunnel View Yosemite Valley - Yosemite National Park (5763418254).jpg",
-    "grimpeur.jpg": "File:Yosemite night elcapitan climbers.jpg",
-    "glace.jpg": "File:Expedition Bergans Baikal 2010, cracks in the ice.jpg",
-    "elcap.jpg": "File:El Capitan, 'Wall of Early Morning Light', Yosemite Valley, California.JPG"
+    "repechage.jpg": "https://cdn.climbing.com/wp-content/uploads/2022/11/File0003.jpg",
+    "butin.jpg": "https://cdn.climbing.com/wp-content/uploads/2022/11/File0105-vi.jpg"
   },
   "scenes": [
     {
-      "image": "lac.jpg",
-      "duration": 2.4,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Un avion bourré de cannabis",
+          "text": "Que fouillent-ils dans la neige ?",
           "size": 58
         },
         {
-          "text": "S'ÉCRASE DANS UN LAC GELÉ.",
-          "size": 74,
+          "text": "QU'ONT-ILS TROUVÉ LÀ-HAUT ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "aile.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Une aile d'avion, au bord d'un lac gelé.",
+          "size": 58
+        },
+        {
+          "text": "QUE S'EST-IL PASSÉ ICI ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -32,16 +53,36 @@
       "zoom": "in"
     },
     {
-      "image": "hiver.jpg",
-      "duration": 2.4,
+      "image": "lac.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Yosemite, décembre 1976.",
+          "text": "Sous la glace, une cargaison oubliée.",
           "size": 58
         },
         {
-          "text": "LA NEIGE CACHE L'ÉPAVE.",
-          "size": 74,
+          "text": "QUI LA RÉCUPÉRERA EN PREMIER ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "repechage.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Des grimpeurs fauchés apprennent la nouvelle.",
+          "size": 58
+        },
+        {
+          "text": "JUSQU'OÙ IRIEZ-VOUS POUR UN TRÉSOR ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -52,56 +93,16 @@
       "zoom": "out"
     },
     {
-      "image": "grimpeur.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Au printemps, des grimpeurs fauchés",
-          "size": 58
-        },
-        {
-          "text": "L'APPRENNENT.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "glace.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Ils montent au lac et repêchent",
-          "size": 58
-        },
-        {
-          "text": "LES BALLOTS SOUS LA GLACE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "elcap.jpg",
+      "image": "butin.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "L'argent aurait financé",
+          "text": "Vous seriez montés jusqu'au lac ?",
           "size": 58
         },
         {
-          "text": "LEURS ESCALADES.",
-          "size": 74,
+          "text": "QU'AURIEZ-VOUS FAIT DU BUTIN ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -109,7 +110,7 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],

@@ -4,23 +4,24 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/04.txt",
   "images": {
-    "fleur.jpg": "File:Silene_stenophylla_158085000.jpg",
-    "fleur2.jpg": "File:Silene_stenophylla_115390032.jpg",
+    "origine.jpg": "posts/originaux/18248493985106662.jpg",
+    "terrier.jpg": "https://i.natgeofe.com/n/aaf82a39-0a9f-43a6-81a4-c4e1d8f9ec4d/Fossil_squirrel_burrow.jpg",
     "kolyma.jpg": "File:Kolyma-river_01.jpg",
-    "kolyma2.jpg": "File:Kolyma's_Annual_Purge_(cropped).jpg"
+    "plante.jpg": "https://i.natgeofe.com/n/a28febd0-a506-422d-8bc6-f43d82e9a97d/Silene_regenerated_plant.jpg",
+    "fleur2.jpg": "File:Silene_stenophylla_115390032.jpg"
   },
   "scenes": [
     {
-      "image": "fleur2.jpg",
-      "duration": 2.2,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Cette fleur a",
+          "text": "Une petite fleur blanche, l'air banal.",
           "size": 58
         },
         {
-          "text": "32 000 ANS.",
-          "size": 74,
+          "text": "QUEL ÂGE LUI DONNEZ-VOUS ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -29,19 +30,19 @@
         }
       ],
       "zoom": "in",
-      "pan": 0.55
+      "pan": 0.45
     },
     {
       "image": "kolyma.jpg",
       "duration": 2.6,
       "text": [
         {
-          "text": "Elle dormait dans un terrier",
+          "text": "Ici, le sol ne dégèle jamais.",
           "size": 58
         },
         {
-          "text": "GELÉ EN SIBÉRIE.",
-          "size": 74,
+          "text": "QUE CACHE-T-IL DEPUIS SI LONGTEMPS ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -49,20 +50,19 @@
           ]
         }
       ],
-      "zoom": "in",
-      "pan": 0.5
+      "zoom": "in"
     },
     {
-      "image": "kolyma2.jpg",
-      "duration": 2.4,
+      "image": "terrier.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Des chercheurs ont réveillé",
+          "text": "Un terrier, retrouvé tout au fond.",
           "size": 58
         },
         {
-          "text": "SES CELLULES.",
-          "size": 74,
+          "text": "QUI L'AVAIT REMPLI, ET QUAND ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -70,47 +70,39 @@
           ]
         }
       ],
-      "zoom": "out",
-      "pan": 0.5
+      "zoom": "in"
     },
     {
-      "image": "fleur.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Et en 2012,",
-          "size": 58
-        },
-        {
-          "text": "ELLE A FLEURI.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "pan": 0.5,
-      "crop": [
-        0.0,
-        0.35,
-        1.0,
-        1.0
-      ]
-    },
-    {
-      "image": "fleur2.jpg",
+      "image": "plante.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "Une fleur",
+          "text": "Des chercheurs tentent l'impossible.",
           "size": 58
         },
         {
-          "text": "DU TEMPS DES MAMMOUTHS.",
-          "size": 74,
+          "text": "PEUT-ON RÉVEILLER CE QUI DORT SOUS LA GLACE ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Les mammouths l'ont-ils connue ?",
+          "size": 58
+        },
+        {
+          "text": "QUE CACHENT ENCORE LES GLACES ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -118,12 +110,18 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
       "zoom": "out",
-      "pan": 0.55
+      "pan": 0.5,
+      "crop": [
+        0.05,
+        0.0,
+        0.95,
+        0.8
+      ]
     }
   ]
 }
