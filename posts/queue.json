@@ -543,8 +543,8 @@
     "publish_at": "2026-11-05T18:00:00+01:00",
     "caption_file": "posts/captions/30-glass-beach.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-05T17:01:23+00:00",
+    "media_id": "17999881604825988",
     "images": [
       {
         "sources": [
@@ -553,7 +553,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Sea_glass_at_Glass_Beach_in_Fort_Bragg_4.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18060788735591100",
+    "story_published_at": "2026-11-05T17:01:47+00:00"
   },
   {
     "id": "31-hashima",
