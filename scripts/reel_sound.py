@@ -16,6 +16,7 @@ import numpy as np
 from scipy.signal import butter, fftconvolve, lfilter
 
 SR = 44100
+SIGNATURE = "b"  # "a" : trois accords ; "b" : cascade lydienne ; "c" : la porte qui s'ouvre
 rng = np.random.default_rng(1887)
 
 
@@ -153,6 +154,74 @@ def signature(seconds):
     return echo(out, 0.30, 0.4, 0.4)[: len(out)]
 
 
+def signature_b(seconds):
+    """Variante libre : une cascade d'étincelles qui monte en mode lydien (la couleur de l'émerveillement),
+    une basse qui glisse vers le grave, puis un grand accord fa maj7(#11) qui s'ouvre, respire
+    et s'éteint lentement jusqu'à la fin."""
+    out = np.zeros(int(seconds * SR))
+    run = [53, 57, 59, 60, 64, 65, 67, 69, 71, 72, 76, 77, 79, 81]  # fa lydien qui grimpe
+    st = 0.055
+    for k, m in enumerate(run):
+        put(out, analog(m + 12, 0.35, 2500 + 220 * k, decay=6, kind="pulse"), k * st, 0.05 + 0.006 * k)
+    land = len(run) * st + 0.05
+    # basse qui glisse du fa vers le fa grave
+    n = int(min(seconds - land, 3.0) * SR)
+    tt = np.arange(n) / SR
+    f = hz(41) * (1 + 0.5 * np.exp(-tt * 9))
+    bass = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.3 * np.sin(4 * np.pi * np.cumsum(f) / SR)
+    put(out, bass * np.exp(-tt * 0.8) * env(n, 0.005, 0.4), land, 0.35)
+    # le grand accord qui s'ouvre (filtre qui s'éclaircit en le tenant)
+    length = seconds - land
+    for v in (0, 7, 11, 16, 18, 23):  # fa, do, mi, la, si (la quarte augmentée), mi
+        nn = int(length * SR)
+        x = saw(hz(53 + v), nn, 0.006)
+        cut = np.linspace(700, 3800, nn)
+        y = np.zeros(nn)
+        for c0 in range(0, nn, 2048):  # filtre qui s'ouvre progressivement
+            b, a = butter(2, cut[c0] / (SR / 2), "low")
+            y[c0:c0 + 2048] = lfilter(b, a, x[c0:c0 + 2048])
+        put(out, y * env(nn, 0.25, length * 0.85), land, 0.075)  # la note de fond s'éteint lentement
+    return echo(out, 0.25, 0.3, 0.3)[: len(out)]
+
+
+def lead(m_from, m_to, length, glide=0.06):
+    """Lead de synthé : dent de scie + carré, petit glissando d'attaque et léger vibrato."""
+    n = int(length * SR)
+    t = np.arange(n) / SR
+    f0, f1 = hz(m_from), hz(m_to)
+    f = f1 + (f0 - f1) * np.exp(-t / glide)
+    f = f * (1 + 0.004 * np.sin(2 * np.pi * 5.5 * t) * np.clip(t / 0.3, 0, 1))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = sum(np.sin(k * ph) / k for k in range(1, 18)) * 0.7 + np.sign(np.sin(ph)) * 0.15
+    b, a = butter(2, 3200 / (SR / 2), "low")
+    return lfilter(b, a, x) * env(n, 0.01, 0.12)
+
+
+def signature_c(seconds):
+    """Variante C, « la porte qui s'ouvre » : une nappe suspendue qui enfle, la mélodie de la chaîne
+    (ré-la-fa-mi) jouée par un lead de synthé, puis la résolution en ré majeur : le mystère s'éclaire."""
+    out = np.zeros(int(seconds * SR))
+    sw = 0.7  # nappe suspendue (ré sus4) qui enfle
+    for v in (0, 5, 7, 12):
+        nn = int((sw + 0.3) * SR)
+        x = saw(hz(50 + v), nn, 0.006)
+        b, a = butter(2, 1600 / (SR / 2), "low")
+        put(out, lfilter(b, a, x) * np.linspace(0, 1, nn) ** 2 * env(nn, 0, 0.3), 0, 0.09)
+    prev = 74
+    for k, m in enumerate((74, 81, 77, 76)):  # ré la fa mi
+        put(out, lead(prev, m, 0.34 if k < 3 else 0.5), sw + k * 0.3, 0.16)
+        prev = m
+    res = sw + 4 * 0.3 + 0.12
+    length = seconds - res
+    for v in (0, 4, 7, 14, 16):  # ré majeur ajouté neuvième : l'éclaircie
+        put(out, analog(62 + v, length, 3000, attack=0.04, release=min(1.8, length * 0.6), detune=0.007), res, 0.10)
+    put(out, lead(74, 78, length * 0.8, glide=0.08), res, 0.10)  # le lead monte sur la tierce majeure
+    put(out, analog(38, length, 360, attack=0.01, release=1.0, decay=0.9), res, 0.45)
+    shine = sum(analog(86 + v, 0.8, 6000, decay=3, kind="pulse") * 0.6 ** j for j, v in enumerate((0, 4, 7, 12)))
+    put(out, shine, res + 0.15, 0.06)
+    return echo(out, 0.30, 0.4, 0.4)[: len(out)]
+
+
 def make(total, hit_at, out, story_end=None):
     """Synthés analogiques des années 80 (composition originale) : nappe chaude, arpège qui scintille,
     basse ronde. Sur la dernière diapositive, la musique revient sur l'accord de départ et le laisse
@@ -186,7 +255,7 @@ def make(total, hit_at, out, story_end=None):
     music *= env(len(music), 0.08, 0.35)  # l'accord s'éteint juste avant l'écran de fin
     put(mix, music, 0, 1.0)
     if total - story_end > 0.5:
-        put(mix, signature(total - story_end), story_end, 1.1)
+        put(mix, {"b": signature_b, "c": signature_c}.get(SIGNATURE, signature)(total - story_end), story_end, 1.1)
     mix = reverb(mix, 2.4, 0.3)
     mix *= env(len(mix), 0.05, 0.5)
     mix /= np.abs(mix).max() / 0.89
