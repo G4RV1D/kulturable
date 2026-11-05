@@ -4,24 +4,44 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/13.txt",
   "images": {
+    "famille.jpg": "posts/originaux/17915560574493347.jpg",
     "decollage.jpg": "File:Apollo 11 Launch - GPN-2000-000630.jpg",
-    "foule.jpg": "File:Apollo 11 Launch Spectators (2).jpg",
-    "neil.jpg": "File:Neil Armstrong pose.jpg",
-    "lune.jpg": "File:A Man on the Moon, AS11-40-5903 (21039130393).jpg",
-    "retour.jpg": "File:Apollo-11-Capsule.jpg"
+    "memo.jpg": "https://www.archives.gov/files/press/press-kits/american-originals-photos/moon-disaster-1.jpg",
+    "lune.jpg": "File:A Man on the Moon, AS11-40-5903 (21039130393).jpg"
   },
   "scenes": [
     {
+      "image": "famille.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Ils regardent une fusée décoller.",
+          "size": 58
+        },
+        {
+          "text": "QUI EST À BORD ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
       "image": "decollage.jpg",
-      "duration": 2.4,
+      "duration": 2.6,
       "text": [
         {
-          "text": "Ce jour-là, papa est parti",
+          "text": "L'homme de leur vie est dedans.",
           "size": 58
         },
         {
-          "text": "SUR LA LUNE.",
-          "size": 74,
+          "text": "REVIENDRA-T-IL ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -32,76 +52,63 @@
       "zoom": "in"
     },
     {
-      "image": "foule.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Sa femme et ses deux fils",
-          "size": 58
-        },
-        {
-          "text": "RETIENNENT LEUR SOUFFLE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "out"
-    },
-    {
-      "image": "neil.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Le papa ?",
-          "size": 58
-        },
-        {
-          "text": "NEIL ARMSTRONG.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "lune.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Au cas où, un discours de deuil",
-          "size": 58
-        },
-        {
-          "text": "ÉTAIT DÉJÀ PRÊT.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "retour.jpg",
+      "image": "memo.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "24 juillet : papa rentre",
+          "text": "La Maison-Blanche a déjà écrit un discours.",
           "size": 58
         },
         {
-          "text": "SAIN ET SAUF.",
-          "size": 74,
+          "text": "POUR ANNONCER SA MORT ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5,
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.6
+      ]
+    },
+    {
+      "image": "lune.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Et s'il restait bloqué là-haut ?",
+          "size": 58
+        },
+        {
+          "text": "QUE DIT-ON À SES ENFANTS ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "famille.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Auriez-vous eu le courage",
+          "size": 58
+        },
+        {
+          "text": "DE REGARDER LA FUSÉE PARTIR ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -109,11 +116,18 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.55,
+      "crop": [
+        0.25,
+        0.4,
+        0.85,
+        1.0
+      ]
     }
   ]
 }
