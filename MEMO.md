@@ -80,6 +80,13 @@
   2. Faire les Reels suivants à partir des anciens posts réécrits.
   3. Plus tard, mettre en place la publication automatique des Reels.
 
+## Règles des Reels (décision du 5/11, s'appliquent à tous les Reels)
+
+- Chaque Reel reprend **au minimum la photo publiée sur Instagram** pour le post d'origine (`posts/originaux/<id>.jpg`, récupérées par le workflow « Récupérer les photos publiées » ; `index.json` relie chaque id à sa légende).
+- **1 ou 2 questions ouvertes par diapositive** pour donner envie d'aller lire le post. Ne jamais dévoiler les noms ni les éléments clés de l'histoire (sinon tout est dit et personne ne clique).
+- **Images explicites** en priorité, même si elles ne sont pas libres de droits (choix de Paul : la chaîne ne rapporte rien). Toujours créditer l'auteur dans la légende, pour lui attribuer le travail.
+- Modèle : `reels/14-papa-sur-la-lune` (refait le 5/11 selon ces règles).
+
 ## TikTok (projet, rien créé)
 
 - Consigne : **ne rien mettre en ligne, ne créer aucun compte**.
