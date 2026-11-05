@@ -29,7 +29,8 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "pan": 0.0
     },
     {
       "image": "pluvier.jpg",

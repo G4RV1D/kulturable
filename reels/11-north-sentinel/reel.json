@@ -5,10 +5,10 @@
   "source_post": "posts/anciens/10.txt",
   "images": {
     "ile.jpg": "File:North Sentinel Island.jpg",
-    "iss.jpg": "File:NorthSentinel Island ISS006-E-33376 sat.jpg",
-    "cote.jpg": "File:North Sentinel Island 1732160137 dff5236475 o.jpg",
-    "sat.jpg": "File:North Sentinel Island 2022-03-06 Sentinel-2 L2A True color.jpg",
-    "foret.jpg": "File:Havelock Island, Forest on the beach 2, Andaman Islands.jpg"
+    "iss.jpg": "File:ISS017-E-012583 lrg.jpg",
+    "cote.jpg": "File:ISS018-E-038182 lrg.jpg",
+    "iss46.jpg": "File:ISS046-E-3699.JPG",
+    "sat.jpg": "File:North Sentinel Island 2022-03-06 Sentinel-2 L2A True color.jpg"
   },
   "scenes": [
     {
@@ -32,7 +32,7 @@
       "zoom": "in"
     },
     {
-      "image": "foret.jpg",
+      "image": "iss46.jpg",
       "duration": 2.4,
       "text": [
         {

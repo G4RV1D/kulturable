@@ -7,7 +7,7 @@
     "ali.jpg": "File:Muhammad Ali NYWTS.jpg",
     "velo.jpg": "File:1950 Schwinn Spitfire.jpg",
     "martin.jpg": "File:JoeEMartinCassiusClay1960.jpg",
-    "rome.jpg": "File:Cassius Clay (1960, JO).jpg",
+    "rome.jpg": "File:Boxing light-heavyweight 1960 Olympics.jpg",
     "liston.jpg": "File:Muhammad Ali vs. Sonny Liston I AP.jpg"
   },
   "scenes": [
@@ -69,7 +69,8 @@
           ]
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.75
     },
     {
       "image": "rome.jpg",
