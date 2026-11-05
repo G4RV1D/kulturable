@@ -5,9 +5,7 @@
   "source_post": "posts/anciens/10.txt",
   "images": {
     "ile.jpg": "File:North Sentinel Island.jpg",
-    "iss.jpg": "File:ISS017-E-012583 lrg.jpg",
-    "cote.jpg": "File:ISS018-E-038182 lrg.jpg",
-    "iss46.jpg": "File:ISS046-E-3699.JPG",
+    "s2a.png": "File:North-Sentinel-Island-Sentinel-2A.png",
     "sat.jpg": "File:North Sentinel Island 2022-03-06 Sentinel-2 L2A True color.jpg"
   },
   "scenes": [
@@ -32,7 +30,7 @@
       "zoom": "in"
     },
     {
-      "image": "iss46.jpg",
+      "image": "s2a.png",
       "duration": 2.4,
       "text": [
         {
@@ -52,7 +50,7 @@
       "zoom": "out"
     },
     {
-      "image": "cote.jpg",
+      "image": "ile.jpg",
       "duration": 2.4,
       "text": [
         {
@@ -69,10 +67,16 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "crop": [
+        0.0,
+        0.0,
+        0.5,
+        0.6
+      ]
     },
     {
-      "image": "iss.jpg",
+      "image": "sat.jpg",
       "duration": 2.4,
       "text": [
         {
@@ -89,7 +93,13 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "crop": [
+        0.45,
+        0.3,
+        1.0,
+        1.0
+      ]
     },
     {
       "image": "sat.jpg",

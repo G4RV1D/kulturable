@@ -6,8 +6,7 @@
   "images": {
     "urne.jpg": "File:Nepenthes rafflesiana var. elongata upper pitcher.jpg",
     "fourmi.jpg": "File:Nepenthes rafflesiana ant.jpg",
-    "foret.jpg": "File:Borneo rainforest.jpg",
-    "geante.jpg": "File:Raffles' Pitcher Plant (Nepenthes rafflesiana) 2.jpg"
+    "foret.jpg": "File:Borneo rainforest.jpg"
   },
   "scenes": [
     {
@@ -77,7 +76,7 @@
       ]
     },
     {
-      "image": "geante.jpg",
+      "image": "fourmi.jpg",
       "duration": 2.4,
       "text": [
         {
@@ -94,7 +93,13 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "crop": [
+        0.35,
+        0.3,
+        1.0,
+        0.85
+      ]
     },
     {
       "image": "foret.jpg",
