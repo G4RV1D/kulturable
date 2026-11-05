@@ -1,0 +1,27 @@
+name: Tester un Reel (sans publier)
+
+on:
+  workflow_dispatch:
+    inputs:
+      reel_id:
+        description: "Reel à tester (ex. reel-01-coral-castle)"
+        type: string
+        default: "reel-01-coral-castle"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Créer le conteneur Instagram du Reel, sans le publier
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IMAGE_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/images
+          REEL_TEST: ${{ inputs.reel_id }}
+        run: python scripts/publish.py

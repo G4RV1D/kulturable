@@ -1,0 +1,35 @@
+name: Statistiques des Reels
+
+on:
+  schedule:
+    - cron: "7 14 * * *"   # chaque jour vers 14 h UTC : relevé J+1, J+2… de chaque Reel publié
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kulturable-repo-write
+  cancel-in-progress: false
+
+jobs:
+  reels-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Relever les statistiques des Reels
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python scripts/reels_stats.py
+      - name: Analyser (rapport, modèle, tableau de bord)
+        run: python scripts/reels_analyse.py
+      - name: Enregistrer
+        run: |
+          git config user.name "kulturable-bot"
+          git config user.email "kulturable-bot@users.noreply.github.com"
+          git add reels/analyse
+          if [ -d reels/stats ]; then git add reels/stats; fi   # absent tant qu'aucun Reel n'est publié
+          git diff --cached --quiet || (git commit -m "Statistiques des Reels" && git pull --rebase && git push)

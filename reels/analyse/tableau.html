@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!-- Gabarit du tableau de bord des Reels : scripts/reels_analyse.py y injecte les données
+     et l'écrit dans reels/analyse/tableau.html. Autonome : aucun fichier ni service externe. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reels Kulturable : tableau de bord</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface-1: #fcfcfb;
+    --text-primary: #0b0b0b; --text-secondary: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+    --series-1: #2a78d6; --series-2: #eb6834; --context: #c9c8c1;
+    --good: #006300; --critical: #d03b3b; --wash: rgba(42,120,214,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface-1: #1a1a19;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5; --series-2: #d95926; --context: #4a4a46;
+      --good: #0ca30c; --critical: #e66767; --wash: rgba(57,135,229,0.14);
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926; --context: #4a4a46;
+    --good: #0ca30c; --critical: #e66767; --wash: rgba(57,135,229,0.14);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .viz-root { background: var(--page); color: var(--text-primary); min-height: 100vh;
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 24px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 0 0 4px; }
+  .sub { color: var(--text-secondary); margin: 0 0 12px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; border: 1px solid var(--border);
+    color: var(--text-secondary); font-size: 12px; margin-left: 6px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; margin: 0 0 16px; }
+  .note { border-left: 3px solid var(--series-2); padding: 6px 10px; color: var(--text-secondary); margin: 8px 0 0; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 0 0 16px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+  .tile .lab { color: var(--text-secondary); font-size: 12px; }
+  .tile .val { font-size: 26px; font-weight: 600; margin-top: 2px; }
+  .tile .det { color: var(--muted); font-size: 12px; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 6px 0 10px; }
+  select { font: inherit; padding: 4px 6px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--surface-1); color: var(--text-primary); }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--text-secondary); font-size: 12px; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  svg .lbl { fill: var(--text-primary); font-size: 12px; }
+  svg .lbl2 { fill: var(--text-secondary); font-size: 11px; }
+  .grid { stroke: var(--grid); stroke-width: 1; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+  .empty { color: var(--text-secondary); padding: 18px; text-align: center; border: 1px dashed var(--axis); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--grid); text-align: left; vertical-align: top; }
+  th { color: var(--text-secondary); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .scroll { overflow-x: auto; }
+  .ok { color: var(--good); } .ko { color: var(--critical); }
+  ol { margin: 6px 0 0; padding-left: 20px; } li { margin: 4px 0; }
+  #tip { position: fixed; pointer-events: none; background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12); display: none; max-width: 280px; z-index: 10; }
+  #tip b { font-size: 14px; }
+  #tip .r { display: flex; justify-content: space-between; gap: 12px; color: var(--text-secondary); }
+  #tip .r span:last-child { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  details summary { cursor: pointer; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+  <h1>Reels Kulturable <span class="badge" id="mode"></span></h1>
+  <p class="sub">Tableau de bord généré le 2026-11-05T12:55 UTC par scripts/reels_analyse.py. Détails : reels/analyse/rapport.md.</p>
+  <div id="alerte"></div>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card"><h2>Recommandations pour les prochains Reels</h2><ol id="recos"></ol></div>
+
+  <div class="card">
+    <h2>Classement par score</h2>
+    <p class="sub">Score de 0 à 100, relatif à nos autres Reels (relevé le plus proche de J+7). Survolez une barre pour le détail.</p>
+    <div id="classement"></div>
+  </div>
+
+  <div class="card">
+    <h2>Évolution après publication</h2>
+    <div class="controls">
+      <label>Mesure <select id="metrique"></select></label>
+      <label>Reel mis en avant <select id="choixReel"></select></label>
+      <div class="legend" id="legendeCourbes"></div>
+    </div>
+    <div id="courbes"></div>
+  </div>
+
+  <div class="card">
+    <h2>Meilleurs contre moins bons : caractéristiques</h2>
+    <p class="sub">Médiane des meilleurs Reels et des moins bons, sur l'échelle de chaque caractéristique (du plus petit au plus grand de nos Reels).</p>
+    <div class="legend" id="legendeComp"></div>
+    <div id="comparaison"></div>
+  </div>
+
+  <div class="card"><h2>Reels en préparation : contrôle par rapport au modèle</h2><div class="scroll" id="avenir"></div></div>
+  <div class="card"><h2>Modèle : règles pour les prochains Reels</h2><p class="sub" id="avert"></p><div class="scroll" id="regles"></div></div>
+  <div class="card"><details><summary>Tableau de toutes les données (vue texte)</summary><div class="scroll" id="donnees"></div></details></div>
+</div>
+<div id="tip"></div>
+</div>
+
+<script>
+const D = {"genere": "2026-11-05T12:55:49+00:00", "mode": "réduit", "n": 0, "min_solide": 8, "reels": [], "composantes": [{"cle": "engagement_abonnes", "poids": 70, "mieux": true, "libelle": "J'aime + commentaires pour 100 abonnés"}, {"cle": "abonnes_gagnes", "poids": 30, "mieux": true, "libelle": "Abonnés gagnés (estimés)"}], "comparaison": [{"cle": "duree_totale_s", "libelle": "Durée totale (s)", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "nb_diapos", "libelle": "Nombre de diapos", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "duree_1re_diapo_s", "libelle": "Durée de la 1re diapo (s)", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "mots_accroche", "libelle": "Mots dans l'accroche", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "mots_max_diapo", "libelle": "Mots max sur une diapo", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "mots_total", "libelle": "Mots à l'écran (total)", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "debit_max_mots_s", "libelle": "Débit max (mots/s)", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "nb_images", "libelle": "Photos différentes", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "heure_paris", "libelle": "Heure de publication", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "legende_caracteres", "libelle": "Longueur de la légende", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}, {"cle": "nb_hashtags", "libelle": "Hashtags", "meilleurs": null, "moins_bons": null, "min": null, "max": null, "rho": null, "confiance": "insuffisante"}], "a_venir": [{"id": "reel-01-coral-castle", "titre": "Le château de corail", "car": {"titre": "Le château de corail", "dossier": "reels/01-coral-castle", "duree_totale_s": 18.0, "duree_diapos_s": 14.8, "nb_diapos": 6, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.47, "accroche": "Sa fiancée l'a planté LA VEILLE DU MARIAGE.", "mots_accroche": 8, "mots_par_diapo": [8, 9, 8, 8, 4, 13], "mots_max_diapo": 13, "mots_total": 50, "debit_max_mots_s": 4.33, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "lieux", "themes": ["lieux", "personnages", "mysteres"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": 12, "jour": "vendredi", "legende_caracteres": 838, "legende_mots": 135, "premiere_ligne_caracteres": 102, "nb_hashtags": 5, "question_legende": true}, "ecarts": [{"regle": "mots_par_diapo_max", "texte": "Diapo la plus chargée : 13 mots (max conseillé 12 mots)"}], "prevu": "2026-11-06T12:00:00+01:00"}, {"id": "reel-02-oiseau-guide", "titre": "L'oiseau qui guide les hommes", "car": {"titre": "L'oiseau qui guide les hommes", "dossier": "reels/02-oiseau-guide", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.48, "accroche": "Cet oiseau sauvage GUIDE LES HOMMES AU MIEL.", "mots_accroche": 8, "mots_par_diapo": [8, 4, 7, 12, 8], "mots_max_diapo": 12, "mots_total": 39, "debit_max_mots_s": 4.62, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "animaux", "themes": ["animaux", "personnages", "nature"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": 12, "jour": "samedi", "legende_caracteres": 859, "legende_mots": 132, "premiere_ligne_caracteres": 103, "nb_hashtags": 5, "question_legende": true}, "ecarts": [{"regle": "debit_max_mots_s", "texte": "Débit de lecture : 4,62 mots/s (max conseillé 4,5 mots/s)"}], "prevu": "2026-11-07T12:00:00+01:00"}, {"id": "reel-04-mangoustes", "titre": "Timon et Pumbaa en vrai", "car": {"titre": "Timon et Pumbaa en vrai", "dossier": "reels/04-mangoustes", "duree_totale_s": 15.4, "duree_diapos_s": 12.2, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.44, "accroche": "Ce phacochère a ses TOILETTEUSES PERSO.", "mots_accroche": 6, "mots_par_diapo": [6, 6, 7, 7, 6], "mots_max_diapo": 7, "mots_total": 32, "debit_max_mots_s": 2.92, "chiffre_accroche": false, "chiffre_textes": false, "question_accroche": false, "theme": "animaux", "themes": ["animaux"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": 12, "jour": "dimanche", "legende_caracteres": 669, "legende_mots": 107, "premiere_ligne_caracteres": 104, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": "2026-11-08T12:00:00+01:00"}, {"id": "reel-05-fleur-glaciaire", "titre": "La fleur de l'ère glaciaire", "car": {"titre": "La fleur de l'ère glaciaire", "dossier": "reels/05-fleur-glaciaire", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.48, "accroche": "Cette fleur a 32 000 ANS.", "mots_accroche": 6, "mots_par_diapo": [6, 8, 6, 6, 6], "mots_max_diapo": 8, "mots_total": 32, "debit_max_mots_s": 3.08, "chiffre_accroche": true, "chiffre_textes": true, "question_accroche": false, "theme": "nature", "themes": ["nature", "science"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": 12, "jour": "lundi", "legende_caracteres": 765, "legende_mots": 122, "premiere_ligne_caracteres": 107, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": "2026-11-09T12:00:00+01:00"}, {"id": "reel-06-poisson-phares", "titre": "Le poisson aux phares", "car": {"titre": "Le poisson aux phares", "dossier": "reels/06-poisson-phares", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.48, "accroche": "Ce poisson a DES PHARES SOUS LES YEUX.", "mots_accroche": 8, "mots_par_diapo": [8, 7, 5, 7, 8], "mots_max_diapo": 8, "mots_total": 35, "debit_max_mots_s": 3.64, "chiffre_accroche": false, "chiffre_textes": false, "question_accroche": false, "theme": "animaux", "themes": ["animaux", "science", "nature"], "type_images": "une seule photo", "nb_images": 1, "musique": "signature", "heure_paris": 12, "jour": "mardi", "legende_caracteres": 631, "legende_mots": 99, "premiere_ligne_caracteres": 109, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": "2026-11-10T12:00:00+01:00"}, {"id": "reel-07-bouddha-leshan", "titre": "Le Bouddha caché dans la montagne", "car": {"titre": "Le Bouddha caché dans la montagne", "dossier": "reels/07-bouddha-leshan", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.48, "accroche": "Taillé dans une falaise : 71 MÈTRES DE HAUT.", "mots_accroche": 8, "mots_par_diapo": [8, 5, 7, 6, 8], "mots_max_diapo": 8, "mots_total": 34, "debit_max_mots_s": 3.64, "chiffre_accroche": true, "chiffre_textes": true, "question_accroche": false, "theme": "nature", "themes": ["nature", "lieux", "mysteres"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": 12, "jour": "mercredi", "legende_caracteres": 750, "legende_mots": 116, "premiere_ligne_caracteres": 104, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": "2026-11-11T12:00:00+01:00"}, {"id": "reel-03-kulning", "titre": "Le chant qui appelle les troupeaux", "car": {"titre": "Le chant qui appelle les troupeaux", "dossier": "reels/03-kulning", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.2, "duree_moy_diapo_s": 2.48, "accroche": "Un chant envoûtant QUI TRAVERSE LA VALLÉE.", "mots_accroche": 7, "mots_par_diapo": [7, 8, 4, 8, 4], "mots_max_diapo": 8, "mots_total": 31, "debit_max_mots_s": 3.33, "chiffre_accroche": false, "chiffre_textes": false, "question_accroche": false, "theme": "animaux", "themes": ["animaux", "traditions", "personnages"], "type_images": "mélange", "nb_images": 3, "musique": "signature", "heure_paris": 12, "jour": "jeudi", "legende_caracteres": 741, "legende_mots": 110, "premiere_ligne_caracteres": 107, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": "2026-11-12T12:00:00+01:00"}, {"id": "08-lac-drogue", "titre": "Le lac de la drogue", "car": {"titre": "Le lac de la drogue", "dossier": "reels/08-lac-drogue", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Un avion bourré de cannabis S'ÉCRASE DANS UN LAC GELÉ.", "mots_accroche": 10, "mots_par_diapo": [10, 7, 6, 11, 5], "mots_max_diapo": 11, "mots_total": 39, "debit_max_mots_s": 4.58, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "nature", "themes": ["nature", "histoire"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 669, "legende_mots": 106, "premiere_ligne_caracteres": 102, "nb_hashtags": 5, "question_legende": true}, "ecarts": [{"regle": "mots_accroche_max", "texte": "Accroche : 10 mots (max conseillé 8 mots)"}, {"regle": "debit_max_mots_s", "texte": "Débit de lecture : 4,58 mots/s (max conseillé 4,5 mots/s)"}], "prevu": null}, {"id": "09-dentiste-crocodiles", "titre": "Le dentiste des crocodiles", "car": {"titre": "Le dentiste des crocodiles", "dossier": "reels/09-dentiste-crocodiles", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Un oiseau nettoie les dents DES CROCODILES ?", "mots_accroche": 7, "mots_par_diapo": [7, 7, 8, 8, 7], "mots_max_diapo": 8, "mots_total": 37, "debit_max_mots_s": 3.33, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": true, "theme": "animaux", "themes": ["animaux", "mysteres"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 682, "legende_mots": 107, "premiere_ligne_caracteres": 101, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": null}, {"id": "10-crabe-oursin", "titre": "Le crabe au casque d'oursin", "car": {"titre": "Le crabe au casque d'oursin", "dossier": "reels/10-crabe-oursin", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Ce crabe porte un oursin VIVANT SUR SON DOS.", "mots_accroche": 9, "mots_par_diapo": [9, 6, 8, 6, 10], "mots_max_diapo": 10, "mots_total": 39, "debit_max_mots_s": 3.75, "chiffre_accroche": false, "chiffre_textes": false, "question_accroche": false, "theme": "animaux", "themes": ["animaux", "nature"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 698, "legende_mots": 116, "premiere_ligne_caracteres": 108, "nb_hashtags": 5, "question_legende": true}, "ecarts": [{"regle": "mots_accroche_max", "texte": "Accroche : 9 mots (max conseillé 8 mots)"}], "prevu": null}, {"id": "11-north-sentinel", "titre": "Le peuple qui dit non au monde", "car": {"titre": "Le peuple qui dit non au monde", "dossier": "reels/11-north-sentinel", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Sur cette île, un peuple REFUSE TOUT CONTACT.", "mots_accroche": 8, "mots_par_diapo": [8, 8, 8, 10, 8], "mots_max_diapo": 10, "mots_total": 42, "debit_max_mots_s": 4.17, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "lieux", "themes": ["lieux", "nature", "mysteres"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 724, "legende_mots": 109, "premiere_ligne_caracteres": 103, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": null}, {"id": "12-velo-ali", "titre": "Le vélo qui a créé une légende", "car": {"titre": "Le vélo qui a créé une légende", "dossier": "reels/12-velo-ali", "duree_totale_s": 15.4, "duree_diapos_s": 12.2, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.44, "accroche": "On lui a volé son vélo. IL EST DEVENU MOHAMED ALI.", "mots_accroche": 11, "mots_par_diapo": [11, 9, 9, 7, 5], "mots_max_diapo": 11, "mots_total": 41, "debit_max_mots_s": 4.58, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "mysteres", "themes": ["mysteres", "histoire"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 726, "legende_mots": 120, "premiere_ligne_caracteres": 105, "nb_hashtags": 5, "question_legende": true}, "ecarts": [{"regle": "mots_accroche_max", "texte": "Accroche : 11 mots (max conseillé 8 mots)"}, {"regle": "debit_max_mots_s", "texte": "Débit de lecture : 4,58 mots/s (max conseillé 4,5 mots/s)"}], "prevu": null}, {"id": "13-chauves-souris-nepenthes", "titre": "La plante qui héberge des chauves-souris", "car": {"titre": "La plante qui héberge des chauves-souris", "dossier": "reels/13-chauves-souris-nepenthes", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Cette plante carnivore LOGE UNE CHAUVE-SOURIS.", "mots_accroche": 6, "mots_par_diapo": [6, 10, 7, 7, 8], "mots_max_diapo": 10, "mots_total": 38, "debit_max_mots_s": 4.17, "chiffre_accroche": false, "chiffre_textes": false, "question_accroche": false, "theme": "nature", "themes": ["nature", "animaux", "science"], "type_images": "photos libres (Wikimedia)", "nb_images": 4, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 780, "legende_mots": 116, "premiere_ligne_caracteres": 106, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": null}, {"id": "14-papa-sur-la-lune", "titre": "Le jour où papa est parti sur la Lune", "car": {"titre": "Le jour où papa est parti sur la Lune", "dossier": "reels/14-papa-sur-la-lune", "duree_totale_s": 15.6, "duree_diapos_s": 12.4, "nb_diapos": 5, "duree_1re_diapo_s": 2.4, "duree_moy_diapo_s": 2.48, "accroche": "Ce jour-là, papa est parti SUR LA LUNE.", "mots_accroche": 8, "mots_par_diapo": [8, 9, 4, 10, 7], "mots_max_diapo": 10, "mots_total": 38, "debit_max_mots_s": 4.17, "chiffre_accroche": false, "chiffre_textes": true, "question_accroche": false, "theme": "personnages", "themes": ["personnages", "histoire"], "type_images": "photos libres (Wikimedia)", "nb_images": 5, "musique": "signature", "heure_paris": null, "jour": null, "legende_caracteres": 705, "legende_mots": 119, "premiere_ligne_caracteres": 110, "nb_hashtags": 5, "question_legende": true}, "ecarts": [], "prevu": null}], "regles": {"duree_totale_s": {"cible": 15, "plage": [10, 18], "source": "hypothèse de départ, à confirmer", "caracteristique": "duree_totale_s", "pourquoi": "Les Reels courts (moins de 15-20 s) sont plus souvent vus en entier, ce qui pèse lourd pour l'algorithme. Écran de fin de 3,2 s compris.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "duree_1re_diapo_max_s": {"max": 2.5, "source": "hypothèse de départ, à confirmer", "caracteristique": "duree_1re_diapo_s", "pourquoi": "Beaucoup de gens décident en moins de 3 s : la 1re diapo doit accrocher vite et laisser place à la suite.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "mots_accroche_max": {"max": 8, "source": "hypothèse de départ, à confirmer", "caracteristique": "mots_accroche", "pourquoi": "Une accroche courte se lit d'un coup d'œil pendant le défilement.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "mots_par_diapo_max": {"max": 12, "source": "hypothèse de départ, à confirmer", "caracteristique": "mots_max_diapo", "pourquoi": "Au-delà, le texte n'a pas le temps d'être lu.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "debit_max_mots_s": {"max": 4.5, "source": "hypothèse de départ, à confirmer", "caracteristique": "debit_max_mots_s", "pourquoi": "Lecture confortable d'un texte court et percutant : environ 4 mots par seconde au plus (appel à l'action exclu).", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "nb_diapos": {"cible": 5, "plage": [4, 7], "source": "hypothèse de départ, à confirmer", "caracteristique": "nb_diapos", "pourquoi": "Assez de diapos pour un rythme vif, pas trop pour rester court.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "chiffre_dans_accroche": {"prefere": true, "source": "hypothèse de départ, à confirmer", "caracteristique": "chiffre_accroche", "pourquoi": "Un nombre concret (date, poids, distance) rend l'accroche plus crédible et intrigante.", "n_reels": 0, "confiance": "insuffisante"}, "nb_hashtags": {"plage": [3, 5], "source": "hypothèse de départ, à confirmer", "caracteristique": "nb_hashtags", "pourquoi": "Instagram conseille 3 à 5 hashtags précis.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "premiere_ligne_max_caracteres": {"max": 110, "source": "règle du compte (MEMO.md)", "caracteristique": "premiere_ligne_caracteres", "pourquoi": "La 1re ligne doit tenir avant « … plus ».", "n_reels": 0, "confiance": "insuffisante"}, "heure_conseillee_paris": {"valeur": 12, "plage": [11, 20], "source": "hypothèse de départ, à confirmer", "caracteristique": "heure_paris", "pourquoi": "Midi et la soirée sont des pics d'utilisation ; les Reels sont programmés à midi, les posts à 18 h.", "n_reels": 0, "observe": {"mediane_meilleurs": null, "mediane_moins_bons": null, "correlation_score": null}, "confiance": "insuffisante"}, "jours_conseilles": {"valeur": ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"], "source": "hypothèse de départ, à confirmer", "caracteristique": "jour", "pourquoi": "Aucun jour n'est privilégié tant que les données ne le montrent pas.", "n_reels": 0, "confiance": "insuffisante"}, "themes_a_privilegier": {"valeur": [], "source": "hypothèse de départ, à confirmer", "caracteristique": "theme", "pourquoi": "Varier les thèmes au début pour découvrir ceux qui plaisent.", "n_reels": 0, "confiance": "insuffisante"}, "themes_a_eviter": {"valeur": [], "source": "hypothèse de départ, à confirmer", "caracteristique": "theme", "pourquoi": "", "n_reels": 0, "confiance": "insuffisante"}}, "avertissement": "Moins de 8 Reels mesurés : les règles sont des hypothèses de départ, à confirmer.", "abonnes": [["2026-10-21T20:53:54+00:00", 14], ["2026-10-22T19:26:20+00:00", 14], ["2026-10-23T19:31:26+00:00", 14], ["2026-10-24T18:20:46+00:00", 14], ["2026-10-25T18:32:32+00:00", 14], ["2026-10-26T20:43:41+00:00", 14], ["2026-10-27T20:13:45+00:00", 14], ["2026-10-28T20:31:50+00:00", 14], ["2026-10-29T20:31:41+00:00", 14], ["2026-10-30T20:05:30+00:00", 14], ["2026-10-31T19:31:41+00:00", 14], ["2026-11-01T19:53:46+00:00", 14], ["2026-11-02T23:12:15+00:00", 14], ["2026-11-03T21:14:57+00:00", 14], ["2026-11-04T21:27:59+00:00", 14]], "recommandations": ["**Activer les statistiques détaillées** (permission instagram_business_manage_insights) : sans vues, temps de visionnage ni partages, l'analyse ne voit que les j'aime, ce qui est très pauvre avec peu d'abonnés. Voir la fin de ce rapport.", "**Publier au moins 8 Reels** avant de tirer des conclusions, en ne changeant qu'une chose à la fois d'un Reel à l'autre (par exemple : accroche avec un chiffre / sans chiffre, ou thème animaux / histoire) pour savoir ce qui fait la différence.", "**Laisser plus de temps pour lire (ou moins de mots)** : concerne 3 Reel(s) en préparation (reel-02-oiseau-guide, 08-lac-drogue, 12-velo-ali), détail plus bas.", "**Raccourcir l'accroche** : concerne 3 Reel(s) en préparation (08-lac-drogue, 10-crabe-oursin, 12-velo-ali), détail plus bas.", "**Accroche en moins de 8 mots, avec un chiffre concret**, lisible dès la 1re seconde. *(bonne pratique générale, à confirmer)*"]};
+const NS = "http://www.w3.org/2000/svg";
+const $ = (id) => document.getElementById(id);
+const tip = $("tip");
+
+/* ---------- petits outils ---------- */
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+  if (text !== undefined) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function h(tag, text, parent, cls) {
+  const e = document.createElement(tag);
+  if (text !== undefined && text !== null) e.textContent = text;
+  if (cls) e.className = cls;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function fmt(v, dec) {
+  if (v === null || v === undefined || Number.isNaN(v)) return "–";
+  if (typeof v === "boolean") return v ? "oui" : "non";
+  if (typeof v !== "number") return String(v);
+  const d = dec !== undefined ? dec : (Math.abs(v) >= 100 ? 0 : (Math.abs(v) >= 10 ? 1 : 2));
+  return v.toLocaleString("fr-FR", { maximumFractionDigits: d });
+}
+function niceMax(v) {
+  if (!(v > 0)) return 1;
+  const p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p;
+  return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p;
+}
+function showTip(ev, titre, lignes) {
+  tip.replaceChildren();
+  h("b", titre, tip);
+  for (const [k, v] of lignes) { const r = h("div", null, tip, "r"); h("span", k, r); h("span", v, r); }
+  tip.style.display = "block";
+  const x = Math.min(ev.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+  const y = Math.min(ev.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.style.display = "none"; }
+function empty(parent, msg) { parent.replaceChildren(); h("div", msg, parent, "empty"); }
+
+/* ---------- en-tête, tuiles, recommandations ---------- */
+$("mode").textContent = D.mode === "complet" ? "mode complet" : "mode réduit (j'aime et commentaires seulement)";
+if (D.n < D.min_solide) {
+  h("p", `Prudence : ${D.n} Reel(s) mesuré(s). En dessous de ${D.min_solide}, les écarts peuvent être dus au hasard ; ` +
+    "les règles du modèle restent des hypothèses de départ.", $("alerte"), "note");
+}
+(function tuiles() {
+  const R = D.reels, t = $("tiles");
+  const med = (a) => { a = a.filter((x) => x !== null && x !== undefined).sort((x, y) => x - y);
+    return a.length ? (a.length % 2 ? a[(a.length - 1) / 2] : (a[a.length / 2 - 1] + a[a.length / 2]) / 2) : null; };
+  const ab = D.abonnes.length ? D.abonnes[D.abonnes.length - 1][1] : null;
+  const items = [
+    ["Reels mesurés", D.n, `${D.a_venir.length} en préparation`],
+    D.mode === "complet"
+      ? ["Vues médianes", med(R.map((r) => r.ind.vues)), "au relevé de référence (~J+7)"]
+      : ["J'aime médians", med(R.map((r) => r.ind.likes)), "au relevé de référence (~J+7)"],
+    D.mode === "complet"
+      ? ["Rétention médiane", med(R.map((r) => r.ind.retention)) === null ? null : med(R.map((r) => r.ind.retention)) * 100, "% du Reel regardé en moyenne"]
+      : ["Commentaires médians", med(R.map((r) => r.ind.commentaires)), "au relevé de référence"],
+    ["Abonnés", ab, "au dernier relevé"],
+  ];
+  for (const [lab, val, det] of items) {
+    const d = h("div", null, t, "tile");
+    h("div", lab, d, "lab"); h("div", fmt(val, lab.startsWith("Rétention") ? 0 : undefined) + (lab.startsWith("Rétention") && val !== null ? " %" : ""), d, "val"); h("div", det, d, "det");
+  }
+  for (const r of D.recommandations) {
+    const li = h("li", null, $("recos"));
+    r.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/).forEach((part) => {
+      if (part.startsWith("**")) h("strong", part.slice(2, -2), li);
+      else if (part.startsWith("*")) h("em", part.slice(1, -1), li);
+      else li.appendChild(document.createTextNode(part));
+    });
+  }
+})();
+
+/* ---------- classement : barres horizontales ---------- */
+(function classement() {
+  const box = $("classement"), R = D.reels;
+  if (!R.length) return empty(box, "Aucun Reel publié et mesuré pour l'instant : le classement apparaîtra après le premier relevé.");
+  const W = 1000, row = 30, padL = 260, padR = 60, top = 8, H = top + R.length * row + 26;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Classement des Reels par score" }, box);
+  const x = (v) => padL + (W - padL - padR) * v / 100;
+  for (const t of [0, 25, 50, 75, 100]) {
+    el("line", { x1: x(t), x2: x(t), y1: top, y2: H - 22, class: "grid" }, svg);
+    el("text", { x: x(t), y: H - 6, "text-anchor": "middle" }, svg, t);
+  }
+  const libs = Object.fromEntries(D.composantes.map((c) => [c.cle, c.libelle]));
+  R.forEach((r, i) => {
+    const y = top + i * row, bh = 18, w = Math.max(2, x(r.score) - x(0));
+    const titre = `${r.rang}. ${r.titre}`;
+    el("text", { x: padL - 10, y: y + bh / 2 + 4, "text-anchor": "end", class: "lbl" }, svg,
+      titre.length > 38 ? titre.slice(0, 37) + "…" : titre);
+    // barre : extrémité de données arrondie (4 px), base carrée sur l'axe
+    el("path", { d: `M${x(0)},${y}h${w - 4}a4,4 0 0 1 4,4v${bh - 8}a4,4 0 0 1 -4,4h${-(w - 4)}z`, fill: "var(--series-1)" }, svg);
+    el("text", { x: x(r.score) + 6, y: y + bh / 2 + 4, class: "lbl2" }, svg, fmt(r.score, 0) + (r.ind.provisoire ? " *" : ""));
+    const hit = el("rect", { x: 0, y: y - 5, width: W, height: row, fill: "transparent", tabindex: 0 }, svg);
+    const lignes = () => [["Score", fmt(r.score, 1)], ...Object.entries(r.detail).map(([k, v]) => [libs[k] || k, fmt(v, 0) + " / 100"]),
+      ["Âge du relevé", "J+" + Math.round((r.ind.age_ref_h || 0) / 24) + (r.ind.provisoire ? " (provisoire)" : "")]];
+    hit.addEventListener("pointermove", (e) => showTip(e, r.titre, lignes()));
+    hit.addEventListener("pointerleave", hideTip);
+    hit.addEventListener("focus", () => { const b = hit.getBoundingClientRect(); showTip({ clientX: b.left + padL, clientY: b.bottom }, r.titre, lignes()); });
+    hit.addEventListener("blur", hideTip);
+  });
+  if (R.some((r) => r.ind.provisoire)) h("p", "* provisoire : Reel de moins de 6 jours, son score peut encore bouger.", box, "sub");
+})();
+
+/* ---------- évolution : courbes par Reel (le Reel choisi en couleur, les autres en gris) ---------- */
+const METRIQUES = D.mode === "complet"
+  ? [["views", "Vues"], ["reach", "Portée"], ["likes", "J'aime"], ["comments", "Commentaires"], ["shares", "Partages"],
+     ["saved", "Enregistrements"], ["avg_watch_s", "Temps moyen de visionnage (s)"], ["skip_rate", "Abandon avant 3 s (%)"]]
+  : [["likes", "J'aime"], ["comments", "Commentaires"]];
+METRIQUES.forEach(([k, l]) => { const o = h("option", l, $("metrique")); o.value = k; });
+D.reels.forEach((r, i) => { const o = h("option", r.titre, $("choixReel")); o.value = String(i); });
+function courbes() {
+  const box = $("courbes"), R = D.reels.filter((r) => r.serie.length);
+  const leg = $("legendeCourbes"); leg.replaceChildren();
+  if (!R.length) return empty(box, "Pas encore de relevé : les courbes apparaîtront après le premier relevé quotidien d'un Reel publié.");
+  const m = $("metrique").value, mLib = METRIQUES.find((x) => x[0] === m)[1];
+  const sel = D.reels[+$("choixReel").value] || D.reels[0];
+  for (const [nom, c] of [[sel.titre, "var(--series-1)"], ["autres Reels", "var(--context)"]]) {
+    const s = h("span", null, leg); const sw = h("span", null, s, "sw"); sw.style.background = c; s.appendChild(document.createTextNode(nom));
+  }
+  const W = 1000, H = 340, pl = 56, pr = 20, pt = 12, pb = 34;
+  const pts = R.flatMap((r) => r.serie.map((p) => [p.age_h / 24, p[m]])).filter((p) => p[1] !== null && p[1] !== undefined);
+  if (!pts.length) return empty(box, `Aucune valeur pour « ${mLib} » : cette mesure demande peut-être la permission des statistiques détaillées.`);
+  const xMax = Math.max(1, Math.ceil(Math.max(...pts.map((p) => p[0])))), yMax = niceMax(Math.max(...pts.map((p) => p[1])));
+  const X = (d) => pl + (W - pl - pr) * d / xMax, Y = (v) => H - pb - (H - pt - pb) * v / yMax;
+  box.replaceChildren();
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `${mLib} selon les jours depuis la publication` }, box);
+  for (let i = 0; i <= 4; i++) {
+    const v = yMax * i / 4;
+    el("line", { x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), class: i ? "grid" : "axis" }, svg);
+    el("text", { x: pl - 8, y: Y(v) + 4, "text-anchor": "end" }, svg, fmt(v));
+  }
+  const pas = xMax <= 10 ? 1 : xMax <= 30 ? 5 : 10;
+  for (let d = 0; d <= xMax; d += pas) el("text", { x: X(d), y: H - pb + 16, "text-anchor": "middle" }, svg, "J+" + d);
+  el("text", { x: W - pr, y: H - 2, "text-anchor": "end" }, svg, "jours depuis la publication");
+  const path = (r) => r.serie.filter((p) => p[m] !== null && p[m] !== undefined)
+    .map((p, i) => `${i ? "L" : "M"}${X(p.age_h / 24).toFixed(1)},${Y(p[m]).toFixed(1)}`).join("");
+  for (const r of R) if (r !== sel) el("path", { d: path(r), fill: "none", stroke: "var(--context)", "stroke-width": 1.5, "stroke-linejoin": "round" }, svg);
+  const sp = sel.serie.filter((p) => p[m] !== null && p[m] !== undefined);
+  if (sp.length) {
+    el("path", { d: path(sel), fill: "none", stroke: "var(--series-1)", "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+    for (const p of sp) el("circle", { cx: X(p.age_h / 24), cy: Y(p[m]), r: 4, fill: "var(--series-1)", stroke: "var(--surface-1)", "stroke-width": 2 }, svg);
+    const last = sp[sp.length - 1];
+    el("text", { x: Math.min(X(last.age_h / 24) + 8, W - pr - 4), y: Y(last[m]) - 8, class: "lbl", "text-anchor": X(last.age_h / 24) > W - 120 ? "end" : "start" }, svg, fmt(last[m]));
+  }
+  // réticule : suit le pointeur et s'accroche au relevé le plus proche du Reel choisi
+  const cross = el("line", { y1: pt, y2: H - pb, class: "axis", visibility: "hidden" }, svg);
+  const dot = el("circle", { r: 5, fill: "var(--series-1)", stroke: "var(--surface-1)", "stroke-width": 2, visibility: "hidden" }, svg);
+  const zone = el("rect", { x: pl, y: pt, width: W - pl - pr, height: H - pt - pb, fill: "transparent" }, svg);
+  zone.addEventListener("pointermove", (e) => {
+    if (!sp.length) return;
+    const b = svg.getBoundingClientRect(), d = ((e.clientX - b.left) * W / b.width - pl) / (W - pl - pr) * xMax;
+    const p = sp.reduce((a, q) => Math.abs(q.age_h / 24 - d) < Math.abs(a.age_h / 24 - d) ? q : a);
+    cross.setAttribute("x1", X(p.age_h / 24)); cross.setAttribute("x2", X(p.age_h / 24)); cross.setAttribute("visibility", "visible");
+    dot.setAttribute("cx", X(p.age_h / 24)); dot.setAttribute("cy", Y(p[m])); dot.setAttribute("visibility", "visible");
+    const autres = R.filter((r) => r !== sel).map((r) => {
+      const q = r.serie.filter((s) => s[m] !== null && s[m] !== undefined);
+      if (!q.length) return null;
+      return q.reduce((a, s) => Math.abs(s.age_h - p.age_h) < Math.abs(a.age_h - p.age_h) ? s : a)[m];
+    }).filter((v) => v !== null).sort((a, b) => a - b);
+    const medAutres = autres.length ? autres[Math.floor(autres.length / 2)] : null;
+    showTip(e, sel.titre, [["Âge", "J+" + fmt(p.age_h / 24, 1)], [mLib, fmt(p[m])], ["Médiane des autres au même âge", fmt(medAutres)]]);
+  });
+  zone.addEventListener("pointerleave", () => { hideTip(); cross.setAttribute("visibility", "hidden"); dot.setAttribute("visibility", "hidden"); });
+}
+$("metrique").addEventListener("change", courbes);
+$("choixReel").addEventListener("change", courbes);
+courbes();
+
+/* ---------- comparaison des caractéristiques : haltères ---------- */
+(function comparaison() {
+  const box = $("comparaison"), leg = $("legendeComp");
+  const C = D.comparaison.filter((c) => c.meilleurs !== null && c.moins_bons !== null);
+  if (D.n < 2 || !C.length) return empty(box, "Il faut au moins 2 Reels mesurés pour comparer les meilleurs aux moins bons.");
+  for (const [nom, c] of [["meilleurs Reels", "var(--series-1)"], ["moins bons Reels", "var(--series-2)"]]) {
+    const s = h("span", null, leg); const sw = h("span", null, s, "sw"); sw.style.background = c; sw.style.borderRadius = "50%"; s.appendChild(document.createTextNode(nom));
+  }
+  C.sort((a, b) => Math.abs(b.rho || 0) - Math.abs(a.rho || 0));
+  const W = 1000, row = 36, pl = 230, pr = 210, H = C.length * row + 10;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Comparaison des caractéristiques" }, box);
+  C.forEach((c, i) => {
+    const y = 8 + i * row + 12, lo = c.min, hi = c.max === c.min ? c.min + 1 : c.max;
+    const X = (v) => pl + (W - pl - pr) * (v - lo) / (hi - lo);
+    el("text", { x: pl - 12, y: y + 4, "text-anchor": "end", class: "lbl" }, svg, c.libelle);
+    el("line", { x1: pl, x2: W - pr, y1: y, y2: y, class: "grid" }, svg);
+    el("text", { x: pl, y: y + 17, "text-anchor": "start" }, svg, fmt(c.min));
+    el("text", { x: W - pr, y: y + 17, "text-anchor": "end" }, svg, fmt(c.max));
+    el("line", { x1: X(c.moins_bons), x2: X(c.meilleurs), y1: y, y2: y, stroke: "var(--axis)", "stroke-width": 2 }, svg);
+    el("circle", { cx: X(c.moins_bons), cy: y, r: 6, fill: "var(--series-2)", stroke: "var(--surface-1)", "stroke-width": 2 }, svg);
+    el("circle", { cx: X(c.meilleurs), cy: y, r: 6, fill: "var(--series-1)", stroke: "var(--surface-1)", "stroke-width": 2 }, svg);
+    el("text", { x: W - pr + 14, y: y + 4, class: "lbl2" }, svg, `lien ${fmt(c.rho, 2)} · confiance ${c.confiance}`);
+    const hit = el("rect", { x: 0, y: y - row / 2, width: W, height: row, fill: "transparent" }, svg);
+    hit.addEventListener("pointermove", (e) => showTip(e, c.libelle, [["Meilleurs (médiane)", fmt(c.meilleurs)],
+      ["Moins bons (médiane)", fmt(c.moins_bons)], ["Lien avec le score", fmt(c.rho, 2)], ["Confiance", c.confiance]]));
+    hit.addEventListener("pointerleave", hideTip);
+  });
+  h("p", "« Lien » : corrélation de rang avec le score, de −1 (plus il y en a, moins ça marche) à +1 (plus il y en a, mieux ça marche). " +
+    "Confiance « insuffisante » tant qu'il y a moins de " + D.min_solide + " Reels.", box, "sub");
+})();
+
+/* ---------- tableaux ---------- */
+function table(parent, entetes, lignes, num) {
+  const t = h("table", null, parent), tr = h("tr", null, h("thead", null, t));
+  entetes.forEach((e, i) => h("th", e, tr, num && num[i] ? "n" : ""));
+  const tb = h("tbody", null, t);
+  for (const l of lignes) { const r = h("tr", null, tb); l.forEach((v, i) => {
+    const td = h("td", null, r, num && num[i] ? "n" : "");
+    if (v instanceof Node) td.appendChild(v); else td.textContent = v; }); }
+  return t;
+}
+(function avenir() {
+  const box = $("avenir");
+  if (!D.a_venir.length) return empty(box, "Aucun Reel en préparation.");
+  table(box, ["Reel", "Prévu", "Durée", "Diapos", "1re diapo", "Mots accroche", "Thème", "Contrôle"],
+    D.a_venir.map((r) => {
+      const s = document.createElement("span");
+      s.className = r.ecarts.length ? "ko" : "ok";
+      s.textContent = r.ecarts.length ? "⚠ " + r.ecarts.map((e) => e.texte).join(" ; ") : "✓ conforme";
+      return [r.titre, r.prevu ? r.prevu.slice(0, 10) : "–", fmt(r.car.duree_totale_s) + " s", r.car.nb_diapos,
+        fmt(r.car.duree_1re_diapo_s) + " s", r.car.mots_accroche, r.car.theme, s];
+    }), [0, 0, 1, 1, 1, 1, 0, 0]);
+})();
+(function regles() {
+  $("avert").textContent = D.avertissement;
+  const val = (r) => ["cible", "max", "plage", "valeur", "prefere"].filter((k) => k in r).map((k) => {
+    let v = r[k];
+    if (Array.isArray(v)) v = k === "plage" ? v.join(" à ") : (v.length ? v.join(", ") : "(aucun)");
+    if (typeof v === "boolean") v = v ? "oui" : "non";
+    return `${k} ${v}`; }).join(" ; ");
+  table($("regles"), ["Règle", "Valeur", "Pourquoi", "Source", "Confiance"],
+    Object.entries(D.regles).map(([n, r]) => [n.replace(/_/g, " "), val(r), r.pourquoi || "", r.source, r.confiance]));
+})();
+(function donnees() {
+  const box = $("donnees");
+  if (!D.reels.length) return empty(box, "Pas encore de données mesurées.");
+  table(box, ["Rang", "Reel", "Score", "Vues", "Portée", "J'aime", "Comm.", "Partages", "Enreg.", "Rétention %", "Abandon %",
+    "Abonnés +", "Durée s", "Diapos", "Mots accroche", "Chiffre", "Thème", "Jour", "Heure"],
+    D.reels.map((r) => [r.rang, r.titre, fmt(r.score, 1), fmt(r.ind.vues), fmt(r.ind.portee), fmt(r.ind.likes), fmt(r.ind.commentaires),
+      fmt(r.ind.partages), fmt(r.ind.enregistrements), r.ind.retention == null ? "–" : fmt(r.ind.retention * 100, 0), fmt(r.ind.skip_rate),
+      fmt(r.ind.abonnes_gagnes), fmt(r.car.duree_totale_s), r.car.nb_diapos, r.car.mots_accroche, fmt(r.car.chiffre_accroche),
+      r.car.theme, r.car.jour || "–", r.car.heure_paris == null ? "–" : r.car.heure_paris + " h"]),
+    [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1]);
+})();
+</script>
+</body>
+</html>

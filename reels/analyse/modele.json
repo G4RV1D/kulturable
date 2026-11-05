@@ -1,0 +1,177 @@
+{
+ "version": 1,
+ "n_reels": 0,
+ "mode": "réduit",
+ "avertissement": "Moins de 8 Reels mesurés : les règles sont des hypothèses de départ, à confirmer.",
+ "regles": {
+  "duree_totale_s": {
+   "cible": 15,
+   "plage": [
+    10,
+    18
+   ],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "duree_totale_s",
+   "pourquoi": "Les Reels courts (moins de 15-20 s) sont plus souvent vus en entier, ce qui pèse lourd pour l'algorithme. Écran de fin de 3,2 s compris.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "duree_1re_diapo_max_s": {
+   "max": 2.5,
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "duree_1re_diapo_s",
+   "pourquoi": "Beaucoup de gens décident en moins de 3 s : la 1re diapo doit accrocher vite et laisser place à la suite.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "mots_accroche_max": {
+   "max": 8,
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "mots_accroche",
+   "pourquoi": "Une accroche courte se lit d'un coup d'œil pendant le défilement.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "mots_par_diapo_max": {
+   "max": 12,
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "mots_max_diapo",
+   "pourquoi": "Au-delà, le texte n'a pas le temps d'être lu.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "debit_max_mots_s": {
+   "max": 4.5,
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "debit_max_mots_s",
+   "pourquoi": "Lecture confortable d'un texte court et percutant : environ 4 mots par seconde au plus (appel à l'action exclu).",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "nb_diapos": {
+   "cible": 5,
+   "plage": [
+    4,
+    7
+   ],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "nb_diapos",
+   "pourquoi": "Assez de diapos pour un rythme vif, pas trop pour rester court.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "chiffre_dans_accroche": {
+   "prefere": true,
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "chiffre_accroche",
+   "pourquoi": "Un nombre concret (date, poids, distance) rend l'accroche plus crédible et intrigante.",
+   "n_reels": 0,
+   "confiance": "insuffisante"
+  },
+  "nb_hashtags": {
+   "plage": [
+    3,
+    5
+   ],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "nb_hashtags",
+   "pourquoi": "Instagram conseille 3 à 5 hashtags précis.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "premiere_ligne_max_caracteres": {
+   "max": 110,
+   "source": "règle du compte (MEMO.md)",
+   "caracteristique": "premiere_ligne_caracteres",
+   "pourquoi": "La 1re ligne doit tenir avant « … plus ».",
+   "n_reels": 0,
+   "confiance": "insuffisante"
+  },
+  "heure_conseillee_paris": {
+   "valeur": 12,
+   "plage": [
+    11,
+    20
+   ],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "heure_paris",
+   "pourquoi": "Midi et la soirée sont des pics d'utilisation ; les Reels sont programmés à midi, les posts à 18 h.",
+   "n_reels": 0,
+   "observe": {
+    "mediane_meilleurs": null,
+    "mediane_moins_bons": null,
+    "correlation_score": null
+   },
+   "confiance": "insuffisante"
+  },
+  "jours_conseilles": {
+   "valeur": [
+    "lundi",
+    "mardi",
+    "mercredi",
+    "jeudi",
+    "vendredi",
+    "samedi",
+    "dimanche"
+   ],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "jour",
+   "pourquoi": "Aucun jour n'est privilégié tant que les données ne le montrent pas.",
+   "n_reels": 0,
+   "confiance": "insuffisante"
+  },
+  "themes_a_privilegier": {
+   "valeur": [],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "theme",
+   "pourquoi": "Varier les thèmes au début pour découvrir ceux qui plaisent.",
+   "n_reels": 0,
+   "confiance": "insuffisante"
+  },
+  "themes_a_eviter": {
+   "valeur": [],
+   "source": "hypothèse de départ, à confirmer",
+   "caracteristique": "theme",
+   "pourquoi": "",
+   "n_reels": 0,
+   "confiance": "insuffisante"
+  }
+ },
+ "genere": "2026-11-05T12:55:49+00:00",
+ "classement": []
+}
