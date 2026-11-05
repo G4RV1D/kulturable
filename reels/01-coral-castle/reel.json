@@ -30,12 +30,12 @@
       ],
       "zoom": "in",
       "crop": [
-        0.38,
-        0.0,
+        0.55,
+        0.36,
         0.95,
-        0.88
+        0.92
       ],
-      "pan": 0.6
+      "pan": 0.5
     },
     {
       "image": "chateau.jpg",
@@ -46,7 +46,7 @@
           "size": 58
         },
         {
-          "text": "QUI A PU LES DRESSER ?",
+          "text": "QUI A BIEN PU DRESSER CES BLOCS ?",
           "size": 72,
           "color": [
             255,
@@ -124,10 +124,10 @@
       "crop": [
         0.0,
         0.0,
-        0.6,
+        0.42,
         0.88
       ],
-      "pan": 0.4
+      "pan": 0.5
     }
   ]
 }
