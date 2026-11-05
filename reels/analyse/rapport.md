@@ -1,6 +1,6 @@
 # Analyse des Reels Kulturable
 
-*Généré le 2026-11-05 à 12:55 UTC par `scripts/reels_analyse.py`. Tableau de bord visuel : `reels/analyse/tableau.html`.*
+*Généré le 2026-11-05 à 21:01 UTC par `scripts/reels_analyse.py`. Tableau de bord visuel : `reels/analyse/tableau.html`.*
 
 ## En bref
 
@@ -12,26 +12,27 @@
 
 1. **Activer les statistiques détaillées** (permission instagram_business_manage_insights) : sans vues, temps de visionnage ni partages, l'analyse ne voit que les j'aime, ce qui est très pauvre avec peu d'abonnés. Voir la fin de ce rapport.
 2. **Publier au moins 8 Reels** avant de tirer des conclusions, en ne changeant qu'une chose à la fois d'un Reel à l'autre (par exemple : accroche avec un chiffre / sans chiffre, ou thème animaux / histoire) pour savoir ce qui fait la différence.
-3. **Laisser plus de temps pour lire (ou moins de mots)** : concerne 3 Reel(s) en préparation (reel-02-oiseau-guide, 08-lac-drogue, 12-velo-ali), détail plus bas.
-4. **Raccourcir l'accroche** : concerne 3 Reel(s) en préparation (08-lac-drogue, 10-crabe-oursin, 12-velo-ali), détail plus bas.
+3. **Raccourcir la 1re diapo** : concerne 14 Reel(s) en préparation (reel-01-coral-castle, reel-02-oiseau-guide, reel-04-mangoustes, reel-05-fleur-glaciaire…), détail plus bas.
+4. **Raccourcir l'accroche** : concerne 11 Reel(s) en préparation (reel-01-coral-castle, reel-04-mangoustes, reel-05-fleur-glaciaire, reel-06-poisson-phares…), détail plus bas.
 5. **Accroche en moins de 8 mots, avec un chiffre concret**, lisible dès la 1re seconde. *(bonne pratique générale, à confirmer)*
 
 ## Reels en préparation : contrôle par rapport au modèle
 
-- **Le château de corail** (reel-01-coral-castle, validé, prévu le 2026-11-06) : 18 s, 6 diapos, accroche de 8 mots, thème lieux. À revoir : Diapo la plus chargée : 13 mots (max conseillé 12 mots).
-- **L'oiseau qui guide les hommes** (reel-02-oiseau-guide, validé, prévu le 2026-11-07) : 15,6 s, 5 diapos, accroche de 8 mots, thème animaux. À revoir : Débit de lecture : 4,62 mots/s (max conseillé 4,5 mots/s).
-- **Timon et Pumbaa en vrai** (reel-04-mangoustes, validé, prévu le 2026-11-08) : 15,4 s, 5 diapos, accroche de 6 mots, thème animaux. Conforme.
-- **La fleur de l'ère glaciaire** (reel-05-fleur-glaciaire, validé, prévu le 2026-11-09) : 15,6 s, 5 diapos, accroche de 6 mots, thème nature. Conforme.
-- **Le poisson aux phares** (reel-06-poisson-phares, validé, prévu le 2026-11-10) : 15,6 s, 5 diapos, accroche de 8 mots, thème animaux. Conforme.
-- **Le Bouddha caché dans la montagne** (reel-07-bouddha-leshan, validé, prévu le 2026-11-11) : 15,6 s, 5 diapos, accroche de 8 mots, thème nature. Conforme.
-- **Le chant qui appelle les troupeaux** (reel-03-kulning, non validé, prévu le 2026-11-12) : 15,6 s, 5 diapos, accroche de 7 mots, thème animaux. Conforme.
-- **Le lac de la drogue** (08-lac-drogue, hors file) : 15,6 s, 5 diapos, accroche de 10 mots, thème nature. À revoir : Accroche : 10 mots (max conseillé 8 mots) ; Débit de lecture : 4,58 mots/s (max conseillé 4,5 mots/s).
-- **Le dentiste des crocodiles** (09-dentiste-crocodiles, hors file) : 15,6 s, 5 diapos, accroche de 7 mots, thème animaux. Conforme.
-- **Le crabe au casque d'oursin** (10-crabe-oursin, hors file) : 15,6 s, 5 diapos, accroche de 9 mots, thème animaux. À revoir : Accroche : 9 mots (max conseillé 8 mots).
-- **Le peuple qui dit non au monde** (11-north-sentinel, hors file) : 15,6 s, 5 diapos, accroche de 8 mots, thème lieux. Conforme.
-- **Le vélo qui a créé une légende** (12-velo-ali, hors file) : 15,4 s, 5 diapos, accroche de 11 mots, thème mysteres. À revoir : Accroche : 11 mots (max conseillé 8 mots) ; Débit de lecture : 4,58 mots/s (max conseillé 4,5 mots/s).
-- **La plante qui héberge des chauves-souris** (13-chauves-souris-nepenthes, hors file) : 15,6 s, 5 diapos, accroche de 6 mots, thème nature. Conforme.
-- **Le jour où papa est parti sur la Lune** (14-papa-sur-la-lune, hors file) : 15,6 s, 5 diapos, accroche de 8 mots, thème personnages. Conforme.
+- **Le château de corail** (reel-01-coral-castle, non validé, prévu le 2026-11-06) : 16,6 s, 5 diapos, accroche de 13 mots, thème lieux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 13 mots (max conseillé 8 mots) ; Diapo la plus chargée : 14 mots (max conseillé 12 mots) ; Débit de lecture : 5,38 mots/s (max conseillé 4,5 mots/s).
+- **L'oiseau qui guide les hommes** (reel-02-oiseau-guide, non validé, prévu le 2026-11-07) : 16,6 s, 5 diapos, accroche de 7 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s).
+- **Timon et Pumbaa en vrai** (reel-04-mangoustes, non validé, prévu le 2026-11-08) : 16,6 s, 5 diapos, accroche de 11 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 11 mots (max conseillé 8 mots).
+- **La fleur de l'ère glaciaire** (reel-05-fleur-glaciaire, non validé, prévu le 2026-11-09) : 16,6 s, 5 diapos, accroche de 10 mots, thème nature. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 10 mots (max conseillé 8 mots).
+- **Le poisson aux phares** (reel-06-poisson-phares, non validé, prévu le 2026-11-10) : 16,6 s, 5 diapos, accroche de 11 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 11 mots (max conseillé 8 mots).
+- **Le Bouddha caché dans la montagne** (reel-07-bouddha-leshan, non validé, prévu le 2026-11-11) : 16,6 s, 5 diapos, accroche de 11 mots, thème nature. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 11 mots (max conseillé 8 mots) ; Débit de lecture : 4,62 mots/s (max conseillé 4,5 mots/s).
+- **Le chant qui appelle les troupeaux** (reel-03-kulning, non validé, prévu le 2026-11-12) : 16,6 s, 5 diapos, accroche de 11 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 11 mots (max conseillé 8 mots).
+- **Le lac de la drogue** (08-lac-drogue, hors file) : 16,6 s, 5 diapos, accroche de 8 mots, thème nature. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Débit de lecture : 4,62 mots/s (max conseillé 4,5 mots/s).
+- **Le dentiste des crocodiles** (09-dentiste-crocodiles, hors file) : 16,6 s, 5 diapos, accroche de 12 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 12 mots (max conseillé 8 mots) ; Débit de lecture : 4,62 mots/s (max conseillé 4,5 mots/s).
+- **Le crabe au casque d'oursin** (10-crabe-oursin, hors file) : 16,6 s, 5 diapos, accroche de 9 mots, thème animaux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 9 mots (max conseillé 8 mots).
+- **Le peuple qui dit non au monde** (11-north-sentinel, hors file) : 16,8 s, 5 diapos, accroche de 8 mots, thème lieux. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Diapo la plus chargée : 13 mots (max conseillé 12 mots) ; Débit de lecture : 4,64 mots/s (max conseillé 4,5 mots/s).
+- **Le vélo qui a créé une légende** (12-velo-ali, hors file) : 16,6 s, 5 diapos, accroche de 13 mots, thème mysteres. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 13 mots (max conseillé 8 mots) ; Diapo la plus chargée : 13 mots (max conseillé 12 mots) ; Débit de lecture : 5 mots/s (max conseillé 4,5 mots/s).
+- **La plante qui héberge des chauves-souris** (13-chauves-souris-nepenthes, hors file) : 16,6 s, 5 diapos, accroche de 10 mots, thème nature. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 10 mots (max conseillé 8 mots).
+- **Le jour où papa est parti sur la Lune** (14-papa-sur-la-lune, hors file) : 16,6 s, 5 diapos, accroche de 9 mots, thème personnages. À revoir : 1re diapo : 2,6 s (max conseillé 2,5 s) ; Accroche : 9 mots (max conseillé 8 mots).
+- **Le protocole secret si Apollo 11 tournait mal (version boucle)** (14b-protocole-nixon, hors file) : 10 s, 4 diapos, accroche de 7 mots, thème mysteres. À revoir : Hashtags : 6 (conseillé 3 à 5) ; 1re ligne de la légende : 116 car. (max conseillé 110 car.).
 
 ## Le modèle (règles pour les prochains Reels)
 
