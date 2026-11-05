@@ -158,7 +158,8 @@ def fetch_images(cfg, folder):
 
 
 OUTRO_LEN = 3.2
-NAVY = (14, 16, 28)
+NAVY = (40, 43, 53)  # gris ardoise du fond du logo officiel
+LOGO = ROOT / "assets" / "logo-kulturable.png"
 
 
 def ease(x):
@@ -198,6 +199,22 @@ def emblem(size, grow):
     return im.resize((size, size), Image.LANCZOS)
 
 
+_LOGO_CACHE = {}
+
+
+def logo_image(size):
+    """Logo officiel, bords fondus dans le fond pour qu'on ne voie pas le carré."""
+    if size not in _LOGO_CACHE:
+        im = Image.open(LOGO).convert("RGB").crop((150, 140, 874, 864)).resize((size, size), Image.LANCZOS)
+        yy, xx = np.mgrid[0:size, 0:size]
+        r = np.hypot(xx - size / 2, yy - size / 2) / (size / 2)
+        mask = np.clip((1.0 - r) / 0.18, 0, 1) * 255
+        im = im.convert("RGBA")
+        im.putalpha(Image.fromarray(mask.astype(np.uint8)))
+        _LOGO_CACHE[size] = im
+    return _LOGO_CACHE[size].copy()
+
+
 def outro_frame(t, stars):
     frame = Image.new("RGBA", (W, H), NAVY + (255,))
     d = ImageDraw.Draw(frame)
@@ -205,10 +222,11 @@ def outro_frame(t, stars):
         a = int(90 + 80 * np.sin(ph + t * 3))
         d.ellipse((x - r, y - r, x + r, y + r), fill=(255, 230, 170, a))
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    em = emblem(300, ease(t / 0.9))
-    alpha = ease(t / 0.4)
-    em.putalpha(em.getchannel("A").point(lambda v: int(v * alpha)))
-    layer.alpha_composite(em, (W // 2 - 150, int(H * 0.22)))
+    k0 = ease(t / 0.7)
+    size = int(560 * (0.86 + 0.14 * k0))
+    em = logo_image(size)
+    em.putalpha(em.getchannel("A").point(lambda v: int(v * k0)))
+    layer.alpha_composite(em, (W // 2 - size // 2, int(H * 0.29) - size // 2))
     dl = ImageDraw.Draw(layer)
 
     def txt(y, text, size, color, start, dur=0.45, rise=30):
@@ -218,23 +236,31 @@ def outro_frame(t, stars):
         f = ImageFont.truetype(FONT, size)
         dl.text((W // 2, y + int(rise * (1 - k))), text, font=f, fill=color + (int(255 * k),), anchor="mm")
 
-    txt(int(H * 0.42), "KULTURABLE", 104, ACCENT, 0.35)
-    txt(int(H * 0.47), "La culture se cultive", 50, (255, 255, 255), 0.7)
-    txt(int(H * 0.545), "Des histoires vraies,", 48, (220, 220, 230), 1.05)
-    txt(int(H * 0.575), "insolites et fascinantes.", 48, (220, 220, 230), 1.15)
-    txt(int(H * 0.615), "Une nouvelle chaque jour.", 48, (220, 220, 230), 1.25)
-    # bouton d'abonnement qui apparaît puis pulse
+    txt(int(H * 0.465), "KULTURABLE", 104, ACCENT, 0.35)
+    txt(int(H * 0.515), "La culture se cultive", 50, (255, 255, 255), 0.7)
+    txt(int(H * 0.575), "Des histoires vraies,", 48, (220, 220, 230), 1.05)
+    txt(int(H * 0.603), "insolites et fascinantes.", 48, (220, 220, 230), 1.15)
+    txt(int(H * 0.638), "Une nouvelle chaque jour.", 48, (220, 220, 230), 1.25)
+    # appel à s'abonner : renvoie vers le vrai bouton « Suivre » d'Instagram, en bas à gauche du Reel
     k = ease((t - 1.6) / 0.35)
     if k > 0:
-        pulse_ = 1 + 0.04 * np.sin(max(0.0, t - 1.95) * 7) if t > 1.95 else 0.85 + 0.15 * k
-        bw, bh = int(520 * pulse_), int(120 * pulse_)
-        cx, cy = W // 2, int(H * 0.70)
+        cx, cy = W // 2, int(H * 0.705)
+        bw, bh = 640, 104
         dl.rounded_rectangle((cx - bw // 2, cy - bh // 2, cx + bw // 2, cy + bh // 2), bh // 2,
                              fill=ACCENT + (int(255 * k),))
-        f = ImageFont.truetype(FONT, int(54 * pulse_))
-        dl.text((cx, cy + 2), "S'ABONNER", font=f, fill=NAVY + (int(255 * k),), anchor="mm")
-        f2 = ImageFont.truetype(FONT, 44)
-        dl.text((cx, cy + bh // 2 + 60), "@kulturable", font=f2, fill=(255, 255, 255, int(220 * k)), anchor="mm")
+        f = ImageFont.truetype(FONT, 46)
+        dl.text((cx, cy + 2), "ABONNEZ-VOUS !", font=f, fill=NAVY + (int(255 * k),), anchor="mm")
+        f2 = ImageFont.truetype(FONT, 40)
+        dl.text((cx, cy + 92), "Touchez « Suivre » juste ici", font=f2, fill=(255, 255, 255, int(235 * k)), anchor="mm")
+        # flèche qui rebondit vers le nom du compte (zone du bouton « Suivre »)
+        bounce = 14 * np.sin(max(0.0, t - 1.6) * 8)
+        x0, y0 = 330 + bounce * 0.6, int(H * 0.775) + bounce
+        x1, y1 = 190 + bounce * 0.6, int(H * 0.835) + bounce
+        col = ACCENT + (int(255 * k),)
+        dl.line([(x0, y0), (x1, y1)], fill=col, width=12)
+        ang = np.arctan2(y1 - y0, x1 - x0)
+        for da in (2.6, -2.6):
+            dl.line([(x1, y1), (x1 + 46 * np.cos(ang + da), y1 + 46 * np.sin(ang + da))], fill=col, width=12)
     frame.alpha_composite(layer)
     return frame.convert("RGB")
 
