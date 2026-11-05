@@ -136,40 +136,59 @@ def analog(m, length, cutoff, attack=0.005, release=0.05, decay=0.0, kind="saw",
     return x * e
 
 
-def make(total, hit_at, out):
+def signature(seconds):
+    """Signature sonore de la page : trois accords de synthé analogique qui montent
+    (fa maj7, la m9, do maj9), le dernier tenu avec écho jusqu'à la fin."""
+    out = np.zeros(int(seconds * SR))
+    chords = [(53, [0, 4, 7, 11]), (57, [0, 3, 7, 14]), (60, [0, 4, 7, 14])]
+    starts = [0.0, 0.42, 0.84]
+    for k, ((root, iv), at) in enumerate(zip(chords, starts)):
+        length = (starts[k + 1] - at + 0.25) if k < 2 else seconds - at
+        rel = 0.25 if k < 2 else min(2.0, length * 0.6)
+        for v in iv:
+            put(out, analog(root + v, length, 1800 + 900 * k, attack=0.02, release=rel, detune=0.006), at, 0.13)
+        put(out, analog(root - 12, length, 420, attack=0.01, release=rel), at, 0.30)
+    shine = sum(analog(84 + v, 0.7, 5500, decay=3, kind="pulse") * 0.6 ** j for j, v in enumerate((0, 7, 12)))
+    put(out, shine, starts[2] + 0.05, 0.08)
+    return echo(out, 0.30, 0.4, 0.4)[: len(out)]
+
+
+def make(total, hit_at, out, story_end=None):
     """Synthés analogiques des années 80 (composition originale) : nappe chaude, arpège qui scintille,
-    basse ronde. Harmonie en accords de septième majeure et de neuvième : mystère et émerveillement,
-    sans angoisse. La musique continue jusqu'au bout : sur la dernière diapositive, elle revient
-    sur l'accord de départ, quelques notes scintillent, puis tout s'éteint en fondu."""
+    basse ronde. Sur la dernière diapositive, la musique revient sur l'accord de départ et le laisse
+    se terminer proprement. Au passage à l'écran de fin : la signature de la page en trois accords."""
+    story_end = story_end or total
     mix = np.zeros(int(total * SR))
     step = 60 / 96 / 2  # croches à 96 battements par minute
-    # fa maj7 - ré m9 - si bémol maj7 - do 6/9 (fondamentales et couleurs propres à la chaîne)
     chords = [(53, [0, 4, 7, 11]), (50, [0, 3, 7, 14]), (46, [0, 4, 7, 11]), (48, [0, 4, 9, 14])]
-    pattern = [0, 2, 3, 1, 2, 3, 2, 1]  # ordre des notes de l'accord dans l'arpège
-    bar_len = step * 8
-    final = (53, [0, 4, 7, 14])  # fa maj9 : retour à la maison, couleur lumineuse
-    t, i = 0.1, 0
-    landed = False
-    while t < total:
-        if t >= hit_at - 0.01 and not landed:  # dernière diapositive : on retombe sur l'accord de départ
+    pattern = [0, 2, 3, 1, 2, 3, 2, 1]
+    final = (53, [0, 4, 7, 14])
+    music = np.zeros(int(story_end * SR))
+    t, i, landed = 0.1, 0, False
+    while t < story_end - step * 0.5:
+        if t >= hit_at - 0.01 and not landed:
             landed, i = True, 0
         root, iv = final if landed else chords[(i // 8) % 4]
         if i % 8 == 0:
-            span = min(bar_len + 0.6, total - t + 0.5)
-            for v in iv[:3]:  # nappe chaude, attaque lente
-                put(mix, analog(root + 12 + v, span, 1400, attack=0.6, release=0.6, detune=0.006), t, 0.10)
-            put(mix, analog(root - 12, span, 380, attack=0.08, release=0.4), t, 0.30)  # basse ronde
+            span = (story_end - t) if landed else min(step * 8 + 0.6, story_end - t)
+            rel = min(1.2, span * 0.5) if landed else 0.6
+            for v in iv[:3]:
+                put(music, analog(root + 12 + v, span, 1400, attack=0.6 if not landed else 0.2,
+                                  release=rel, detune=0.006), t, 0.10)
+            put(music, analog(root - 12, span, 380, attack=0.08, release=rel), t, 0.30)
+        if landed and i >= 8:  # l'accord final ne relance pas l'arpège : il se termine
+            break
         prog = min(1.0, t / max(1.0, hit_at))
-        note = root + 24 + iv[pattern[i % 8]]
-        put(mix, analog(note, step * 1.4, 1500 + 2500 * prog, decay=4, kind="pulse"), t, 0.16)
+        put(music, analog(root + 24 + iv[pattern[i % 8]], step * 1.4, 1500 + 2500 * prog, decay=4, kind="pulse"), t, 0.16)
         t += step
         i += 1
-    mix = echo(mix, delay=step * 1.5, fb=0.35, mix=0.3)[: len(mix)]
-    # la chute, en douceur : sur la dernière diapositive, quelques notes aiguës qui scintillent en écho
-    sparkle = sum(analog(77 + v, 0.6, 5000, decay=3, kind="pulse") * 0.6 ** k for k, v in enumerate((0, 7, 12, 16)))
-    put(mix, echo(sparkle, step * 1.5, 0.45, 0.6), hit_at, 0.09)
+    music = echo(music, delay=step * 1.5, fb=0.35, mix=0.3)[: len(music)]
+    music *= env(len(music), 0.08, 0.35)  # l'accord s'éteint juste avant l'écran de fin
+    put(mix, music, 0, 1.0)
+    if total - story_end > 0.5:
+        put(mix, signature(total - story_end), story_end, 1.1)
     mix = reverb(mix, 2.4, 0.3)
-    mix *= env(len(mix), 0.08, 2.0)  # fondu progressif sur la dernière diapositive
+    mix *= env(len(mix), 0.05, 0.5)
     mix /= np.abs(mix).max() / 0.89
     pcm = (np.stack([mix, mix], 1) * 32767).astype(np.int16)
     with wave.open(out, "wb") as w:
@@ -181,4 +200,4 @@ def make(total, hit_at, out):
 
 
 if __name__ == "__main__":
-    make(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3])
+    make(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3], float(sys.argv[4]) if len(sys.argv) > 4 else None)

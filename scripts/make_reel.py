@@ -251,16 +251,7 @@ def outro_frame(t, stars):
         f = ImageFont.truetype(FONT, 46)
         dl.text((cx, cy + 2), "ABONNEZ-VOUS !", font=f, fill=NAVY + (int(255 * k),), anchor="mm")
         f2 = ImageFont.truetype(FONT, 40)
-        dl.text((cx, cy + 92), "Touchez « Suivre » juste ici", font=f2, fill=(255, 255, 255, int(235 * k)), anchor="mm")
-        # flèche qui rebondit vers le nom du compte (zone du bouton « Suivre »)
-        bounce = 14 * np.sin(max(0.0, t - 1.6) * 8)
-        x0, y0 = 330 + bounce * 0.6, int(H * 0.775) + bounce
-        x1, y1 = 190 + bounce * 0.6, int(H * 0.835) + bounce
-        col = ACCENT + (int(255 * k),)
-        dl.line([(x0, y0), (x1, y1)], fill=col, width=12)
-        ang = np.arctan2(y1 - y0, x1 - x0)
-        for da in (2.6, -2.6):
-            dl.line([(x1, y1), (x1 + 46 * np.cos(ang + da), y1 + 46 * np.sin(ang + da))], fill=col, width=12)
+        dl.text((cx, cy + 92), "@kulturable", font=f2, fill=(255, 255, 255, int(235 * k)), anchor="mm")
     frame.alpha_composite(layer)
     return frame.convert("RGB")
 
@@ -308,7 +299,7 @@ def build(folder: pathlib.Path) -> pathlib.Path:
         from reel_sound import make as make_sound
         hit = story - cfg["scenes"][-1]["duration"]
         wav = work / "son.wav"
-        make_sound(total, hit, str(wav))
+        make_sound(total, hit, str(wav), story)
         subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-i", str(wav),
                         "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                         "-t", str(total), "-movflags", "+faststart", str(tmp)], check=True)
