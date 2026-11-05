@@ -1,0 +1,124 @@
+{
+  "title": "La plante qui héberge des chauves-souris",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/12.txt",
+  "images": {
+    "urne.jpg": "File:Nepenthes rafflesiana var. elongata upper pitcher.jpg",
+    "fourmi.jpg": "File:Nepenthes rafflesiana ant.jpg",
+    "foret.jpg": "File:Borneo rainforest.jpg",
+    "geante.jpg": "File:Nepenthes rafflesiana giant upper pitcher.jpg"
+  },
+  "scenes": [
+    {
+      "image": "urne.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Cette plante carnivore",
+          "size": 58
+        },
+        {
+          "text": "LOGE UNE CHAUVE-SOURIS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "fourmi.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ses urnes noient les insectes.",
+          "size": 58
+        },
+        {
+          "text": "MAIS ELLE EN ATTIRE PEU.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "urne.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Une petite chauve-souris",
+          "size": 58
+        },
+        {
+          "text": "DORT DANS SON URNE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out",
+      "crop": [
+        0.1,
+        0.0,
+        0.9,
+        0.6
+      ]
+    },
+    {
+      "image": "geante.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Le loyer : ses excréments.",
+          "size": 58
+        },
+        {
+          "text": "UN ENGRAIS PARFAIT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "foret.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "L'urne renvoie ses ultrasons",
+          "size": 58
+        },
+        {
+          "text": "COMME UNE ENSEIGNE LUMINEUSE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

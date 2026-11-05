@@ -1,0 +1,119 @@
+{
+  "title": "Le vélo qui a créé une légende",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/11.txt",
+  "images": {
+    "ali.jpg": "File:Muhammad Ali NYWTS.jpg",
+    "velo.jpg": "File:1950 Schwinn Spitfire.jpg",
+    "martin.jpg": "File:JoeEMartinCassiusClay1960.jpg",
+    "rome.jpg": "File:Cassius Clay (1960, JO).jpg",
+    "liston.jpg": "File:Muhammad Ali vs. Sonny Liston I AP.jpg"
+  },
+  "scenes": [
+    {
+      "image": "ali.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "On lui a volé son vélo.",
+          "size": 58
+        },
+        {
+          "text": "IL EST DEVENU MOHAMED ALI.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "velo.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Louisville, 1954. Il a 12 ans.",
+          "size": 58
+        },
+        {
+          "text": "SON VÉLO DISPARAÎT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "martin.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Un policier lui dit :",
+          "size": 58
+        },
+        {
+          "text": "APPRENDS D'ABORD À TE BATTRE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "rome.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "1960 : champion olympique.",
+          "size": 58
+        },
+        {
+          "text": "1964 : CHAMPION DU MONDE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "liston.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Et le vélo ?",
+          "size": 58
+        },
+        {
+          "text": "JAMAIS RETROUVÉ.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

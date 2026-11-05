@@ -1,0 +1,119 @@
+{
+  "title": "Le peuple qui dit non au monde",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/10.txt",
+  "images": {
+    "ile.jpg": "File:North Sentinel Island.jpg",
+    "iss.jpg": "File:NorthSentinel Island ISS006-E-33376 sat.jpg",
+    "cote.jpg": "File:North Sentinel Island 1732160137 dff5236475 o.jpg",
+    "sat.jpg": "File:North Sentinel Island 2022-03-06 Sentinel-2 L2A True color.jpg",
+    "foret.jpg": "File:Havelock Island, Forest on the beach 2, Andaman Islands.jpg"
+  },
+  "scenes": [
+    {
+      "image": "ile.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Sur cette île, un peuple",
+          "size": 58
+        },
+        {
+          "text": "REFUSE TOUT CONTACT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "foret.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ils y vivraient depuis",
+          "size": 58
+        },
+        {
+          "text": "DES DIZAINES DE MILLÉNAIRES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "cote.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Un bateau approche ?",
+          "size": 58
+        },
+        {
+          "text": "ILS SORTENT ARCS ET LANCES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "iss.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Après le tsunami de 2004,",
+          "size": 58
+        },
+        {
+          "text": "UN HÉLICO REÇOIT DES FLÈCHES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "sat.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "L'Inde interdit d'approcher :",
+          "size": 58
+        },
+        {
+          "text": "UN RHUME POURRAIT LES DÉCIMER.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

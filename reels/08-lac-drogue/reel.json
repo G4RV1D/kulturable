@@ -1,0 +1,119 @@
+{
+  "title": "Le lac de la drogue",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/07.txt",
+  "images": {
+    "lac.jpg": "File:Tenaya Lake, Yosemite National Park, California, U.S.jpg",
+    "hiver.jpg": "File:Winter Morning Sunrise Tunnel View Yosemite Valley - Yosemite National Park (5763418254).jpg",
+    "grimpeur.jpg": "File:Climbing El Capitan, Yosemite National Park (49915941047).jpg",
+    "glace.jpg": "File:Expedition Bergans Baikal 2010, cracks in the ice.jpg",
+    "elcap.jpg": "File:El Capitan, 'Wall of Early Morning Light', Yosemite Valley, California.JPG"
+  },
+  "scenes": [
+    {
+      "image": "lac.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Un avion bourré de cannabis",
+          "size": 58
+        },
+        {
+          "text": "S'ÉCRASE DANS UN LAC GELÉ.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "hiver.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Yosemite, décembre 1976.",
+          "size": 58
+        },
+        {
+          "text": "LA NEIGE CACHE L'ÉPAVE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "grimpeur.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Au printemps, des grimpeurs fauchés",
+          "size": 58
+        },
+        {
+          "text": "L'APPRENNENT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "glace.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ils montent au lac et repêchent",
+          "size": 58
+        },
+        {
+          "text": "LES BALLOTS SOUS LA GLACE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "elcap.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "L'argent aurait financé",
+          "size": 58
+        },
+        {
+          "text": "LEURS ESCALADES.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

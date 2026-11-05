@@ -1,0 +1,124 @@
+{
+  "title": "Le crabe au casque d'oursin",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/09.txt",
+  "images": {
+    "crabe.jpg": "File:Carrier Crab (Dorippe frascone) with Red Radiant Sea Urchin (Astropyga radiata).jpg",
+    "pattes.jpg": "File:Dorippe sinica - National Museum of Nature and Science, Tokyo - DSC07556.JPG",
+    "oursin.jpg": "File:Astropyga radiata.jpg",
+    "lembeh.jpg": "File:Astropyga radiata Lembeh.JPG"
+  },
+  "scenes": [
+    {
+      "image": "crabe.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ce crabe porte un oursin",
+          "size": 58
+        },
+        {
+          "text": "VIVANT SUR SON DOS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "pattes.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ses pattes arrière",
+          "size": 58
+        },
+        {
+          "text": "FINISSENT EN CROCHETS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "oursin.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Les poissons tombent sur",
+          "size": 58
+        },
+        {
+          "text": "UNE BOULE DE PIQUANTS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "lembeh.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Et l'oursin, lui,",
+          "size": 58
+        },
+        {
+          "text": "VOYAGE EN TAXI.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "crabe.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "On lui retire son oursin ?",
+          "size": 58
+        },
+        {
+          "text": "IL EN CHERCHE UN AUTRE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out",
+      "crop": [
+        0.15,
+        0.15,
+        0.85,
+        0.85
+      ]
+    }
+  ]
+}

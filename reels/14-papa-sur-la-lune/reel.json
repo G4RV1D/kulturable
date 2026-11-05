@@ -1,0 +1,119 @@
+{
+  "title": "Le jour où papa est parti sur la Lune",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/13.txt",
+  "images": {
+    "decollage.jpg": "File:Apollo 11 Launch - GPN-2000-000630.jpg",
+    "foule.jpg": "File:Apollo 11 Launch Spectators (2).jpg",
+    "neil.jpg": "File:Neil Armstrong pose.jpg",
+    "lune.jpg": "File:A Man on the Moon, AS11-40-5903 (21039130393).jpg",
+    "retour.jpg": "File:Apollo-11-Capsule.jpg"
+  },
+  "scenes": [
+    {
+      "image": "decollage.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Ce jour-là, papa est parti",
+          "size": 58
+        },
+        {
+          "text": "SUR LA LUNE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "foule.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Sa femme et ses deux fils",
+          "size": 58
+        },
+        {
+          "text": "RETIENNENT LEUR SOUFFLE.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "neil.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Le papa ?",
+          "size": 58
+        },
+        {
+          "text": "NEIL ARMSTRONG.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "lune.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Au cas où, un discours de deuil",
+          "size": 58
+        },
+        {
+          "text": "ÉTAIT DÉJÀ PRÊT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "retour.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "24 juillet : papa rentre",
+          "size": 58
+        },
+        {
+          "text": "SAIN ET SAUF.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}

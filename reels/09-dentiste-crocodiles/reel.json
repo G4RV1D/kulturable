@@ -1,0 +1,119 @@
+{
+  "title": "Le dentiste des crocodiles",
+  "music": "signature",
+  "share_to_feed": false,
+  "source_post": "posts/anciens/08.txt",
+  "images": {
+    "gueule.jpg": "File:Open mouth Crocodile.jpg",
+    "pluvier.jpg": "File:Flickr - Rainbirder - Egyptian Plover (Pluvianus aegyptius).jpg",
+    "herodote.jpg": "File:Marble bust of Herodotos MET DT11742.jpg",
+    "berge.jpg": "File:Nile Crocodile basking (13869043013).jpg",
+    "croc.jpg": "File:Crocodylus-niloticus-Crocoloco-296-Zachi-Evenor.jpg"
+  },
+  "scenes": [
+    {
+      "image": "gueule.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Un oiseau nettoie les dents",
+          "size": 58
+        },
+        {
+          "text": "DES CROCODILES ?",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "pluvier.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Le pluvier égyptien picorerait",
+          "size": 58
+        },
+        {
+          "text": "ENTRE SES CROCS.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "herodote.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Hérodote le raconte",
+          "size": 58
+        },
+        {
+          "text": "VERS 450 AV. J.-C.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "berge.jpg",
+      "duration": 2.4,
+      "text": [
+        {
+          "text": "Depuis 2 500 ans,",
+          "size": 58
+        },
+        {
+          "text": "ON LE RÉPÈTE PARTOUT.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "croc.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Problème : personne",
+          "size": 58
+        },
+        {
+          "text": "NE L'A JAMAIS VRAIMENT VU.",
+          "size": 74,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        },
+        {
+          "text": "Histoire complète sur le profil",
+          "size": 46
+        }
+      ],
+      "zoom": "out"
+    }
+  ]
+}
