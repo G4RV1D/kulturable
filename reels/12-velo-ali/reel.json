@@ -4,64 +4,23 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/11.txt",
   "images": {
-    "ali.jpg": "File:Muhammad Ali NYWTS.jpg",
-    "velo.jpg": "File:1950 Schwinn Spitfire.jpg",
-    "martin.jpg": "File:JoeEMartinCassiusClay1960.jpg",
-    "rome.jpg": "File:Boxing light-heavyweight 1960 Olympics.jpg",
-    "liston.jpg": "File:Muhammad Ali vs. Sonny Liston I AP.jpg"
+    "origine.jpg": "posts/originaux/18146521012269713.jpg",
+    "velo.jpg": "https://collections-media.thehenryford.org/CollectionImages/_detail/photos/thf108122.jpg",
+    "policier.jpg": "File:JoeEMartinCassiusClay1960.jpg",
+    "podium.jpg": "File:Boxing light-heavyweight 1960 Olympics.jpg"
   },
   "scenes": [
     {
-      "image": "ali.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "On lui a volé son vélo.",
-          "size": 58
-        },
-        {
-          "text": "IL EST DEVENU MOHAMED ALI.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "velo.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Louisville, 1954. Il a 12 ans.",
-          "size": 58
-        },
-        {
-          "text": "SON VÉLO DISPARAÎT.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "martin.jpg",
+      "image": "origine.jpg",
       "duration": 2.6,
       "text": [
         {
-          "text": "Un policier lui dit :",
+          "text": "À 12 ans, ce gamin est fou de rage.",
           "size": 58
         },
         {
-          "text": "APPRENDS D'ABORD À TE BATTRE.",
-          "size": 74,
+          "text": "QUE LUI EST-IL ARRIVÉ ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -69,20 +28,20 @@
           ]
         }
       ],
-      "zoom": "out",
-      "pan": 0.5
+      "zoom": "in",
+      "pan": 0.4
     },
     {
-      "image": "rome.jpg",
-      "duration": 2.4,
+      "image": "velo.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "1960 : champion olympique.",
+          "text": "Un simple vol de vélo…",
           "size": 58
         },
         {
-          "text": "1964 : CHAMPION DU MONDE.",
-          "size": 74,
+          "text": "PEUT-IL CHANGER UN DESTIN ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -93,16 +52,56 @@
       "zoom": "in"
     },
     {
-      "image": "liston.jpg",
-      "duration": 2.4,
+      "image": "policier.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Et le vélo ?",
+          "text": "Un policier lui donne un conseil.",
           "size": 58
         },
         {
-          "text": "JAMAIS RETROUVÉ.",
-          "size": 74,
+          "text": "QUE LUI DIT-IL ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "podium.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Six ans plus tard, il monte sur un podium.",
+          "size": 58
+        },
+        {
+          "text": "JUSQU'OÙ IRA CE GAMIN ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Qu'est devenu ce gamin ?",
+          "size": 58
+        },
+        {
+          "text": "A-T-IL RETROUVÉ SON VÉLO ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -110,11 +109,12 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.4
     }
   ]
 }

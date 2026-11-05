@@ -4,88 +4,23 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/12.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17951344130041562.jpg",
     "urne.jpg": "File:Nepenthes rafflesiana var. elongata upper pitcher.jpg",
-    "fourmi.jpg": "File:Nepenthes rafflesiana ant.jpg",
-    "foret.jpg": "File:Borneo rainforest.jpg"
+    "entree.jpg": "https://www.archiv.fau.eu/files/2015/07/Fledermaus_CHIEN_C_LEE_original_02_200dpi_2000xnn.jpg",
+    "visite.jpg": "https://www.merlintuttle.org/wp-content/uploads/2014/09/MDT_BR_C3_1356-Edit.jpg"
   },
   "scenes": [
     {
-      "image": "urne.jpg",
-      "duration": 2.4,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Cette plante carnivore",
+          "text": "Une chauve-souris, une plante carnivore…",
           "size": 58
         },
         {
-          "text": "LOGE UNE CHAUVE-SOURIS.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "fourmi.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Ses urnes noient les insectes.",
-          "size": 58
-        },
-        {
-          "text": "MAIS ELLE EN ATTIRE PEU.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in"
-    },
-    {
-      "image": "urne.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Une petite chauve-souris",
-          "size": 58
-        },
-        {
-          "text": "DORT DANS SON URNE.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "out",
-      "crop": [
-        0.1,
-        0.0,
-        0.9,
-        0.6
-      ]
-    },
-    {
-      "image": "fourmi.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Le loyer : ses excréments.",
-          "size": 58
-        },
-        {
-          "text": "UN ENGRAIS PARFAIT.",
-          "size": 74,
+          "text": "QUEL EST LEUR PACTE SECRET ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -94,24 +29,80 @@
         }
       ],
       "zoom": "in",
-      "crop": [
-        0.35,
-        0.3,
-        1.0,
-        0.85
-      ]
+      "pan": 0.5,
+      "text_y": 0.3
     },
     {
-      "image": "foret.jpg",
-      "duration": 2.8,
+      "image": "urne.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "L'urne renvoie ses ultrasons",
+          "text": "Elle attire très peu d'insectes.",
           "size": 58
         },
         {
-          "text": "COMME UNE ENSEIGNE LUMINEUSE.",
-          "size": 74,
+          "text": "COMMENT SE NOURRIT-ELLE ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "entree.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Pourquoi entrer dans un piège mortel ?",
+          "size": 58
+        },
+        {
+          "text": "VA-T-ELLE S'Y NOYER ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in"
+    },
+    {
+      "image": "visite.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Au milieu d'une forêt immense…",
+          "size": 58
+        },
+        {
+          "text": "COMMENT RETROUVE-T-ELLE SON URNE ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Quel loyer paie la locataire ?",
+          "size": 58
+        },
+        {
+          "text": "QUI Y GAGNE VRAIMENT ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -119,11 +110,13 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.5,
+      "text_y": 0.3
     }
   ]
 }

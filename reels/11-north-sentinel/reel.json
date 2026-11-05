@@ -4,22 +4,64 @@
   "share_to_feed": false,
   "source_post": "posts/anciens/10.txt",
   "images": {
+    "origine.jpg": "posts/originaux/17916077258573986.jpg",
     "ile.jpg": "File:North Sentinel Island.jpg",
-    "s2a.png": "File:North-Sentinel-Island-Sentinel-2A.png",
-    "sat.jpg": "File:North Sentinel Island 2022-03-06 Sentinel-2 L2A True color.jpg"
+    "barque.jpg": "File:Fishing Boat Waves Devaneri Mahabalipuram Sep22 A7C 02637.jpg",
+    "helico.jpg": "https://img.jakpost.net/c/2018/11/23/2018_11_23_59213_1542944162._large.jpg"
   },
   "scenes": [
     {
-      "image": "ile.jpg",
-      "duration": 2.4,
+      "image": "origine.jpg",
+      "duration": 2.6,
       "text": [
         {
-          "text": "Sur cette île, un peuple",
+          "text": "Un peuple coupé du monde.",
           "size": 58
         },
         {
-          "text": "REFUSE TOUT CONTACT.",
-          "size": 74,
+          "text": "QUI SONT-ILS VRAIMENT ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "ile.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Une île à peu près grande comme Paris.",
+          "size": 58
+        },
+        {
+          "text": "POURQUOI EST-IL INTERDIT D'EN APPROCHER ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "out"
+    },
+    {
+      "image": "barque.jpg",
+      "duration": 2.6,
+      "text": [
+        {
+          "text": "Et si votre barque dérivait jusque-là ?",
+          "size": 58
+        },
+        {
+          "text": "QUE VOUS ARRIVERAIT-IL ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -30,88 +72,37 @@
       "zoom": "in"
     },
     {
-      "image": "s2a.png",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Ils y vivraient depuis",
-          "size": 58
-        },
-        {
-          "text": "DES DIZAINES DE MILLÉNAIRES.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "out"
-    },
-    {
-      "image": "ile.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Un bateau approche ?",
-          "size": 58
-        },
-        {
-          "text": "ILS SORTENT ARCS ET LANCES.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "crop": [
-        0.0,
-        0.0,
-        0.5,
-        0.6
-      ]
-    },
-    {
-      "image": "sat.jpg",
-      "duration": 2.4,
-      "text": [
-        {
-          "text": "Après le tsunami de 2004,",
-          "size": 58
-        },
-        {
-          "text": "UN HÉLICO REÇOIT DES FLÈCHES.",
-          "size": 74,
-          "color": [
-            255,
-            196,
-            72
-          ]
-        }
-      ],
-      "zoom": "in",
-      "crop": [
-        0.45,
-        0.3,
-        1.0,
-        1.0
-      ]
-    },
-    {
-      "image": "sat.jpg",
+      "image": "helico.jpg",
       "duration": 2.8,
       "text": [
         {
-          "text": "L'Inde interdit d'approcher :",
+          "text": "Même un hélicoptère venu prendre des nouvelles…",
           "size": 58
         },
         {
-          "text": "UN RHUME POURRAIT LES DÉCIMER.",
-          "size": 74,
+          "text": "COMMENT L'ONT-ILS ACCUEILLI ?",
+          "size": 72,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ],
+      "zoom": "in",
+      "pan": 0.5
+    },
+    {
+      "image": "origine.jpg",
+      "duration": 2.8,
+      "text": [
+        {
+          "text": "Faut-il les laisser tranquilles ?",
+          "size": 58
+        },
+        {
+          "text": "QUI PROTÈGE-T-ON VRAIMENT ?",
+          "size": 72,
           "color": [
             255,
             196,
@@ -119,11 +110,12 @@
           ]
         },
         {
-          "text": "Histoire complète sur le profil",
+          "text": "Toute l'histoire dans le post",
           "size": 46
         }
       ],
-      "zoom": "out"
+      "zoom": "out",
+      "pan": 0.5
     }
   ]
 }
