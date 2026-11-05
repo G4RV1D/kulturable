@@ -5,7 +5,6 @@
   "source_post": "posts/anciens/04.txt",
   "images": {
     "origine.jpg": "posts/originaux/18248493985106662.jpg",
-    "terrier.jpg": "https://i.natgeofe.com/n/aaf82a39-0a9f-43a6-81a4-c4e1d8f9ec4d/Fossil_squirrel_burrow.jpg",
     "kolyma.jpg": "File:Kolyma-river_01.jpg",
     "plante.jpg": "https://i.natgeofe.com/n/a28febd0-a506-422d-8bc6-f43d82e9a97d/Silene_regenerated_plant.jpg",
     "fleur2.jpg": "File:Silene_stenophylla_115390032.jpg"
@@ -53,15 +52,15 @@
       "zoom": "in"
     },
     {
-      "image": "terrier.jpg",
+      "image": "fleur2.jpg",
       "duration": 2.6,
       "text": [
         {
-          "text": "Un terrier, retrouvé tout au fond.",
+          "text": "Des chercheurs creusent très profond.",
           "size": 58
         },
         {
-          "text": "QUI L'AVAIT REMPLI, ET QUAND ?",
+          "text": "QU'ESPÈRENT-ILS Y TROUVER ?",
           "size": 72,
           "color": [
             255,
@@ -70,7 +69,8 @@
           ]
         }
       ],
-      "zoom": "in"
+      "zoom": "in",
+      "pan": 0.5
     },
     {
       "image": "plante.jpg",

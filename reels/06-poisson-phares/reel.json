@@ -5,8 +5,8 @@
   "source_post": "posts/anciens/05.txt",
   "images": {
     "origine.jpg": "posts/originaux/18210970096087898.jpg",
-    "musee.jpg": "https://media.australian.museum/media/dd/images/Photoblepharon_palpebratum.82ac2d2.width-1200.941334a.jpg",
-    "anomalops.jpg": "File:Anomalops sp.jpg"
+    "mazza.jpg": "https://www.monaconatureencyclopedia.com/wp-content/uploads/2018/09/Anomalops-katoptron.jpg",
+    "banc.jpg": "https://mediasvc.eurekalert.org/Api/v1/Multimedia/65fc08bd-f1e1-41da-9321-843b03c6d7d5/Rendition/low-res/Content/Public"
   },
   "scenes": [
     {
@@ -60,7 +60,7 @@
       "text_y": 0.3
     },
     {
-      "image": "musee.jpg",
+      "image": "mazza.jpg",
       "duration": 2.6,
       "text": [
         {
@@ -81,7 +81,7 @@
       "pan": 0.4
     },
     {
-      "image": "anomalops.jpg",
+      "image": "banc.jpg",
       "duration": 2.8,
       "text": [
         {
@@ -109,7 +109,7 @@
           "size": 58
         },
         {
-          "text": "QUEL EST SON SECRET ?",
+          "text": "QUEL SECRET CACHE-T-IL ?",
           "size": 72,
           "color": [
             255,
