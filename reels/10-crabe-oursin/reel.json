@@ -41,7 +41,7 @@
           "size": 58
         },
         {
-          "text": "CAPRICE OU QUESTION DE SURVIE ?",
+          "text": "CAPRICE OU SURVIE ?",
           "size": 72,
           "color": [
             255,
@@ -84,7 +84,7 @@
       "duration": 2.6,
       "text": [
         {
-          "text": "Et l'oursin, qu'y gagne-t-il ?",
+          "text": "Et l'oursin, alors ?",
           "size": 58
         },
         {
@@ -108,7 +108,7 @@
           "size": 58
         },
         {
-          "text": "QUE FERAIT LE CRABE ?",
+          "text": "QUE FERA LE CRABE ?",
           "size": 72,
           "color": [
             255,
@@ -123,7 +123,13 @@
       ],
       "zoom": "out",
       "pan": 0.5,
-      "text_y": 0.18
+      "crop": [
+        0.1,
+        0.35,
+        0.9,
+        1.0
+      ],
+      "text_y": 0.14
     }
   ]
 }
