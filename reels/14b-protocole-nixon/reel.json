@@ -1,0 +1,70 @@
+{
+  "title": "Le protocole secret si Apollo 11 tournait mal (version boucle)",
+  "music": "boucle",
+  "outro": false,
+  "radio_cut": 5.0,
+  "share_to_feed": false,
+  "source_post": "posts/anciens/13.txt",
+  "images": {
+    "famille.jpg": "posts/originaux/17915560574493347.jpg",
+    "memo.jpg": "https://www.archives.gov/files/press/press-kits/american-originals-photos/moon-disaster-1.jpg",
+    "lune.jpg": "File:A Man on the Moon, AS11-40-5903 (21039130393).jpg"
+  },
+  "scenes": [
+    {
+      "image": "famille.jpg",
+      "duration": 2.4,
+      "zoom": "in",
+      "text": [
+        {
+          "text": "« Ils reposeront en paix sur la Lune. »",
+          "size": 78,
+          "color": [
+            255,
+            196,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "image": "memo.jpg",
+      "duration": 2.6,
+      "zoom": "in",
+      "crop": [
+        0,
+        0,
+        1,
+        0.6
+      ],
+      "text": [
+        {
+          "text": "Discours prêt pour Nixon. 18 juillet 1969.",
+          "size": 70
+        }
+      ]
+    },
+    {
+      "image": "lune.jpg",
+      "duration": 2.6,
+      "zoom": "in",
+      "text": [
+        {
+          "text": "Consigne : couper la radio avec eux.",
+          "size": 74
+        }
+      ]
+    },
+    {
+      "image": "famille.jpg",
+      "duration": 2.4,
+      "zoom": "out",
+      "text": [
+        {
+          "text": "D'abord, appeler leurs futures veuves. Puis lire :",
+          "size": 70
+        }
+      ]
+    }
+  ]
+}

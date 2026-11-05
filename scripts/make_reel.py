@@ -303,6 +303,17 @@ def build(folder: pathlib.Path) -> pathlib.Path:
         subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-i", str(wav),
                         "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                         "-t", str(total), "-movflags", "+faststart", str(tmp)], check=True)
+    elif cfg.get("music") == "boucle":  # Reel en boucle parfaite, sans écran de fin
+        from reel_sound import make_loop
+        wav = work / "son.wav"
+        cuts, t = [], 0.0
+        for sc in cfg["scenes"]:
+            cuts.append(t)
+            t += sc["duration"]
+        make_loop(total, cuts, cfg.get("radio_cut", cuts[-1]), str(wav))
+        subprocess.run([FFMPEG, "-v", "error", "-y", "-i", str(silent), "-i", str(wav),
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                        "-t", str(total), "-movflags", "+faststart", str(tmp)], check=True)
     elif cfg.get("music"):
         music = ROOT / cfg["music"]
         start = cfg.get("music_start", 0)

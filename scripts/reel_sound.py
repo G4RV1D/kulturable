@@ -263,5 +263,49 @@ def make(total, hit_at, out, story_end=None):
     return out
 
 
+def make_loop(total, cuts, radio_cut, out):
+    """Son en boucle parfaite (Reel sans écran de fin) : nappe grave continue, battement sourd,
+    bips radio de la NASA (tonalités Quindar) à chaque plan, grésillement puis radio coupée.
+    La fin se raccorde exactement au début : la traîne est repliée sur les premières secondes."""
+    extra = 2.0
+    n = int(total * SR)
+    mix = np.zeros(int((total + extra) * SR))
+    tt = np.arange(len(mix)) / SR
+    lfo = 1 + 0.2 * np.sin(2 * np.pi * tt / total)  # période = durée du Reel : se raccorde
+    bass = lfilter(*butter(2, 260 / (SR / 2), "low"), saw(hz(29), len(mix), 0.004)) * 0.55
+    pad = sum(lfilter(*butter(2, 900 / (SR / 2), "low"), saw(hz(53 + v), len(mix), 0.006)) for v in (0, 7, 16, 23)) * 0.07
+    pe = np.ones(len(mix))  # la nappe s'efface quand la radio est coupée, revient avant la boucle
+    i0, i1 = int(radio_cut * SR), int((radio_cut + 0.12) * SR)
+    pe[i0:i1] = np.linspace(1, 0.12, i1 - i0)
+    pe[i1:] = 0.12
+    r0, r1 = int((total - 0.9) * SR), n
+    pe[r0:r1] = np.linspace(0.12, 1, r1 - r0)
+    pe[r1:] = 1
+    mix += (bass + pad) * lfo * pe
+    beat = 60 / 72  # battement de cœur, tombe juste sur la durée
+    for k in range(int(round(total / beat)) + 3):
+        for off, g in ((0, 0.55), (0.22, 0.35)):
+            t = np.arange(int(0.35 * SR)) / SR
+            put(mix, np.sin(2 * np.pi * (48 * np.exp(-t * 6) + 34) * t) * np.exp(-t * 14), k * beat * total / (round(total / beat) * beat) + off, g)
+    for c in cuts:  # bip radio d'Apollo, discret
+        t = np.arange(int(0.22 * SR)) / SR
+        put(mix, np.sin(2 * np.pi * 2525 * t) * env(len(t), 0.005, 0.03), c, 0.05)
+    t = np.arange(int(0.55 * SR)) / SR  # grésillement puis silence radio
+    stat = lfilter(*butter(2, [900 / (SR / 2), 5000 / (SR / 2)], "band"), rng.standard_normal(len(t)))
+    put(mix, stat * (0.5 + 0.5 * (rng.random(len(t)) > 0.6)) * env(len(t), 0.01, 0.25), radio_cut - 0.15, 0.35)
+    mix = reverb(mix, 2.0, 0.25)
+    loop = mix[:n].copy()
+    tail = mix[n:]
+    loop[: len(tail)] += tail  # la traîne de la fin se prolonge sur le début : raccord invisible
+    loop /= np.abs(loop).max() / 0.89
+    pcm = (np.stack([loop, loop], 1) * 32767).astype(np.int16)
+    with wave.open(out, "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes(pcm.tobytes())
+    return out
+
+
 if __name__ == "__main__":
     make(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3], float(sys.argv[4]) if len(sys.argv) > 4 else None)
