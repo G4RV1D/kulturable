@@ -155,15 +155,10 @@ def signature(seconds):
 
 
 def signature_b(seconds):
-    """Variante libre : une cascade d'étincelles qui monte en mode lydien (la couleur de l'émerveillement),
-    une basse qui glisse vers le grave, puis un grand accord fa maj7(#11) qui s'ouvre, respire
+    """Signature de la page : une basse qui glisse vers le grave, puis un grand accord fa maj7(#11) qui s'ouvre, respire
     et s'éteint lentement jusqu'à la fin."""
     out = np.zeros(int(seconds * SR))
-    run = [53, 57, 59, 60, 64, 65, 67, 69, 71, 72, 76, 77, 79, 81]  # fa lydien qui grimpe
-    st = 0.055
-    for k, m in enumerate(run):
-        put(out, analog(m + 12, 0.35, 2500 + 220 * k, decay=6, kind="pulse"), k * st, 0.05 + 0.006 * k)
-    land = len(run) * st + 0.05
+    land = 0.05  # pas de montée : la basse et le grand accord arrivent directement
     # basse qui glisse du fa vers le fa grave
     n = int(min(seconds - land, 3.0) * SR)
     tt = np.arange(n) / SR

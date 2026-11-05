@@ -891,10 +891,10 @@
     "publish_at": "2026-11-06T12:00:00+01:00",
     "caption_file": "reels/01-coral-castle/legende.txt",
     "video_file": "reels/01-coral-castle/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-02-oiseau-guide",
@@ -902,10 +902,10 @@
     "publish_at": "2026-11-07T12:00:00+01:00",
     "caption_file": "reels/02-oiseau-guide/legende.txt",
     "video_file": "reels/02-oiseau-guide/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-04-mangoustes",
@@ -913,10 +913,10 @@
     "publish_at": "2026-11-08T12:00:00+01:00",
     "caption_file": "reels/04-mangoustes/legende.txt",
     "video_file": "reels/04-mangoustes/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-05-fleur-glaciaire",
@@ -924,10 +924,10 @@
     "publish_at": "2026-11-09T12:00:00+01:00",
     "caption_file": "reels/05-fleur-glaciaire/legende.txt",
     "video_file": "reels/05-fleur-glaciaire/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-06-poisson-phares",
@@ -935,10 +935,10 @@
     "publish_at": "2026-11-10T12:00:00+01:00",
     "caption_file": "reels/06-poisson-phares/legende.txt",
     "video_file": "reels/06-poisson-phares/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-07-bouddha-leshan",
@@ -946,10 +946,10 @@
     "publish_at": "2026-11-11T12:00:00+01:00",
     "caption_file": "reels/07-bouddha-leshan/legende.txt",
     "video_file": "reels/07-bouddha-leshan/apercu.mp4",
-    "approved": true,
+    "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false)."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   },
   {
     "id": "reel-03-kulning",
@@ -960,6 +960,6 @@
     "approved": false,
     "published_at": null,
     "media_id": null,
-    "note": "Reel : onglet Reels uniquement (share_to_feed=false). EN ATTENTE : crédits des photos de Paul (bergère, troupeau) à fournir, ou retour aux photos libres."
+    "note": "Reel suspendu : à refaire selon les règles du 5/11 (photo d'origine, questions ouvertes, sans dévoiler les noms), puis à revalider."
   }
 ]
