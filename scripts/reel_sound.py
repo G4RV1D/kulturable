@@ -26,7 +26,7 @@ def hz(m):
 
 def env(n, a, r):
     e = np.ones(n)
-    na, nr = int(a * SR), int(r * SR)
+    na, nr = min(int(a * SR), n), min(int(r * SR), n)
     if na:
         e[:na] = np.linspace(0, 1, na)
     if nr:
@@ -238,6 +238,8 @@ def make(total, hit_at, out, story_end=None):
         if t >= hit_at - 0.01 and not landed:
             landed, i = True, 0
         root, iv = final if landed else chords[(i // 8) % 4]
+        if landed and i >= 8:  # l'accord final ne relance pas l'arpège : il se termine
+            break
         if i % 8 == 0:
             span = (story_end - t) if landed else min(step * 8 + 0.6, story_end - t)
             rel = min(1.2, span * 0.5) if landed else 0.6
@@ -245,8 +247,6 @@ def make(total, hit_at, out, story_end=None):
                 put(music, analog(root + 12 + v, span, 1400, attack=0.6 if not landed else 0.2,
                                   release=rel, detune=0.006), t, 0.10)
             put(music, analog(root - 12, span, 380, attack=0.08, release=rel), t, 0.30)
-        if landed and i >= 8:  # l'accord final ne relance pas l'arpège : il se termine
-            break
         prog = min(1.0, t / max(1.0, hit_at))
         put(music, analog(root + 24 + iv[pattern[i % 8]], step * 1.4, 1500 + 2500 * prog, decay=4, kind="pulse"), t, 0.16)
         t += step

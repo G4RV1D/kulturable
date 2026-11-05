@@ -3,7 +3,7 @@ name: Monter les Reels
 on:
   push:
     branches: [main]
-    paths: ["reels/**/reel.json", "scripts/make_reel.py", "scripts/reel_sound.py"]
+    paths: ["reels/**/reel.json", "reels/**/photos/**", "scripts/make_reel.py", "scripts/reel_sound.py"]
   workflow_dispatch:
 
 permissions:
@@ -19,11 +19,23 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install pillow imageio-ffmpeg numpy scipy
-      - run: python scripts/make_reel.py
+      - name: Monter (seulement les Reels modifiés, ou tous si les scripts ont changé)
+        run: |
+          before="${{ github.event.before }}"
+          if [ "${{ github.event_name }}" = "push" ] && git cat-file -e "$before" 2>/dev/null \
+             && ! git diff --name-only "$before" "${{ github.sha }}" | grep -q '^scripts/'; then
+            dirs=$(git diff --name-only "$before" "${{ github.sha }}" | grep -E '^reels/[^/]+/' | cut -d/ -f1-2 | sort -u \
+                   | while read d; do [ -f "$d/reel.json" ] && echo "$d"; done)
+            [ -n "$dirs" ] && python scripts/make_reel.py $dirs || echo "Aucun Reel modifié."
+          else
+            python scripts/make_reel.py
+          fi
       - name: Crédits des images
         run: |
           python - <<'PY'
