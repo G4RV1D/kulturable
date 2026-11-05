@@ -22,6 +22,10 @@ on:
         description: "Publier seulement la story de ce post déjà publié"
         type: string
         default: ""
+      reel_test:
+        description: "Tester un Reel sans le publier (ex. 01-coral-castle)"
+        type: string
+        default: ""
       relais:
         description: "Usage interne : relance automatique de la surveillance"
         type: boolean
@@ -92,6 +96,7 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
           FORCE_ID: ${{ inputs.force_id }}
           STORY_ONLY: ${{ inputs.story_only }}
+          REEL_TEST: ${{ inputs.reel_test }}
         run: python scripts/publish.py
       - name: Noter la publication
         run: |

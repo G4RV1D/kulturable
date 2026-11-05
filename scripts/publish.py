@@ -98,15 +98,35 @@ def check_image_online(url: str) -> None:
             raise ValueError(f"L'image {url} n'est pas servie en JPEG ({ctype})")
 
 
-def wait_ready(container: str, token: str) -> None:
-    for _ in range(30):  # Instagram traite le média avant publication
+def wait_ready(container: str, token: str, tries: int = 30, pause: int = 5) -> None:
+    for _ in range(tries):  # Instagram traite le média avant publication
         status = call("GET", container, {"fields": "status_code", "access_token": token})
         if status.get("status_code") == "FINISHED":
             return
         if status.get("status_code") == "ERROR":
             raise RuntimeError(f"Instagram a refusé le média : {status}")
-        time.sleep(5)
+        time.sleep(pause)
     raise RuntimeError("Instagram n'a pas fini de traiter le média à temps.")
+
+
+def reel_video_url(post: dict) -> str:
+    base = os.environ["IMAGE_BASE_URL"].rstrip("/").rsplit("/images", 1)[0]
+    url = f"{base}/" + post.get("video_file", f"reels/{post['id']}/apercu.mp4")
+    req = urllib.request.Request(url, method="HEAD")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        size = int(r.headers.get("Content-Length") or 0)
+    if size < 100_000:
+        raise ValueError(f"La vidéo {url} est introuvable ou vide ({size} octets)")
+    return url
+
+
+def reel_container(post: dict, caption: str, user_id: str, token: str) -> str:
+    """Conteneur Reel : onglet Reels uniquement (share_to_feed=false), jamais dans la grille."""
+    container = call("POST", f"{user_id}/media", {
+        "media_type": "REELS", "video_url": reel_video_url(post), "caption": caption,
+        "share_to_feed": "false", "access_token": token})["id"]
+    wait_ready(container, token, tries=60, pause=10)  # une vidéo prend plus de temps à traiter
+    return container
 
 
 def first_line(text: str) -> str:
@@ -172,6 +192,15 @@ def main() -> int:
     posts = json.loads(QUEUE.read_text(encoding="utf-8"))
     now = dt.datetime.now(dt.timezone.utc)
 
+    reel_test = os.environ.get("REEL_TEST", "").strip()
+    if reel_test:  # crée le conteneur du Reel pour vérifier qu'Instagram accepte la vidéo, sans publier
+        post = next(p for p in posts if p["id"] == reel_test)
+        caption = (ROOT / post["caption_file"]).read_text(encoding="utf-8").strip()
+        me = call("GET", "me", {"fields": "user_id,username", "access_token": token})
+        c = reel_container(post, caption, me.get("user_id") or me["id"], token)
+        print(f"Test Reel {reel_test} : vidéo acceptée par Instagram (conteneur {c}), rien publié.")
+        return 0
+
     story_only = os.environ.get("STORY_ONLY", "").strip()
     if story_only:
         post = next(p for p in posts if p["id"] == story_only)
@@ -203,11 +232,16 @@ def main() -> int:
         return 1
     caption = (ROOT / post["caption_file"]).read_text(encoding="utf-8").strip()
     check_caption(caption, post["id"])
-    from prepare_images import image_files
-    image_urls = [f"{base}/{name}" for name, _, _ in image_files(post)]
-    for url in image_urls:
-        check_image_online(url)
-    print(f"Prêt : {post['id']} ({len(caption)} caractères), {len(image_urls)} image(s)")
+    is_reel = post.get("type") == "reel"
+    image_urls = []
+    if is_reel:
+        print(f"Prêt : Reel {post['id']} ({len(caption)} caractères), vidéo {reel_video_url(post)}")
+    else:
+        from prepare_images import image_files
+        image_urls = [f"{base}/{name}" for name, _, _ in image_files(post)]
+        for url in image_urls:
+            check_image_online(url)
+        print(f"Prêt : {post['id']} ({len(caption)} caractères), {len(image_urls)} image(s)")
 
     if not token:
         print("IG_ACCESS_TOKEN manquant.")
@@ -234,11 +268,14 @@ def main() -> int:
         post["published_at"] = post.get("published_at") or dup["timestamp"].replace("+0000", "+00:00")
         post["media_id"] = dup["id"]
         print(f"{post['id']} est déjà sur Instagram ({dup['id']}) : pas de doublon.")
-        add_to_deja_publie(post, caption)
-        publish_story(post, user_id, token)
+        if not is_reel:
+            add_to_deja_publie(post, caption)
+            publish_story(post, user_id, token)
         QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return 0
-    if len(image_urls) == 1:
+    if is_reel:
+        container = reel_container(post, caption, user_id, token)
+    elif len(image_urls) == 1:
         container = call("POST", f"{user_id}/media",
                          {"image_url": image_urls[0], "caption": caption, "access_token": token})["id"]
     else:  # carrousel : un conteneur par image, puis le conteneur du carrousel
@@ -259,8 +296,9 @@ def main() -> int:
     post["media_id"] = media["id"]
     QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Publié sur @{me.get('username')} : {post['id']} (media {media['id']})")
-    add_to_deja_publie(post, caption)
-    publish_story(post, user_id, token)
+    if not is_reel:  # un Reel reprend un post existant : pas de story, pas d'ajout à deja_publie.txt
+        add_to_deja_publie(post, caption)
+        publish_story(post, user_id, token)
     QUEUE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0
 

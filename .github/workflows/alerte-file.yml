@@ -19,8 +19,8 @@ jobs:
       - name: Compter les posts à venir
         id: count
         run: |
-          n=$(python3 -c "import json;print(sum(1 for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at')))")
-          last=$(python3 -c "import json;d=[p['publish_at'][:10] for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at')];print(max(d) if d else 'aucun')")
+          n=$(python3 -c "import json;print(sum(1 for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at') and p.get('type') != 'reel'))")
+          last=$(python3 -c "import json;d=[p['publish_at'][:10] for p in json.load(open('posts/queue.json')) if p.get('approved') and not p.get('published_at') and p.get('type') != 'reel'];print(max(d) if d else 'aucun')")
           echo "n=$n" >> "$GITHUB_OUTPUT"; echo "last=$last" >> "$GITHUB_OUTPUT"
           echo "$n post(s) validé(s) à venir, dernier le $last"
       - name: Prévenir

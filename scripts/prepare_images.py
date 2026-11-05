@@ -60,6 +60,8 @@ def main() -> int:
     OUT_DIR.mkdir(exist_ok=True)
     failed = []
     for post in posts:
+        if post.get("type") == "reel":  # un Reel a sa vidéo, pas d'image à préparer
+            continue
         for name, sources, crop in image_files(post):
             out = OUT_DIR / name
             if out.exists():
