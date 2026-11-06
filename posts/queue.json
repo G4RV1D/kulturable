@@ -562,8 +562,8 @@
     "publish_at": "2026-11-06T18:00:00+01:00",
     "caption_file": "posts/captions/31-hashima.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-06T17:01:02+00:00",
+    "media_id": "18103098746553220",
     "images": [
       {
         "sources": [
@@ -572,7 +572,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Hashima,_Nagasaki,_Japan,_20240814_1421_3372.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18164929516498620",
+    "story_published_at": "2026-11-06T17:01:32+00:00"
   },
   {
     "id": "32-sedlec",
