@@ -600,8 +600,8 @@
     "publish_at": "2026-11-08T18:00:00+01:00",
     "caption_file": "posts/captions/33-moai.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-08T17:00:54+00:00",
+    "media_id": "18190242667407050",
     "images": [
       {
         "sources": [
@@ -610,7 +610,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Moai_Rano_raraku.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18134230546763485",
+    "story_published_at": "2026-11-08T17:01:17+00:00"
   },
   {
     "id": "34-lac-hillier",
