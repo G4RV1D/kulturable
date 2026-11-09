@@ -619,8 +619,8 @@
     "publish_at": "2026-11-09T18:00:00+01:00",
     "caption_file": "posts/captions/34-lac-hillier.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-09T17:00:51+00:00",
+    "media_id": "18038665298744036",
     "images": [
       {
         "sources": [
@@ -629,7 +629,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Pink_Lake_(Lake_Hillier)_on_Middle_Island_off_the_coast_of_Esperance_Western_Australia.jpg"
       }
-    ]
+    ],
+    "story_media_id": "17875085499602188",
+    "story_published_at": "2026-11-09T17:01:11+00:00"
   },
   {
     "id": "35-arbre-proprietaire",
