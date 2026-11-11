@@ -657,8 +657,8 @@
     "publish_at": "2026-11-11T18:00:00+01:00",
     "caption_file": "posts/captions/36-chaussee-des-geants.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-11T17:00:49+00:00",
+    "media_id": "17990236406877961",
     "images": [
       {
         "sources": [
@@ -667,7 +667,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Antrim_Coast_-_Giant's_Causeway_-_Port_Granny_-_Basalt_Columns_-_geograph.org.uk_-_3719380.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18164758342494679",
+    "story_published_at": "2026-11-11T17:01:12+00:00"
   },
   {
     "id": "37-foret-tordue",
