@@ -676,8 +676,8 @@
     "publish_at": "2026-11-12T18:00:00+01:00",
     "caption_file": "posts/captions/37-foret-tordue.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-12T17:00:54+00:00",
+    "media_id": "18106119386016487",
     "images": [
       {
         "sources": [
@@ -686,7 +686,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Krzywy_Las_-_Nowe_Czarnowo_1.JPG"
       }
-    ]
+    ],
+    "story_media_id": "18065544680794595",
+    "story_published_at": "2026-11-12T17:01:19+00:00"
   },
   {
     "id": "38-pompei",
