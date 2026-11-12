@@ -1,6 +1,6 @@
 # Analyse des Reels Kulturable
 
-*Généré le 2026-11-11 à 21:18 UTC par `scripts/reels_analyse.py`. Tableau de bord visuel : `reels/analyse/tableau.html`.*
+*Généré le 2026-11-12 à 21:25 UTC par `scripts/reels_analyse.py`. Tableau de bord visuel : `reels/analyse/tableau.html`.*
 
 ## En bref
 
