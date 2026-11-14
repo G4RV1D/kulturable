@@ -714,8 +714,8 @@
     "publish_at": "2026-11-14T18:00:00+01:00",
     "caption_file": "posts/captions/39-dallol.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-14T17:00:48+00:00",
+    "media_id": "18136775122735493",
     "images": [
       {
         "sources": [
@@ -724,7 +724,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:ET_Afar_asv2018-01_img48_Dallol.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18114774764168076",
+    "story_published_at": "2026-11-14T17:01:11+00:00"
   },
   {
     "id": "40-neuschwanstein",
