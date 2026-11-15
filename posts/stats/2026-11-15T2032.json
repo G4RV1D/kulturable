@@ -1,0 +1,463 @@
+{
+ "date": "2026-11-15T20:32:13+00:00",
+ "compte": {
+  "user_id": "17841454875673988",
+  "username": "kulturable",
+  "followers_count": 14,
+  "follows_count": 18,
+  "media_count": 91,
+  "id": "40290243097233043"
+ },
+ "posts": [
+  {
+   "id": "31-hashima",
+   "publie": "2026-11-06T17:01:02+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfaGDkPm_JF/",
+    "id": "18103098746553220"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ax2Op5__4G",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AoBqR-r13q",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AlAdnmr-TU",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AU9lVenpCF",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AjCxyFVAXr",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Aj9M7M1WE5",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AKHxT9sJ0p"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164929516498620' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-06T17:01:32+00:00"
+  },
+  {
+   "id": "32-sedlec",
+   "publie": "2026-11-07T17:00:53+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfcq1TLib5h/",
+    "id": "18505235008102521"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A1w0PVwXDn",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AaXjvvvCy2",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AgKsRZkbyL",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Asei1R9-YX",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AnGZ_7-wCj",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AXxcuCcVfR",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Abze6nLS8f"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17880549336633147' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-07T17:01:18+00:00"
+  },
+  {
+   "id": "33-moai",
+   "publie": "2026-11-08T17:00:54+00:00",
+   "base": {
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DffPoL2mjf5/",
+    "id": "18190242667407050"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AZYZ-_fIUv",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A_aeJNJpnV",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"APxwBk2FqS",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AoX4BGIbKk",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ai1KijMBRc",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AKGxkyp6a4",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A3SLO64KBi"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18134230546763485' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-08T17:01:17+00:00"
+  },
+  {
+   "id": "34-lac-hillier",
+   "publie": "2026-11-09T17:00:51+00:00",
+   "base": {
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfh0arwFKuF/",
+    "id": "18038665298744036"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AswnB2Tf0S",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A8Gt1LYaVy",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AjfeZ_dqM_",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A8CYTbCBFV",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AaG7PrVlxe",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Aiyd9La02E",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AdUiPBVNXj"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17875085499602188' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-09T17:01:11+00:00"
+  },
+  {
+   "id": "35-arbre-proprietaire",
+   "publie": "2026-11-10T17:00:55+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfkZOHUCQdx/",
+    "id": "18149822857566107"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A5f4wdzHcX",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGgIoPugfm",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ACGK7EuceS",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ah1xb8fW3G",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A02Vd9jVTu",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AFjK8TwkN4",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A9xx5FbSJg"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '17914704345485152' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-10T17:01:22+00:00"
+  },
+  {
+   "id": "36-chaussee-des-geants",
+   "publie": "2026-11-11T17:00:49+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfm-AMnlolW/",
+    "id": "17990236406877961"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AfCU2atqHP",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AGTX-MI2gR",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AsCLsOBDHJ",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A5qZb1GWy9",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AQ-ZwVfoHE",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AOX2gGWHm9",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AR83PfXWci"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18164758342494679' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-11T17:01:12+00:00"
+  },
+  {
+   "id": "37-foret-tordue",
+   "publie": "2026-11-12T17:00:54+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfpizvcEfV8/",
+    "id": "18106119386016487"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AcRaT9Iu_Y",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A9tQbktxDW",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AzXefkk22L",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AMr6jjyUrV",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ACUGk0lTwh",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AM2P1wJuX-",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AUDtExtWft"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18065544680794595' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-12T17:01:19+00:00"
+  },
+  {
+   "id": "38-pompei",
+   "publie": "2026-11-13T17:00:51+00:00",
+   "base": {
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfsHmMsFOMU/",
+    "id": "17953821561292735"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ak_Z94GO1I",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A7i4QjcBY8",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Abomb1Yovy",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ArF1Sf3Yr1",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AiisYjCxAA",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AnZTLQlqRw",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AqYzB3z5Hu"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18141589417627880' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-13T17:01:12+00:00"
+  },
+  {
+   "id": "39-dallol",
+   "publie": "2026-11-14T17:00:48+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfusYwNmr5W/",
+    "id": "18136775122735493"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ApOA56An1o",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AuvguGNUsb",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AwhkQa8Mn2",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AILwsl-5Xl",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AxmHaIaWFi",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ATN6bWR7Fw",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AYeWnI3xOz"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm",
+     "reach: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm",
+     "replies: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm",
+     "shares: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm",
+     "total_interactions: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm",
+     "navigation: Erreur API Instagram 400 : {\"error\":{\"message\":\"Unsupported get request. Object with ID '18114774764168076' does not exist, cannot be loaded due to missing perm"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-14T17:01:11+00:00"
+  },
+  {
+   "id": "40-neuschwanstein",
+   "publie": "2026-11-15T17:00:52+00:00",
+   "base": {
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DfxRMH-FZvL/",
+    "id": "17968037705982021"
+   },
+   "stats": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AF_TR-rUfR",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A2r9jBsxVb",
+     "likes: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AFAJXQuplY",
+     "comments: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"Ai8LSwH9oa",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"ASnnfiX_C7",
+     "saved: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AWdqDRWhA5",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AfikewguDh"
+    ],
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "saved": null,
+    "total_interactions": null
+   },
+   "story": {
+    "views": null,
+    "_erreurs": [
+     "views: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AcwNIhD1K1",
+     "reach: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A6hG7Np1JR",
+     "replies: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AY5mrmJqNn",
+     "shares: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A6kRyq800X",
+     "total_interactions: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"A07-UNmCGF",
+     "navigation: Erreur API Instagram 403 : {\"error\":{\"message\":\"Application does not have permission for this action\",\"type\":\"IGApiException\",\"code\":10,\"fbtrace_id\":\"AhBm8S6vte"
+    ],
+    "reach": null,
+    "replies": null,
+    "shares": null,
+    "total_interactions": null,
+    "navigation": null
+   },
+   "story_publiee": "2026-11-15T17:01:11+00:00"
+  }
+ ]
+}
