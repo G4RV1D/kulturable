@@ -790,8 +790,8 @@
     "publish_at": "2026-11-18T18:00:00+01:00",
     "caption_file": "posts/captions/04-strasbourg-1518.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-18T17:00:54+00:00",
+    "media_id": "18119727476020774",
     "images": [
       {
         "sources": [
@@ -801,7 +801,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame_de_Strasbourg_ao%C3%BBt_2014.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18578253127076857",
+    "story_published_at": "2026-11-18T17:01:15+00:00"
   },
   {
     "id": "47-vague-de-biere",
