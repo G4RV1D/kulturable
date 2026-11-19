@@ -810,8 +810,8 @@
     "publish_at": "2026-11-19T18:00:00+01:00",
     "caption_file": "posts/captions/47-vague-de-biere.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-19T17:00:49+00:00",
+    "media_id": "18232863985335490",
     "images": [
       {
         "sources": [
@@ -821,7 +821,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Dominion_Theatre_-_geograph.org.uk_-_8205691.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18142598428724765",
+    "story_published_at": "2026-11-19T17:01:11+00:00"
   },
   {
     "id": "44-proces-du-pape-mort",
