@@ -830,8 +830,8 @@
     "publish_at": "2026-11-20T18:00:00+01:00",
     "caption_file": "posts/captions/44-proces-du-pape-mort.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-20T17:00:55+00:00",
+    "media_id": "18472956043184471",
     "images": [
       {
         "sources": [
@@ -841,7 +841,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Archbasilica_of_St._John_Lateran_HD.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18135128050783868",
+    "story_published_at": "2026-11-20T17:01:19+00:00"
   },
   {
     "id": "49-tulipomanie",
