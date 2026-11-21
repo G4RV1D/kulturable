@@ -850,8 +850,8 @@
     "publish_at": "2026-11-21T18:00:00+01:00",
     "caption_file": "posts/captions/49-tulipomanie.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-21T17:00:49+00:00",
+    "media_id": "18015864534005055",
     "images": [
       {
         "sources": [
@@ -861,7 +861,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Flaming,_virus_infected_Tulipa_fosteriana_'Orange_Breeze'_2021_01.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18046714919836542",
+    "story_published_at": "2026-11-21T17:01:09+00:00"
   },
   {
     "id": "45-defenestration-prague",
