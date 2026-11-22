@@ -1,12 +1,9 @@
 {
- "full_coral": [
-  "File:Coral Castle, the creation of reclusive Edward Leedskalnin, who, using only hand tools, moved more than 1,100 tons of coral several miles, then sculpted them into a series of stone tributes to his LCCN2011631875.tif",
-  "File:Edward Leedskalnin, circa 1910.jpg",
-  "File:The Coral Castle.jpg",
-  "File:Coral Castle, Homestead, Florida LCCN2017708525.tif",
-  "File:Coral Castle 2.jpg",
-  "File:Coral Castle Walk.jpg",
-  "File:Coral Castle, Homestead, Florida LCCN2017708512.tif",
-  "File:Coral Castle by Carol M. Highsmith.jpg"
- ]
+ "hamelin": ["File:Hameln-Rattenfaenger-Augustin-von-Moersperg-1592.jpg", "Pied Piper Hamelin Moersperg", "Rattenfänger Hameln Glasfenster Aquarell"],
+ "waitomo": ["Waitomo glowworm cave", "Arachnocampa luminosa glowworms", "Waitomo glow worms"],
+ "eiffel": ["Tour Eiffel Champ de Mars color", "Eiffel Tower from Trocadero", "Eiffel Tower Paris"],
+ "anning": ["File:Mary Anning painting, before 1842.jpg", "Mary Anning portrait", "Mary Anning Natural History Museum"],
+ "sapanta": ["Merry Cemetery Sapanta", "Cimitirul Vesel Săpânța", "Sapanta crosses"],
+ "hans": ["Hans Island", "Tartupaluk", "Hans Ø"],
+ "joconde": ["File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg", "Mona Lisa C2RMF", "Mona Lisa Louvre"]
 }
