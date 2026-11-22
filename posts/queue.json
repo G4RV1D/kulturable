@@ -870,8 +870,8 @@
     "publish_at": "2026-11-22T18:00:00+01:00",
     "caption_file": "posts/captions/45-defenestration-prague.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-22T17:01:00+00:00",
+    "media_id": "17998492898844430",
     "images": [
       {
         "sources": [
@@ -881,7 +881,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Defenestration_window_at_the_Prague_Castle.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18110011463255727",
+    "story_published_at": "2026-11-22T17:01:23+00:00"
   },
   {
     "id": "46-annee-sans-ete",
