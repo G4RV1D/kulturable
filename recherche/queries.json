@@ -1,9 +1,3 @@
 {
- "hamelin": ["File:Hameln-Rattenfaenger-Augustin-von-Moersperg-1592.jpg", "Pied Piper Hamelin Moersperg", "Rattenfänger Hameln Glasfenster Aquarell"],
- "waitomo": ["Waitomo glowworm cave", "Arachnocampa luminosa glowworms", "Waitomo glow worms"],
- "eiffel": ["Tour Eiffel Champ de Mars color", "Eiffel Tower from Trocadero", "Eiffel Tower Paris"],
- "anning": ["File:Mary Anning painting, before 1842.jpg", "Mary Anning portrait", "Mary Anning Natural History Museum"],
- "sapanta": ["Merry Cemetery Sapanta", "Cimitirul Vesel Săpânța", "Sapanta crosses"],
- "hans": ["Hans Island", "Tartupaluk", "Hans Ø"],
- "joconde": ["File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg", "Mona Lisa C2RMF", "Mona Lisa Louvre"]
+ "hamelin2": ["Moersperg Rattenfänger 1592", "insource:Moersperg Hameln", "Rattenfänger Hameln Aquarell 1592", "Rattenfängerhaus Hameln", "Hameln Rattenfänger Glasfenster Marktkirche"]
 }
