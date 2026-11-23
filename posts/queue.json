@@ -1002,7 +1002,7 @@
   "id": "50-hamelin",
   "publish_at": "2026-11-25T18:00:00+01:00",
   "caption_file": "posts/captions/50-hamelin.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1013,14 +1013,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Hameln_Rattenfaengerhaus_Fassade-.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "51-waitomo",
   "publish_at": "2026-11-26T18:00:00+01:00",
   "caption_file": "posts/captions/51-waitomo.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1031,14 +1030,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Glowworm_Grotto,_Waitomo_Glowworm_Cave.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "52-tour-eiffel-vendue",
   "publish_at": "2026-11-27T18:00:00+01:00",
   "caption_file": "posts/captions/52-tour-eiffel-vendue.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1049,14 +1047,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Paris,_Eiffelturm_--_2014_--_1309.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "53-mary-anning",
   "publish_at": "2026-11-28T18:00:00+01:00",
   "caption_file": "posts/captions/53-mary-anning.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1067,14 +1064,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Mary_Anning_painting.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "54-sapanta",
   "publish_at": "2026-11-29T18:00:00+01:00",
   "caption_file": "posts/captions/54-sapanta.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1085,14 +1081,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Merry_Cemetery_-_Sapanta_-_Romania_01.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "55-ile-hans",
   "publish_at": "2026-11-30T18:00:00+01:00",
   "caption_file": "posts/captions/55-ile-hans.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1103,14 +1098,13 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Hans_Island,_2003-08-01,_UTC_2301,_HDMS_Triton,_Commanding_Officer,_Cdr._s.g._Per_Starklint.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  },
  {
   "id": "56-vol-joconde",
   "publish_at": "2026-12-01T18:00:00+01:00",
   "caption_file": "posts/captions/56-vol-joconde.txt",
-  "approved": false,
+  "approved": true,
   "published_at": null,
   "media_id": null,
   "images": [
@@ -1121,7 +1115,6 @@
     ],
     "credit_page": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"
    }
-  ],
-  "note": "Lot du 25/11 au 1/12 : validé d'office sauf « stop » avant le 23/11 à 18h."
+  ]
  }
 ]
