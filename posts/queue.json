@@ -910,8 +910,8 @@
     "publish_at": "2026-11-24T18:00:00+01:00",
     "caption_file": "posts/captions/48-grande-puanteur.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-24T17:00:50+00:00",
+    "media_id": "18102366032420597",
     "images": [
       {
         "sources": [
@@ -921,7 +921,9 @@
         "credit_page": "https://commons.wikimedia.org/wiki/File:Belvedere_,_Crossness_Pumping_Station_interior_view_-_geograph.org.uk_-_7309198.jpg"
       }
     ],
-    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h."
+    "note": "Lot du 18 au 24/11 (sujets Perplexity) : validé d'office sauf « stop » avant le 16/11 à 18h.",
+    "story_media_id": "18151110682557835",
+    "story_published_at": "2026-11-24T17:01:17+00:00"
   },
   {
     "id": "reel-01-coral-castle",
