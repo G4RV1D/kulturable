@@ -1026,8 +1026,8 @@
     "publish_at": "2026-11-26T18:00:00+01:00",
     "caption_file": "posts/captions/51-waitomo.txt",
     "approved": true,
-    "published_at": null,
-    "media_id": null,
+    "published_at": "2026-11-26T17:00:45+00:00",
+    "media_id": "17900227152417972",
     "images": [
       {
         "sources": [
@@ -1036,7 +1036,9 @@
         ],
         "credit_page": "https://commons.wikimedia.org/wiki/File:Glowworm_Grotto,_Waitomo_Glowworm_Cave.jpg"
       }
-    ]
+    ],
+    "story_media_id": "18581682388073573",
+    "story_published_at": "2026-11-26T17:01:11+00:00"
   },
   {
     "id": "52-tour-eiffel-vendue",
